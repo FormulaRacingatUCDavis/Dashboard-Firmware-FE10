@@ -1,0 +1,3823 @@
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"can_manga.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.getCapacitorVoltage,"ax",%progbits
+  20              		.align	2
+  21              		.global	getCapacitorVoltage
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	getCapacitorVoltage, %function
+  25              	getCapacitorVoltage:
+  26              	.LFB64:
+  27              		.file 1 "can_manga.c"
+   1:can_manga.c   **** /* ========================================
+   2:can_manga.c   ****  * Can API for FRUCD
+   3:can_manga.c   ****  * Schuyler Alschuler 2016 - 2017
+   4:can_manga.c   ****  * ========================================
+   5:can_manga.c   **** */
+   6:can_manga.c   **** 
+   7:can_manga.c   **** /*******************************************
+   8:can_manga.c   ****  * Used to interface dashboard with CAN bus
+   9:can_manga.c   ****  * some functinality can be found in CAN_TX_RX_func.c
+  10:can_manga.c   ****  * which is a generated source file
+  11:can_manga.c   ****  * see the can component of the top design for specific mailboxes
+  12:can_manga.c   ****  ******************************************/
+  13:can_manga.c   **** 
+  14:can_manga.c   **** #include "CAN.h"
+  15:can_manga.c   **** #include "can_manga.h"
+  16:can_manga.c   **** #include "cytypes.h"
+  17:can_manga.c   **** //#include "data.h"
+  18:can_manga.c   **** #include "frucd_display.h"
+  19:can_manga.c   **** // indicator LEDs
+  20:can_manga.c   **** #include "BMS_LED.h"
+  21:can_manga.c   **** #include "IMD_LED.h"
+  22:can_manga.c   **** 
+  23:can_manga.c   **** extern volatile vcu_state state;
+  24:can_manga.c   **** extern volatile uint32_t pedalOK;
+  25:can_manga.c   **** extern volatile uint8_t PACK_TEMP;
+  26:can_manga.c   **** extern volatile uint8_t BSPD_CATCH;
+  27:can_manga.c   **** extern volatile uint16_t CURRENT;
+  28:can_manga.c   **** //extern volatile int ERROR_NODE;
+  29:can_manga.c   **** //extern volatile int ERROR_IDX;
+  30:can_manga.c   **** extern volatile uint8_t soc;
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 2
+
+
+  31:can_manga.c   **** extern volatile uint32_t voltage;
+  32:can_manga.c   **** extern volatile BMS_STATUS bms_status;
+  33:can_manga.c   **** extern volatile uint8_t shutdown_flags;
+  34:can_manga.c   **** 
+  35:can_manga.c   **** // info from MC and motor
+  36:can_manga.c   **** extern volatile uint16_t mc_temp;
+  37:can_manga.c   **** extern volatile uint16_t motor_temp;
+  38:can_manga.c   **** 
+  39:can_manga.c   **** volatile uint8_t CAPACITOR_VOLT = 0;
+  40:can_manga.c   **** volatile uint8_t CURTIS_FAULT_CHECK = 0;
+  41:can_manga.c   **** volatile uint8_t CURTIS_HEART_BEAT_CHECK = 0;
+  42:can_manga.c   **** volatile uint8_t ACK_RX = 0;
+  43:can_manga.c   **** volatile uint8_t ERROR_TOLERANCE = 0;
+  44:can_manga.c   **** volatile uint8_t ABS_MOTOR_RPM = 0;
+  45:can_manga.c   **** volatile uint8_t THROTTLE_HIGH = 0;
+  46:can_manga.c   **** volatile uint8_t THROTTLE_LOW = 0;
+  47:can_manga.c   **** 
+  48:can_manga.c   **** //volatile uint8_t ESTOP; //Tehya test
+  49:can_manga.c   **** 
+  50:can_manga.c   **** 
+  51:can_manga.c   **** uint8 current_bytes[4] = {0};
+  52:can_manga.c   **** 
+  53:can_manga.c   **** // returns voltage of capacitor from motor controller
+  54:can_manga.c   **** uint8_t getCapacitorVoltage()
+  55:can_manga.c   **** {
+  28              		.loc 1 55 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  56:can_manga.c   ****     return CAPACITOR_VOLT;
+  33              		.loc 1 56 0
+  34 0000 014B     		ldr	r3, .L2
+  35 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  57:can_manga.c   **** }
+  36              		.loc 1 57 0
+  37 0004 7047     		bx	lr
+  38              	.L3:
+  39 0006 00BF     		.align	2
+  40              	.L2:
+  41 0008 00000000 		.word	.LANCHOR0
+  42              		.cfi_endproc
+  43              	.LFE64:
+  44              		.size	getCapacitorVoltage, .-getCapacitorVoltage
+  45              		.section	.text.getCurtisFaultCheck,"ax",%progbits
+  46              		.align	2
+  47              		.global	getCurtisFaultCheck
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	getCurtisFaultCheck, %function
+  51              	getCurtisFaultCheck:
+  52              	.LFB65:
+  58:can_manga.c   **** 
+  59:can_manga.c   **** // returns true if there is a fault in motor controller
+  60:can_manga.c   **** uint8_t getCurtisFaultCheck()
+  61:can_manga.c   **** {
+  53              		.loc 1 61 0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 3
+
+
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+  62:can_manga.c   ****     return CURTIS_FAULT_CHECK;
+  58              		.loc 1 62 0
+  59 0000 014B     		ldr	r3, .L5
+  60 0002 5878     		ldrb	r0, [r3, #1]	@ zero_extendqisi2
+  63:can_manga.c   **** }
+  61              		.loc 1 63 0
+  62 0004 7047     		bx	lr
+  63              	.L6:
+  64 0006 00BF     		.align	2
+  65              	.L5:
+  66 0008 00000000 		.word	.LANCHOR0
+  67              		.cfi_endproc
+  68              	.LFE65:
+  69              		.size	getCurtisFaultCheck, .-getCurtisFaultCheck
+  70              		.section	.text.getCurtisHeartBeatCheck,"ax",%progbits
+  71              		.align	2
+  72              		.global	getCurtisHeartBeatCheck
+  73              		.thumb
+  74              		.thumb_func
+  75              		.type	getCurtisHeartBeatCheck, %function
+  76              	getCurtisHeartBeatCheck:
+  77              	.LFB66:
+  64:can_manga.c   **** 
+  65:can_manga.c   **** // returns true if motor controller node is still active
+  66:can_manga.c   **** // if node is in active check the fault code using 1314
+  67:can_manga.c   **** uint8_t getCurtisHeartBeatCheck()
+  68:can_manga.c   **** {
+  78              		.loc 1 68 0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  69:can_manga.c   ****     return CURTIS_HEART_BEAT_CHECK;
+  83              		.loc 1 69 0
+  84 0000 014B     		ldr	r3, .L8
+  85 0002 9878     		ldrb	r0, [r3, #2]	@ zero_extendqisi2
+  70:can_manga.c   **** }
+  86              		.loc 1 70 0
+  87 0004 7047     		bx	lr
+  88              	.L9:
+  89 0006 00BF     		.align	2
+  90              	.L8:
+  91 0008 00000000 		.word	.LANCHOR0
+  92              		.cfi_endproc
+  93              	.LFE66:
+  94              		.size	getCurtisHeartBeatCheck, .-getCurtisHeartBeatCheck
+  95              		.section	.text.getAckRx,"ax",%progbits
+  96              		.align	2
+  97              		.global	getAckRx
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.type	getAckRx, %function
+ 101              	getAckRx:
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 4
+
+
+ 102              	.LFB67:
+  71:can_manga.c   **** 
+  72:can_manga.c   **** // returns 1 always... not sure whats up in the motor controller
+  73:can_manga.c   **** uint8_t getAckRx()
+  74:can_manga.c   **** {
+ 103              		.loc 1 74 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+  75:can_manga.c   ****     return ACK_RX;
+ 108              		.loc 1 75 0
+ 109 0000 014B     		ldr	r3, .L11
+ 110 0002 D878     		ldrb	r0, [r3, #3]	@ zero_extendqisi2
+  76:can_manga.c   **** }
+ 111              		.loc 1 76 0
+ 112 0004 7047     		bx	lr
+ 113              	.L12:
+ 114 0006 00BF     		.align	2
+ 115              	.L11:
+ 116 0008 00000000 		.word	.LANCHOR0
+ 117              		.cfi_endproc
+ 118              	.LFE67:
+ 119              		.size	getAckRx, .-getAckRx
+ 120              		.section	.text.getErrorTolerance,"ax",%progbits
+ 121              		.align	2
+ 122              		.global	getErrorTolerance
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	getErrorTolerance, %function
+ 126              	getErrorTolerance:
+ 127              	.LFB68:
+  77:can_manga.c   **** 
+  78:can_manga.c   **** // true if break depressed more than 10%
+  79:can_manga.c   **** // this value typically used for drive request
+  80:can_manga.c   **** uint8_t getErrorTolerance()
+  81:can_manga.c   **** {
+ 128              		.loc 1 81 0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132              		@ link register save eliminated.
+  82:can_manga.c   ****     return ERROR_TOLERANCE;
+ 133              		.loc 1 82 0
+ 134 0000 014B     		ldr	r3, .L14
+ 135 0002 1879     		ldrb	r0, [r3, #4]	@ zero_extendqisi2
+  83:can_manga.c   **** }
+ 136              		.loc 1 83 0
+ 137 0004 7047     		bx	lr
+ 138              	.L15:
+ 139 0006 00BF     		.align	2
+ 140              	.L14:
+ 141 0008 00000000 		.word	.LANCHOR0
+ 142              		.cfi_endproc
+ 143              	.LFE68:
+ 144              		.size	getErrorTolerance, .-getErrorTolerance
+ 145              		.section	.text.getABSMotorRPM,"ax",%progbits
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 5
+
+
+ 146              		.align	2
+ 147              		.global	getABSMotorRPM
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.type	getABSMotorRPM, %function
+ 151              	getABSMotorRPM:
+ 152              	.LFB69:
+  84:can_manga.c   **** 
+  85:can_manga.c   **** // from motor controller
+  86:can_manga.c   **** // look this one up in 1239E manual, im not super sure
+  87:can_manga.c   **** uint8_t getABSMotorRPM()
+  88:can_manga.c   **** {
+ 153              		.loc 1 88 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              		@ link register save eliminated.
+  89:can_manga.c   ****     return ABS_MOTOR_RPM;
+ 158              		.loc 1 89 0
+ 159 0000 014B     		ldr	r3, .L17
+ 160 0002 5879     		ldrb	r0, [r3, #5]	@ zero_extendqisi2
+  90:can_manga.c   **** }
+ 161              		.loc 1 90 0
+ 162 0004 7047     		bx	lr
+ 163              	.L18:
+ 164 0006 00BF     		.align	2
+ 165              	.L17:
+ 166 0008 00000000 		.word	.LANCHOR0
+ 167              		.cfi_endproc
+ 168              	.LFE69:
+ 169              		.size	getABSMotorRPM, .-getABSMotorRPM
+ 170              		.section	.text.getEStop,"ax",%progbits
+ 171              		.align	2
+ 172              		.global	getEStop
+ 173              		.thumb
+ 174              		.thumb_func
+ 175              		.type	getEStop, %function
+ 176              	getEStop:
+ 177              	.LFB70:
+  91:can_manga.c   **** 
+  92:can_manga.c   **** //Tehya test
+  93:can_manga.c   **** //will be a 1 if the estop was pressed (I'm making it a special case because I want to test rn)
+  94:can_manga.c   **** uint8_t getEStop()
+  95:can_manga.c   **** {
+ 178              		.loc 1 95 0
+ 179              		.cfi_startproc
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182              		@ link register save eliminated.
+  96:can_manga.c   ****     return ESTOP;
+  97:can_manga.c   **** }
+ 183              		.loc 1 97 0
+ 184 0000 0720     		movs	r0, #7
+ 185 0002 7047     		bx	lr
+ 186              		.cfi_endproc
+ 187              	.LFE70:
+ 188              		.size	getEStop, .-getEStop
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 6
+
+
+ 189              		.section	.text.can_test_send,"ax",%progbits
+ 190              		.align	2
+ 191              		.global	can_test_send
+ 192              		.thumb
+ 193              		.thumb_func
+ 194              		.type	can_test_send, %function
+ 195              	can_test_send:
+ 196              	.LFB71:
+  98:can_manga.c   **** 
+  99:can_manga.c   **** // called from CAN_TX_RX_func.c in the generic RX func
+ 100:can_manga.c   **** /*/ tldr: part of an interrupt service routine
+ 101:can_manga.c   **** void can_receive(uint8_t *msg, int ID)
+ 102:can_manga.c   **** {
+ 103:can_manga.c   ****     uint8 InterruptState = CyEnterCriticalSection();
+ 104:can_manga.c   ****     
+ 105:can_manga.c   ****     switch (ID) 
+ 106:can_manga.c   ****     {
+ 107:can_manga.c   ****         case VEHICLE_STATE:
+ 108:can_manga.c   ****             state = msg[CAN_DATA_BYTE_1];
+ 109:can_manga.c   ****             break;
+ 110:can_manga.c   ****         case MC_PDO_SEND:
+ 111:can_manga.c   ****             CAPACITOR_VOLT = msg[CAN_DATA_BYTE_1];
+ 112:can_manga.c   ****             ABS_MOTOR_RPM = msg[CAN_DATA_BYTE_3];
+ 113:can_manga.c   ****             mc_temp = msg[CAN_DATA_BYTE_7] << 8;
+ 114:can_manga.c   ****             mc_temp += msg[CAN_DATA_BYTE_8];
+ 115:can_manga.c   ****             break;
+ 116:can_manga.c   ****         case MC_PDO_ACK:
+ 117:can_manga.c   ****             ACK_RX = msg[CAN_DATA_BYTE_1];
+ 118:can_manga.c   ****             motor_temp = msg[CAN_DATA_BYTE_5] << 8;
+ 119:can_manga.c   ****             motor_temp |= msg[CAN_DATA_BYTE_6];
+ 120:can_manga.c   ****             break;
+ 121:can_manga.c   ****         case 0xA6:  // errors sent from MC node
+ 122:can_manga.c   ****             CURTIS_FAULT_CHECK = 0x1;
+ 123:can_manga.c   ****             break;
+ 124:can_manga.c   ****         case 0x726:     // from motor controller to confirm that node is still active
+ 125:can_manga.c   ****             CURTIS_HEART_BEAT_CHECK = 0x1;
+ 126:can_manga.c   ****             break;
+ 127:can_manga.c   ****         case BMS_VOLTAGES:
+ 128:can_manga.c   ****             voltage = msg[CAN_DATA_BYTE_5] << 24;
+ 129:can_manga.c   ****             voltage |= msg[CAN_DATA_BYTE_6] << 16;
+ 130:can_manga.c   ****             voltage |= msg[CAN_DATA_BYTE_7] << 8;
+ 131:can_manga.c   ****             voltage |= msg[CAN_DATA_BYTE_8];
+ 132:can_manga.c   ****             break;
+ 133:can_manga.c   ****         case BMS_STATUS_MSG:
+ 134:can_manga.c   ****             soc = msg[CAN_DATA_BYTE_2];
+ 135:can_manga.c   ****             bms_status = msg[CAN_DATA_BYTE_3] << 8;    // bms error flags
+ 136:can_manga.c   ****             bms_status |= msg[CAN_DATA_BYTE_4];        // bms error flags
+ 137:can_manga.c   ****             break;
+ 138:can_manga.c   ****         case BMS_TEMPERATURES:
+ 139:can_manga.c   ****             PACK_TEMP = msg[CAN_DATA_BYTE_8];
+ 140:can_manga.c   ****             break;
+ 141:can_manga.c   ****         case PEI_CURRENT:
+ 142:can_manga.c   ****             CURRENT = msg[CAN_DATA_BYTE_1] << 8;
+ 143:can_manga.c   ****             CURRENT |= msg[CAN_DATA_BYTE_2];
+ 144:can_manga.c   ****             shutdown_flags = msg[CAN_DATA_BYTE_3];
+ 145:can_manga.c   ****             break;
+ 146:can_manga.c   ****         case 0x366: //Tehya test
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 7
+
+
+ 147:can_manga.c   ****             //ESTOP = msg[CAN_DATA_BYTE_1];
+ 148:can_manga.c   ****             break;
+ 149:can_manga.c   ****     }
+ 150:can_manga.c   ****     
+ 151:can_manga.c   ****     CyExitCriticalSection(InterruptState);
+ 152:can_manga.c   **** }*/
+ 153:can_manga.c   **** 
+ 154:can_manga.c   **** void can_test_send()
+ 155:can_manga.c   **** {
+ 197              		.loc 1 155 0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 16
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201 0000 00B5     		push	{lr}
+ 202              		.cfi_def_cfa_offset 4
+ 203              		.cfi_offset 14, -4
+ 204 0002 85B0     		sub	sp, sp, #20
+ 205              		.cfi_def_cfa_offset 24
+ 156:can_manga.c   ****     //CAN_1_DATA_BYTES_MSG msg;
+ 157:can_manga.c   ****     CAN_TX_MSG HeartB;
+ 158:can_manga.c   ****     
+ 159:can_manga.c   ****     HeartB.id = 0x300;
+ 206              		.loc 1 159 0
+ 207 0004 4FF44073 		mov	r3, #768
+ 208 0008 0193     		str	r3, [sp, #4]
+ 160:can_manga.c   ****     HeartB.rtr = 0;
+ 209              		.loc 1 160 0
+ 210 000a 0022     		movs	r2, #0
+ 211 000c 8DF80820 		strb	r2, [sp, #8]
+ 161:can_manga.c   ****     HeartB.ide = 0;
+ 212              		.loc 1 161 0
+ 213 0010 8DF80920 		strb	r2, [sp, #9]
+ 162:can_manga.c   ****     HeartB.dlc = 1;
+ 214              		.loc 1 162 0
+ 215 0014 0123     		movs	r3, #1
+ 216 0016 8DF80A30 		strb	r3, [sp, #10]
+ 163:can_manga.c   ****     
+ 164:can_manga.c   ****     HeartB.irq = 0;
+ 217              		.loc 1 164 0
+ 218 001a 8DF80B20 		strb	r2, [sp, #11]
+ 165:can_manga.c   ****     
+ 166:can_manga.c   ****     HeartB.msg->byte[0] = (uint8) 1;
+ 219              		.loc 1 166 0
+ 220 001e 039A     		ldr	r2, [sp, #12]
+ 221 0020 1370     		strb	r3, [r2]
+ 167:can_manga.c   ****     HeartB.msg->byte[1] = (uint8) 1;
+ 222              		.loc 1 167 0
+ 223 0022 039A     		ldr	r2, [sp, #12]
+ 224 0024 5370     		strb	r3, [r2, #1]
+ 168:can_manga.c   ****     HeartB.msg->byte[2] = (uint8) 1;
+ 225              		.loc 1 168 0
+ 226 0026 039A     		ldr	r2, [sp, #12]
+ 227 0028 9370     		strb	r3, [r2, #2]
+ 169:can_manga.c   ****     HeartB.msg->byte[3] = (uint8) 1;
+ 228              		.loc 1 169 0
+ 229 002a 039A     		ldr	r2, [sp, #12]
+ 230 002c D370     		strb	r3, [r2, #3]
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 8
+
+
+ 170:can_manga.c   ****     HeartB.msg->byte[4] = (uint8) 1;
+ 231              		.loc 1 170 0
+ 232 002e 039A     		ldr	r2, [sp, #12]
+ 233 0030 1371     		strb	r3, [r2, #4]
+ 171:can_manga.c   ****     HeartB.msg->byte[5] = (uint8) 1;
+ 234              		.loc 1 171 0
+ 235 0032 039A     		ldr	r2, [sp, #12]
+ 236 0034 5371     		strb	r3, [r2, #5]
+ 172:can_manga.c   ****     HeartB.msg->byte[6] = (uint8) 1;
+ 237              		.loc 1 172 0
+ 238 0036 039A     		ldr	r2, [sp, #12]
+ 239 0038 9371     		strb	r3, [r2, #6]
+ 173:can_manga.c   ****     HeartB.msg->byte[7] = (uint8) 1;
+ 240              		.loc 1 173 0
+ 241 003a 039A     		ldr	r2, [sp, #12]
+ 242 003c D371     		strb	r3, [r2, #7]
+ 174:can_manga.c   ****     
+ 175:can_manga.c   ****     CAN_SendMsg(&HeartB);
+ 243              		.loc 1 175 0
+ 244 003e 01A8     		add	r0, sp, #4
+ 245 0040 FFF7FEFF 		bl	CAN_SendMsg
+ 246              	.LVL0:
+ 176:can_manga.c   **** }
+ 247              		.loc 1 176 0
+ 248 0044 05B0     		add	sp, sp, #20
+ 249              		.cfi_def_cfa_offset 4
+ 250              		@ sp needed
+ 251 0046 5DF804FB 		ldr	pc, [sp], #4
+ 252              		.cfi_endproc
+ 253              	.LFE71:
+ 254              		.size	can_test_send, .-can_test_send
+ 255 004a 00BF     		.section	.text.can_send,"ax",%progbits
+ 256              		.align	2
+ 257              		.global	can_send
+ 258              		.thumb
+ 259              		.thumb_func
+ 260              		.type	can_send, %function
+ 261              	can_send:
+ 262              	.LFB72:
+ 177:can_manga.c   **** 
+ 178:can_manga.c   **** void can_send(uint8_t data[8], uint32_t ID)
+ 179:can_manga.c   **** {
+ 263              		.loc 1 179 0
+ 264              		.cfi_startproc
+ 265              		@ args = 0, pretend = 0, frame = 24
+ 266              		@ frame_needed = 0, uses_anonymous_args = 0
+ 267              	.LVL1:
+ 268 0000 00B5     		push	{lr}
+ 269              		.cfi_def_cfa_offset 4
+ 270              		.cfi_offset 14, -4
+ 271 0002 87B0     		sub	sp, sp, #28
+ 272              		.cfi_def_cfa_offset 32
+ 180:can_manga.c   ****     uint8_t i;
+ 181:can_manga.c   **** 	CAN_TX_MSG message;
+ 182:can_manga.c   **** 	CAN_DATA_BYTES_MSG payload;
+ 183:can_manga.c   **** 	message.id = ID; 
+ 273              		.loc 1 183 0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 9
+
+
+ 274 0004 0391     		str	r1, [sp, #12]
+ 184:can_manga.c   **** 	message.rtr = 0;
+ 275              		.loc 1 184 0
+ 276 0006 0023     		movs	r3, #0
+ 277 0008 8DF81030 		strb	r3, [sp, #16]
+ 185:can_manga.c   **** 	message.ide = 0;
+ 278              		.loc 1 185 0
+ 279 000c 8DF81130 		strb	r3, [sp, #17]
+ 186:can_manga.c   **** 	message.dlc = 0x08;
+ 280              		.loc 1 186 0
+ 281 0010 0822     		movs	r2, #8
+ 282 0012 8DF81220 		strb	r2, [sp, #18]
+ 187:can_manga.c   **** 	message.irq = 0;
+ 283              		.loc 1 187 0
+ 284 0016 8DF81330 		strb	r3, [sp, #19]
+ 188:can_manga.c   **** 	message.msg = &payload;
+ 285              		.loc 1 188 0
+ 286 001a 01AA     		add	r2, sp, #4
+ 287 001c 0592     		str	r2, [sp, #20]
+ 288              	.LVL2:
+ 189:can_manga.c   **** 	for(i=0;i<8;i++)
+ 289              		.loc 1 189 0
+ 290 001e 06E0     		b	.L23
+ 291              	.LVL3:
+ 292              	.L24:
+ 190:can_manga.c   **** 		payload.byte[i] = data[i];
+ 293              		.loc 1 190 0 discriminator 3
+ 294 0020 C15C     		ldrb	r1, [r0, r3]	@ zero_extendqisi2
+ 295 0022 06AA     		add	r2, sp, #24
+ 296 0024 1A44     		add	r2, r2, r3
+ 297 0026 02F8141C 		strb	r1, [r2, #-20]
+ 189:can_manga.c   **** 	for(i=0;i<8;i++)
+ 298              		.loc 1 189 0 discriminator 3
+ 299 002a 0133     		adds	r3, r3, #1
+ 300              	.LVL4:
+ 301 002c DBB2     		uxtb	r3, r3
+ 302              	.LVL5:
+ 303              	.L23:
+ 189:can_manga.c   **** 	for(i=0;i<8;i++)
+ 304              		.loc 1 189 0 is_stmt 0 discriminator 1
+ 305 002e 072B     		cmp	r3, #7
+ 306 0030 F6D9     		bls	.L24
+ 191:can_manga.c   **** 	CAN_SendMsg(&message); 
+ 307              		.loc 1 191 0 is_stmt 1
+ 308 0032 03A8     		add	r0, sp, #12
+ 309              	.LVL6:
+ 310 0034 FFF7FEFF 		bl	CAN_SendMsg
+ 311              	.LVL7:
+ 192:can_manga.c   **** }
+ 312              		.loc 1 192 0
+ 313 0038 07B0     		add	sp, sp, #28
+ 314              		.cfi_def_cfa_offset 4
+ 315              		@ sp needed
+ 316 003a 5DF804FB 		ldr	pc, [sp], #4
+ 317              		.cfi_endproc
+ 318              	.LFE72:
+ 319              		.size	can_send, .-can_send
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 10
+
+
+ 320 003e 00BF     		.section	.text.can_send_switches,"ax",%progbits
+ 321              		.align	2
+ 322              		.global	can_send_switches
+ 323              		.thumb
+ 324              		.thumb_func
+ 325              		.type	can_send_switches, %function
+ 326              	can_send_switches:
+ 327              	.LFB73:
+ 193:can_manga.c   **** 
+ 194:can_manga.c   **** void can_send_switches(
+ 195:can_manga.c   ****     uint8_t sw_status)
+ 196:can_manga.c   **** {
+ 328              		.loc 1 196 0
+ 329              		.cfi_startproc
+ 330              		@ args = 0, pretend = 0, frame = 0
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332              	.LVL8:
+ 333 0000 08B5     		push	{r3, lr}
+ 334              		.cfi_def_cfa_offset 8
+ 335              		.cfi_offset 3, -8
+ 336              		.cfi_offset 14, -4
+ 197:can_manga.c   ****         CAN_TX_DATA_BYTE1(CAN_TX_MAILBOX_DRIVER_SWITCHES) = sw_status; 
+ 337              		.loc 1 197 0
+ 338 0002 024B     		ldr	r3, .L28
+ 339 0004 D872     		strb	r0, [r3, #11]
+ 198:can_manga.c   ****         CAN_SendMsgDRIVER_SWITCHES(); 
+ 340              		.loc 1 198 0
+ 341 0006 FFF7FEFF 		bl	CAN_SendMsgDRIVER_SWITCHES
+ 342              	.LVL9:
+ 343 000a 08BD     		pop	{r3, pc}
+ 344              	.L29:
+ 345              		.align	2
+ 346              	.L28:
+ 347 000c 20A00040 		.word	1073782816
+ 348              		.cfi_endproc
+ 349              	.LFE73:
+ 350              		.size	can_send_switches, .-can_send_switches
+ 351              		.section	.text.can_send_cmd,"ax",%progbits
+ 352              		.align	2
+ 353              		.global	can_send_cmd
+ 354              		.thumb
+ 355              		.thumb_func
+ 356              		.type	can_send_cmd, %function
+ 357              	can_send_cmd:
+ 358              	.LFB74:
+ 199:can_manga.c   ****     
+ 200:can_manga.c   ****         /*
+ 201:can_manga.c   ****         uint8_t data[8];
+ 202:can_manga.c   ****         
+ 203:can_manga.c   ****         data[0] = sw_status;
+ 204:can_manga.c   ****         data[1] = 0;
+ 205:can_manga.c   ****         
+ 206:can_manga.c   ****         data[2] = 0;
+ 207:can_manga.c   ****         data[3] = 0;
+ 208:can_manga.c   ****         
+ 209:can_manga.c   ****         data[4] = 0;
+ 210:can_manga.c   ****         data[5] = 0;
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 11
+
+
+ 211:can_manga.c   ****         data[6] = 0;
+ 212:can_manga.c   ****         data[7] = 0;
+ 213:can_manga.c   **** 
+ 214:can_manga.c   ****         can_send(data, DRIVER_SWITCHES);
+ 215:can_manga.c   **** */
+ 216:can_manga.c   ****         
+ 217:can_manga.c   **** } // can_send_status()
+ 218:can_manga.c   **** 
+ 219:can_manga.c   **** void can_send_cmd(
+ 220:can_manga.c   ****     uint8_t SetInterlock,
+ 221:can_manga.c   ****     uint16_t VCL_Throttle_High,
+ 222:can_manga.c   ****     uint16_t VCL_Throttle_Low,
+ 223:can_manga.c   ****     uint8_t E_Stop_Check
+ 224:can_manga.c   **** )
+ 225:can_manga.c   **** {
+ 359              		.loc 1 225 0
+ 360              		.cfi_startproc
+ 361              		@ args = 0, pretend = 0, frame = 8
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363              	.LVL10:
+ 364 0000 00B5     		push	{lr}
+ 365              		.cfi_def_cfa_offset 4
+ 366              		.cfi_offset 14, -4
+ 367 0002 83B0     		sub	sp, sp, #12
+ 368              		.cfi_def_cfa_offset 16
+ 226:can_manga.c   ****     //max and min voltage means the voltage of single cell
+ 227:can_manga.c   ****         
+ 228:can_manga.c   ****         uint8_t data[8];
+ 229:can_manga.c   ****         
+ 230:can_manga.c   ****         data[0] = SetInterlock;
+ 369              		.loc 1 230 0
+ 370 0004 8DF80000 		strb	r0, [sp]
+ 231:can_manga.c   ****         
+ 232:can_manga.c   ****         data[1] = VCL_Throttle_High;
+ 371              		.loc 1 232 0
+ 372 0008 8DF80110 		strb	r1, [sp, #1]
+ 233:can_manga.c   ****         data[2] = VCL_Throttle_Low;
+ 373              		.loc 1 233 0
+ 374 000c 8DF80220 		strb	r2, [sp, #2]
+ 234:can_manga.c   ****         
+ 235:can_manga.c   ****         data[3] = 0;
+ 375              		.loc 1 235 0
+ 376 0010 0022     		movs	r2, #0
+ 377              	.LVL11:
+ 378 0012 8DF80320 		strb	r2, [sp, #3]
+ 236:can_manga.c   ****         data[4] = E_Stop_Check;
+ 379              		.loc 1 236 0
+ 380 0016 8DF80430 		strb	r3, [sp, #4]
+ 237:can_manga.c   ****         
+ 238:can_manga.c   ****         data[5] = 0;
+ 381              		.loc 1 238 0
+ 382 001a 8DF80520 		strb	r2, [sp, #5]
+ 239:can_manga.c   ****         data[6] = 0;
+ 383              		.loc 1 239 0
+ 384 001e 8DF80620 		strb	r2, [sp, #6]
+ 240:can_manga.c   ****         data[7] = 0;
+ 385              		.loc 1 240 0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 12
+
+
+ 386 0022 8DF80720 		strb	r2, [sp, #7]
+ 241:can_manga.c   **** 
+ 242:can_manga.c   ****         can_send(data, 0x766);
+ 387              		.loc 1 242 0
+ 388 0026 40F26671 		movw	r1, #1894
+ 389              	.LVL12:
+ 390 002a 6846     		mov	r0, sp
+ 391              	.LVL13:
+ 392 002c FFF7FEFF 		bl	can_send
+ 393              	.LVL14:
+ 243:can_manga.c   ****         CyDelay(1); // Wtf is this shit?
+ 394              		.loc 1 243 0
+ 395 0030 0120     		movs	r0, #1
+ 396 0032 FFF7FEFF 		bl	CyDelay
+ 397              	.LVL15:
+ 244:can_manga.c   **** 
+ 245:can_manga.c   **** } // can_send_cmd()
+ 398              		.loc 1 245 0
+ 399 0036 03B0     		add	sp, sp, #12
+ 400              		.cfi_def_cfa_offset 4
+ 401              		@ sp needed
+ 402 0038 5DF804FB 		ldr	pc, [sp], #4
+ 403              		.cfi_endproc
+ 404              	.LFE74:
+ 405              		.size	can_send_cmd, .-can_send_cmd
+ 406              		.section	.text.can_send_charge,"ax",%progbits
+ 407              		.align	2
+ 408              		.global	can_send_charge
+ 409              		.thumb
+ 410              		.thumb_func
+ 411              		.type	can_send_charge, %function
+ 412              	can_send_charge:
+ 413              	.LFB75:
+ 246:can_manga.c   **** 
+ 247:can_manga.c   **** void can_send_charge(uint8_t charge, uint8_t save_soc) {
+ 414              		.loc 1 247 0
+ 415              		.cfi_startproc
+ 416              		@ args = 0, pretend = 0, frame = 8
+ 417              		@ frame_needed = 0, uses_anonymous_args = 0
+ 418              	.LVL16:
+ 419 0000 00B5     		push	{lr}
+ 420              		.cfi_def_cfa_offset 4
+ 421              		.cfi_offset 14, -4
+ 422 0002 83B0     		sub	sp, sp, #12
+ 423              		.cfi_def_cfa_offset 16
+ 248:can_manga.c   ****     uint8_t data[8] = {0};
+ 424              		.loc 1 248 0
+ 425 0004 0023     		movs	r3, #0
+ 426 0006 0093     		str	r3, [sp]
+ 427 0008 0193     		str	r3, [sp, #4]
+ 249:can_manga.c   ****     data[0] = charge;
+ 428              		.loc 1 249 0
+ 429 000a 8DF80000 		strb	r0, [sp]
+ 250:can_manga.c   ****     data[1] = save_soc;
+ 430              		.loc 1 250 0
+ 431 000e 8DF80110 		strb	r1, [sp, #1]
+ 251:can_manga.c   ****     
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 13
+
+
+ 252:can_manga.c   ****     can_send(data, 0x389);
+ 432              		.loc 1 252 0
+ 433 0012 40F28931 		movw	r1, #905
+ 434              	.LVL17:
+ 435 0016 6846     		mov	r0, sp
+ 436              	.LVL18:
+ 437 0018 FFF7FEFF 		bl	can_send
+ 438              	.LVL19:
+ 253:can_manga.c   **** }...
+ 439              		.loc 1 253 0
+ 440 001c 03B0     		add	sp, sp, #12
+ 441              		.cfi_def_cfa_offset 4
+ 442              		@ sp needed
+ 443 001e 5DF804FB 		ldr	pc, [sp], #4
+ 444              		.cfi_endproc
+ 445              	.LFE75:
+ 446              		.size	can_send_charge, .-can_send_charge
+ 447              		.global	current_bytes
+ 448              		.global	THROTTLE_LOW
+ 449              		.global	THROTTLE_HIGH
+ 450              		.global	ABS_MOTOR_RPM
+ 451              		.global	ERROR_TOLERANCE
+ 452              		.global	ACK_RX
+ 453              		.global	CURTIS_HEART_BEAT_CHECK
+ 454              		.global	CURTIS_FAULT_CHECK
+ 455              		.global	CAPACITOR_VOLT
+ 456              		.comm	last_motor_temp_color,4,4
+ 457              		.comm	last_mc_temp_color,4,4
+ 458              		.comm	last_glv_v_color,4,4
+ 459              		.comm	last_state_color,4,4
+ 460              		.comm	last_max_pack_temp_color,4,4
+ 461              		.comm	last_SOC_color,4,4
+ 462              		.comm	gui1963,120,4
+ 463 0022 00BF     		.bss
+ 464              		.align	2
+ 465              		.set	.LANCHOR0,. + 0
+ 466              		.type	CAPACITOR_VOLT, %object
+ 467              		.size	CAPACITOR_VOLT, 1
+ 468              	CAPACITOR_VOLT:
+ 469 0000 00       		.space	1
+ 470              		.type	CURTIS_FAULT_CHECK, %object
+ 471              		.size	CURTIS_FAULT_CHECK, 1
+ 472              	CURTIS_FAULT_CHECK:
+ 473 0001 00       		.space	1
+ 474              		.type	CURTIS_HEART_BEAT_CHECK, %object
+ 475              		.size	CURTIS_HEART_BEAT_CHECK, 1
+ 476              	CURTIS_HEART_BEAT_CHECK:
+ 477 0002 00       		.space	1
+ 478              		.type	ACK_RX, %object
+ 479              		.size	ACK_RX, 1
+ 480              	ACK_RX:
+ 481 0003 00       		.space	1
+ 482              		.type	ERROR_TOLERANCE, %object
+ 483              		.size	ERROR_TOLERANCE, 1
+ 484              	ERROR_TOLERANCE:
+ 485 0004 00       		.space	1
+ 486              		.type	ABS_MOTOR_RPM, %object
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 14
+
+
+ 487              		.size	ABS_MOTOR_RPM, 1
+ 488              	ABS_MOTOR_RPM:
+ 489 0005 00       		.space	1
+ 490 0006 0000     		.space	2
+ 491              		.type	current_bytes, %object
+ 492              		.size	current_bytes, 4
+ 493              	current_bytes:
+ 494 0008 00000000 		.space	4
+ 495              		.type	THROTTLE_LOW, %object
+ 496              		.size	THROTTLE_LOW, 1
+ 497              	THROTTLE_LOW:
+ 498 000c 00       		.space	1
+ 499              		.type	THROTTLE_HIGH, %object
+ 500              		.size	THROTTLE_HIGH, 1
+ 501              	THROTTLE_HIGH:
+ 502 000d 00       		.space	1
+ 503              		.text
+ 504              	.Letext0:
+ 505              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 506              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 507              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 508              		.file 5 "Generated_Source\\PSoC5/CAN.h"
+ 509              		.file 6 "ugui_config.h"
+ 510              		.file 7 "data.h"
+ 511              		.file 8 "ugui.h"
+ 512              		.file 9 "Generated_Source\\PSoC5/core_cm3.h"
+ 513              		.file 10 "ugui_SSD1963.h"
+ 514              		.file 11 "frucd_display.h"
+ 515              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
+ 516              		.section	.debug_info,"",%progbits
+ 517              	.Ldebug_info0:
+ 518 0000 C00B0000 		.4byte	0xbc0
+ 519 0004 0400     		.2byte	0x4
+ 520 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 521 000a 04       		.byte	0x4
+ 522 000b 01       		.uleb128 0x1
+ 523 000c 7A020000 		.4byte	.LASF151
+ 524 0010 0C       		.byte	0xc
+ 525 0011 F1060000 		.4byte	.LASF152
+ 526 0015 25000000 		.4byte	.LASF153
+ 527 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 528 001d 00000000 		.4byte	0
+ 529 0021 00000000 		.4byte	.Ldebug_line0
+ 530 0025 02       		.uleb128 0x2
+ 531 0026 CB040000 		.4byte	.LASF0
+ 532 002a 02       		.byte	0x2
+ 533 002b 1B       		.byte	0x1b
+ 534 002c 30000000 		.4byte	0x30
+ 535 0030 03       		.uleb128 0x3
+ 536 0031 01       		.byte	0x1
+ 537 0032 06       		.byte	0x6
+ 538 0033 B7060000 		.4byte	.LASF2
+ 539 0037 02       		.uleb128 0x2
+ 540 0038 C2050000 		.4byte	.LASF1
+ 541 003c 02       		.byte	0x2
+ 542 003d 1D       		.byte	0x1d
+ 543 003e 42000000 		.4byte	0x42
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 15
+
+
+ 544 0042 03       		.uleb128 0x3
+ 545 0043 01       		.byte	0x1
+ 546 0044 08       		.byte	0x8
+ 547 0045 40060000 		.4byte	.LASF3
+ 548 0049 02       		.uleb128 0x2
+ 549 004a 70040000 		.4byte	.LASF4
+ 550 004e 02       		.byte	0x2
+ 551 004f 29       		.byte	0x29
+ 552 0050 54000000 		.4byte	0x54
+ 553 0054 03       		.uleb128 0x3
+ 554 0055 02       		.byte	0x2
+ 555 0056 05       		.byte	0x5
+ 556 0057 4C050000 		.4byte	.LASF5
+ 557 005b 02       		.uleb128 0x2
+ 558 005c 2A020000 		.4byte	.LASF6
+ 559 0060 02       		.byte	0x2
+ 560 0061 2B       		.byte	0x2b
+ 561 0062 66000000 		.4byte	0x66
+ 562 0066 03       		.uleb128 0x3
+ 563 0067 02       		.byte	0x2
+ 564 0068 07       		.byte	0x7
+ 565 0069 D1060000 		.4byte	.LASF7
+ 566 006d 02       		.uleb128 0x2
+ 567 006e CE000000 		.4byte	.LASF8
+ 568 0072 02       		.byte	0x2
+ 569 0073 3F       		.byte	0x3f
+ 570 0074 78000000 		.4byte	0x78
+ 571 0078 03       		.uleb128 0x3
+ 572 0079 04       		.byte	0x4
+ 573 007a 05       		.byte	0x5
+ 574 007b 67050000 		.4byte	.LASF9
+ 575 007f 02       		.uleb128 0x2
+ 576 0080 4E060000 		.4byte	.LASF10
+ 577 0084 02       		.byte	0x2
+ 578 0085 41       		.byte	0x41
+ 579 0086 8A000000 		.4byte	0x8a
+ 580 008a 03       		.uleb128 0x3
+ 581 008b 04       		.byte	0x4
+ 582 008c 07       		.byte	0x7
+ 583 008d DA050000 		.4byte	.LASF11
+ 584 0091 03       		.uleb128 0x3
+ 585 0092 08       		.byte	0x8
+ 586 0093 05       		.byte	0x5
+ 587 0094 49040000 		.4byte	.LASF12
+ 588 0098 03       		.uleb128 0x3
+ 589 0099 08       		.byte	0x8
+ 590 009a 07       		.byte	0x7
+ 591 009b F2010000 		.4byte	.LASF13
+ 592 009f 04       		.uleb128 0x4
+ 593 00a0 04       		.byte	0x4
+ 594 00a1 05       		.byte	0x5
+ 595 00a2 696E7400 		.ascii	"int\000"
+ 596 00a6 03       		.uleb128 0x3
+ 597 00a7 04       		.byte	0x4
+ 598 00a8 07       		.byte	0x7
+ 599 00a9 AF000000 		.4byte	.LASF14
+ 600 00ad 02       		.uleb128 0x2
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 16
+
+
+ 601 00ae 99010000 		.4byte	.LASF15
+ 602 00b2 03       		.byte	0x3
+ 603 00b3 14       		.byte	0x14
+ 604 00b4 25000000 		.4byte	0x25
+ 605 00b8 02       		.uleb128 0x2
+ 606 00b9 1C040000 		.4byte	.LASF16
+ 607 00bd 03       		.byte	0x3
+ 608 00be 18       		.byte	0x18
+ 609 00bf 37000000 		.4byte	0x37
+ 610 00c3 02       		.uleb128 0x2
+ 611 00c4 EA010000 		.4byte	.LASF17
+ 612 00c8 03       		.byte	0x3
+ 613 00c9 20       		.byte	0x20
+ 614 00ca 49000000 		.4byte	0x49
+ 615 00ce 02       		.uleb128 0x2
+ 616 00cf 08050000 		.4byte	.LASF18
+ 617 00d3 03       		.byte	0x3
+ 618 00d4 24       		.byte	0x24
+ 619 00d5 5B000000 		.4byte	0x5b
+ 620 00d9 02       		.uleb128 0x2
+ 621 00da FE050000 		.4byte	.LASF19
+ 622 00de 03       		.byte	0x3
+ 623 00df 2C       		.byte	0x2c
+ 624 00e0 6D000000 		.4byte	0x6d
+ 625 00e4 02       		.uleb128 0x2
+ 626 00e5 90010000 		.4byte	.LASF20
+ 627 00e9 03       		.byte	0x3
+ 628 00ea 30       		.byte	0x30
+ 629 00eb 7F000000 		.4byte	0x7f
+ 630 00ef 05       		.uleb128 0x5
+ 631 00f0 FD060000 		.4byte	.LASF21
+ 632 00f4 04       		.byte	0x4
+ 633 00f5 E901     		.2byte	0x1e9
+ 634 00f7 42000000 		.4byte	0x42
+ 635 00fb 05       		.uleb128 0x5
+ 636 00fc AC040000 		.4byte	.LASF22
+ 637 0100 04       		.byte	0x4
+ 638 0101 EB01     		.2byte	0x1eb
+ 639 0103 8A000000 		.4byte	0x8a
+ 640 0107 03       		.uleb128 0x3
+ 641 0108 04       		.byte	0x4
+ 642 0109 04       		.byte	0x4
+ 643 010a AD010000 		.4byte	.LASF23
+ 644 010e 03       		.uleb128 0x3
+ 645 010f 08       		.byte	0x8
+ 646 0110 04       		.byte	0x4
+ 647 0111 03070000 		.4byte	.LASF24
+ 648 0115 03       		.uleb128 0x3
+ 649 0116 01       		.byte	0x1
+ 650 0117 08       		.byte	0x8
+ 651 0118 BA030000 		.4byte	.LASF25
+ 652 011c 05       		.uleb128 0x5
+ 653 011d E0000000 		.4byte	.LASF26
+ 654 0121 04       		.byte	0x4
+ 655 0122 9302     		.2byte	0x293
+ 656 0124 28010000 		.4byte	0x128
+ 657 0128 06       		.uleb128 0x6
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 17
+
+
+ 658 0129 EF000000 		.4byte	0xef
+ 659 012d 03       		.uleb128 0x3
+ 660 012e 08       		.byte	0x8
+ 661 012f 04       		.byte	0x4
+ 662 0130 FC040000 		.4byte	.LASF27
+ 663 0134 03       		.uleb128 0x3
+ 664 0135 04       		.byte	0x4
+ 665 0136 07       		.byte	0x7
+ 666 0137 D1050000 		.4byte	.LASF28
+ 667 013b 07       		.uleb128 0x7
+ 668 013c 04       		.byte	0x4
+ 669 013d 08       		.uleb128 0x8
+ 670 013e 04       		.byte	0x4
+ 671 013f 15010000 		.4byte	0x115
+ 672 0143 08       		.uleb128 0x8
+ 673 0144 04       		.byte	0x4
+ 674 0145 42000000 		.4byte	0x42
+ 675 0149 09       		.uleb128 0x9
+ 676 014a 08       		.byte	0x8
+ 677 014b 05       		.byte	0x5
+ 678 014c 6F       		.byte	0x6f
+ 679 014d 5E010000 		.4byte	0x15e
+ 680 0151 0A       		.uleb128 0xa
+ 681 0152 18060000 		.4byte	.LASF30
+ 682 0156 05       		.byte	0x5
+ 683 0157 71       		.byte	0x71
+ 684 0158 5E010000 		.4byte	0x15e
+ 685 015c 00       		.byte	0
+ 686 015d 00       		.byte	0
+ 687 015e 0B       		.uleb128 0xb
+ 688 015f EF000000 		.4byte	0xef
+ 689 0163 6E010000 		.4byte	0x16e
+ 690 0167 0C       		.uleb128 0xc
+ 691 0168 34010000 		.4byte	0x134
+ 692 016c 07       		.byte	0x7
+ 693 016d 00       		.byte	0
+ 694 016e 02       		.uleb128 0x2
+ 695 016f D8030000 		.4byte	.LASF29
+ 696 0173 05       		.byte	0x5
+ 697 0174 72       		.byte	0x72
+ 698 0175 49010000 		.4byte	0x149
+ 699 0179 09       		.uleb128 0x9
+ 700 017a 08       		.byte	0x8
+ 701 017b 05       		.byte	0x5
+ 702 017c 75       		.byte	0x75
+ 703 017d 8E010000 		.4byte	0x18e
+ 704 0181 0A       		.uleb128 0xa
+ 705 0182 18060000 		.4byte	.LASF30
+ 706 0186 05       		.byte	0x5
+ 707 0187 77       		.byte	0x77
+ 708 0188 9E010000 		.4byte	0x19e
+ 709 018c 00       		.byte	0
+ 710 018d 00       		.byte	0
+ 711 018e 0B       		.uleb128 0xb
+ 712 018f 1C010000 		.4byte	0x11c
+ 713 0193 9E010000 		.4byte	0x19e
+ 714 0197 0C       		.uleb128 0xc
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 18
+
+
+ 715 0198 34010000 		.4byte	0x134
+ 716 019c 07       		.byte	0x7
+ 717 019d 00       		.byte	0
+ 718 019e 06       		.uleb128 0x6
+ 719 019f 8E010000 		.4byte	0x18e
+ 720 01a3 02       		.uleb128 0x2
+ 721 01a4 90040000 		.4byte	.LASF31
+ 722 01a8 05       		.byte	0x5
+ 723 01a9 78       		.byte	0x78
+ 724 01aa 79010000 		.4byte	0x179
+ 725 01ae 09       		.uleb128 0x9
+ 726 01af 04       		.byte	0x4
+ 727 01b0 05       		.byte	0x5
+ 728 01b1 7B       		.byte	0x7b
+ 729 01b2 C3010000 		.4byte	0x1c3
+ 730 01b6 0A       		.uleb128 0xa
+ 731 01b7 18060000 		.4byte	.LASF30
+ 732 01bb 05       		.byte	0x5
+ 733 01bc 7D       		.byte	0x7d
+ 734 01bd D3010000 		.4byte	0x1d3
+ 735 01c1 00       		.byte	0
+ 736 01c2 00       		.byte	0
+ 737 01c3 0B       		.uleb128 0xb
+ 738 01c4 1C010000 		.4byte	0x11c
+ 739 01c8 D3010000 		.4byte	0x1d3
+ 740 01cc 0C       		.uleb128 0xc
+ 741 01cd 34010000 		.4byte	0x134
+ 742 01d1 03       		.byte	0x3
+ 743 01d2 00       		.byte	0
+ 744 01d3 06       		.uleb128 0x6
+ 745 01d4 C3010000 		.4byte	0x1c3
+ 746 01d8 02       		.uleb128 0x2
+ 747 01d9 06060000 		.4byte	.LASF32
+ 748 01dd 05       		.byte	0x5
+ 749 01de 7E       		.byte	0x7e
+ 750 01df AE010000 		.4byte	0x1ae
+ 751 01e3 09       		.uleb128 0x9
+ 752 01e4 0C       		.byte	0xc
+ 753 01e5 05       		.byte	0x5
+ 754 01e6 81       		.byte	0x81
+ 755 01e7 33020000 		.4byte	0x233
+ 756 01eb 0D       		.uleb128 0xd
+ 757 01ec 696400   		.ascii	"id\000"
+ 758 01ef 05       		.byte	0x5
+ 759 01f0 83       		.byte	0x83
+ 760 01f1 FB000000 		.4byte	0xfb
+ 761 01f5 00       		.byte	0
+ 762 01f6 0D       		.uleb128 0xd
+ 763 01f7 72747200 		.ascii	"rtr\000"
+ 764 01fb 05       		.byte	0x5
+ 765 01fc 84       		.byte	0x84
+ 766 01fd EF000000 		.4byte	0xef
+ 767 0201 04       		.byte	0x4
+ 768 0202 0D       		.uleb128 0xd
+ 769 0203 69646500 		.ascii	"ide\000"
+ 770 0207 05       		.byte	0x5
+ 771 0208 85       		.byte	0x85
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 19
+
+
+ 772 0209 EF000000 		.4byte	0xef
+ 773 020d 05       		.byte	0x5
+ 774 020e 0D       		.uleb128 0xd
+ 775 020f 646C6300 		.ascii	"dlc\000"
+ 776 0213 05       		.byte	0x5
+ 777 0214 86       		.byte	0x86
+ 778 0215 EF000000 		.4byte	0xef
+ 779 0219 06       		.byte	0x6
+ 780 021a 0D       		.uleb128 0xd
+ 781 021b 69727100 		.ascii	"irq\000"
+ 782 021f 05       		.byte	0x5
+ 783 0220 87       		.byte	0x87
+ 784 0221 EF000000 		.4byte	0xef
+ 785 0225 07       		.byte	0x7
+ 786 0226 0D       		.uleb128 0xd
+ 787 0227 6D736700 		.ascii	"msg\000"
+ 788 022b 05       		.byte	0x5
+ 789 022c 8B       		.byte	0x8b
+ 790 022d 33020000 		.4byte	0x233
+ 791 0231 08       		.byte	0x8
+ 792 0232 00       		.byte	0
+ 793 0233 08       		.uleb128 0x8
+ 794 0234 04       		.byte	0x4
+ 795 0235 6E010000 		.4byte	0x16e
+ 796 0239 02       		.uleb128 0x2
+ 797 023a 66010000 		.4byte	.LASF33
+ 798 023e 05       		.byte	0x5
+ 799 023f 8C       		.byte	0x8c
+ 800 0240 E3010000 		.4byte	0x1e3
+ 801 0244 09       		.uleb128 0x9
+ 802 0245 10       		.byte	0x10
+ 803 0246 05       		.byte	0x5
+ 804 0247 AC       		.byte	0xac
+ 805 0248 71020000 		.4byte	0x271
+ 806 024c 0A       		.uleb128 0xa
+ 807 024d 47010000 		.4byte	.LASF34
+ 808 0251 05       		.byte	0x5
+ 809 0252 AE       		.byte	0xae
+ 810 0253 D8010000 		.4byte	0x1d8
+ 811 0257 00       		.byte	0
+ 812 0258 0A       		.uleb128 0xa
+ 813 0259 60070000 		.4byte	.LASF35
+ 814 025d 05       		.byte	0x5
+ 815 025e AF       		.byte	0xaf
+ 816 025f D8010000 		.4byte	0x1d8
+ 817 0263 04       		.byte	0x4
+ 818 0264 0A       		.uleb128 0xa
+ 819 0265 11060000 		.4byte	.LASF36
+ 820 0269 05       		.byte	0x5
+ 821 026a B0       		.byte	0xb0
+ 822 026b A3010000 		.4byte	0x1a3
+ 823 026f 08       		.byte	0x8
+ 824 0270 00       		.byte	0
+ 825 0271 02       		.uleb128 0x2
+ 826 0272 C3060000 		.4byte	.LASF37
+ 827 0276 05       		.byte	0x5
+ 828 0277 B1       		.byte	0xb1
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 20
+
+
+ 829 0278 44020000 		.4byte	0x244
+ 830 027c 06       		.uleb128 0x6
+ 831 027d B8000000 		.4byte	0xb8
+ 832 0281 0E       		.uleb128 0xe
+ 833 0282 01       		.byte	0x1
+ 834 0283 42000000 		.4byte	0x42
+ 835 0287 07       		.byte	0x7
+ 836 0288 11       		.byte	0x11
+ 837 0289 BE020000 		.4byte	0x2be
+ 838 028d 0F       		.uleb128 0xf
+ 839 028e C9000000 		.4byte	.LASF38
+ 840 0292 00       		.byte	0
+ 841 0293 0F       		.uleb128 0xf
+ 842 0294 22070000 		.4byte	.LASF39
+ 843 0298 01       		.byte	0x1
+ 844 0299 0F       		.uleb128 0xf
+ 845 029a BF030000 		.4byte	.LASF40
+ 846 029e 02       		.byte	0x2
+ 847 029f 0F       		.uleb128 0xf
+ 848 02a0 10030000 		.4byte	.LASF41
+ 849 02a4 03       		.byte	0x3
+ 850 02a5 0F       		.uleb128 0xf
+ 851 02a6 52030000 		.4byte	.LASF42
+ 852 02aa 04       		.byte	0x4
+ 853 02ab 0F       		.uleb128 0xf
+ 854 02ac FD000000 		.4byte	.LASF43
+ 855 02b0 05       		.byte	0x5
+ 856 02b1 0F       		.uleb128 0xf
+ 857 02b2 35010000 		.4byte	.LASF44
+ 858 02b6 06       		.byte	0x6
+ 859 02b7 0F       		.uleb128 0xf
+ 860 02b8 6C030000 		.4byte	.LASF45
+ 861 02bc 07       		.byte	0x7
+ 862 02bd 00       		.byte	0
+ 863 02be 0B       		.uleb128 0xb
+ 864 02bf B8000000 		.4byte	0xb8
+ 865 02c3 CE020000 		.4byte	0x2ce
+ 866 02c7 0C       		.uleb128 0xc
+ 867 02c8 34010000 		.4byte	0x134
+ 868 02cc 07       		.byte	0x7
+ 869 02cd 00       		.byte	0
+ 870 02ce 02       		.uleb128 0x2
+ 871 02cf C5040000 		.4byte	.LASF46
+ 872 02d3 06       		.byte	0x6
+ 873 02d4 26       		.byte	0x26
+ 874 02d5 B8000000 		.4byte	0xb8
+ 875 02d9 02       		.uleb128 0x2
+ 876 02da 31040000 		.4byte	.LASF47
+ 877 02de 06       		.byte	0x6
+ 878 02df 27       		.byte	0x27
+ 879 02e0 AD000000 		.4byte	0xad
+ 880 02e4 02       		.uleb128 0x2
+ 881 02e5 A8000000 		.4byte	.LASF48
+ 882 02e9 06       		.byte	0x6
+ 883 02ea 28       		.byte	0x28
+ 884 02eb CE000000 		.4byte	0xce
+ 885 02ef 02       		.uleb128 0x2
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 21
+
+
+ 886 02f0 4A020000 		.4byte	.LASF49
+ 887 02f4 06       		.byte	0x6
+ 888 02f5 29       		.byte	0x29
+ 889 02f6 C3000000 		.4byte	0xc3
+ 890 02fa 02       		.uleb128 0x2
+ 891 02fb A0010000 		.4byte	.LASF50
+ 892 02ff 06       		.byte	0x6
+ 893 0300 2A       		.byte	0x2a
+ 894 0301 E4000000 		.4byte	0xe4
+ 895 0305 0E       		.uleb128 0xe
+ 896 0306 01       		.byte	0x1
+ 897 0307 42000000 		.4byte	0x42
+ 898 030b 08       		.byte	0x8
+ 899 030c 1F       		.byte	0x1f
+ 900 030d 1E030000 		.4byte	0x31e
+ 901 0311 0F       		.uleb128 0xf
+ 902 0312 6B070000 		.4byte	.LASF51
+ 903 0316 00       		.byte	0
+ 904 0317 0F       		.uleb128 0xf
+ 905 0318 08000000 		.4byte	.LASF52
+ 906 031c 01       		.byte	0x1
+ 907 031d 00       		.byte	0
+ 908 031e 02       		.uleb128 0x2
+ 909 031f 2B010000 		.4byte	.LASF53
+ 910 0323 08       		.byte	0x8
+ 911 0324 22       		.byte	0x22
+ 912 0325 05030000 		.4byte	0x305
+ 913 0329 09       		.uleb128 0x9
+ 914 032a 14       		.byte	0x14
+ 915 032b 08       		.byte	0x8
+ 916 032c 24       		.byte	0x24
+ 917 032d 84030000 		.4byte	0x384
+ 918 0331 0D       		.uleb128 0xd
+ 919 0332 7000     		.ascii	"p\000"
+ 920 0334 08       		.byte	0x8
+ 921 0335 26       		.byte	0x26
+ 922 0336 43010000 		.4byte	0x143
+ 923 033a 00       		.byte	0
+ 924 033b 0A       		.uleb128 0xa
+ 925 033c EB030000 		.4byte	.LASF54
+ 926 0340 08       		.byte	0x8
+ 927 0341 27       		.byte	0x27
+ 928 0342 1E030000 		.4byte	0x31e
+ 929 0346 04       		.byte	0x4
+ 930 0347 0A       		.uleb128 0xa
+ 931 0348 47030000 		.4byte	.LASF55
+ 932 034c 08       		.byte	0x8
+ 933 034d 28       		.byte	0x28
+ 934 034e EF020000 		.4byte	0x2ef
+ 935 0352 06       		.byte	0x6
+ 936 0353 0A       		.uleb128 0xa
+ 937 0354 40050000 		.4byte	.LASF56
+ 938 0358 08       		.byte	0x8
+ 939 0359 29       		.byte	0x29
+ 940 035a EF020000 		.4byte	0x2ef
+ 941 035e 08       		.byte	0x8
+ 942 035f 0A       		.uleb128 0xa
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 22
+
+
+ 943 0360 BA040000 		.4byte	.LASF57
+ 944 0364 08       		.byte	0x8
+ 945 0365 2A       		.byte	0x2a
+ 946 0366 E4020000 		.4byte	0x2e4
+ 947 036a 0A       		.byte	0xa
+ 948 036b 0A       		.uleb128 0xa
+ 949 036c A3050000 		.4byte	.LASF58
+ 950 0370 08       		.byte	0x8
+ 951 0371 2B       		.byte	0x2b
+ 952 0372 E4020000 		.4byte	0x2e4
+ 953 0376 0C       		.byte	0xc
+ 954 0377 0A       		.uleb128 0xa
+ 955 0378 E1040000 		.4byte	.LASF59
+ 956 037c 08       		.byte	0x8
+ 957 037d 2C       		.byte	0x2c
+ 958 037e 84030000 		.4byte	0x384
+ 959 0382 10       		.byte	0x10
+ 960 0383 00       		.byte	0
+ 961 0384 08       		.uleb128 0x8
+ 962 0385 04       		.byte	0x4
+ 963 0386 CE020000 		.4byte	0x2ce
+ 964 038a 02       		.uleb128 0x2
+ 965 038b BA050000 		.4byte	.LASF60
+ 966 038f 08       		.byte	0x8
+ 967 0390 2D       		.byte	0x2d
+ 968 0391 29030000 		.4byte	0x329
+ 969 0395 02       		.uleb128 0x2
+ 970 0396 7A040000 		.4byte	.LASF61
+ 971 039a 08       		.byte	0x8
+ 972 039b 66       		.byte	0x66
+ 973 039c A0030000 		.4byte	0x3a0
+ 974 03a0 10       		.uleb128 0x10
+ 975 03a1 3F070000 		.4byte	.LASF71
+ 976 03a5 20       		.byte	0x20
+ 977 03a6 08       		.byte	0x8
+ 978 03a7 F7       		.byte	0xf7
+ 979 03a8 1A040000 		.4byte	0x41a
+ 980 03ac 0A       		.uleb128 0xa
+ 981 03ad 9B060000 		.4byte	.LASF62
+ 982 03b1 08       		.byte	0x8
+ 983 03b2 F9       		.byte	0xf9
+ 984 03b3 CE020000 		.4byte	0x2ce
+ 985 03b7 00       		.byte	0
+ 986 03b8 0A       		.uleb128 0xa
+ 987 03b9 78000000 		.4byte	.LASF63
+ 988 03bd 08       		.byte	0x8
+ 989 03be FA       		.byte	0xfa
+ 990 03bf CE020000 		.4byte	0x2ce
+ 991 03c3 01       		.byte	0x1
+ 992 03c4 0A       		.uleb128 0xa
+ 993 03c5 1E010000 		.4byte	.LASF64
+ 994 03c9 08       		.byte	0x8
+ 995 03ca FB       		.byte	0xfb
+ 996 03cb BF050000 		.4byte	0x5bf
+ 997 03cf 04       		.byte	0x4
+ 998 03d0 0A       		.uleb128 0xa
+ 999 03d1 65070000 		.4byte	.LASF65
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 23
+
+
+ 1000 03d5 08       		.byte	0x8
+ 1001 03d6 FC       		.byte	0xfc
+ 1002 03d7 08050000 		.4byte	0x508
+ 1003 03db 08       		.byte	0x8
+ 1004 03dc 0A       		.uleb128 0xa
+ 1005 03dd A8060000 		.4byte	.LASF66
+ 1006 03e1 08       		.byte	0x8
+ 1007 03e2 FD       		.byte	0xfd
+ 1008 03e3 08050000 		.4byte	0x508
+ 1009 03e7 10       		.byte	0x10
+ 1010 03e8 0A       		.uleb128 0xa
+ 1011 03e9 3B060000 		.4byte	.LASF67
+ 1012 03ed 08       		.byte	0x8
+ 1013 03ee FE       		.byte	0xfe
+ 1014 03ef CE020000 		.4byte	0x2ce
+ 1015 03f3 18       		.byte	0x18
+ 1016 03f4 0D       		.uleb128 0xd
+ 1017 03f5 696400   		.ascii	"id\000"
+ 1018 03f8 08       		.byte	0x8
+ 1019 03f9 FF       		.byte	0xff
+ 1020 03fa CE020000 		.4byte	0x2ce
+ 1021 03fe 19       		.byte	0x19
+ 1022 03ff 11       		.uleb128 0x11
+ 1023 0400 B3010000 		.4byte	.LASF68
+ 1024 0404 08       		.byte	0x8
+ 1025 0405 0001     		.2byte	0x100
+ 1026 0407 CE020000 		.4byte	0x2ce
+ 1027 040b 1A       		.byte	0x1a
+ 1028 040c 11       		.uleb128 0x11
+ 1029 040d 08040000 		.4byte	.LASF69
+ 1030 0411 08       		.byte	0x8
+ 1031 0412 0101     		.2byte	0x101
+ 1032 0414 3B010000 		.4byte	0x13b
+ 1033 0418 1C       		.byte	0x1c
+ 1034 0419 00       		.byte	0
+ 1035 041a 02       		.uleb128 0x2
+ 1036 041b 70050000 		.4byte	.LASF70
+ 1037 041f 08       		.byte	0x8
+ 1038 0420 67       		.byte	0x67
+ 1039 0421 25040000 		.4byte	0x425
+ 1040 0425 12       		.uleb128 0x12
+ 1041 0426 E5000000 		.4byte	.LASF72
+ 1042 042a 44       		.byte	0x44
+ 1043 042b 08       		.byte	0x8
+ 1044 042c 4101     		.2byte	0x141
+ 1045 042e C8040000 		.4byte	0x4c8
+ 1046 0432 11       		.uleb128 0x11
+ 1047 0433 43020000 		.4byte	.LASF73
+ 1048 0437 08       		.byte	0x8
+ 1049 0438 4301     		.2byte	0x143
+ 1050 043a CE020000 		.4byte	0x2ce
+ 1051 043e 00       		.byte	0
+ 1052 043f 11       		.uleb128 0x11
+ 1053 0440 4D010000 		.4byte	.LASF74
+ 1054 0444 08       		.byte	0x8
+ 1055 0445 4401     		.2byte	0x144
+ 1056 0447 B9050000 		.4byte	0x5b9
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 24
+
+
+ 1057 044b 04       		.byte	0x4
+ 1058 044c 11       		.uleb128 0x11
+ 1059 044d 9B060000 		.4byte	.LASF62
+ 1060 0451 08       		.byte	0x8
+ 1061 0452 4501     		.2byte	0x145
+ 1062 0454 CE020000 		.4byte	0x2ce
+ 1063 0458 08       		.byte	0x8
+ 1064 0459 13       		.uleb128 0x13
+ 1065 045a 666300   		.ascii	"fc\000"
+ 1066 045d 08       		.byte	0x8
+ 1067 045e 4601     		.2byte	0x146
+ 1068 0460 C8040000 		.4byte	0x4c8
+ 1069 0464 0C       		.byte	0xc
+ 1070 0465 13       		.uleb128 0x13
+ 1071 0466 626300   		.ascii	"bc\000"
+ 1072 0469 08       		.byte	0x8
+ 1073 046a 4701     		.2byte	0x147
+ 1074 046c C8040000 		.4byte	0x4c8
+ 1075 0470 10       		.byte	0x10
+ 1076 0471 13       		.uleb128 0x13
+ 1077 0472 787300   		.ascii	"xs\000"
+ 1078 0475 08       		.byte	0x8
+ 1079 0476 4801     		.2byte	0x148
+ 1080 0478 EF020000 		.4byte	0x2ef
+ 1081 047c 14       		.byte	0x14
+ 1082 047d 13       		.uleb128 0x13
+ 1083 047e 797300   		.ascii	"ys\000"
+ 1084 0481 08       		.byte	0x8
+ 1085 0482 4901     		.2byte	0x149
+ 1086 0484 EF020000 		.4byte	0x2ef
+ 1087 0488 16       		.byte	0x16
+ 1088 0489 13       		.uleb128 0x13
+ 1089 048a 786500   		.ascii	"xe\000"
+ 1090 048d 08       		.byte	0x8
+ 1091 048e 4A01     		.2byte	0x14a
+ 1092 0490 EF020000 		.4byte	0x2ef
+ 1093 0494 18       		.byte	0x18
+ 1094 0495 13       		.uleb128 0x13
+ 1095 0496 796500   		.ascii	"ye\000"
+ 1096 0499 08       		.byte	0x8
+ 1097 049a 4B01     		.2byte	0x14b
+ 1098 049c EF020000 		.4byte	0x2ef
+ 1099 04a0 1A       		.byte	0x1a
+ 1100 04a1 11       		.uleb128 0x11
+ 1101 04a2 95060000 		.4byte	.LASF75
+ 1102 04a6 08       		.byte	0x8
+ 1103 04a7 4C01     		.2byte	0x14c
+ 1104 04a9 CE020000 		.4byte	0x2ce
+ 1105 04ad 1C       		.byte	0x1c
+ 1106 04ae 11       		.uleb128 0x11
+ 1107 04af 8A010000 		.4byte	.LASF76
+ 1108 04b3 08       		.byte	0x8
+ 1109 04b4 4D01     		.2byte	0x14d
+ 1110 04b6 4F060000 		.4byte	0x64f
+ 1111 04ba 20       		.byte	0x20
+ 1112 04bb 13       		.uleb128 0x13
+ 1113 04bc 636200   		.ascii	"cb\000"
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 25
+
+
+ 1114 04bf 08       		.byte	0x8
+ 1115 04c0 4E01     		.2byte	0x14e
+ 1116 04c2 6C060000 		.4byte	0x66c
+ 1117 04c6 40       		.byte	0x40
+ 1118 04c7 00       		.byte	0
+ 1119 04c8 02       		.uleb128 0x2
+ 1120 04c9 84000000 		.4byte	.LASF77
+ 1121 04cd 08       		.byte	0x8
+ 1122 04ce 6A       		.byte	0x6a
+ 1123 04cf FA020000 		.4byte	0x2fa
+ 1124 04d3 09       		.uleb128 0x9
+ 1125 04d4 08       		.byte	0x8
+ 1126 04d5 08       		.byte	0x8
+ 1127 04d6 A7       		.byte	0xa7
+ 1128 04d7 08050000 		.4byte	0x508
+ 1129 04db 0D       		.uleb128 0xd
+ 1130 04dc 787300   		.ascii	"xs\000"
+ 1131 04df 08       		.byte	0x8
+ 1132 04e0 A9       		.byte	0xa9
+ 1133 04e1 EF020000 		.4byte	0x2ef
+ 1134 04e5 00       		.byte	0
+ 1135 04e6 0D       		.uleb128 0xd
+ 1136 04e7 797300   		.ascii	"ys\000"
+ 1137 04ea 08       		.byte	0x8
+ 1138 04eb AA       		.byte	0xaa
+ 1139 04ec EF020000 		.4byte	0x2ef
+ 1140 04f0 02       		.byte	0x2
+ 1141 04f1 0D       		.uleb128 0xd
+ 1142 04f2 786500   		.ascii	"xe\000"
+ 1143 04f5 08       		.byte	0x8
+ 1144 04f6 AB       		.byte	0xab
+ 1145 04f7 EF020000 		.4byte	0x2ef
+ 1146 04fb 04       		.byte	0x4
+ 1147 04fc 0D       		.uleb128 0xd
+ 1148 04fd 796500   		.ascii	"ye\000"
+ 1149 0500 08       		.byte	0x8
+ 1150 0501 AC       		.byte	0xac
+ 1151 0502 EF020000 		.4byte	0x2ef
+ 1152 0506 06       		.byte	0x6
+ 1153 0507 00       		.byte	0
+ 1154 0508 02       		.uleb128 0x2
+ 1155 0509 F5030000 		.4byte	.LASF78
+ 1156 050d 08       		.byte	0x8
+ 1157 050e AD       		.byte	0xad
+ 1158 050f D3040000 		.4byte	0x4d3
+ 1159 0513 08       		.uleb128 0x8
+ 1160 0514 04       		.byte	0x4
+ 1161 0515 19050000 		.4byte	0x519
+ 1162 0519 14       		.uleb128 0x14
+ 1163 051a 8A030000 		.4byte	0x38a
+ 1164 051e 09       		.uleb128 0x9
+ 1165 051f 08       		.byte	0x8
+ 1166 0520 08       		.byte	0x8
+ 1167 0521 D6       		.byte	0xd6
+ 1168 0522 62050000 		.4byte	0x562
+ 1169 0526 0A       		.uleb128 0xa
+ 1170 0527 3B060000 		.4byte	.LASF67
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 26
+
+
+ 1171 052b 08       		.byte	0x8
+ 1172 052c D8       		.byte	0xd8
+ 1173 052d CE020000 		.4byte	0x2ce
+ 1174 0531 00       		.byte	0
+ 1175 0532 0D       		.uleb128 0xd
+ 1176 0533 696400   		.ascii	"id\000"
+ 1177 0536 08       		.byte	0x8
+ 1178 0537 D9       		.byte	0xd9
+ 1179 0538 CE020000 		.4byte	0x2ce
+ 1180 053c 01       		.byte	0x1
+ 1181 053d 0A       		.uleb128 0xa
+ 1182 053e 89040000 		.4byte	.LASF79
+ 1183 0542 08       		.byte	0x8
+ 1184 0543 DA       		.byte	0xda
+ 1185 0544 CE020000 		.4byte	0x2ce
+ 1186 0548 02       		.byte	0x2
+ 1187 0549 0A       		.uleb128 0xa
+ 1188 054a B3010000 		.4byte	.LASF68
+ 1189 054e 08       		.byte	0x8
+ 1190 054f DB       		.byte	0xdb
+ 1191 0550 CE020000 		.4byte	0x2ce
+ 1192 0554 03       		.byte	0x3
+ 1193 0555 0D       		.uleb128 0xd
+ 1194 0556 73726300 		.ascii	"src\000"
+ 1195 055a 08       		.byte	0x8
+ 1196 055b DC       		.byte	0xdc
+ 1197 055c 3B010000 		.4byte	0x13b
+ 1198 0560 04       		.byte	0x4
+ 1199 0561 00       		.byte	0
+ 1200 0562 02       		.uleb128 0x2
+ 1201 0563 FD030000 		.4byte	.LASF80
+ 1202 0567 08       		.byte	0x8
+ 1203 0568 DD       		.byte	0xdd
+ 1204 0569 1E050000 		.4byte	0x51e
+ 1205 056d 09       		.uleb128 0x9
+ 1206 056e 06       		.byte	0x6
+ 1207 056f 08       		.byte	0x8
+ 1208 0570 E8       		.byte	0xe8
+ 1209 0571 98050000 		.4byte	0x598
+ 1210 0575 0A       		.uleb128 0xa
+ 1211 0576 9B060000 		.4byte	.LASF62
+ 1212 057a 08       		.byte	0x8
+ 1213 057b EA       		.byte	0xea
+ 1214 057c CE020000 		.4byte	0x2ce
+ 1215 0580 00       		.byte	0
+ 1216 0581 0D       		.uleb128 0xd
+ 1217 0582 787000   		.ascii	"xp\000"
+ 1218 0585 08       		.byte	0x8
+ 1219 0586 EB       		.byte	0xeb
+ 1220 0587 EF020000 		.4byte	0x2ef
+ 1221 058b 02       		.byte	0x2
+ 1222 058c 0D       		.uleb128 0xd
+ 1223 058d 797000   		.ascii	"yp\000"
+ 1224 0590 08       		.byte	0x8
+ 1225 0591 EC       		.byte	0xec
+ 1226 0592 EF020000 		.4byte	0x2ef
+ 1227 0596 04       		.byte	0x4
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 27
+
+
+ 1228 0597 00       		.byte	0
+ 1229 0598 02       		.uleb128 0x2
+ 1230 0599 AE060000 		.4byte	.LASF81
+ 1231 059d 08       		.byte	0x8
+ 1232 059e ED       		.byte	0xed
+ 1233 059f 6D050000 		.4byte	0x56d
+ 1234 05a3 15       		.uleb128 0x15
+ 1235 05a4 B3050000 		.4byte	0x5b3
+ 1236 05a8 16       		.uleb128 0x16
+ 1237 05a9 B3050000 		.4byte	0x5b3
+ 1238 05ad 16       		.uleb128 0x16
+ 1239 05ae B9050000 		.4byte	0x5b9
+ 1240 05b2 00       		.byte	0
+ 1241 05b3 08       		.uleb128 0x8
+ 1242 05b4 04       		.byte	0x4
+ 1243 05b5 1A040000 		.4byte	0x41a
+ 1244 05b9 08       		.uleb128 0x8
+ 1245 05ba 04       		.byte	0x4
+ 1246 05bb 95030000 		.4byte	0x395
+ 1247 05bf 08       		.uleb128 0x8
+ 1248 05c0 04       		.byte	0x4
+ 1249 05c1 A3050000 		.4byte	0x5a3
+ 1250 05c5 17       		.uleb128 0x17
+ 1251 05c6 20       		.byte	0x20
+ 1252 05c7 08       		.byte	0x8
+ 1253 05c8 3201     		.2byte	0x132
+ 1254 05ca 4F060000 		.4byte	0x64f
+ 1255 05ce 13       		.uleb128 0x13
+ 1256 05cf 73747200 		.ascii	"str\000"
+ 1257 05d3 08       		.byte	0x8
+ 1258 05d4 3401     		.2byte	0x134
+ 1259 05d6 3D010000 		.4byte	0x13d
+ 1260 05da 00       		.byte	0
+ 1261 05db 11       		.uleb128 0x11
+ 1262 05dc CC050000 		.4byte	.LASF82
+ 1263 05e0 08       		.byte	0x8
+ 1264 05e1 3501     		.2byte	0x135
+ 1265 05e3 13050000 		.4byte	0x513
+ 1266 05e7 04       		.byte	0x4
+ 1267 05e8 11       		.uleb128 0x11
+ 1268 05e9 59060000 		.4byte	.LASF83
+ 1269 05ed 08       		.byte	0x8
+ 1270 05ee 3601     		.2byte	0x136
+ 1271 05f0 D9020000 		.4byte	0x2d9
+ 1272 05f4 08       		.byte	0x8
+ 1273 05f5 11       		.uleb128 0x11
+ 1274 05f6 B2030000 		.4byte	.LASF84
+ 1275 05fa 08       		.byte	0x8
+ 1276 05fb 3701     		.2byte	0x137
+ 1277 05fd D9020000 		.4byte	0x2d9
+ 1278 0601 09       		.byte	0x9
+ 1279 0602 11       		.uleb128 0x11
+ 1280 0603 5A070000 		.4byte	.LASF85
+ 1281 0607 08       		.byte	0x8
+ 1282 0608 3801     		.2byte	0x138
+ 1283 060a CE020000 		.4byte	0x2ce
+ 1284 060e 0A       		.byte	0xa
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 28
+
+
+ 1285 060f 13       		.uleb128 0x13
+ 1286 0610 666300   		.ascii	"fc\000"
+ 1287 0613 08       		.byte	0x8
+ 1288 0614 3901     		.2byte	0x139
+ 1289 0616 C8040000 		.4byte	0x4c8
+ 1290 061a 0C       		.byte	0xc
+ 1291 061b 13       		.uleb128 0x13
+ 1292 061c 626300   		.ascii	"bc\000"
+ 1293 061f 08       		.byte	0x8
+ 1294 0620 3A01     		.2byte	0x13a
+ 1295 0622 C8040000 		.4byte	0x4c8
+ 1296 0626 10       		.byte	0x10
+ 1297 0627 13       		.uleb128 0x13
+ 1298 0628 69666300 		.ascii	"ifc\000"
+ 1299 062c 08       		.byte	0x8
+ 1300 062d 3B01     		.2byte	0x13b
+ 1301 062f C8040000 		.4byte	0x4c8
+ 1302 0633 14       		.byte	0x14
+ 1303 0634 13       		.uleb128 0x13
+ 1304 0635 69626300 		.ascii	"ibc\000"
+ 1305 0639 08       		.byte	0x8
+ 1306 063a 3C01     		.2byte	0x13c
+ 1307 063c C8040000 		.4byte	0x4c8
+ 1308 0640 18       		.byte	0x18
+ 1309 0641 11       		.uleb128 0x11
+ 1310 0642 B3040000 		.4byte	.LASF86
+ 1311 0646 08       		.byte	0x8
+ 1312 0647 3D01     		.2byte	0x13d
+ 1313 0649 CE020000 		.4byte	0x2ce
+ 1314 064d 1C       		.byte	0x1c
+ 1315 064e 00       		.byte	0
+ 1316 064f 05       		.uleb128 0x5
+ 1317 0650 19050000 		.4byte	.LASF87
+ 1318 0654 08       		.byte	0x8
+ 1319 0655 3E01     		.2byte	0x13e
+ 1320 0657 C5050000 		.4byte	0x5c5
+ 1321 065b 15       		.uleb128 0x15
+ 1322 065c 66060000 		.4byte	0x666
+ 1323 0660 16       		.uleb128 0x16
+ 1324 0661 66060000 		.4byte	0x666
+ 1325 0665 00       		.byte	0
+ 1326 0666 08       		.uleb128 0x8
+ 1327 0667 04       		.byte	0x4
+ 1328 0668 62050000 		.4byte	0x562
+ 1329 066c 08       		.uleb128 0x8
+ 1330 066d 04       		.byte	0x4
+ 1331 066e 5B060000 		.4byte	0x65b
+ 1332 0672 17       		.uleb128 0x17
+ 1333 0673 08       		.byte	0x8
+ 1334 0674 08       		.byte	0x8
+ 1335 0675 2002     		.2byte	0x220
+ 1336 0677 96060000 		.4byte	0x696
+ 1337 067b 11       		.uleb128 0x11
+ 1338 067c 2A040000 		.4byte	.LASF88
+ 1339 0680 08       		.byte	0x8
+ 1340 0681 2202     		.2byte	0x222
+ 1341 0683 3B010000 		.4byte	0x13b
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 29
+
+
+ 1342 0687 00       		.byte	0
+ 1343 0688 11       		.uleb128 0x11
+ 1344 0689 9B060000 		.4byte	.LASF62
+ 1345 068d 08       		.byte	0x8
+ 1346 068e 2302     		.2byte	0x223
+ 1347 0690 CE020000 		.4byte	0x2ce
+ 1348 0694 04       		.byte	0x4
+ 1349 0695 00       		.byte	0
+ 1350 0696 05       		.uleb128 0x5
+ 1351 0697 30050000 		.4byte	.LASF89
+ 1352 069b 08       		.byte	0x8
+ 1353 069c 2402     		.2byte	0x224
+ 1354 069e 72060000 		.4byte	0x672
+ 1355 06a2 17       		.uleb128 0x17
+ 1356 06a3 14       		.byte	0x14
+ 1357 06a4 08       		.byte	0x8
+ 1358 06a5 3C02     		.2byte	0x23c
+ 1359 06a7 14070000 		.4byte	0x714
+ 1360 06ab 11       		.uleb128 0x11
+ 1361 06ac 3A050000 		.4byte	.LASF90
+ 1362 06b0 08       		.byte	0x8
+ 1363 06b1 3E02     		.2byte	0x23e
+ 1364 06b3 EF020000 		.4byte	0x2ef
+ 1365 06b7 00       		.byte	0
+ 1366 06b8 11       		.uleb128 0x11
+ 1367 06b9 74020000 		.4byte	.LASF91
+ 1368 06bd 08       		.byte	0x8
+ 1369 06be 3F02     		.2byte	0x23f
+ 1370 06c0 EF020000 		.4byte	0x2ef
+ 1371 06c4 02       		.byte	0x2
+ 1372 06c5 11       		.uleb128 0x11
+ 1373 06c6 61060000 		.4byte	.LASF92
+ 1374 06ca 08       		.byte	0x8
+ 1375 06cb 4002     		.2byte	0x240
+ 1376 06cd EF020000 		.4byte	0x2ef
+ 1377 06d1 04       		.byte	0x4
+ 1378 06d2 11       		.uleb128 0x11
+ 1379 06d3 AA030000 		.4byte	.LASF93
+ 1380 06d7 08       		.byte	0x8
+ 1381 06d8 4102     		.2byte	0x241
+ 1382 06da EF020000 		.4byte	0x2ef
+ 1383 06de 06       		.byte	0x6
+ 1384 06df 11       		.uleb128 0x11
+ 1385 06e0 A7010000 		.4byte	.LASF94
+ 1386 06e4 08       		.byte	0x8
+ 1387 06e5 4202     		.2byte	0x242
+ 1388 06e7 EF020000 		.4byte	0x2ef
+ 1389 06eb 08       		.byte	0x8
+ 1390 06ec 11       		.uleb128 0x11
+ 1391 06ed 73060000 		.4byte	.LASF95
+ 1392 06f1 08       		.byte	0x8
+ 1393 06f2 4302     		.2byte	0x243
+ 1394 06f4 EF020000 		.4byte	0x2ef
+ 1395 06f8 0A       		.byte	0xa
+ 1396 06f9 11       		.uleb128 0x11
+ 1397 06fa 69020000 		.4byte	.LASF96
+ 1398 06fe 08       		.byte	0x8
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 30
+
+
+ 1399 06ff 4402     		.2byte	0x244
+ 1400 0701 C8040000 		.4byte	0x4c8
+ 1401 0705 0C       		.byte	0xc
+ 1402 0706 11       		.uleb128 0x11
+ 1403 0707 C5010000 		.4byte	.LASF97
+ 1404 070b 08       		.byte	0x8
+ 1405 070c 4502     		.2byte	0x245
+ 1406 070e C8040000 		.4byte	0x4c8
+ 1407 0712 10       		.byte	0x10
+ 1408 0713 00       		.byte	0
+ 1409 0714 17       		.uleb128 0x17
+ 1410 0715 78       		.byte	0x78
+ 1411 0716 08       		.byte	0x8
+ 1412 0717 3302     		.2byte	0x233
+ 1413 0719 EE070000 		.4byte	0x7ee
+ 1414 071d 11       		.uleb128 0x11
+ 1415 071e 84040000 		.4byte	.LASF98
+ 1416 0722 08       		.byte	0x8
+ 1417 0723 3502     		.2byte	0x235
+ 1418 0725 03080000 		.4byte	0x803
+ 1419 0729 00       		.byte	0
+ 1420 072a 11       		.uleb128 0x11
+ 1421 072b 43040000 		.4byte	.LASF99
+ 1422 072f 08       		.byte	0x8
+ 1423 0730 3602     		.2byte	0x236
+ 1424 0732 EF020000 		.4byte	0x2ef
+ 1425 0736 04       		.byte	0x4
+ 1426 0737 11       		.uleb128 0x11
+ 1427 0738 25010000 		.4byte	.LASF100
+ 1428 073c 08       		.byte	0x8
+ 1429 073d 3702     		.2byte	0x237
+ 1430 073f EF020000 		.4byte	0x2ef
+ 1431 0743 06       		.byte	0x6
+ 1432 0744 11       		.uleb128 0x11
+ 1433 0745 24040000 		.4byte	.LASF101
+ 1434 0749 08       		.byte	0x8
+ 1435 074a 3802     		.2byte	0x238
+ 1436 074c 98050000 		.4byte	0x598
+ 1437 0750 08       		.byte	0x8
+ 1438 0751 11       		.uleb128 0x11
+ 1439 0752 71010000 		.4byte	.LASF102
+ 1440 0756 08       		.byte	0x8
+ 1441 0757 3902     		.2byte	0x239
+ 1442 0759 B3050000 		.4byte	0x5b3
+ 1443 075d 10       		.byte	0x10
+ 1444 075e 11       		.uleb128 0x11
+ 1445 075f 35020000 		.4byte	.LASF103
+ 1446 0763 08       		.byte	0x8
+ 1447 0764 3A02     		.2byte	0x23a
+ 1448 0766 B3050000 		.4byte	0x5b3
+ 1449 076a 14       		.byte	0x14
+ 1450 076b 11       		.uleb128 0x11
+ 1451 076c B9010000 		.4byte	.LASF104
+ 1452 0770 08       		.byte	0x8
+ 1453 0771 3B02     		.2byte	0x23b
+ 1454 0773 B3050000 		.4byte	0x5b3
+ 1455 0777 18       		.byte	0x18
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 31
+
+
+ 1456 0778 11       		.uleb128 0x11
+ 1457 0779 D8000000 		.4byte	.LASF105
+ 1458 077d 08       		.byte	0x8
+ 1459 077e 4602     		.2byte	0x246
+ 1460 0780 A2060000 		.4byte	0x6a2
+ 1461 0784 1C       		.byte	0x1c
+ 1462 0785 11       		.uleb128 0x11
+ 1463 0786 CC050000 		.4byte	.LASF82
+ 1464 078a 08       		.byte	0x8
+ 1465 078b 4702     		.2byte	0x247
+ 1466 078d 8A030000 		.4byte	0x38a
+ 1467 0791 30       		.byte	0x30
+ 1468 0792 11       		.uleb128 0x11
+ 1469 0793 1D060000 		.4byte	.LASF106
+ 1470 0797 08       		.byte	0x8
+ 1471 0798 4802     		.2byte	0x248
+ 1472 079a D9020000 		.4byte	0x2d9
+ 1473 079e 44       		.byte	0x44
+ 1474 079f 11       		.uleb128 0x11
+ 1475 07a0 BC000000 		.4byte	.LASF107
+ 1476 07a4 08       		.byte	0x8
+ 1477 07a5 4902     		.2byte	0x249
+ 1478 07a7 D9020000 		.4byte	0x2d9
+ 1479 07ab 45       		.byte	0x45
+ 1480 07ac 11       		.uleb128 0x11
+ 1481 07ad 69020000 		.4byte	.LASF96
+ 1482 07b1 08       		.byte	0x8
+ 1483 07b2 4A02     		.2byte	0x24a
+ 1484 07b4 C8040000 		.4byte	0x4c8
+ 1485 07b8 48       		.byte	0x48
+ 1486 07b9 11       		.uleb128 0x11
+ 1487 07ba C5010000 		.4byte	.LASF97
+ 1488 07be 08       		.byte	0x8
+ 1489 07bf 4B02     		.2byte	0x24b
+ 1490 07c1 C8040000 		.4byte	0x4c8
+ 1491 07c5 4C       		.byte	0x4c
+ 1492 07c6 11       		.uleb128 0x11
+ 1493 07c7 17000000 		.4byte	.LASF108
+ 1494 07cb 08       		.byte	0x8
+ 1495 07cc 4C02     		.2byte	0x24c
+ 1496 07ce C8040000 		.4byte	0x4c8
+ 1497 07d2 50       		.byte	0x50
+ 1498 07d3 11       		.uleb128 0x11
+ 1499 07d4 9B060000 		.4byte	.LASF62
+ 1500 07d8 08       		.byte	0x8
+ 1501 07d9 4D02     		.2byte	0x24d
+ 1502 07db CE020000 		.4byte	0x2ce
+ 1503 07df 54       		.byte	0x54
+ 1504 07e0 11       		.uleb128 0x11
+ 1505 07e1 2A040000 		.4byte	.LASF88
+ 1506 07e5 08       		.byte	0x8
+ 1507 07e6 4E02     		.2byte	0x24e
+ 1508 07e8 09080000 		.4byte	0x809
+ 1509 07ec 58       		.byte	0x58
+ 1510 07ed 00       		.byte	0
+ 1511 07ee 15       		.uleb128 0x15
+ 1512 07ef 03080000 		.4byte	0x803
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 32
+
+
+ 1513 07f3 16       		.uleb128 0x16
+ 1514 07f4 EF020000 		.4byte	0x2ef
+ 1515 07f8 16       		.uleb128 0x16
+ 1516 07f9 EF020000 		.4byte	0x2ef
+ 1517 07fd 16       		.uleb128 0x16
+ 1518 07fe C8040000 		.4byte	0x4c8
+ 1519 0802 00       		.byte	0
+ 1520 0803 08       		.uleb128 0x8
+ 1521 0804 04       		.byte	0x4
+ 1522 0805 EE070000 		.4byte	0x7ee
+ 1523 0809 0B       		.uleb128 0xb
+ 1524 080a 96060000 		.4byte	0x696
+ 1525 080e 19080000 		.4byte	0x819
+ 1526 0812 0C       		.uleb128 0xc
+ 1527 0813 34010000 		.4byte	0x134
+ 1528 0817 03       		.byte	0x3
+ 1529 0818 00       		.byte	0
+ 1530 0819 05       		.uleb128 0x5
+ 1531 081a A1060000 		.4byte	.LASF109
+ 1532 081e 08       		.byte	0x8
+ 1533 081f 4F02     		.2byte	0x24f
+ 1534 0821 14070000 		.4byte	0x714
+ 1535 0825 18       		.uleb128 0x18
+ 1536 0826 E8040000 		.4byte	.LASF110
+ 1537 082a 01       		.byte	0x1
+ 1538 082b 36       		.byte	0x36
+ 1539 082c B8000000 		.4byte	0xb8
+ 1540 0830 00000000 		.4byte	.LFB64
+ 1541 0834 0C000000 		.4byte	.LFE64-.LFB64
+ 1542 0838 01       		.uleb128 0x1
+ 1543 0839 9C       		.byte	0x9c
+ 1544 083a 18       		.uleb128 0x18
+ 1545 083b 96030000 		.4byte	.LASF111
+ 1546 083f 01       		.byte	0x1
+ 1547 0840 3C       		.byte	0x3c
+ 1548 0841 B8000000 		.4byte	0xb8
+ 1549 0845 00000000 		.4byte	.LFB65
+ 1550 0849 0C000000 		.4byte	.LFE65-.LFB65
+ 1551 084d 01       		.uleb128 0x1
+ 1552 084e 9C       		.byte	0x9c
+ 1553 084f 18       		.uleb128 0x18
+ 1554 0850 51020000 		.4byte	.LASF112
+ 1555 0854 01       		.byte	0x1
+ 1556 0855 43       		.byte	0x43
+ 1557 0856 B8000000 		.4byte	0xb8
+ 1558 085a 00000000 		.4byte	.LFB66
+ 1559 085e 0C000000 		.4byte	.LFE66-.LFB66
+ 1560 0862 01       		.uleb128 0x1
+ 1561 0863 9C       		.byte	0x9c
+ 1562 0864 18       		.uleb128 0x18
+ 1563 0865 79060000 		.4byte	.LASF113
+ 1564 0869 01       		.byte	0x1
+ 1565 086a 49       		.byte	0x49
+ 1566 086b B8000000 		.4byte	0xb8
+ 1567 086f 00000000 		.4byte	.LFB67
+ 1568 0873 0C000000 		.4byte	.LFE67-.LFB67
+ 1569 0877 01       		.uleb128 0x1
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 33
+
+
+ 1570 0878 9C       		.byte	0x9c
+ 1571 0879 18       		.uleb128 0x18
+ 1572 087a EC050000 		.4byte	.LASF114
+ 1573 087e 01       		.byte	0x1
+ 1574 087f 50       		.byte	0x50
+ 1575 0880 B8000000 		.4byte	0xb8
+ 1576 0884 00000000 		.4byte	.LFB68
+ 1577 0888 0C000000 		.4byte	.LFE68-.LFB68
+ 1578 088c 01       		.uleb128 0x1
+ 1579 088d 9C       		.byte	0x9c
+ 1580 088e 18       		.uleb128 0x18
+ 1581 088f 0D040000 		.4byte	.LASF115
+ 1582 0893 01       		.byte	0x1
+ 1583 0894 57       		.byte	0x57
+ 1584 0895 B8000000 		.4byte	0xb8
+ 1585 0899 00000000 		.4byte	.LFB69
+ 1586 089d 0C000000 		.4byte	.LFE69-.LFB69
+ 1587 08a1 01       		.uleb128 0x1
+ 1588 08a2 9C       		.byte	0x9c
+ 1589 08a3 18       		.uleb128 0x18
+ 1590 08a4 9A050000 		.4byte	.LASF116
+ 1591 08a8 01       		.byte	0x1
+ 1592 08a9 5E       		.byte	0x5e
+ 1593 08aa B8000000 		.4byte	0xb8
+ 1594 08ae 00000000 		.4byte	.LFB70
+ 1595 08b2 04000000 		.4byte	.LFE70-.LFB70
+ 1596 08b6 01       		.uleb128 0x1
+ 1597 08b7 9C       		.byte	0x9c
+ 1598 08b8 19       		.uleb128 0x19
+ 1599 08b9 AC050000 		.4byte	.LASF154
+ 1600 08bd 01       		.byte	0x1
+ 1601 08be 9A       		.byte	0x9a
+ 1602 08bf 00000000 		.4byte	.LFB71
+ 1603 08c3 4A000000 		.4byte	.LFE71-.LFB71
+ 1604 08c7 01       		.uleb128 0x1
+ 1605 08c8 9C       		.byte	0x9c
+ 1606 08c9 EC080000 		.4byte	0x8ec
+ 1607 08cd 1A       		.uleb128 0x1a
+ 1608 08ce 93050000 		.4byte	.LASF117
+ 1609 08d2 01       		.byte	0x1
+ 1610 08d3 9D       		.byte	0x9d
+ 1611 08d4 39020000 		.4byte	0x239
+ 1612 08d8 02       		.uleb128 0x2
+ 1613 08d9 91       		.byte	0x91
+ 1614 08da 6C       		.sleb128 -20
+ 1615 08db 1B       		.uleb128 0x1b
+ 1616 08dc 44000000 		.4byte	.LVL0
+ 1617 08e0 A00B0000 		.4byte	0xba0
+ 1618 08e4 1C       		.uleb128 0x1c
+ 1619 08e5 01       		.uleb128 0x1
+ 1620 08e6 50       		.byte	0x50
+ 1621 08e7 02       		.uleb128 0x2
+ 1622 08e8 91       		.byte	0x91
+ 1623 08e9 6C       		.sleb128 -20
+ 1624 08ea 00       		.byte	0
+ 1625 08eb 00       		.byte	0
+ 1626 08ec 1D       		.uleb128 0x1d
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 34
+
+
+ 1627 08ed 7A050000 		.4byte	.LASF120
+ 1628 08f1 01       		.byte	0x1
+ 1629 08f2 B2       		.byte	0xb2
+ 1630 08f3 00000000 		.4byte	.LFB72
+ 1631 08f7 3E000000 		.4byte	.LFE72-.LFB72
+ 1632 08fb 01       		.uleb128 0x1
+ 1633 08fc 9C       		.byte	0x9c
+ 1634 08fd 58090000 		.4byte	0x958
+ 1635 0901 1E       		.uleb128 0x1e
+ 1636 0902 08040000 		.4byte	.LASF69
+ 1637 0906 01       		.byte	0x1
+ 1638 0907 B2       		.byte	0xb2
+ 1639 0908 58090000 		.4byte	0x958
+ 1640 090c 00000000 		.4byte	.LLST0
+ 1641 0910 1F       		.uleb128 0x1f
+ 1642 0911 494400   		.ascii	"ID\000"
+ 1643 0914 01       		.byte	0x1
+ 1644 0915 B2       		.byte	0xb2
+ 1645 0916 E4000000 		.4byte	0xe4
+ 1646 091a 21000000 		.4byte	.LLST1
+ 1647 091e 20       		.uleb128 0x20
+ 1648 091f 6900     		.ascii	"i\000"
+ 1649 0921 01       		.byte	0x1
+ 1650 0922 B4       		.byte	0xb4
+ 1651 0923 B8000000 		.4byte	0xb8
+ 1652 0927 5A000000 		.4byte	.LLST2
+ 1653 092b 1A       		.uleb128 0x1a
+ 1654 092c 70000000 		.4byte	.LASF118
+ 1655 0930 01       		.byte	0x1
+ 1656 0931 B5       		.byte	0xb5
+ 1657 0932 39020000 		.4byte	0x239
+ 1658 0936 02       		.uleb128 0x2
+ 1659 0937 91       		.byte	0x91
+ 1660 0938 6C       		.sleb128 -20
+ 1661 0939 1A       		.uleb128 0x1a
+ 1662 093a 08030000 		.4byte	.LASF119
+ 1663 093e 01       		.byte	0x1
+ 1664 093f B6       		.byte	0xb6
+ 1665 0940 6E010000 		.4byte	0x16e
+ 1666 0944 02       		.uleb128 0x2
+ 1667 0945 91       		.byte	0x91
+ 1668 0946 64       		.sleb128 -28
+ 1669 0947 1B       		.uleb128 0x1b
+ 1670 0948 38000000 		.4byte	.LVL7
+ 1671 094c A00B0000 		.4byte	0xba0
+ 1672 0950 1C       		.uleb128 0x1c
+ 1673 0951 01       		.uleb128 0x1
+ 1674 0952 50       		.byte	0x50
+ 1675 0953 02       		.uleb128 0x2
+ 1676 0954 91       		.byte	0x91
+ 1677 0955 6C       		.sleb128 -20
+ 1678 0956 00       		.byte	0
+ 1679 0957 00       		.byte	0
+ 1680 0958 08       		.uleb128 0x8
+ 1681 0959 04       		.byte	0x4
+ 1682 095a B8000000 		.4byte	0xb8
+ 1683 095e 1D       		.uleb128 0x1d
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 35
+
+
+ 1684 095f 48070000 		.4byte	.LASF121
+ 1685 0963 01       		.byte	0x1
+ 1686 0964 C2       		.byte	0xc2
+ 1687 0965 00000000 		.4byte	.LFB73
+ 1688 0969 10000000 		.4byte	.LFE73-.LFB73
+ 1689 096d 01       		.uleb128 0x1
+ 1690 096e 9C       		.byte	0x9c
+ 1691 096f 8C090000 		.4byte	0x98c
+ 1692 0973 1E       		.uleb128 0x1e
+ 1693 0974 69060000 		.4byte	.LASF122
+ 1694 0978 01       		.byte	0x1
+ 1695 0979 C3       		.byte	0xc3
+ 1696 097a B8000000 		.4byte	0xb8
+ 1697 097e 84000000 		.4byte	.LLST3
+ 1698 0982 21       		.uleb128 0x21
+ 1699 0983 0A000000 		.4byte	.LVL9
+ 1700 0987 AC0B0000 		.4byte	0xbac
+ 1701 098b 00       		.byte	0
+ 1702 098c 1D       		.uleb128 0x1d
+ 1703 098d D4040000 		.4byte	.LASF123
+ 1704 0991 01       		.byte	0x1
+ 1705 0992 DB       		.byte	0xdb
+ 1706 0993 00000000 		.4byte	.LFB74
+ 1707 0997 3C000000 		.4byte	.LFE74-.LFB74
+ 1708 099b 01       		.uleb128 0x1
+ 1709 099c 9C       		.byte	0x9c
+ 1710 099d 160A0000 		.4byte	0xa16
+ 1711 09a1 1E       		.uleb128 0x1e
+ 1712 09a2 7D010000 		.4byte	.LASF124
+ 1713 09a6 01       		.byte	0x1
+ 1714 09a7 DC       		.byte	0xdc
+ 1715 09a8 B8000000 		.4byte	0xb8
+ 1716 09ac A5000000 		.4byte	.LLST4
+ 1717 09b0 1E       		.uleb128 0x1e
+ 1718 09b1 54010000 		.4byte	.LASF125
+ 1719 09b5 01       		.byte	0x1
+ 1720 09b6 DD       		.byte	0xdd
+ 1721 09b7 CE000000 		.4byte	0xce
+ 1722 09bb D2000000 		.4byte	.LLST5
+ 1723 09bf 1E       		.uleb128 0x1e
+ 1724 09c0 09020000 		.4byte	.LASF126
+ 1725 09c4 01       		.byte	0x1
+ 1726 09c5 DE       		.byte	0xde
+ 1727 09c6 CE000000 		.4byte	0xce
+ 1728 09ca F3000000 		.4byte	.LLST6
+ 1729 09ce 1E       		.uleb128 0x1e
+ 1730 09cf 9F040000 		.4byte	.LASF127
+ 1731 09d3 01       		.byte	0x1
+ 1732 09d4 DF       		.byte	0xdf
+ 1733 09d5 B8000000 		.4byte	0xb8
+ 1734 09d9 14010000 		.4byte	.LLST7
+ 1735 09dd 1A       		.uleb128 0x1a
+ 1736 09de 08040000 		.4byte	.LASF69
+ 1737 09e2 01       		.byte	0x1
+ 1738 09e3 E4       		.byte	0xe4
+ 1739 09e4 BE020000 		.4byte	0x2be
+ 1740 09e8 02       		.uleb128 0x2
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 36
+
+
+ 1741 09e9 91       		.byte	0x91
+ 1742 09ea 70       		.sleb128 -16
+ 1743 09eb 22       		.uleb128 0x22
+ 1744 09ec 30000000 		.4byte	.LVL14
+ 1745 09f0 EC080000 		.4byte	0x8ec
+ 1746 09f4 060A0000 		.4byte	0xa06
+ 1747 09f8 1C       		.uleb128 0x1c
+ 1748 09f9 01       		.uleb128 0x1
+ 1749 09fa 50       		.byte	0x50
+ 1750 09fb 02       		.uleb128 0x2
+ 1751 09fc 7D       		.byte	0x7d
+ 1752 09fd 00       		.sleb128 0
+ 1753 09fe 1C       		.uleb128 0x1c
+ 1754 09ff 01       		.uleb128 0x1
+ 1755 0a00 51       		.byte	0x51
+ 1756 0a01 03       		.uleb128 0x3
+ 1757 0a02 0A       		.byte	0xa
+ 1758 0a03 6607     		.2byte	0x766
+ 1759 0a05 00       		.byte	0
+ 1760 0a06 1B       		.uleb128 0x1b
+ 1761 0a07 36000000 		.4byte	.LVL15
+ 1762 0a0b B80B0000 		.4byte	0xbb8
+ 1763 0a0f 1C       		.uleb128 0x1c
+ 1764 0a10 01       		.uleb128 0x1
+ 1765 0a11 50       		.byte	0x50
+ 1766 0a12 01       		.uleb128 0x1
+ 1767 0a13 31       		.byte	0x31
+ 1768 0a14 00       		.byte	0
+ 1769 0a15 00       		.byte	0
+ 1770 0a16 1D       		.uleb128 0x1d
+ 1771 0a17 83050000 		.4byte	.LASF128
+ 1772 0a1b 01       		.byte	0x1
+ 1773 0a1c F7       		.byte	0xf7
+ 1774 0a1d 00000000 		.4byte	.LFB75
+ 1775 0a21 22000000 		.4byte	.LFE75-.LFB75
+ 1776 0a25 01       		.uleb128 0x1
+ 1777 0a26 9C       		.byte	0x9c
+ 1778 0a27 6F0A0000 		.4byte	0xa6f
+ 1779 0a2b 1E       		.uleb128 0x1e
+ 1780 0a2c E3010000 		.4byte	.LASF129
+ 1781 0a30 01       		.byte	0x1
+ 1782 0a31 F7       		.byte	0xf7
+ 1783 0a32 B8000000 		.4byte	0xb8
+ 1784 0a36 35010000 		.4byte	.LLST8
+ 1785 0a3a 1E       		.uleb128 0x1e
+ 1786 0a3b 3E030000 		.4byte	.LASF130
+ 1787 0a3f 01       		.byte	0x1
+ 1788 0a40 F7       		.byte	0xf7
+ 1789 0a41 B8000000 		.4byte	0xb8
+ 1790 0a45 62010000 		.4byte	.LLST9
+ 1791 0a49 1A       		.uleb128 0x1a
+ 1792 0a4a 08040000 		.4byte	.LASF69
+ 1793 0a4e 01       		.byte	0x1
+ 1794 0a4f F8       		.byte	0xf8
+ 1795 0a50 BE020000 		.4byte	0x2be
+ 1796 0a54 02       		.uleb128 0x2
+ 1797 0a55 91       		.byte	0x91
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 37
+
+
+ 1798 0a56 70       		.sleb128 -16
+ 1799 0a57 1B       		.uleb128 0x1b
+ 1800 0a58 1C000000 		.4byte	.LVL19
+ 1801 0a5c EC080000 		.4byte	0x8ec
+ 1802 0a60 1C       		.uleb128 0x1c
+ 1803 0a61 01       		.uleb128 0x1
+ 1804 0a62 50       		.byte	0x50
+ 1805 0a63 02       		.uleb128 0x2
+ 1806 0a64 7D       		.byte	0x7d
+ 1807 0a65 00       		.sleb128 0
+ 1808 0a66 1C       		.uleb128 0x1c
+ 1809 0a67 01       		.uleb128 0x1
+ 1810 0a68 51       		.byte	0x51
+ 1811 0a69 03       		.uleb128 0x3
+ 1812 0a6a 0A       		.byte	0xa
+ 1813 0a6b 8903     		.2byte	0x389
+ 1814 0a6d 00       		.byte	0
+ 1815 0a6e 00       		.byte	0
+ 1816 0a6f 23       		.uleb128 0x23
+ 1817 0a70 31030000 		.4byte	.LASF131
+ 1818 0a74 09       		.byte	0x9
+ 1819 0a75 1207     		.2byte	0x712
+ 1820 0a77 7B0A0000 		.4byte	0xa7b
+ 1821 0a7b 06       		.uleb128 0x6
+ 1822 0a7c D9000000 		.4byte	0xd9
+ 1823 0a80 24       		.uleb128 0x24
+ 1824 0a81 11050000 		.4byte	.LASF132
+ 1825 0a85 0A       		.byte	0xa
+ 1826 0a86 33       		.byte	0x33
+ 1827 0a87 19080000 		.4byte	0x819
+ 1828 0a8b 05       		.uleb128 0x5
+ 1829 0a8c 03       		.byte	0x3
+ 1830 0a8d 00000000 		.4byte	gui1963
+ 1831 0a91 24       		.uleb128 0x24
+ 1832 0a92 22030000 		.4byte	.LASF133
+ 1833 0a96 0B       		.byte	0xb
+ 1834 0a97 0F       		.byte	0xf
+ 1835 0a98 C8040000 		.4byte	0x4c8
+ 1836 0a9c 05       		.uleb128 0x5
+ 1837 0a9d 03       		.byte	0x3
+ 1838 0a9e 00000000 		.4byte	last_SOC_color
+ 1839 0aa2 24       		.uleb128 0x24
+ 1840 0aa3 57040000 		.4byte	.LASF134
+ 1841 0aa7 0B       		.byte	0xb
+ 1842 0aa8 10       		.byte	0x10
+ 1843 0aa9 C8040000 		.4byte	0x4c8
+ 1844 0aad 05       		.uleb128 0x5
+ 1845 0aae 03       		.byte	0x3
+ 1846 0aaf 00000000 		.4byte	last_max_pack_temp_color
+ 1847 0ab3 24       		.uleb128 0x24
+ 1848 0ab4 56050000 		.4byte	.LASF135
+ 1849 0ab8 0B       		.byte	0xb
+ 1850 0ab9 11       		.byte	0x11
+ 1851 0aba C8040000 		.4byte	0x4c8
+ 1852 0abe 05       		.uleb128 0x5
+ 1853 0abf 03       		.byte	0x3
+ 1854 0ac0 00000000 		.4byte	last_state_color
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 38
+
+
+ 1855 0ac4 24       		.uleb128 0x24
+ 1856 0ac5 2A060000 		.4byte	.LASF136
+ 1857 0ac9 0B       		.byte	0xb
+ 1858 0aca 12       		.byte	0x12
+ 1859 0acb C8040000 		.4byte	0x4c8
+ 1860 0acf 05       		.uleb128 0x5
+ 1861 0ad0 03       		.byte	0x3
+ 1862 0ad1 00000000 		.4byte	last_glv_v_color
+ 1863 0ad5 24       		.uleb128 0x24
+ 1864 0ad6 82060000 		.4byte	.LASF137
+ 1865 0ada 0B       		.byte	0xb
+ 1866 0adb 13       		.byte	0x13
+ 1867 0adc C8040000 		.4byte	0x4c8
+ 1868 0ae0 05       		.uleb128 0x5
+ 1869 0ae1 03       		.byte	0x3
+ 1870 0ae2 00000000 		.4byte	last_mc_temp_color
+ 1871 0ae6 24       		.uleb128 0x24
+ 1872 0ae7 72030000 		.4byte	.LASF138
+ 1873 0aeb 0B       		.byte	0xb
+ 1874 0aec 14       		.byte	0x14
+ 1875 0aed C8040000 		.4byte	0x4c8
+ 1876 0af1 05       		.uleb128 0x5
+ 1877 0af2 03       		.byte	0x3
+ 1878 0af3 00000000 		.4byte	last_motor_temp_color
+ 1879 0af7 24       		.uleb128 0x24
+ 1880 0af8 EE000000 		.4byte	.LASF139
+ 1881 0afc 01       		.byte	0x1
+ 1882 0afd 27       		.byte	0x27
+ 1883 0afe 7C020000 		.4byte	0x27c
+ 1884 0b02 05       		.uleb128 0x5
+ 1885 0b03 03       		.byte	0x3
+ 1886 0b04 00000000 		.4byte	CAPACITOR_VOLT
+ 1887 0b08 24       		.uleb128 0x24
+ 1888 0b09 D0010000 		.4byte	.LASF140
+ 1889 0b0d 01       		.byte	0x1
+ 1890 0b0e 28       		.byte	0x28
+ 1891 0b0f 7C020000 		.4byte	0x27c
+ 1892 0b13 05       		.uleb128 0x5
+ 1893 0b14 03       		.byte	0x3
+ 1894 0b15 00000000 		.4byte	CURTIS_FAULT_CHECK
+ 1895 0b19 24       		.uleb128 0x24
+ 1896 0b1a 0A070000 		.4byte	.LASF141
+ 1897 0b1e 01       		.byte	0x1
+ 1898 0b1f 29       		.byte	0x29
+ 1899 0b20 7C020000 		.4byte	0x27c
+ 1900 0b24 05       		.uleb128 0x5
+ 1901 0b25 03       		.byte	0x3
+ 1902 0b26 00000000 		.4byte	CURTIS_HEART_BEAT_CHECK
+ 1903 0b2a 24       		.uleb128 0x24
+ 1904 0b2b 38070000 		.4byte	.LASF142
+ 1905 0b2f 01       		.byte	0x1
+ 1906 0b30 2A       		.byte	0x2a
+ 1907 0b31 7C020000 		.4byte	0x27c
+ 1908 0b35 05       		.uleb128 0x5
+ 1909 0b36 03       		.byte	0x3
+ 1910 0b37 00000000 		.4byte	ACK_RX
+ 1911 0b3b 24       		.uleb128 0x24
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 39
+
+
+ 1912 0b3c 1A020000 		.4byte	.LASF143
+ 1913 0b40 01       		.byte	0x1
+ 1914 0b41 2B       		.byte	0x2b
+ 1915 0b42 7C020000 		.4byte	0x27c
+ 1916 0b46 05       		.uleb128 0x5
+ 1917 0b47 03       		.byte	0x3
+ 1918 0b48 00000000 		.4byte	ERROR_TOLERANCE
+ 1919 0b4c 24       		.uleb128 0x24
+ 1920 0b4d 88030000 		.4byte	.LASF144
+ 1921 0b51 01       		.byte	0x1
+ 1922 0b52 2C       		.byte	0x2c
+ 1923 0b53 7C020000 		.4byte	0x27c
+ 1924 0b57 05       		.uleb128 0x5
+ 1925 0b58 03       		.byte	0x3
+ 1926 0b59 00000000 		.4byte	ABS_MOTOR_RPM
+ 1927 0b5d 24       		.uleb128 0x24
+ 1928 0b5e 22050000 		.4byte	.LASF145
+ 1929 0b62 01       		.byte	0x1
+ 1930 0b63 2D       		.byte	0x2d
+ 1931 0b64 7C020000 		.4byte	0x27c
+ 1932 0b68 05       		.uleb128 0x5
+ 1933 0b69 03       		.byte	0x3
+ 1934 0b6a 00000000 		.4byte	THROTTLE_HIGH
+ 1935 0b6e 24       		.uleb128 0x24
+ 1936 0b6f E4060000 		.4byte	.LASF146
+ 1937 0b73 01       		.byte	0x1
+ 1938 0b74 2E       		.byte	0x2e
+ 1939 0b75 7C020000 		.4byte	0x27c
+ 1940 0b79 05       		.uleb128 0x5
+ 1941 0b7a 03       		.byte	0x3
+ 1942 0b7b 00000000 		.4byte	THROTTLE_LOW
+ 1943 0b7f 0B       		.uleb128 0xb
+ 1944 0b80 EF000000 		.4byte	0xef
+ 1945 0b84 8F0B0000 		.4byte	0xb8f
+ 1946 0b88 0C       		.uleb128 0xc
+ 1947 0b89 34010000 		.4byte	0x134
+ 1948 0b8d 03       		.byte	0x3
+ 1949 0b8e 00       		.byte	0
+ 1950 0b8f 24       		.uleb128 0x24
+ 1951 0b90 10010000 		.4byte	.LASF147
+ 1952 0b94 01       		.byte	0x1
+ 1953 0b95 33       		.byte	0x33
+ 1954 0b96 7F0B0000 		.4byte	0xb7f
+ 1955 0b9a 05       		.uleb128 0x5
+ 1956 0b9b 03       		.byte	0x3
+ 1957 0b9c 00000000 		.4byte	current_bytes
+ 1958 0ba0 25       		.uleb128 0x25
+ 1959 0ba1 37040000 		.4byte	.LASF148
+ 1960 0ba5 37040000 		.4byte	.LASF148
+ 1961 0ba9 05       		.byte	0x5
+ 1962 0baa 1801     		.2byte	0x118
+ 1963 0bac 25       		.uleb128 0x25
+ 1964 0bad 8D000000 		.4byte	.LASF149
+ 1965 0bb1 8D000000 		.4byte	.LASF149
+ 1966 0bb5 05       		.byte	0x5
+ 1967 0bb6 1D01     		.2byte	0x11d
+ 1968 0bb8 26       		.uleb128 0x26
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 40
+
+
+ 1969 0bb9 00000000 		.4byte	.LASF150
+ 1970 0bbd 00000000 		.4byte	.LASF150
+ 1971 0bc1 0C       		.byte	0xc
+ 1972 0bc2 76       		.byte	0x76
+ 1973 0bc3 00       		.byte	0
+ 1974              		.section	.debug_abbrev,"",%progbits
+ 1975              	.Ldebug_abbrev0:
+ 1976 0000 01       		.uleb128 0x1
+ 1977 0001 11       		.uleb128 0x11
+ 1978 0002 01       		.byte	0x1
+ 1979 0003 25       		.uleb128 0x25
+ 1980 0004 0E       		.uleb128 0xe
+ 1981 0005 13       		.uleb128 0x13
+ 1982 0006 0B       		.uleb128 0xb
+ 1983 0007 03       		.uleb128 0x3
+ 1984 0008 0E       		.uleb128 0xe
+ 1985 0009 1B       		.uleb128 0x1b
+ 1986 000a 0E       		.uleb128 0xe
+ 1987 000b 55       		.uleb128 0x55
+ 1988 000c 17       		.uleb128 0x17
+ 1989 000d 11       		.uleb128 0x11
+ 1990 000e 01       		.uleb128 0x1
+ 1991 000f 10       		.uleb128 0x10
+ 1992 0010 17       		.uleb128 0x17
+ 1993 0011 00       		.byte	0
+ 1994 0012 00       		.byte	0
+ 1995 0013 02       		.uleb128 0x2
+ 1996 0014 16       		.uleb128 0x16
+ 1997 0015 00       		.byte	0
+ 1998 0016 03       		.uleb128 0x3
+ 1999 0017 0E       		.uleb128 0xe
+ 2000 0018 3A       		.uleb128 0x3a
+ 2001 0019 0B       		.uleb128 0xb
+ 2002 001a 3B       		.uleb128 0x3b
+ 2003 001b 0B       		.uleb128 0xb
+ 2004 001c 49       		.uleb128 0x49
+ 2005 001d 13       		.uleb128 0x13
+ 2006 001e 00       		.byte	0
+ 2007 001f 00       		.byte	0
+ 2008 0020 03       		.uleb128 0x3
+ 2009 0021 24       		.uleb128 0x24
+ 2010 0022 00       		.byte	0
+ 2011 0023 0B       		.uleb128 0xb
+ 2012 0024 0B       		.uleb128 0xb
+ 2013 0025 3E       		.uleb128 0x3e
+ 2014 0026 0B       		.uleb128 0xb
+ 2015 0027 03       		.uleb128 0x3
+ 2016 0028 0E       		.uleb128 0xe
+ 2017 0029 00       		.byte	0
+ 2018 002a 00       		.byte	0
+ 2019 002b 04       		.uleb128 0x4
+ 2020 002c 24       		.uleb128 0x24
+ 2021 002d 00       		.byte	0
+ 2022 002e 0B       		.uleb128 0xb
+ 2023 002f 0B       		.uleb128 0xb
+ 2024 0030 3E       		.uleb128 0x3e
+ 2025 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 41
+
+
+ 2026 0032 03       		.uleb128 0x3
+ 2027 0033 08       		.uleb128 0x8
+ 2028 0034 00       		.byte	0
+ 2029 0035 00       		.byte	0
+ 2030 0036 05       		.uleb128 0x5
+ 2031 0037 16       		.uleb128 0x16
+ 2032 0038 00       		.byte	0
+ 2033 0039 03       		.uleb128 0x3
+ 2034 003a 0E       		.uleb128 0xe
+ 2035 003b 3A       		.uleb128 0x3a
+ 2036 003c 0B       		.uleb128 0xb
+ 2037 003d 3B       		.uleb128 0x3b
+ 2038 003e 05       		.uleb128 0x5
+ 2039 003f 49       		.uleb128 0x49
+ 2040 0040 13       		.uleb128 0x13
+ 2041 0041 00       		.byte	0
+ 2042 0042 00       		.byte	0
+ 2043 0043 06       		.uleb128 0x6
+ 2044 0044 35       		.uleb128 0x35
+ 2045 0045 00       		.byte	0
+ 2046 0046 49       		.uleb128 0x49
+ 2047 0047 13       		.uleb128 0x13
+ 2048 0048 00       		.byte	0
+ 2049 0049 00       		.byte	0
+ 2050 004a 07       		.uleb128 0x7
+ 2051 004b 0F       		.uleb128 0xf
+ 2052 004c 00       		.byte	0
+ 2053 004d 0B       		.uleb128 0xb
+ 2054 004e 0B       		.uleb128 0xb
+ 2055 004f 00       		.byte	0
+ 2056 0050 00       		.byte	0
+ 2057 0051 08       		.uleb128 0x8
+ 2058 0052 0F       		.uleb128 0xf
+ 2059 0053 00       		.byte	0
+ 2060 0054 0B       		.uleb128 0xb
+ 2061 0055 0B       		.uleb128 0xb
+ 2062 0056 49       		.uleb128 0x49
+ 2063 0057 13       		.uleb128 0x13
+ 2064 0058 00       		.byte	0
+ 2065 0059 00       		.byte	0
+ 2066 005a 09       		.uleb128 0x9
+ 2067 005b 13       		.uleb128 0x13
+ 2068 005c 01       		.byte	0x1
+ 2069 005d 0B       		.uleb128 0xb
+ 2070 005e 0B       		.uleb128 0xb
+ 2071 005f 3A       		.uleb128 0x3a
+ 2072 0060 0B       		.uleb128 0xb
+ 2073 0061 3B       		.uleb128 0x3b
+ 2074 0062 0B       		.uleb128 0xb
+ 2075 0063 01       		.uleb128 0x1
+ 2076 0064 13       		.uleb128 0x13
+ 2077 0065 00       		.byte	0
+ 2078 0066 00       		.byte	0
+ 2079 0067 0A       		.uleb128 0xa
+ 2080 0068 0D       		.uleb128 0xd
+ 2081 0069 00       		.byte	0
+ 2082 006a 03       		.uleb128 0x3
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 42
+
+
+ 2083 006b 0E       		.uleb128 0xe
+ 2084 006c 3A       		.uleb128 0x3a
+ 2085 006d 0B       		.uleb128 0xb
+ 2086 006e 3B       		.uleb128 0x3b
+ 2087 006f 0B       		.uleb128 0xb
+ 2088 0070 49       		.uleb128 0x49
+ 2089 0071 13       		.uleb128 0x13
+ 2090 0072 38       		.uleb128 0x38
+ 2091 0073 0B       		.uleb128 0xb
+ 2092 0074 00       		.byte	0
+ 2093 0075 00       		.byte	0
+ 2094 0076 0B       		.uleb128 0xb
+ 2095 0077 01       		.uleb128 0x1
+ 2096 0078 01       		.byte	0x1
+ 2097 0079 49       		.uleb128 0x49
+ 2098 007a 13       		.uleb128 0x13
+ 2099 007b 01       		.uleb128 0x1
+ 2100 007c 13       		.uleb128 0x13
+ 2101 007d 00       		.byte	0
+ 2102 007e 00       		.byte	0
+ 2103 007f 0C       		.uleb128 0xc
+ 2104 0080 21       		.uleb128 0x21
+ 2105 0081 00       		.byte	0
+ 2106 0082 49       		.uleb128 0x49
+ 2107 0083 13       		.uleb128 0x13
+ 2108 0084 2F       		.uleb128 0x2f
+ 2109 0085 0B       		.uleb128 0xb
+ 2110 0086 00       		.byte	0
+ 2111 0087 00       		.byte	0
+ 2112 0088 0D       		.uleb128 0xd
+ 2113 0089 0D       		.uleb128 0xd
+ 2114 008a 00       		.byte	0
+ 2115 008b 03       		.uleb128 0x3
+ 2116 008c 08       		.uleb128 0x8
+ 2117 008d 3A       		.uleb128 0x3a
+ 2118 008e 0B       		.uleb128 0xb
+ 2119 008f 3B       		.uleb128 0x3b
+ 2120 0090 0B       		.uleb128 0xb
+ 2121 0091 49       		.uleb128 0x49
+ 2122 0092 13       		.uleb128 0x13
+ 2123 0093 38       		.uleb128 0x38
+ 2124 0094 0B       		.uleb128 0xb
+ 2125 0095 00       		.byte	0
+ 2126 0096 00       		.byte	0
+ 2127 0097 0E       		.uleb128 0xe
+ 2128 0098 04       		.uleb128 0x4
+ 2129 0099 01       		.byte	0x1
+ 2130 009a 0B       		.uleb128 0xb
+ 2131 009b 0B       		.uleb128 0xb
+ 2132 009c 49       		.uleb128 0x49
+ 2133 009d 13       		.uleb128 0x13
+ 2134 009e 3A       		.uleb128 0x3a
+ 2135 009f 0B       		.uleb128 0xb
+ 2136 00a0 3B       		.uleb128 0x3b
+ 2137 00a1 0B       		.uleb128 0xb
+ 2138 00a2 01       		.uleb128 0x1
+ 2139 00a3 13       		.uleb128 0x13
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 43
+
+
+ 2140 00a4 00       		.byte	0
+ 2141 00a5 00       		.byte	0
+ 2142 00a6 0F       		.uleb128 0xf
+ 2143 00a7 28       		.uleb128 0x28
+ 2144 00a8 00       		.byte	0
+ 2145 00a9 03       		.uleb128 0x3
+ 2146 00aa 0E       		.uleb128 0xe
+ 2147 00ab 1C       		.uleb128 0x1c
+ 2148 00ac 0B       		.uleb128 0xb
+ 2149 00ad 00       		.byte	0
+ 2150 00ae 00       		.byte	0
+ 2151 00af 10       		.uleb128 0x10
+ 2152 00b0 13       		.uleb128 0x13
+ 2153 00b1 01       		.byte	0x1
+ 2154 00b2 03       		.uleb128 0x3
+ 2155 00b3 0E       		.uleb128 0xe
+ 2156 00b4 0B       		.uleb128 0xb
+ 2157 00b5 0B       		.uleb128 0xb
+ 2158 00b6 3A       		.uleb128 0x3a
+ 2159 00b7 0B       		.uleb128 0xb
+ 2160 00b8 3B       		.uleb128 0x3b
+ 2161 00b9 0B       		.uleb128 0xb
+ 2162 00ba 01       		.uleb128 0x1
+ 2163 00bb 13       		.uleb128 0x13
+ 2164 00bc 00       		.byte	0
+ 2165 00bd 00       		.byte	0
+ 2166 00be 11       		.uleb128 0x11
+ 2167 00bf 0D       		.uleb128 0xd
+ 2168 00c0 00       		.byte	0
+ 2169 00c1 03       		.uleb128 0x3
+ 2170 00c2 0E       		.uleb128 0xe
+ 2171 00c3 3A       		.uleb128 0x3a
+ 2172 00c4 0B       		.uleb128 0xb
+ 2173 00c5 3B       		.uleb128 0x3b
+ 2174 00c6 05       		.uleb128 0x5
+ 2175 00c7 49       		.uleb128 0x49
+ 2176 00c8 13       		.uleb128 0x13
+ 2177 00c9 38       		.uleb128 0x38
+ 2178 00ca 0B       		.uleb128 0xb
+ 2179 00cb 00       		.byte	0
+ 2180 00cc 00       		.byte	0
+ 2181 00cd 12       		.uleb128 0x12
+ 2182 00ce 13       		.uleb128 0x13
+ 2183 00cf 01       		.byte	0x1
+ 2184 00d0 03       		.uleb128 0x3
+ 2185 00d1 0E       		.uleb128 0xe
+ 2186 00d2 0B       		.uleb128 0xb
+ 2187 00d3 0B       		.uleb128 0xb
+ 2188 00d4 3A       		.uleb128 0x3a
+ 2189 00d5 0B       		.uleb128 0xb
+ 2190 00d6 3B       		.uleb128 0x3b
+ 2191 00d7 05       		.uleb128 0x5
+ 2192 00d8 01       		.uleb128 0x1
+ 2193 00d9 13       		.uleb128 0x13
+ 2194 00da 00       		.byte	0
+ 2195 00db 00       		.byte	0
+ 2196 00dc 13       		.uleb128 0x13
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 44
+
+
+ 2197 00dd 0D       		.uleb128 0xd
+ 2198 00de 00       		.byte	0
+ 2199 00df 03       		.uleb128 0x3
+ 2200 00e0 08       		.uleb128 0x8
+ 2201 00e1 3A       		.uleb128 0x3a
+ 2202 00e2 0B       		.uleb128 0xb
+ 2203 00e3 3B       		.uleb128 0x3b
+ 2204 00e4 05       		.uleb128 0x5
+ 2205 00e5 49       		.uleb128 0x49
+ 2206 00e6 13       		.uleb128 0x13
+ 2207 00e7 38       		.uleb128 0x38
+ 2208 00e8 0B       		.uleb128 0xb
+ 2209 00e9 00       		.byte	0
+ 2210 00ea 00       		.byte	0
+ 2211 00eb 14       		.uleb128 0x14
+ 2212 00ec 26       		.uleb128 0x26
+ 2213 00ed 00       		.byte	0
+ 2214 00ee 49       		.uleb128 0x49
+ 2215 00ef 13       		.uleb128 0x13
+ 2216 00f0 00       		.byte	0
+ 2217 00f1 00       		.byte	0
+ 2218 00f2 15       		.uleb128 0x15
+ 2219 00f3 15       		.uleb128 0x15
+ 2220 00f4 01       		.byte	0x1
+ 2221 00f5 27       		.uleb128 0x27
+ 2222 00f6 19       		.uleb128 0x19
+ 2223 00f7 01       		.uleb128 0x1
+ 2224 00f8 13       		.uleb128 0x13
+ 2225 00f9 00       		.byte	0
+ 2226 00fa 00       		.byte	0
+ 2227 00fb 16       		.uleb128 0x16
+ 2228 00fc 05       		.uleb128 0x5
+ 2229 00fd 00       		.byte	0
+ 2230 00fe 49       		.uleb128 0x49
+ 2231 00ff 13       		.uleb128 0x13
+ 2232 0100 00       		.byte	0
+ 2233 0101 00       		.byte	0
+ 2234 0102 17       		.uleb128 0x17
+ 2235 0103 13       		.uleb128 0x13
+ 2236 0104 01       		.byte	0x1
+ 2237 0105 0B       		.uleb128 0xb
+ 2238 0106 0B       		.uleb128 0xb
+ 2239 0107 3A       		.uleb128 0x3a
+ 2240 0108 0B       		.uleb128 0xb
+ 2241 0109 3B       		.uleb128 0x3b
+ 2242 010a 05       		.uleb128 0x5
+ 2243 010b 01       		.uleb128 0x1
+ 2244 010c 13       		.uleb128 0x13
+ 2245 010d 00       		.byte	0
+ 2246 010e 00       		.byte	0
+ 2247 010f 18       		.uleb128 0x18
+ 2248 0110 2E       		.uleb128 0x2e
+ 2249 0111 00       		.byte	0
+ 2250 0112 3F       		.uleb128 0x3f
+ 2251 0113 19       		.uleb128 0x19
+ 2252 0114 03       		.uleb128 0x3
+ 2253 0115 0E       		.uleb128 0xe
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 45
+
+
+ 2254 0116 3A       		.uleb128 0x3a
+ 2255 0117 0B       		.uleb128 0xb
+ 2256 0118 3B       		.uleb128 0x3b
+ 2257 0119 0B       		.uleb128 0xb
+ 2258 011a 49       		.uleb128 0x49
+ 2259 011b 13       		.uleb128 0x13
+ 2260 011c 11       		.uleb128 0x11
+ 2261 011d 01       		.uleb128 0x1
+ 2262 011e 12       		.uleb128 0x12
+ 2263 011f 06       		.uleb128 0x6
+ 2264 0120 40       		.uleb128 0x40
+ 2265 0121 18       		.uleb128 0x18
+ 2266 0122 9742     		.uleb128 0x2117
+ 2267 0124 19       		.uleb128 0x19
+ 2268 0125 00       		.byte	0
+ 2269 0126 00       		.byte	0
+ 2270 0127 19       		.uleb128 0x19
+ 2271 0128 2E       		.uleb128 0x2e
+ 2272 0129 01       		.byte	0x1
+ 2273 012a 3F       		.uleb128 0x3f
+ 2274 012b 19       		.uleb128 0x19
+ 2275 012c 03       		.uleb128 0x3
+ 2276 012d 0E       		.uleb128 0xe
+ 2277 012e 3A       		.uleb128 0x3a
+ 2278 012f 0B       		.uleb128 0xb
+ 2279 0130 3B       		.uleb128 0x3b
+ 2280 0131 0B       		.uleb128 0xb
+ 2281 0132 11       		.uleb128 0x11
+ 2282 0133 01       		.uleb128 0x1
+ 2283 0134 12       		.uleb128 0x12
+ 2284 0135 06       		.uleb128 0x6
+ 2285 0136 40       		.uleb128 0x40
+ 2286 0137 18       		.uleb128 0x18
+ 2287 0138 9742     		.uleb128 0x2117
+ 2288 013a 19       		.uleb128 0x19
+ 2289 013b 01       		.uleb128 0x1
+ 2290 013c 13       		.uleb128 0x13
+ 2291 013d 00       		.byte	0
+ 2292 013e 00       		.byte	0
+ 2293 013f 1A       		.uleb128 0x1a
+ 2294 0140 34       		.uleb128 0x34
+ 2295 0141 00       		.byte	0
+ 2296 0142 03       		.uleb128 0x3
+ 2297 0143 0E       		.uleb128 0xe
+ 2298 0144 3A       		.uleb128 0x3a
+ 2299 0145 0B       		.uleb128 0xb
+ 2300 0146 3B       		.uleb128 0x3b
+ 2301 0147 0B       		.uleb128 0xb
+ 2302 0148 49       		.uleb128 0x49
+ 2303 0149 13       		.uleb128 0x13
+ 2304 014a 02       		.uleb128 0x2
+ 2305 014b 18       		.uleb128 0x18
+ 2306 014c 00       		.byte	0
+ 2307 014d 00       		.byte	0
+ 2308 014e 1B       		.uleb128 0x1b
+ 2309 014f 898201   		.uleb128 0x4109
+ 2310 0152 01       		.byte	0x1
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 46
+
+
+ 2311 0153 11       		.uleb128 0x11
+ 2312 0154 01       		.uleb128 0x1
+ 2313 0155 31       		.uleb128 0x31
+ 2314 0156 13       		.uleb128 0x13
+ 2315 0157 00       		.byte	0
+ 2316 0158 00       		.byte	0
+ 2317 0159 1C       		.uleb128 0x1c
+ 2318 015a 8A8201   		.uleb128 0x410a
+ 2319 015d 00       		.byte	0
+ 2320 015e 02       		.uleb128 0x2
+ 2321 015f 18       		.uleb128 0x18
+ 2322 0160 9142     		.uleb128 0x2111
+ 2323 0162 18       		.uleb128 0x18
+ 2324 0163 00       		.byte	0
+ 2325 0164 00       		.byte	0
+ 2326 0165 1D       		.uleb128 0x1d
+ 2327 0166 2E       		.uleb128 0x2e
+ 2328 0167 01       		.byte	0x1
+ 2329 0168 3F       		.uleb128 0x3f
+ 2330 0169 19       		.uleb128 0x19
+ 2331 016a 03       		.uleb128 0x3
+ 2332 016b 0E       		.uleb128 0xe
+ 2333 016c 3A       		.uleb128 0x3a
+ 2334 016d 0B       		.uleb128 0xb
+ 2335 016e 3B       		.uleb128 0x3b
+ 2336 016f 0B       		.uleb128 0xb
+ 2337 0170 27       		.uleb128 0x27
+ 2338 0171 19       		.uleb128 0x19
+ 2339 0172 11       		.uleb128 0x11
+ 2340 0173 01       		.uleb128 0x1
+ 2341 0174 12       		.uleb128 0x12
+ 2342 0175 06       		.uleb128 0x6
+ 2343 0176 40       		.uleb128 0x40
+ 2344 0177 18       		.uleb128 0x18
+ 2345 0178 9742     		.uleb128 0x2117
+ 2346 017a 19       		.uleb128 0x19
+ 2347 017b 01       		.uleb128 0x1
+ 2348 017c 13       		.uleb128 0x13
+ 2349 017d 00       		.byte	0
+ 2350 017e 00       		.byte	0
+ 2351 017f 1E       		.uleb128 0x1e
+ 2352 0180 05       		.uleb128 0x5
+ 2353 0181 00       		.byte	0
+ 2354 0182 03       		.uleb128 0x3
+ 2355 0183 0E       		.uleb128 0xe
+ 2356 0184 3A       		.uleb128 0x3a
+ 2357 0185 0B       		.uleb128 0xb
+ 2358 0186 3B       		.uleb128 0x3b
+ 2359 0187 0B       		.uleb128 0xb
+ 2360 0188 49       		.uleb128 0x49
+ 2361 0189 13       		.uleb128 0x13
+ 2362 018a 02       		.uleb128 0x2
+ 2363 018b 17       		.uleb128 0x17
+ 2364 018c 00       		.byte	0
+ 2365 018d 00       		.byte	0
+ 2366 018e 1F       		.uleb128 0x1f
+ 2367 018f 05       		.uleb128 0x5
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 47
+
+
+ 2368 0190 00       		.byte	0
+ 2369 0191 03       		.uleb128 0x3
+ 2370 0192 08       		.uleb128 0x8
+ 2371 0193 3A       		.uleb128 0x3a
+ 2372 0194 0B       		.uleb128 0xb
+ 2373 0195 3B       		.uleb128 0x3b
+ 2374 0196 0B       		.uleb128 0xb
+ 2375 0197 49       		.uleb128 0x49
+ 2376 0198 13       		.uleb128 0x13
+ 2377 0199 02       		.uleb128 0x2
+ 2378 019a 17       		.uleb128 0x17
+ 2379 019b 00       		.byte	0
+ 2380 019c 00       		.byte	0
+ 2381 019d 20       		.uleb128 0x20
+ 2382 019e 34       		.uleb128 0x34
+ 2383 019f 00       		.byte	0
+ 2384 01a0 03       		.uleb128 0x3
+ 2385 01a1 08       		.uleb128 0x8
+ 2386 01a2 3A       		.uleb128 0x3a
+ 2387 01a3 0B       		.uleb128 0xb
+ 2388 01a4 3B       		.uleb128 0x3b
+ 2389 01a5 0B       		.uleb128 0xb
+ 2390 01a6 49       		.uleb128 0x49
+ 2391 01a7 13       		.uleb128 0x13
+ 2392 01a8 02       		.uleb128 0x2
+ 2393 01a9 17       		.uleb128 0x17
+ 2394 01aa 00       		.byte	0
+ 2395 01ab 00       		.byte	0
+ 2396 01ac 21       		.uleb128 0x21
+ 2397 01ad 898201   		.uleb128 0x4109
+ 2398 01b0 00       		.byte	0
+ 2399 01b1 11       		.uleb128 0x11
+ 2400 01b2 01       		.uleb128 0x1
+ 2401 01b3 31       		.uleb128 0x31
+ 2402 01b4 13       		.uleb128 0x13
+ 2403 01b5 00       		.byte	0
+ 2404 01b6 00       		.byte	0
+ 2405 01b7 22       		.uleb128 0x22
+ 2406 01b8 898201   		.uleb128 0x4109
+ 2407 01bb 01       		.byte	0x1
+ 2408 01bc 11       		.uleb128 0x11
+ 2409 01bd 01       		.uleb128 0x1
+ 2410 01be 31       		.uleb128 0x31
+ 2411 01bf 13       		.uleb128 0x13
+ 2412 01c0 01       		.uleb128 0x1
+ 2413 01c1 13       		.uleb128 0x13
+ 2414 01c2 00       		.byte	0
+ 2415 01c3 00       		.byte	0
+ 2416 01c4 23       		.uleb128 0x23
+ 2417 01c5 34       		.uleb128 0x34
+ 2418 01c6 00       		.byte	0
+ 2419 01c7 03       		.uleb128 0x3
+ 2420 01c8 0E       		.uleb128 0xe
+ 2421 01c9 3A       		.uleb128 0x3a
+ 2422 01ca 0B       		.uleb128 0xb
+ 2423 01cb 3B       		.uleb128 0x3b
+ 2424 01cc 05       		.uleb128 0x5
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 48
+
+
+ 2425 01cd 49       		.uleb128 0x49
+ 2426 01ce 13       		.uleb128 0x13
+ 2427 01cf 3F       		.uleb128 0x3f
+ 2428 01d0 19       		.uleb128 0x19
+ 2429 01d1 3C       		.uleb128 0x3c
+ 2430 01d2 19       		.uleb128 0x19
+ 2431 01d3 00       		.byte	0
+ 2432 01d4 00       		.byte	0
+ 2433 01d5 24       		.uleb128 0x24
+ 2434 01d6 34       		.uleb128 0x34
+ 2435 01d7 00       		.byte	0
+ 2436 01d8 03       		.uleb128 0x3
+ 2437 01d9 0E       		.uleb128 0xe
+ 2438 01da 3A       		.uleb128 0x3a
+ 2439 01db 0B       		.uleb128 0xb
+ 2440 01dc 3B       		.uleb128 0x3b
+ 2441 01dd 0B       		.uleb128 0xb
+ 2442 01de 49       		.uleb128 0x49
+ 2443 01df 13       		.uleb128 0x13
+ 2444 01e0 3F       		.uleb128 0x3f
+ 2445 01e1 19       		.uleb128 0x19
+ 2446 01e2 02       		.uleb128 0x2
+ 2447 01e3 18       		.uleb128 0x18
+ 2448 01e4 00       		.byte	0
+ 2449 01e5 00       		.byte	0
+ 2450 01e6 25       		.uleb128 0x25
+ 2451 01e7 2E       		.uleb128 0x2e
+ 2452 01e8 00       		.byte	0
+ 2453 01e9 3F       		.uleb128 0x3f
+ 2454 01ea 19       		.uleb128 0x19
+ 2455 01eb 3C       		.uleb128 0x3c
+ 2456 01ec 19       		.uleb128 0x19
+ 2457 01ed 6E       		.uleb128 0x6e
+ 2458 01ee 0E       		.uleb128 0xe
+ 2459 01ef 03       		.uleb128 0x3
+ 2460 01f0 0E       		.uleb128 0xe
+ 2461 01f1 3A       		.uleb128 0x3a
+ 2462 01f2 0B       		.uleb128 0xb
+ 2463 01f3 3B       		.uleb128 0x3b
+ 2464 01f4 05       		.uleb128 0x5
+ 2465 01f5 00       		.byte	0
+ 2466 01f6 00       		.byte	0
+ 2467 01f7 26       		.uleb128 0x26
+ 2468 01f8 2E       		.uleb128 0x2e
+ 2469 01f9 00       		.byte	0
+ 2470 01fa 3F       		.uleb128 0x3f
+ 2471 01fb 19       		.uleb128 0x19
+ 2472 01fc 3C       		.uleb128 0x3c
+ 2473 01fd 19       		.uleb128 0x19
+ 2474 01fe 6E       		.uleb128 0x6e
+ 2475 01ff 0E       		.uleb128 0xe
+ 2476 0200 03       		.uleb128 0x3
+ 2477 0201 0E       		.uleb128 0xe
+ 2478 0202 3A       		.uleb128 0x3a
+ 2479 0203 0B       		.uleb128 0xb
+ 2480 0204 3B       		.uleb128 0x3b
+ 2481 0205 0B       		.uleb128 0xb
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 49
+
+
+ 2482 0206 00       		.byte	0
+ 2483 0207 00       		.byte	0
+ 2484 0208 00       		.byte	0
+ 2485              		.section	.debug_loc,"",%progbits
+ 2486              	.Ldebug_loc0:
+ 2487              	.LLST0:
+ 2488 0000 00000000 		.4byte	.LVL1
+ 2489 0004 34000000 		.4byte	.LVL6
+ 2490 0008 0100     		.2byte	0x1
+ 2491 000a 50       		.byte	0x50
+ 2492 000b 34000000 		.4byte	.LVL6
+ 2493 000f 3E000000 		.4byte	.LFE72
+ 2494 0013 0400     		.2byte	0x4
+ 2495 0015 F3       		.byte	0xf3
+ 2496 0016 01       		.uleb128 0x1
+ 2497 0017 50       		.byte	0x50
+ 2498 0018 9F       		.byte	0x9f
+ 2499 0019 00000000 		.4byte	0
+ 2500 001d 00000000 		.4byte	0
+ 2501              	.LLST1:
+ 2502 0021 00000000 		.4byte	.LVL1
+ 2503 0025 20000000 		.4byte	.LVL3
+ 2504 0029 0100     		.2byte	0x1
+ 2505 002b 51       		.byte	0x51
+ 2506 002c 20000000 		.4byte	.LVL3
+ 2507 0030 34000000 		.4byte	.LVL6
+ 2508 0034 0200     		.2byte	0x2
+ 2509 0036 91       		.byte	0x91
+ 2510 0037 6C       		.sleb128 -20
+ 2511 0038 34000000 		.4byte	.LVL6
+ 2512 003c 37000000 		.4byte	.LVL7-1
+ 2513 0040 0200     		.2byte	0x2
+ 2514 0042 70       		.byte	0x70
+ 2515 0043 00       		.sleb128 0
+ 2516 0044 37000000 		.4byte	.LVL7-1
+ 2517 0048 3E000000 		.4byte	.LFE72
+ 2518 004c 0400     		.2byte	0x4
+ 2519 004e F3       		.byte	0xf3
+ 2520 004f 01       		.uleb128 0x1
+ 2521 0050 51       		.byte	0x51
+ 2522 0051 9F       		.byte	0x9f
+ 2523 0052 00000000 		.4byte	0
+ 2524 0056 00000000 		.4byte	0
+ 2525              	.LLST2:
+ 2526 005a 1E000000 		.4byte	.LVL2
+ 2527 005e 20000000 		.4byte	.LVL3
+ 2528 0062 0200     		.2byte	0x2
+ 2529 0064 30       		.byte	0x30
+ 2530 0065 9F       		.byte	0x9f
+ 2531 0066 20000000 		.4byte	.LVL3
+ 2532 006a 2C000000 		.4byte	.LVL4
+ 2533 006e 0100     		.2byte	0x1
+ 2534 0070 53       		.byte	0x53
+ 2535 0071 2E000000 		.4byte	.LVL5
+ 2536 0075 37000000 		.4byte	.LVL7-1
+ 2537 0079 0100     		.2byte	0x1
+ 2538 007b 53       		.byte	0x53
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 50
+
+
+ 2539 007c 00000000 		.4byte	0
+ 2540 0080 00000000 		.4byte	0
+ 2541              	.LLST3:
+ 2542 0084 00000000 		.4byte	.LVL8
+ 2543 0088 09000000 		.4byte	.LVL9-1
+ 2544 008c 0100     		.2byte	0x1
+ 2545 008e 50       		.byte	0x50
+ 2546 008f 09000000 		.4byte	.LVL9-1
+ 2547 0093 10000000 		.4byte	.LFE73
+ 2548 0097 0400     		.2byte	0x4
+ 2549 0099 F3       		.byte	0xf3
+ 2550 009a 01       		.uleb128 0x1
+ 2551 009b 50       		.byte	0x50
+ 2552 009c 9F       		.byte	0x9f
+ 2553 009d 00000000 		.4byte	0
+ 2554 00a1 00000000 		.4byte	0
+ 2555              	.LLST4:
+ 2556 00a5 00000000 		.4byte	.LVL10
+ 2557 00a9 2C000000 		.4byte	.LVL13
+ 2558 00ad 0100     		.2byte	0x1
+ 2559 00af 50       		.byte	0x50
+ 2560 00b0 2C000000 		.4byte	.LVL13
+ 2561 00b4 2F000000 		.4byte	.LVL14-1
+ 2562 00b8 0200     		.2byte	0x2
+ 2563 00ba 70       		.byte	0x70
+ 2564 00bb 00       		.sleb128 0
+ 2565 00bc 2F000000 		.4byte	.LVL14-1
+ 2566 00c0 3C000000 		.4byte	.LFE74
+ 2567 00c4 0400     		.2byte	0x4
+ 2568 00c6 F3       		.byte	0xf3
+ 2569 00c7 01       		.uleb128 0x1
+ 2570 00c8 50       		.byte	0x50
+ 2571 00c9 9F       		.byte	0x9f
+ 2572 00ca 00000000 		.4byte	0
+ 2573 00ce 00000000 		.4byte	0
+ 2574              	.LLST5:
+ 2575 00d2 00000000 		.4byte	.LVL10
+ 2576 00d6 2A000000 		.4byte	.LVL12
+ 2577 00da 0100     		.2byte	0x1
+ 2578 00dc 51       		.byte	0x51
+ 2579 00dd 2A000000 		.4byte	.LVL12
+ 2580 00e1 3C000000 		.4byte	.LFE74
+ 2581 00e5 0400     		.2byte	0x4
+ 2582 00e7 F3       		.byte	0xf3
+ 2583 00e8 01       		.uleb128 0x1
+ 2584 00e9 51       		.byte	0x51
+ 2585 00ea 9F       		.byte	0x9f
+ 2586 00eb 00000000 		.4byte	0
+ 2587 00ef 00000000 		.4byte	0
+ 2588              	.LLST6:
+ 2589 00f3 00000000 		.4byte	.LVL10
+ 2590 00f7 12000000 		.4byte	.LVL11
+ 2591 00fb 0100     		.2byte	0x1
+ 2592 00fd 52       		.byte	0x52
+ 2593 00fe 12000000 		.4byte	.LVL11
+ 2594 0102 3C000000 		.4byte	.LFE74
+ 2595 0106 0400     		.2byte	0x4
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 51
+
+
+ 2596 0108 F3       		.byte	0xf3
+ 2597 0109 01       		.uleb128 0x1
+ 2598 010a 52       		.byte	0x52
+ 2599 010b 9F       		.byte	0x9f
+ 2600 010c 00000000 		.4byte	0
+ 2601 0110 00000000 		.4byte	0
+ 2602              	.LLST7:
+ 2603 0114 00000000 		.4byte	.LVL10
+ 2604 0118 2F000000 		.4byte	.LVL14-1
+ 2605 011c 0100     		.2byte	0x1
+ 2606 011e 53       		.byte	0x53
+ 2607 011f 2F000000 		.4byte	.LVL14-1
+ 2608 0123 3C000000 		.4byte	.LFE74
+ 2609 0127 0400     		.2byte	0x4
+ 2610 0129 F3       		.byte	0xf3
+ 2611 012a 01       		.uleb128 0x1
+ 2612 012b 53       		.byte	0x53
+ 2613 012c 9F       		.byte	0x9f
+ 2614 012d 00000000 		.4byte	0
+ 2615 0131 00000000 		.4byte	0
+ 2616              	.LLST8:
+ 2617 0135 00000000 		.4byte	.LVL16
+ 2618 0139 18000000 		.4byte	.LVL18
+ 2619 013d 0100     		.2byte	0x1
+ 2620 013f 50       		.byte	0x50
+ 2621 0140 18000000 		.4byte	.LVL18
+ 2622 0144 1B000000 		.4byte	.LVL19-1
+ 2623 0148 0200     		.2byte	0x2
+ 2624 014a 70       		.byte	0x70
+ 2625 014b 00       		.sleb128 0
+ 2626 014c 1B000000 		.4byte	.LVL19-1
+ 2627 0150 22000000 		.4byte	.LFE75
+ 2628 0154 0400     		.2byte	0x4
+ 2629 0156 F3       		.byte	0xf3
+ 2630 0157 01       		.uleb128 0x1
+ 2631 0158 50       		.byte	0x50
+ 2632 0159 9F       		.byte	0x9f
+ 2633 015a 00000000 		.4byte	0
+ 2634 015e 00000000 		.4byte	0
+ 2635              	.LLST9:
+ 2636 0162 00000000 		.4byte	.LVL16
+ 2637 0166 16000000 		.4byte	.LVL17
+ 2638 016a 0100     		.2byte	0x1
+ 2639 016c 51       		.byte	0x51
+ 2640 016d 16000000 		.4byte	.LVL17
+ 2641 0171 1B000000 		.4byte	.LVL19-1
+ 2642 0175 0200     		.2byte	0x2
+ 2643 0177 91       		.byte	0x91
+ 2644 0178 71       		.sleb128 -15
+ 2645 0179 1B000000 		.4byte	.LVL19-1
+ 2646 017d 22000000 		.4byte	.LFE75
+ 2647 0181 0400     		.2byte	0x4
+ 2648 0183 F3       		.byte	0xf3
+ 2649 0184 01       		.uleb128 0x1
+ 2650 0185 51       		.byte	0x51
+ 2651 0186 9F       		.byte	0x9f
+ 2652 0187 00000000 		.4byte	0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 52
+
+
+ 2653 018b 00000000 		.4byte	0
+ 2654              		.section	.debug_aranges,"",%progbits
+ 2655 0000 74000000 		.4byte	0x74
+ 2656 0004 0200     		.2byte	0x2
+ 2657 0006 00000000 		.4byte	.Ldebug_info0
+ 2658 000a 04       		.byte	0x4
+ 2659 000b 00       		.byte	0
+ 2660 000c 0000     		.2byte	0
+ 2661 000e 0000     		.2byte	0
+ 2662 0010 00000000 		.4byte	.LFB64
+ 2663 0014 0C000000 		.4byte	.LFE64-.LFB64
+ 2664 0018 00000000 		.4byte	.LFB65
+ 2665 001c 0C000000 		.4byte	.LFE65-.LFB65
+ 2666 0020 00000000 		.4byte	.LFB66
+ 2667 0024 0C000000 		.4byte	.LFE66-.LFB66
+ 2668 0028 00000000 		.4byte	.LFB67
+ 2669 002c 0C000000 		.4byte	.LFE67-.LFB67
+ 2670 0030 00000000 		.4byte	.LFB68
+ 2671 0034 0C000000 		.4byte	.LFE68-.LFB68
+ 2672 0038 00000000 		.4byte	.LFB69
+ 2673 003c 0C000000 		.4byte	.LFE69-.LFB69
+ 2674 0040 00000000 		.4byte	.LFB70
+ 2675 0044 04000000 		.4byte	.LFE70-.LFB70
+ 2676 0048 00000000 		.4byte	.LFB71
+ 2677 004c 4A000000 		.4byte	.LFE71-.LFB71
+ 2678 0050 00000000 		.4byte	.LFB72
+ 2679 0054 3E000000 		.4byte	.LFE72-.LFB72
+ 2680 0058 00000000 		.4byte	.LFB73
+ 2681 005c 10000000 		.4byte	.LFE73-.LFB73
+ 2682 0060 00000000 		.4byte	.LFB74
+ 2683 0064 3C000000 		.4byte	.LFE74-.LFB74
+ 2684 0068 00000000 		.4byte	.LFB75
+ 2685 006c 22000000 		.4byte	.LFE75-.LFB75
+ 2686 0070 00000000 		.4byte	0
+ 2687 0074 00000000 		.4byte	0
+ 2688              		.section	.debug_ranges,"",%progbits
+ 2689              	.Ldebug_ranges0:
+ 2690 0000 00000000 		.4byte	.LFB64
+ 2691 0004 0C000000 		.4byte	.LFE64
+ 2692 0008 00000000 		.4byte	.LFB65
+ 2693 000c 0C000000 		.4byte	.LFE65
+ 2694 0010 00000000 		.4byte	.LFB66
+ 2695 0014 0C000000 		.4byte	.LFE66
+ 2696 0018 00000000 		.4byte	.LFB67
+ 2697 001c 0C000000 		.4byte	.LFE67
+ 2698 0020 00000000 		.4byte	.LFB68
+ 2699 0024 0C000000 		.4byte	.LFE68
+ 2700 0028 00000000 		.4byte	.LFB69
+ 2701 002c 0C000000 		.4byte	.LFE69
+ 2702 0030 00000000 		.4byte	.LFB70
+ 2703 0034 04000000 		.4byte	.LFE70
+ 2704 0038 00000000 		.4byte	.LFB71
+ 2705 003c 4A000000 		.4byte	.LFE71
+ 2706 0040 00000000 		.4byte	.LFB72
+ 2707 0044 3E000000 		.4byte	.LFE72
+ 2708 0048 00000000 		.4byte	.LFB73
+ 2709 004c 10000000 		.4byte	.LFE73
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 53
+
+
+ 2710 0050 00000000 		.4byte	.LFB74
+ 2711 0054 3C000000 		.4byte	.LFE74
+ 2712 0058 00000000 		.4byte	.LFB75
+ 2713 005c 22000000 		.4byte	.LFE75
+ 2714 0060 00000000 		.4byte	0
+ 2715 0064 00000000 		.4byte	0
+ 2716              		.section	.debug_line,"",%progbits
+ 2717              	.Ldebug_line0:
+ 2718 0000 BB020000 		.section	.debug_str,"MS",%progbits,1
+ 2718      0200AF01 
+ 2718      00000201 
+ 2718      FB0E0D00 
+ 2718      01010101 
+ 2719              	.LASF150:
+ 2720 0000 43794465 		.ascii	"CyDelay\000"
+ 2720      6C617900 
+ 2721              	.LASF52:
+ 2722 0008 464F4E54 		.ascii	"FONT_TYPE_8BPP\000"
+ 2722      5F545950 
+ 2722      455F3842 
+ 2722      505000
+ 2723              	.LASF108:
+ 2724 0017 6465736B 		.ascii	"desktop_color\000"
+ 2724      746F705F 
+ 2724      636F6C6F 
+ 2724      7200
+ 2725              	.LASF153:
+ 2726 0025 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Downloads\\Dashboard-Firmware-FE9-FE"
+ 2726      635C486F 
+ 2726      6D655C44 
+ 2726      6F776E6C 
+ 2726      6F616473 
+ 2727 0053 372D426F 		.ascii	"7-Board-main\\Dashboard.cydsn\000"
+ 2727      6172642D 
+ 2727      6D61696E 
+ 2727      5C446173 
+ 2727      68626F61 
+ 2728              	.LASF118:
+ 2729 0070 6D657373 		.ascii	"message\000"
+ 2729      61676500 
+ 2730              	.LASF63:
+ 2731 0078 746F7563 		.ascii	"touch_state\000"
+ 2731      685F7374 
+ 2731      61746500 
+ 2732              	.LASF77:
+ 2733 0084 55475F43 		.ascii	"UG_COLOR\000"
+ 2733      4F4C4F52 
+ 2733      00
+ 2734              	.LASF149:
+ 2735 008d 43414E5F 		.ascii	"CAN_SendMsgDRIVER_SWITCHES\000"
+ 2735      53656E64 
+ 2735      4D736744 
+ 2735      52495645 
+ 2735      525F5357 
+ 2736              	.LASF48:
+ 2737 00a8 55475F55 		.ascii	"UG_U16\000"
+ 2737      313600
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 54
+
+
+ 2738              	.LASF14:
+ 2739 00af 756E7369 		.ascii	"unsigned int\000"
+ 2739      676E6564 
+ 2739      20696E74 
+ 2739      00
+ 2740              	.LASF107:
+ 2741 00bc 63686172 		.ascii	"char_v_space\000"
+ 2741      5F765F73 
+ 2741      70616365 
+ 2741      00
+ 2742              	.LASF38:
+ 2743 00c9 4E4F4E45 		.ascii	"NONE\000"
+ 2743      00
+ 2744              	.LASF8:
+ 2745 00ce 5F5F696E 		.ascii	"__int32_t\000"
+ 2745      7433325F 
+ 2745      7400
+ 2746              	.LASF105:
+ 2747 00d8 636F6E73 		.ascii	"console\000"
+ 2747      6F6C6500 
+ 2748              	.LASF26:
+ 2749 00e0 72656738 		.ascii	"reg8\000"
+ 2749      00
+ 2750              	.LASF72:
+ 2751 00e5 535F5749 		.ascii	"S_WINDOW\000"
+ 2751      4E444F57 
+ 2751      00
+ 2752              	.LASF139:
+ 2753 00ee 43415041 		.ascii	"CAPACITOR_VOLT\000"
+ 2753      4349544F 
+ 2753      525F564F 
+ 2753      4C5400
+ 2754              	.LASF43:
+ 2755 00fd 53454E53 		.ascii	"SENSOR_DISCREPANCY\000"
+ 2755      4F525F44 
+ 2755      49534352 
+ 2755      4550414E 
+ 2755      435900
+ 2756              	.LASF147:
+ 2757 0110 63757272 		.ascii	"current_bytes\000"
+ 2757      656E745F 
+ 2757      62797465 
+ 2757      7300
+ 2758              	.LASF64:
+ 2759 011e 75706461 		.ascii	"update\000"
+ 2759      746500
+ 2760              	.LASF100:
+ 2761 0125 795F6469 		.ascii	"y_dim\000"
+ 2761      6D00
+ 2762              	.LASF53:
+ 2763 012b 464F4E54 		.ascii	"FONT_TYPE\000"
+ 2763      5F545950 
+ 2763      4500
+ 2764              	.LASF44:
+ 2765 0135 4252414B 		.ascii	"BRAKE_IMPLAUSIBLE\000"
+ 2765      455F494D 
+ 2765      504C4155 
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 55
+
+
+ 2765      5349424C 
+ 2765      4500
+ 2766              	.LASF34:
+ 2767 0147 7478636D 		.ascii	"txcmd\000"
+ 2767      6400
+ 2768              	.LASF74:
+ 2769 014d 6F626A6C 		.ascii	"objlst\000"
+ 2769      737400
+ 2770              	.LASF125:
+ 2771 0154 56434C5F 		.ascii	"VCL_Throttle_High\000"
+ 2771      5468726F 
+ 2771      74746C65 
+ 2771      5F486967 
+ 2771      6800
+ 2772              	.LASF33:
+ 2773 0166 43414E5F 		.ascii	"CAN_TX_MSG\000"
+ 2773      54585F4D 
+ 2773      534700
+ 2774              	.LASF102:
+ 2775 0171 6E657874 		.ascii	"next_window\000"
+ 2775      5F77696E 
+ 2775      646F7700 
+ 2776              	.LASF124:
+ 2777 017d 53657449 		.ascii	"SetInterlock\000"
+ 2777      6E746572 
+ 2777      6C6F636B 
+ 2777      00
+ 2778              	.LASF76:
+ 2779 018a 7469746C 		.ascii	"title\000"
+ 2779      6500
+ 2780              	.LASF20:
+ 2781 0190 75696E74 		.ascii	"uint32_t\000"
+ 2781      33325F74 
+ 2781      00
+ 2782              	.LASF15:
+ 2783 0199 696E7438 		.ascii	"int8_t\000"
+ 2783      5F7400
+ 2784              	.LASF50:
+ 2785 01a0 55475F55 		.ascii	"UG_U32\000"
+ 2785      333200
+ 2786              	.LASF94:
+ 2787 01a7 785F656E 		.ascii	"x_end\000"
+ 2787      6400
+ 2788              	.LASF23:
+ 2789 01ad 666C6F61 		.ascii	"float\000"
+ 2789      7400
+ 2790              	.LASF68:
+ 2791 01b3 6576656E 		.ascii	"event\000"
+ 2791      7400
+ 2792              	.LASF104:
+ 2793 01b9 6C617374 		.ascii	"last_window\000"
+ 2793      5F77696E 
+ 2793      646F7700 
+ 2794              	.LASF97:
+ 2795 01c5 6261636B 		.ascii	"back_color\000"
+ 2795      5F636F6C 
+ 2795      6F7200
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 56
+
+
+ 2796              	.LASF140:
+ 2797 01d0 43555254 		.ascii	"CURTIS_FAULT_CHECK\000"
+ 2797      49535F46 
+ 2797      41554C54 
+ 2797      5F434845 
+ 2797      434B00
+ 2798              	.LASF129:
+ 2799 01e3 63686172 		.ascii	"charge\000"
+ 2799      676500
+ 2800              	.LASF17:
+ 2801 01ea 696E7431 		.ascii	"int16_t\000"
+ 2801      365F7400 
+ 2802              	.LASF13:
+ 2803 01f2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2803      206C6F6E 
+ 2803      6720756E 
+ 2803      7369676E 
+ 2803      65642069 
+ 2804              	.LASF126:
+ 2805 0209 56434C5F 		.ascii	"VCL_Throttle_Low\000"
+ 2805      5468726F 
+ 2805      74746C65 
+ 2805      5F4C6F77 
+ 2805      00
+ 2806              	.LASF143:
+ 2807 021a 4552524F 		.ascii	"ERROR_TOLERANCE\000"
+ 2807      525F544F 
+ 2807      4C455241 
+ 2807      4E434500 
+ 2808              	.LASF6:
+ 2809 022a 5F5F7569 		.ascii	"__uint16_t\000"
+ 2809      6E743136 
+ 2809      5F7400
+ 2810              	.LASF103:
+ 2811 0235 61637469 		.ascii	"active_window\000"
+ 2811      76655F77 
+ 2811      696E646F 
+ 2811      7700
+ 2812              	.LASF73:
+ 2813 0243 6F626A63 		.ascii	"objcnt\000"
+ 2813      6E7400
+ 2814              	.LASF49:
+ 2815 024a 55475F53 		.ascii	"UG_S16\000"
+ 2815      313600
+ 2816              	.LASF112:
+ 2817 0251 67657443 		.ascii	"getCurtisHeartBeatCheck\000"
+ 2817      75727469 
+ 2817      73486561 
+ 2817      72744265 
+ 2817      61744368 
+ 2818              	.LASF96:
+ 2819 0269 666F7265 		.ascii	"fore_color\000"
+ 2819      5F636F6C 
+ 2819      6F7200
+ 2820              	.LASF91:
+ 2821 0274 795F706F 		.ascii	"y_pos\000"
+ 2821      7300
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 57
+
+
+ 2822              	.LASF151:
+ 2823 027a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2823      43313120 
+ 2823      352E342E 
+ 2823      31203230 
+ 2823      31363036 
+ 2824 02ad 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2824      20726576 
+ 2824      6973696F 
+ 2824      6E203233 
+ 2824      37373135 
+ 2825 02e0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2825      66756E63 
+ 2825      74696F6E 
+ 2825      2D736563 
+ 2825      74696F6E 
+ 2826              	.LASF119:
+ 2827 0308 7061796C 		.ascii	"payload\000"
+ 2827      6F616400 
+ 2828              	.LASF41:
+ 2829 0310 4252414B 		.ascii	"BRAKE_NOT_PRESSED\000"
+ 2829      455F4E4F 
+ 2829      545F5052 
+ 2829      45535345 
+ 2829      4400
+ 2830              	.LASF133:
+ 2831 0322 6C617374 		.ascii	"last_SOC_color\000"
+ 2831      5F534F43 
+ 2831      5F636F6C 
+ 2831      6F7200
+ 2832              	.LASF131:
+ 2833 0331 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2833      52784275 
+ 2833      66666572 
+ 2833      00
+ 2834              	.LASF130:
+ 2835 033e 73617665 		.ascii	"save_soc\000"
+ 2835      5F736F63 
+ 2835      00
+ 2836              	.LASF55:
+ 2837 0347 63686172 		.ascii	"char_width\000"
+ 2837      5F776964 
+ 2837      746800
+ 2838              	.LASF42:
+ 2839 0352 48565F44 		.ascii	"HV_DISABLED_WHILE_DRIVING\000"
+ 2839      49534142 
+ 2839      4C45445F 
+ 2839      5748494C 
+ 2839      455F4452 
+ 2840              	.LASF45:
+ 2841 036c 4553544F 		.ascii	"ESTOP\000"
+ 2841      5000
+ 2842              	.LASF138:
+ 2843 0372 6C617374 		.ascii	"last_motor_temp_color\000"
+ 2843      5F6D6F74 
+ 2843      6F725F74 
+ 2843      656D705F 
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 58
+
+
+ 2843      636F6C6F 
+ 2844              	.LASF144:
+ 2845 0388 4142535F 		.ascii	"ABS_MOTOR_RPM\000"
+ 2845      4D4F544F 
+ 2845      525F5250 
+ 2845      4D00
+ 2846              	.LASF111:
+ 2847 0396 67657443 		.ascii	"getCurtisFaultCheck\000"
+ 2847      75727469 
+ 2847      73466175 
+ 2847      6C744368 
+ 2847      65636B00 
+ 2848              	.LASF93:
+ 2849 03aa 795F7374 		.ascii	"y_start\000"
+ 2849      61727400 
+ 2850              	.LASF84:
+ 2851 03b2 765F7370 		.ascii	"v_space\000"
+ 2851      61636500 
+ 2852              	.LASF25:
+ 2853 03ba 63686172 		.ascii	"char\000"
+ 2853      00
+ 2854              	.LASF40:
+ 2855 03bf 434F4E53 		.ascii	"CONSERVATIVE_TIMER_MAXED\000"
+ 2855      45525641 
+ 2855      54495645 
+ 2855      5F54494D 
+ 2855      45525F4D 
+ 2856              	.LASF29:
+ 2857 03d8 43414E5F 		.ascii	"CAN_DATA_BYTES_MSG\000"
+ 2857      44415441 
+ 2857      5F425954 
+ 2857      45535F4D 
+ 2857      534700
+ 2858              	.LASF54:
+ 2859 03eb 666F6E74 		.ascii	"font_type\000"
+ 2859      5F747970 
+ 2859      6500
+ 2860              	.LASF78:
+ 2861 03f5 55475F41 		.ascii	"UG_AREA\000"
+ 2861      52454100 
+ 2862              	.LASF80:
+ 2863 03fd 55475F4D 		.ascii	"UG_MESSAGE\000"
+ 2863      45535341 
+ 2863      474500
+ 2864              	.LASF69:
+ 2865 0408 64617461 		.ascii	"data\000"
+ 2865      00
+ 2866              	.LASF115:
+ 2867 040d 67657441 		.ascii	"getABSMotorRPM\000"
+ 2867      42534D6F 
+ 2867      746F7252 
+ 2867      504D00
+ 2868              	.LASF16:
+ 2869 041c 75696E74 		.ascii	"uint8_t\000"
+ 2869      385F7400 
+ 2870              	.LASF101:
+ 2871 0424 746F7563 		.ascii	"touch\000"
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 59
+
+
+ 2871      6800
+ 2872              	.LASF88:
+ 2873 042a 64726976 		.ascii	"driver\000"
+ 2873      657200
+ 2874              	.LASF47:
+ 2875 0431 55475F53 		.ascii	"UG_S8\000"
+ 2875      3800
+ 2876              	.LASF148:
+ 2877 0437 43414E5F 		.ascii	"CAN_SendMsg\000"
+ 2877      53656E64 
+ 2877      4D736700 
+ 2878              	.LASF99:
+ 2879 0443 785F6469 		.ascii	"x_dim\000"
+ 2879      6D00
+ 2880              	.LASF12:
+ 2881 0449 6C6F6E67 		.ascii	"long long int\000"
+ 2881      206C6F6E 
+ 2881      6720696E 
+ 2881      7400
+ 2882              	.LASF134:
+ 2883 0457 6C617374 		.ascii	"last_max_pack_temp_color\000"
+ 2883      5F6D6178 
+ 2883      5F706163 
+ 2883      6B5F7465 
+ 2883      6D705F63 
+ 2884              	.LASF4:
+ 2885 0470 5F5F696E 		.ascii	"__int16_t\000"
+ 2885      7431365F 
+ 2885      7400
+ 2886              	.LASF61:
+ 2887 047a 55475F4F 		.ascii	"UG_OBJECT\000"
+ 2887      424A4543 
+ 2887      5400
+ 2888              	.LASF98:
+ 2889 0484 70736574 		.ascii	"pset\000"
+ 2889      00
+ 2890              	.LASF79:
+ 2891 0489 7375625F 		.ascii	"sub_id\000"
+ 2891      696400
+ 2892              	.LASF31:
+ 2893 0490 43414E5F 		.ascii	"CAN_DATA_BYTES\000"
+ 2893      44415441 
+ 2893      5F425954 
+ 2893      455300
+ 2894              	.LASF127:
+ 2895 049f 455F5374 		.ascii	"E_Stop_Check\000"
+ 2895      6F705F43 
+ 2895      6865636B 
+ 2895      00
+ 2896              	.LASF22:
+ 2897 04ac 75696E74 		.ascii	"uint32\000"
+ 2897      333200
+ 2898              	.LASF86:
+ 2899 04b3 68656967 		.ascii	"height\000"
+ 2899      687400
+ 2900              	.LASF57:
+ 2901 04ba 73746172 		.ascii	"start_char\000"
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 60
+
+
+ 2901      745F6368 
+ 2901      617200
+ 2902              	.LASF46:
+ 2903 04c5 55475F55 		.ascii	"UG_U8\000"
+ 2903      3800
+ 2904              	.LASF0:
+ 2905 04cb 5F5F696E 		.ascii	"__int8_t\000"
+ 2905      74385F74 
+ 2905      00
+ 2906              	.LASF123:
+ 2907 04d4 63616E5F 		.ascii	"can_send_cmd\000"
+ 2907      73656E64 
+ 2907      5F636D64 
+ 2907      00
+ 2908              	.LASF59:
+ 2909 04e1 77696474 		.ascii	"widths\000"
+ 2909      687300
+ 2910              	.LASF110:
+ 2911 04e8 67657443 		.ascii	"getCapacitorVoltage\000"
+ 2911      61706163 
+ 2911      69746F72 
+ 2911      566F6C74 
+ 2911      61676500 
+ 2912              	.LASF27:
+ 2913 04fc 6C6F6E67 		.ascii	"long double\000"
+ 2913      20646F75 
+ 2913      626C6500 
+ 2914              	.LASF18:
+ 2915 0508 75696E74 		.ascii	"uint16_t\000"
+ 2915      31365F74 
+ 2915      00
+ 2916              	.LASF132:
+ 2917 0511 67756931 		.ascii	"gui1963\000"
+ 2917      39363300 
+ 2918              	.LASF87:
+ 2919 0519 55475F54 		.ascii	"UG_TITLE\000"
+ 2919      49544C45 
+ 2919      00
+ 2920              	.LASF145:
+ 2921 0522 5448524F 		.ascii	"THROTTLE_HIGH\000"
+ 2921      54544C45 
+ 2921      5F484947 
+ 2921      4800
+ 2922              	.LASF89:
+ 2923 0530 55475F44 		.ascii	"UG_DRIVER\000"
+ 2923      52495645 
+ 2923      5200
+ 2924              	.LASF90:
+ 2925 053a 785F706F 		.ascii	"x_pos\000"
+ 2925      7300
+ 2926              	.LASF56:
+ 2927 0540 63686172 		.ascii	"char_height\000"
+ 2927      5F686569 
+ 2927      67687400 
+ 2928              	.LASF5:
+ 2929 054c 73686F72 		.ascii	"short int\000"
+ 2929      7420696E 
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 61
+
+
+ 2929      7400
+ 2930              	.LASF135:
+ 2931 0556 6C617374 		.ascii	"last_state_color\000"
+ 2931      5F737461 
+ 2931      74655F63 
+ 2931      6F6C6F72 
+ 2931      00
+ 2932              	.LASF9:
+ 2933 0567 6C6F6E67 		.ascii	"long int\000"
+ 2933      20696E74 
+ 2933      00
+ 2934              	.LASF70:
+ 2935 0570 55475F57 		.ascii	"UG_WINDOW\000"
+ 2935      494E444F 
+ 2935      5700
+ 2936              	.LASF120:
+ 2937 057a 63616E5F 		.ascii	"can_send\000"
+ 2937      73656E64 
+ 2937      00
+ 2938              	.LASF128:
+ 2939 0583 63616E5F 		.ascii	"can_send_charge\000"
+ 2939      73656E64 
+ 2939      5F636861 
+ 2939      72676500 
+ 2940              	.LASF117:
+ 2941 0593 48656172 		.ascii	"HeartB\000"
+ 2941      744200
+ 2942              	.LASF116:
+ 2943 059a 67657445 		.ascii	"getEStop\000"
+ 2943      53746F70 
+ 2943      00
+ 2944              	.LASF58:
+ 2945 05a3 656E645F 		.ascii	"end_char\000"
+ 2945      63686172 
+ 2945      00
+ 2946              	.LASF154:
+ 2947 05ac 63616E5F 		.ascii	"can_test_send\000"
+ 2947      74657374 
+ 2947      5F73656E 
+ 2947      6400
+ 2948              	.LASF60:
+ 2949 05ba 55475F46 		.ascii	"UG_FONT\000"
+ 2949      4F4E5400 
+ 2950              	.LASF1:
+ 2951 05c2 5F5F7569 		.ascii	"__uint8_t\000"
+ 2951      6E74385F 
+ 2951      7400
+ 2952              	.LASF82:
+ 2953 05cc 666F6E74 		.ascii	"font\000"
+ 2953      00
+ 2954              	.LASF28:
+ 2955 05d1 73697A65 		.ascii	"sizetype\000"
+ 2955      74797065 
+ 2955      00
+ 2956              	.LASF11:
+ 2957 05da 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2957      20756E73 
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 62
+
+
+ 2957      69676E65 
+ 2957      6420696E 
+ 2957      7400
+ 2958              	.LASF114:
+ 2959 05ec 67657445 		.ascii	"getErrorTolerance\000"
+ 2959      72726F72 
+ 2959      546F6C65 
+ 2959      72616E63 
+ 2959      6500
+ 2960              	.LASF19:
+ 2961 05fe 696E7433 		.ascii	"int32_t\000"
+ 2961      325F7400 
+ 2962              	.LASF32:
+ 2963 0606 43414E5F 		.ascii	"CAN_REG_32\000"
+ 2963      5245475F 
+ 2963      333200
+ 2964              	.LASF36:
+ 2965 0611 74786461 		.ascii	"txdata\000"
+ 2965      746100
+ 2966              	.LASF30:
+ 2967 0618 62797465 		.ascii	"byte\000"
+ 2967      00
+ 2968              	.LASF106:
+ 2969 061d 63686172 		.ascii	"char_h_space\000"
+ 2969      5F685F73 
+ 2969      70616365 
+ 2969      00
+ 2970              	.LASF136:
+ 2971 062a 6C617374 		.ascii	"last_glv_v_color\000"
+ 2971      5F676C76 
+ 2971      5F765F63 
+ 2971      6F6C6F72 
+ 2971      00
+ 2972              	.LASF67:
+ 2973 063b 74797065 		.ascii	"type\000"
+ 2973      00
+ 2974              	.LASF3:
+ 2975 0640 756E7369 		.ascii	"unsigned char\000"
+ 2975      676E6564 
+ 2975      20636861 
+ 2975      7200
+ 2976              	.LASF10:
+ 2977 064e 5F5F7569 		.ascii	"__uint32_t\000"
+ 2977      6E743332 
+ 2977      5F7400
+ 2978              	.LASF83:
+ 2979 0659 685F7370 		.ascii	"h_space\000"
+ 2979      61636500 
+ 2980              	.LASF92:
+ 2981 0661 785F7374 		.ascii	"x_start\000"
+ 2981      61727400 
+ 2982              	.LASF122:
+ 2983 0669 73775F73 		.ascii	"sw_status\000"
+ 2983      74617475 
+ 2983      7300
+ 2984              	.LASF95:
+ 2985 0673 795F656E 		.ascii	"y_end\000"
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 63
+
+
+ 2985      6400
+ 2986              	.LASF113:
+ 2987 0679 67657441 		.ascii	"getAckRx\000"
+ 2987      636B5278 
+ 2987      00
+ 2988              	.LASF137:
+ 2989 0682 6C617374 		.ascii	"last_mc_temp_color\000"
+ 2989      5F6D635F 
+ 2989      74656D70 
+ 2989      5F636F6C 
+ 2989      6F7200
+ 2990              	.LASF75:
+ 2991 0695 7374796C 		.ascii	"style\000"
+ 2991      6500
+ 2992              	.LASF62:
+ 2993 069b 73746174 		.ascii	"state\000"
+ 2993      6500
+ 2994              	.LASF109:
+ 2995 06a1 55475F47 		.ascii	"UG_GUI\000"
+ 2995      554900
+ 2996              	.LASF66:
+ 2997 06a8 615F7265 		.ascii	"a_rel\000"
+ 2997      6C00
+ 2998              	.LASF81:
+ 2999 06ae 55475F54 		.ascii	"UG_TOUCH\000"
+ 2999      4F554348 
+ 2999      00
+ 3000              	.LASF2:
+ 3001 06b7 7369676E 		.ascii	"signed char\000"
+ 3001      65642063 
+ 3001      68617200 
+ 3002              	.LASF37:
+ 3003 06c3 43414E5F 		.ascii	"CAN_TX_STRUCT\000"
+ 3003      54585F53 
+ 3003      54525543 
+ 3003      5400
+ 3004              	.LASF7:
+ 3005 06d1 73686F72 		.ascii	"short unsigned int\000"
+ 3005      7420756E 
+ 3005      7369676E 
+ 3005      65642069 
+ 3005      6E7400
+ 3006              	.LASF146:
+ 3007 06e4 5448524F 		.ascii	"THROTTLE_LOW\000"
+ 3007      54544C45 
+ 3007      5F4C4F57 
+ 3007      00
+ 3008              	.LASF152:
+ 3009 06f1 63616E5F 		.ascii	"can_manga.c\000"
+ 3009      6D616E67 
+ 3009      612E6300 
+ 3010              	.LASF21:
+ 3011 06fd 75696E74 		.ascii	"uint8\000"
+ 3011      3800
+ 3012              	.LASF24:
+ 3013 0703 646F7562 		.ascii	"double\000"
+ 3013      6C6500
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccC1bDrq.s 			page 64
+
+
+ 3014              	.LASF141:
+ 3015 070a 43555254 		.ascii	"CURTIS_HEART_BEAT_CHECK\000"
+ 3015      49535F48 
+ 3015      45415254 
+ 3015      5F424541 
+ 3015      545F4348 
+ 3016              	.LASF39:
+ 3017 0722 44524956 		.ascii	"DRIVE_REQUEST_FROM_LV\000"
+ 3017      455F5245 
+ 3017      51554553 
+ 3017      545F4652 
+ 3017      4F4D5F4C 
+ 3018              	.LASF142:
+ 3019 0738 41434B5F 		.ascii	"ACK_RX\000"
+ 3019      525800
+ 3020              	.LASF71:
+ 3021 073f 535F4F42 		.ascii	"S_OBJECT\000"
+ 3021      4A454354 
+ 3021      00
+ 3022              	.LASF121:
+ 3023 0748 63616E5F 		.ascii	"can_send_switches\000"
+ 3023      73656E64 
+ 3023      5F737769 
+ 3023      74636865 
+ 3023      7300
+ 3024              	.LASF85:
+ 3025 075a 616C6967 		.ascii	"align\000"
+ 3025      6E00
+ 3026              	.LASF35:
+ 3027 0760 74786964 		.ascii	"txid\000"
+ 3027      00
+ 3028              	.LASF65:
+ 3029 0765 615F6162 		.ascii	"a_abs\000"
+ 3029      7300
+ 3030              	.LASF51:
+ 3031 076b 464F4E54 		.ascii	"FONT_TYPE_1BPP\000"
+ 3031      5F545950 
+ 3031      455F3142 
+ 3031      505000
+ 3032              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

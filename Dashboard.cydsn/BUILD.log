@@ -1,0 +1,61 @@
+--------------- Build Started: 11/29/2022 20:35:14 Project: Dashboard, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/frucd_display.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og -c frucd_display.c -o .\CortexM3\ARM_GCC_541\Debug\frucd_display.o
+frucd_display.c: In function 'disp_glv_v':
+frucd_display.c:594:21: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     sprintf(data_s, "%d", data);
+                     ^
+frucd_display.c:594:21: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
+main.c: In function 'main':
+main.c:206:43: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_max_pack_temp(PACK_TEMP, 410, 35, 470, 170, SMALL_FONT);
+                                           ^
+main.c:206:52: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_max_pack_temp(PACK_TEMP, 410, 35, 470, 170, SMALL_FONT);
+                                                    ^
+main.c:210:45: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_glv_v(glv_v, 95, 230, 182, 260, SMALL_FONT);
+                                             ^
+main.c:211:35: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_mc_temp(mc_temp, 410, 185, 470, 215, SMALL_FONT);
+                                   ^
+main.c:211:45: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_mc_temp(mc_temp, 410, 185, 470, 215, SMALL_FONT);
+                                             ^
+main.c:212:41: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_motor_temp(motor_temp, 410, 230, 470, 260, SMALL_FONT);
+                                         ^
+main.c:212:51: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_motor_temp(motor_temp, 410, 230, 470, 260, SMALL_FONT);
+                                                   ^
+main.c:212:56: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_motor_temp(motor_temp, 410, 230, 470, 260, SMALL_FONT);
+                                                        ^
+main.c:216:43: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);
+                                           ^
+main.c:216:52: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);
+                                                    ^
+main.c:217:40: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_state(state, 80, 190, 400, 270, BIG_FONT);
+                                        ^
+main.c:217:45: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+             disp_state(state, 80, 190, 400, 270, BIG_FONT);
+                                             ^
+main.c:136:9: warning: variable 'bms_error' set but not used [-Wunused-but-set-variable]
+     int bms_error;
+         ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/can_manga.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -Og -c can_manga.c -o .\CortexM3\ARM_GCC_541\Debug\can_manga.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Dashboard.a .\CortexM3\ARM_GCC_541\Debug\RX.o .\CortexM3\ARM_GCC_541\Debug\TX.o .\CortexM3\ARM_GCC_541\Debug\CAN.o .\CortexM3\ARM_GCC_541\Debug\CAN_INT.o .\CortexM3\ARM_GCC_541\Debug\CAN_PM.o .\CortexM3\ARM_GCC_541\Debug\CAN_TX_RX_func.o .\CortexM3\ARM_GCC_541\Debug\Buzzer.o .\CortexM3\ARM_GCC_541\Debug\HV.o .\CortexM3\ARM_GCC_541\Debug\Drive.o .\CortexM3\ARM_GCC_541\Debug\RGB3_1.o .\CortexM3\ARM_GCC_541\Debug\RGB2_1.o .\CortexM3\ARM_GCC_541\Debug\RGB1_1.o .\CortexM3\ARM_GCC_541\Debug\GraphicLCDIntf.o .\CortexM3\ARM_GCC_541\Debug\GraphicLCDIntf_PM.o .\CortexM3\ARM_GCC_541\Debug\Clock_1.o .\CortexM3\ARM_GCC_541\Debug\D_BL.o .\CortexM3\ARM_GCC_541\Debug\D_RST.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\GLV_V.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V_INT.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V_theACLK.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V_AMux.o .\CortexM3\ARM_GCC_541\Debug\ADC_GLV_V_Ext_CP_Clk.o .\CortexM3\ARM_GCC_541\Debug\IMD_LED.o .\CortexM3\ARM_GCC_541\Debug\BMS_LED.o .\CortexM3\ARM_GCC_541\Debug\ReadyToDrive_Timer.o .\CortexM3\ARM_GCC_541\Debug\ReadyToDrive_Timer_PM.o .\CortexM3\ARM_GCC_541\Debug\ReadyToDrive_Int.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Dashboard.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o \\Mac\Home\Downloads\Dashboard-Firmware-FE9-FE7-Board-main\Dashboard.cydsn\CortexM3\ARM_GCC_541\Debug\Dashboard.elf .\CortexM3\ARM_GCC_541\Debug\ugui.o .\CortexM3\ARM_GCC_541\Debug\ugui_SSD1963.o .\CortexM3\ARM_GCC_541\Debug\frucd_display.o .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\can_manga.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Dashboard.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Dashboard.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C \\Mac\Home\Downloads\Dashboard-Firmware-FE9-FE7-Board-main\Dashboard.cydsn\CortexM3\ARM_GCC_541\Debug\Dashboard.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+No ELF section .cychecksum found, creating one
+Application checksum calculated and stored in ELF section .cychecksum
+Checksum calculated and stored in ELF section .cymeta
+cyelftool.exe -S \\Mac\Home\Downloads\Dashboard-Firmware-FE9-FE7-Board-main\Dashboard.cydsn\CortexM3\ARM_GCC_541\Debug\Dashboard.elf
+Flash used: 128696 of 262144 bytes (49.1%).
+SRAM used: 2769 of 65536 bytes (4.2%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 11/29/2022 20:35:22 ---------------
