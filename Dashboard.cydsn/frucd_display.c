@@ -58,6 +58,11 @@ void driveTemplate(){
  * - color decision logic is in here
  */
 
+
+
+/* Left in non-generalized functions for future reference*/
+
+
 /*
 void disp_SOC(uint8_t data) {
     UG_FontSelect(&FONT_32X53);
@@ -125,7 +130,7 @@ void disp_SOC(uint8_t data) {
 
 
 // size is big if 1, small if not
-void disp_SOC(uint8_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size) {
+void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
     int stringSize;
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
@@ -205,19 +210,9 @@ void disp_max_pack_temp(uint8_t data) {
         color = C_ORANGE;
     } else {
         color = C_RED;
-        
-        
-        
-        
-        //whats up with the first line here?
+
         UG_FillFrame(270, 35, 450, 170, C_BLACK);
         UG_FillFrame(270, 35, 450, 170, color);
-        
-        
-        
-        
-        
-        
         
     }
     
@@ -238,7 +233,7 @@ void disp_max_pack_temp(uint8_t data) {
 */
 
 
-void disp_max_pack_temp(uint8_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size) {
+void disp_max_pack_temp(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
     int stringSize;
@@ -393,7 +388,7 @@ void disp_state(uint8_t state) { // TODO
 */
 
 
-void disp_state(uint8_t state, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size) { // TODO
+void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) { // TODO
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
     int stringSize;
@@ -557,7 +552,7 @@ void disp_glv_v(uint32_t data) {
 */
 
 
-void disp_glv_v(uint32_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size) {   
+void disp_glv_v(uint32_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {   
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
     int stringSize;
@@ -633,7 +628,7 @@ void disp_mc_temp(uint16_t data) {
 }
 */
 
-void disp_mc_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size){
+void disp_mc_temp(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size){
     disp_gen_temp(data, x1, y1, x2, y2, size);
 }
 /*
@@ -658,13 +653,13 @@ void disp_motor_temp(uint16_t data) {
 }
 */
 
-void disp_motor_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size){
+void disp_motor_temp(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size){
     disp_gen_temp(data, x1, y1, x2, y2, size);
 }
 
 
 
-void disp_gen_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size){
+void disp_gen_temp(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size){
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
     int stringSize;
@@ -699,7 +694,7 @@ void disp_gen_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2
      UG_FontSelect(&FONT_12X16);
 }
 
-void disp_gen_voltage(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size){
+void disp_gen_voltage(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size){
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
     int stringSize;

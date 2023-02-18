@@ -1,6 +1,6 @@
-# Component constraints for \\Mac\Home\Downloads\Dashboard-Firmware-FE9-FE7-Board-main\Dashboard.cydsn\TopDesign\TopDesign.cysch
-# Project: \\Mac\Home\Downloads\Dashboard-Firmware-FE9-FE7-Board-main\Dashboard.cydsn\Dashboard.cyprj
-# Date: Wed, 30 Nov 2022 01:18:00 GMT
+# Component constraints for \\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\TopDesign\TopDesign.cysch
+# Project: \\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\Dashboard.cyprj
+# Date: Sat, 04 Feb 2023 19:06:54 GMT
 # GraphicLCDIntf
 # False paths present for both 8 and 16 bits Graphic LCD Interface configurations 
 expr {(8) == 8 ?

@@ -194,7 +194,7 @@ void can_send(uint8_t data[8], uint32_t ID)
 void can_send_switches(
     uint8_t sw_status)
 {
-        CAN_TX_DATA_BYTE1(CAN_TX_MAILBOX_DRIVER_SWITCHES) = sw_status; 
+        CAN_TX_DATA_BYTE1( 0u, sw_status); 
         CAN_SendMsgDRIVER_SWITCHES(); 
     
         /*

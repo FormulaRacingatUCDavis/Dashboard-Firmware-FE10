@@ -34,12 +34,12 @@ void driveTemplate();
  * BEGIN: functions to show data on dash
  * - color decision logic is in here
  */
-void disp_SOC(uint8_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size);
-void disp_max_pack_temp(uint8_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size);
-void disp_state(uint8_t state, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size); // TODO
-void disp_glv_v(uint32_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size); // TODO
-void disp_mc_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size);
-void disp_motor_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size);
-void disp_gen_temp(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size);
-void disp_gen_voltage(uint16_t data, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t size);
+void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
+void disp_max_pack_temp(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
+void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size); // TODO
+void disp_glv_v(uint32_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size); // TODO
+void disp_mc_temp(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
+void disp_motor_temp(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
+void disp_gen_temp(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
+void disp_gen_voltage(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
 /* [] END OF FILE */

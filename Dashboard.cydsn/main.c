@@ -192,7 +192,7 @@ int main()
         
         // this is where we actually display
        
-        uint32_t glv_v = (int32_t)ADC_GLV_V_CountsTo_mVolts(ADC_GLV_V_Read16());
+        uint32_t glv_v = (int32_t)ADC_GLV_V_CountsTo_mVolts(0, ADC_GLV_V_GetResult16(0));
         
         
         // big displays are usually 180 by 135
