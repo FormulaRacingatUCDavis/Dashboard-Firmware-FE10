@@ -1,5 +1,5 @@
 # Dashboard
-# 2023-02-04 19:06:59Z
+# 2023-02-18 20:03:56Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -30,4 +30,9 @@ set_io "D_BL(0)" iocell 5 5
 set_io "D_RST(0)" iocell 7 1
 set_io "Analog_1(0)" iocell 2 6
 set_io "Analog_2(0)" iocell 2 7
+set_io "DISP(0)" iocell 5 3
+set_io "Digital1(0)" iocell 3 4
+set_io "Digital2(0)" iocell 3 5
+set_io "Digital3(0)" iocell 3 6
+set_io "Digital4(0)" iocell 4 2
 set_location "\ADC_GLV_V:cy_psoc4_sar\" p4sarcell -1 -1 0

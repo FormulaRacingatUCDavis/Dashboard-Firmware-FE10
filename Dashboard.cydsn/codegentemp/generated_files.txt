@@ -88,6 +88,26 @@
   <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Analog_2.h" value="HEADER;;;;;Analog_2" />
   <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Analog_2_aliases.h" value="HEADER;;;;;Analog_2" />
   <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Analog_2_PM.c" value="SOURCE_C;CortexM0;;;;Analog_2" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\DISP.c" value="SOURCE_C;CortexM0;;;;DISP" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\DISP.h" value="HEADER;;;;;DISP" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\DISP_aliases.h" value="HEADER;;;;;DISP" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\DISP_PM.c" value="SOURCE_C;CortexM0;;;;DISP" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital1.c" value="SOURCE_C;CortexM0;;;;Digital1" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital1.h" value="HEADER;;;;;Digital1" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital1_aliases.h" value="HEADER;;;;;Digital1" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital1_PM.c" value="SOURCE_C;CortexM0;;;;Digital1" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital2.c" value="SOURCE_C;CortexM0;;;;Digital2" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital2.h" value="HEADER;;;;;Digital2" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital2_aliases.h" value="HEADER;;;;;Digital2" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital2_PM.c" value="SOURCE_C;CortexM0;;;;Digital2" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital3.c" value="SOURCE_C;CortexM0;;;;Digital3" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital3.h" value="HEADER;;;;;Digital3" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital3_aliases.h" value="HEADER;;;;;Digital3" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital3_PM.c" value="SOURCE_C;CortexM0;;;;Digital3" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital4.c" value="SOURCE_C;CortexM0;;;;Digital4" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital4.h" value="HEADER;;;;;Digital4" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital4_aliases.h" value="HEADER;;;;;Digital4" />
+  <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\Digital4_PM.c" value="SOURCE_C;CortexM0;;;;Digital4" />
   <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\CAN_isr.c" value="SOURCE_C;CortexM0;;;;CAN_isr" />
   <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\CAN_isr.h" value="HEADER;;;;;CAN_isr" />
   <file name="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\codegentemp\CAN_HFCLK.c" value="SOURCE_C;CortexM0;;;;CAN_HFCLK" />

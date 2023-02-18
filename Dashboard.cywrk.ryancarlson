@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard\Dashboard\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard\Dashboard\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Dashboard</v>
 <v>Dashboard\Dashboard</v>
@@ -29,6 +29,7 @@
 <v>Dashboard\Dashboard\Dashboard.cydwr\Flash Security</v>
 <v>Dashboard\Dashboard\Dashboard.cyre</v>
 <v>Dashboard\Dashboard\Header Files\cyapicallbacks.h</v>
+<v>Dashboard\Dashboard\Source Files</v>
 <v>Dashboard\Dashboard\Source Files\Display_Drivers</v>
 <v>Dashboard\Dashboard\Source Files\Display_Drivers\frucd_display.c</v>
 <v>Dashboard\Dashboard\Source Files\Display_Drivers\frucd_display.h</v>
@@ -64,6 +65,20 @@
 <v>Dashboard\Dashboard\Dashboard.cyre</v>
 <v>Dashboard\Dashboard\Header Files</v>
 <v>Dashboard\Dashboard\Source Files</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\frucd_display.c</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\frucd_display.h</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\ugui.c</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\ugui.h</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\ugui_config.h</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.c</v>
+<v>Dashboard\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.h</v>
+<v>Dashboard\Dashboard\Source Files\can_manga.c</v>
+<v>Dashboard\Dashboard\Source Files\can_manga.h</v>
+<v>Dashboard\Dashboard\Source Files\data.h</v>
+<v>Dashboard\Dashboard\Source Files\device.h</v>
+<v>Dashboard\Dashboard\Source Files\LED.h</v>
+<v>Dashboard\Dashboard\Source Files\main.c</v>
 <v>Dashboard\Dashboard\CAN_Full_Example.pdf</v>
 <v>Dashboard\Dashboard\Generated_Source</v>
 </VisibleNodeIds>
@@ -154,6 +169,82 @@
 <v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Debug\Dashboard.elf</v>
 <v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Debug\Dashboard.hex</v>
 <v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Debug\Dashboard.map</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ADC_GLV_V.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ADC_GLV_V_INT.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ADC_GLV_V_intClock.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ADC_GLV_V_IRQ.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ADC_GLV_V_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Analog_1.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Analog_1_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Analog_2.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Analog_2_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\BMS_LED.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\BMS_LED_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Buzzer.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Buzzer_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CAN.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CAN_HFCLK.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CAN_INT.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CAN_isr.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\can_manga.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CAN_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CAN_TX_RX_func.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Clock_1.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Cm0Start.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CyBootAsmGnu.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CyDMA.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\cyfitter_cfg.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CyFlash.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CyLFClk.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\CyLib.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\cymetadata.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\cyPm.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\cyutils.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\D_BL.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\D_BL_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\D_RST.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\D_RST_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital1.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital1_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital2.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital2_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital3.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital3_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital4.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Digital4_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\DISP.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\DISP_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Drive.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\Drive_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\frucd_display.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\GraphicLCDIntf.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\GraphicLCDIntf_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\HV.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\HV_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\IMD_LED.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\IMD_LED_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\main.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ReadyToDrive_Int.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ReadyToDrive_Timer.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ReadyToDrive_Timer_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RGB1_1.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RGB1_1_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RGB2_1.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RGB2_1_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RGB3_1.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RGB3_1_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RX.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\RX_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\TX.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\TX_PM.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ugui.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Listing Files\ugui_SSD1963.lst</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Dashboard.elf</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Dashboard.hex</v>
+<v>Dashboard\Dashboard\CortexM0\ARM_GCC_541\Release\Dashboard.map</v>
 <v>Dashboard\Dashboard\Dashboard.gpdsc</v>
 <v>Dashboard\Dashboard\Dashboard.rpt</v>
 <v>Dashboard\Dashboard\Dashboard_timing.html</v>
@@ -256,7 +347,6 @@
 <OpenDocs>
 <name v=".\Dashboard.cydsn\Dashboard.cydwr" />
 <name v=".\Dashboard.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Dashboard.cydsn\frucd_display.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -264,7 +354,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1117, 439" SelectedTabbedMdiWindow="dd1d9df9-c8d1-4954-a4c7-449e54cc570d"><DocumentWindow Key="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\Dashboard.cydwr" Guid="dd1d9df9-c8d1-4954-a4c7-449e54cc570d" /><DocumentWindow Key="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="e995badb-4c5f-4528-9fe2-8b39bcd7b8be" /><DocumentWindow Key="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\frucd_display.c" Guid="5a3f3ca2-37d9-40d1-bbc2-aa938ea01800" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1821e8e0-552d-4edf-8ed5-0c157b6e048a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="485, 350" SelectedTabbedMdiWindow="92877001-525b-4c6c-992c-e50bb0f013b2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1821e8e0-552d-4edf-8ed5-0c157b6e048a" /><DocumentWindow Key="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\Dashboard.cydwr" Guid="92877001-525b-4c6c-992c-e50bb0f013b2" /><DocumentWindow Key="\\Mac\Home\Desktop\Dashboard-Firmware-FE10\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="eaeee8ba-a7ed-4d24-8db9-88615b132f3a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

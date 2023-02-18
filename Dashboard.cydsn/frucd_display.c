@@ -20,7 +20,7 @@ void calibrateScreen() {
     CyDelay(300);
 }
 
-// Initializes dashboard layout/labels
+// Initializes dashboard layout/label
 /*
 void initDashTemplate() {
     UG_FillScreen(C_BLACK);

@@ -1,0 +1,606 @@
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"GraphicLCDIntf_PM.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.GraphicLCDIntf_SaveConfig,"ax",%progbits
+  20              		.align	1
+  21              		.global	GraphicLCDIntf_SaveConfig
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	GraphicLCDIntf_SaveConfig, %function
+  25              	GraphicLCDIntf_SaveConfig:
+  26              	.LFB5:
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  31              		@ sp needed
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE5:
+  35              		.size	GraphicLCDIntf_SaveConfig, .-GraphicLCDIntf_SaveConfig
+  36              		.section	.text.GraphicLCDIntf_RestoreConfig,"ax",%progbits
+  37              		.align	1
+  38              		.global	GraphicLCDIntf_RestoreConfig
+  39              		.code	16
+  40              		.thumb_func
+  41              		.type	GraphicLCDIntf_RestoreConfig, %function
+  42              	GraphicLCDIntf_RestoreConfig:
+  43              	.LFB1:
+  44              		.file 1 "Generated_Source\\PSoC4\\GraphicLCDIntf_PM.c"
+   1:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * File Name: GraphicLCDIntf_PM.c
+   3:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Version 1.80
+   4:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+   5:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Description:
+   6:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  This file contains the setup, control and status commands to support 
+   7:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  the component operations in Low-power mode.  
+   8:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+   9:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** ********************************************************************************
+  10:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Copyright 2008-2018, Cypress Semiconductor Corporation.  All rights reserved.
+  11:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * the software package with which this file was provided.
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 2
+
+
+  14:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *******************************************************************************/
+  15:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  16:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** #include "GraphicLCDIntf.h" 
+  17:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  18:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  19:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** /*******************************************************************************
+  20:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Function Name: GraphicLCDIntf_SaveConfig
+  21:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** ********************************************************************************
+  22:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  23:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Summary:
+  24:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  All configuration registers are retention. Nothing to save here.
+  25:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  26:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *******************************************************************************/
+  27:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** void GraphicLCDIntf_SaveConfig(void) 
+  28:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** {   
+  29:Generated_Source\PSoC4/GraphicLCDIntf_PM.c ****     
+  30:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** }
+  31:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  32:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  33:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** /*******************************************************************************
+  34:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Function Name: GraphicLCDIntf_RestoreConfig
+  35:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** ********************************************************************************
+  36:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  37:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Summary:
+  38:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  All configuration registers are retention. Nothing to restore here.
+  39:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  40:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *******************************************************************************/
+  41:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** void GraphicLCDIntf_RestoreConfig(void) 
+  42:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** {    
+  45              		.loc 1 42 0
+  46              		.cfi_startproc
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49              		@ link register save eliminated.
+  43:Generated_Source\PSoC4/GraphicLCDIntf_PM.c ****     
+  44:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** }
+  50              		.loc 1 44 0
+  51              		@ sp needed
+  52 0000 7047     		bx	lr
+  53              		.cfi_endproc
+  54              	.LFE1:
+  55              		.size	GraphicLCDIntf_RestoreConfig, .-GraphicLCDIntf_RestoreConfig
+  56              		.section	.text.GraphicLCDIntf_Sleep,"ax",%progbits
+  57              		.align	1
+  58              		.global	GraphicLCDIntf_Sleep
+  59              		.code	16
+  60              		.thumb_func
+  61              		.type	GraphicLCDIntf_Sleep, %function
+  62              	GraphicLCDIntf_Sleep:
+  63              	.LFB2:
+  45:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  46:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  47:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** /*******************************************************************************
+  48:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Function Name: GraphicLCDIntf_Sleep
+  49:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** ********************************************************************************
+  50:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  51:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Summary:
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 3
+
+
+  52:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  Disables block's operation and saves its configuration. Should be called 
+  53:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  prior to entering Sleep.
+  54:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  55:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *******************************************************************************/
+  56:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** void GraphicLCDIntf_Sleep(void) 
+  57:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** {
+  64              		.loc 1 57 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 10B5     		push	{r4, lr}
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 4, -8
+  71              		.cfi_offset 14, -4
+  58:Generated_Source\PSoC4/GraphicLCDIntf_PM.c ****     GraphicLCDIntf_Stop();
+  72              		.loc 1 58 0
+  73 0002 FFF7FEFF 		bl	GraphicLCDIntf_Stop
+  74              	.LVL0:
+  59:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** }
+  75              		.loc 1 59 0
+  76              		@ sp needed
+  77 0006 10BD     		pop	{r4, pc}
+  78              		.cfi_endproc
+  79              	.LFE2:
+  80              		.size	GraphicLCDIntf_Sleep, .-GraphicLCDIntf_Sleep
+  81              		.section	.text.GraphicLCDIntf_Wakeup,"ax",%progbits
+  82              		.align	1
+  83              		.global	GraphicLCDIntf_Wakeup
+  84              		.code	16
+  85              		.thumb_func
+  86              		.type	GraphicLCDIntf_Wakeup, %function
+  87              	GraphicLCDIntf_Wakeup:
+  88              	.LFB3:
+  60:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  61:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** 
+  62:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** /*******************************************************************************
+  63:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Function Name: GraphicLCDIntf_Wakeup
+  64:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** ********************************************************************************
+  65:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  66:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** * Summary:
+  67:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  Enables block's operation and restores its configuration. Should be called
+  68:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *  after awaking from Sleep.
+  69:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *
+  70:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** *******************************************************************************/
+  71:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** void GraphicLCDIntf_Wakeup(void) 
+  72:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** {
+  89              		.loc 1 72 0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93 0000 10B5     		push	{r4, lr}
+  94              		.cfi_def_cfa_offset 8
+  95              		.cfi_offset 4, -8
+  96              		.cfi_offset 14, -4
+  73:Generated_Source\PSoC4/GraphicLCDIntf_PM.c ****     GraphicLCDIntf_Enable();
+  97              		.loc 1 73 0
+  98 0002 FFF7FEFF 		bl	GraphicLCDIntf_Enable
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 4
+
+
+  99              	.LVL1:
+  74:Generated_Source\PSoC4/GraphicLCDIntf_PM.c **** }
+ 100              		.loc 1 74 0
+ 101              		@ sp needed
+ 102 0006 10BD     		pop	{r4, pc}
+ 103              		.cfi_endproc
+ 104              	.LFE3:
+ 105              		.size	GraphicLCDIntf_Wakeup, .-GraphicLCDIntf_Wakeup
+ 106              		.text
+ 107              	.Letext0:
+ 108              		.file 2 "Generated_Source\\PSoC4\\GraphicLCDIntf.h"
+ 109              		.section	.debug_info,"",%progbits
+ 110              	.Ldebug_info0:
+ 111 0000 E8000000 		.4byte	0xe8
+ 112 0004 0400     		.2byte	0x4
+ 113 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 114 000a 04       		.byte	0x4
+ 115 000b 01       		.uleb128 0x1
+ 116 000c 6E010000 		.4byte	.LASF16
+ 117 0010 0C       		.byte	0xc
+ 118 0011 A5000000 		.4byte	.LASF17
+ 119 0015 3E000000 		.4byte	.LASF18
+ 120 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 121 001d 00000000 		.4byte	0
+ 122 0021 00000000 		.4byte	.Ldebug_line0
+ 123 0025 02       		.uleb128 0x2
+ 124 0026 01       		.byte	0x1
+ 125 0027 06       		.byte	0x6
+ 126 0028 45010000 		.4byte	.LASF0
+ 127 002c 02       		.uleb128 0x2
+ 128 002d 01       		.byte	0x1
+ 129 002e 08       		.byte	0x8
+ 130 002f 30000000 		.4byte	.LASF1
+ 131 0033 02       		.uleb128 0x2
+ 132 0034 02       		.byte	0x2
+ 133 0035 05       		.byte	0x5
+ 134 0036 1D010000 		.4byte	.LASF2
+ 135 003a 02       		.uleb128 0x2
+ 136 003b 02       		.byte	0x2
+ 137 003c 07       		.byte	0x7
+ 138 003d 8B000000 		.4byte	.LASF3
+ 139 0041 02       		.uleb128 0x2
+ 140 0042 04       		.byte	0x4
+ 141 0043 05       		.byte	0x5
+ 142 0044 3C010000 		.4byte	.LASF4
+ 143 0048 02       		.uleb128 0x2
+ 144 0049 04       		.byte	0x4
+ 145 004a 07       		.byte	0x7
+ 146 004b 79000000 		.4byte	.LASF5
+ 147 004f 02       		.uleb128 0x2
+ 148 0050 08       		.byte	0x8
+ 149 0051 05       		.byte	0x5
+ 150 0052 0A010000 		.4byte	.LASF6
+ 151 0056 02       		.uleb128 0x2
+ 152 0057 08       		.byte	0x8
+ 153 0058 07       		.byte	0x7
+ 154 0059 DD000000 		.4byte	.LASF7
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 5
+
+
+ 155 005d 03       		.uleb128 0x3
+ 156 005e 04       		.byte	0x4
+ 157 005f 05       		.byte	0x5
+ 158 0060 696E7400 		.ascii	"int\000"
+ 159 0064 02       		.uleb128 0x2
+ 160 0065 04       		.byte	0x4
+ 161 0066 07       		.byte	0x7
+ 162 0067 D0000000 		.4byte	.LASF8
+ 163 006b 02       		.uleb128 0x2
+ 164 006c 04       		.byte	0x4
+ 165 006d 04       		.byte	0x4
+ 166 006e 14000000 		.4byte	.LASF9
+ 167 0072 02       		.uleb128 0x2
+ 168 0073 08       		.byte	0x8
+ 169 0074 04       		.byte	0x4
+ 170 0075 9E000000 		.4byte	.LASF10
+ 171 0079 02       		.uleb128 0x2
+ 172 007a 01       		.byte	0x1
+ 173 007b 08       		.byte	0x8
+ 174 007c 18010000 		.4byte	.LASF11
+ 175 0080 04       		.uleb128 0x4
+ 176 0081 51010000 		.4byte	.LASF19
+ 177 0085 01       		.byte	0x1
+ 178 0086 29       		.byte	0x29
+ 179 0087 01       		.byte	0x1
+ 180 0088 05       		.uleb128 0x5
+ 181 0089 80000000 		.4byte	0x80
+ 182 008d 00000000 		.4byte	.LFB1
+ 183 0091 02000000 		.4byte	.LFE1-.LFB1
+ 184 0095 01       		.uleb128 0x1
+ 185 0096 9C       		.byte	0x9c
+ 186 0097 06       		.uleb128 0x6
+ 187 0098 27010000 		.4byte	.LASF12
+ 188 009c 01       		.byte	0x1
+ 189 009d 38       		.byte	0x38
+ 190 009e 00000000 		.4byte	.LFB2
+ 191 00a2 08000000 		.4byte	.LFE2-.LFB2
+ 192 00a6 01       		.uleb128 0x1
+ 193 00a7 9C       		.byte	0x9c
+ 194 00a8 B6000000 		.4byte	0xb6
+ 195 00ac 07       		.uleb128 0x7
+ 196 00ad 06000000 		.4byte	.LVL0
+ 197 00b1 D5000000 		.4byte	0xd5
+ 198 00b5 00       		.byte	0
+ 199 00b6 06       		.uleb128 0x6
+ 200 00b7 1A000000 		.4byte	.LASF13
+ 201 00bb 01       		.byte	0x1
+ 202 00bc 47       		.byte	0x47
+ 203 00bd 00000000 		.4byte	.LFB3
+ 204 00c1 08000000 		.4byte	.LFE3-.LFB3
+ 205 00c5 01       		.uleb128 0x1
+ 206 00c6 9C       		.byte	0x9c
+ 207 00c7 D5000000 		.4byte	0xd5
+ 208 00cb 07       		.uleb128 0x7
+ 209 00cc 06000000 		.4byte	.LVL1
+ 210 00d0 E0000000 		.4byte	0xe0
+ 211 00d4 00       		.byte	0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 6
+
+
+ 212 00d5 08       		.uleb128 0x8
+ 213 00d6 00000000 		.4byte	.LASF14
+ 214 00da 00000000 		.4byte	.LASF14
+ 215 00de 02       		.byte	0x2
+ 216 00df 28       		.byte	0x28
+ 217 00e0 08       		.uleb128 0x8
+ 218 00e1 F4000000 		.4byte	.LASF15
+ 219 00e5 F4000000 		.4byte	.LASF15
+ 220 00e9 02       		.byte	0x2
+ 221 00ea 3A       		.byte	0x3a
+ 222 00eb 00       		.byte	0
+ 223              		.section	.debug_abbrev,"",%progbits
+ 224              	.Ldebug_abbrev0:
+ 225 0000 01       		.uleb128 0x1
+ 226 0001 11       		.uleb128 0x11
+ 227 0002 01       		.byte	0x1
+ 228 0003 25       		.uleb128 0x25
+ 229 0004 0E       		.uleb128 0xe
+ 230 0005 13       		.uleb128 0x13
+ 231 0006 0B       		.uleb128 0xb
+ 232 0007 03       		.uleb128 0x3
+ 233 0008 0E       		.uleb128 0xe
+ 234 0009 1B       		.uleb128 0x1b
+ 235 000a 0E       		.uleb128 0xe
+ 236 000b 55       		.uleb128 0x55
+ 237 000c 17       		.uleb128 0x17
+ 238 000d 11       		.uleb128 0x11
+ 239 000e 01       		.uleb128 0x1
+ 240 000f 10       		.uleb128 0x10
+ 241 0010 17       		.uleb128 0x17
+ 242 0011 00       		.byte	0
+ 243 0012 00       		.byte	0
+ 244 0013 02       		.uleb128 0x2
+ 245 0014 24       		.uleb128 0x24
+ 246 0015 00       		.byte	0
+ 247 0016 0B       		.uleb128 0xb
+ 248 0017 0B       		.uleb128 0xb
+ 249 0018 3E       		.uleb128 0x3e
+ 250 0019 0B       		.uleb128 0xb
+ 251 001a 03       		.uleb128 0x3
+ 252 001b 0E       		.uleb128 0xe
+ 253 001c 00       		.byte	0
+ 254 001d 00       		.byte	0
+ 255 001e 03       		.uleb128 0x3
+ 256 001f 24       		.uleb128 0x24
+ 257 0020 00       		.byte	0
+ 258 0021 0B       		.uleb128 0xb
+ 259 0022 0B       		.uleb128 0xb
+ 260 0023 3E       		.uleb128 0x3e
+ 261 0024 0B       		.uleb128 0xb
+ 262 0025 03       		.uleb128 0x3
+ 263 0026 08       		.uleb128 0x8
+ 264 0027 00       		.byte	0
+ 265 0028 00       		.byte	0
+ 266 0029 04       		.uleb128 0x4
+ 267 002a 2E       		.uleb128 0x2e
+ 268 002b 00       		.byte	0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 7
+
+
+ 269 002c 3F       		.uleb128 0x3f
+ 270 002d 19       		.uleb128 0x19
+ 271 002e 03       		.uleb128 0x3
+ 272 002f 0E       		.uleb128 0xe
+ 273 0030 3A       		.uleb128 0x3a
+ 274 0031 0B       		.uleb128 0xb
+ 275 0032 3B       		.uleb128 0x3b
+ 276 0033 0B       		.uleb128 0xb
+ 277 0034 27       		.uleb128 0x27
+ 278 0035 19       		.uleb128 0x19
+ 279 0036 20       		.uleb128 0x20
+ 280 0037 0B       		.uleb128 0xb
+ 281 0038 00       		.byte	0
+ 282 0039 00       		.byte	0
+ 283 003a 05       		.uleb128 0x5
+ 284 003b 2E       		.uleb128 0x2e
+ 285 003c 00       		.byte	0
+ 286 003d 31       		.uleb128 0x31
+ 287 003e 13       		.uleb128 0x13
+ 288 003f 11       		.uleb128 0x11
+ 289 0040 01       		.uleb128 0x1
+ 290 0041 12       		.uleb128 0x12
+ 291 0042 06       		.uleb128 0x6
+ 292 0043 40       		.uleb128 0x40
+ 293 0044 18       		.uleb128 0x18
+ 294 0045 9742     		.uleb128 0x2117
+ 295 0047 19       		.uleb128 0x19
+ 296 0048 00       		.byte	0
+ 297 0049 00       		.byte	0
+ 298 004a 06       		.uleb128 0x6
+ 299 004b 2E       		.uleb128 0x2e
+ 300 004c 01       		.byte	0x1
+ 301 004d 3F       		.uleb128 0x3f
+ 302 004e 19       		.uleb128 0x19
+ 303 004f 03       		.uleb128 0x3
+ 304 0050 0E       		.uleb128 0xe
+ 305 0051 3A       		.uleb128 0x3a
+ 306 0052 0B       		.uleb128 0xb
+ 307 0053 3B       		.uleb128 0x3b
+ 308 0054 0B       		.uleb128 0xb
+ 309 0055 27       		.uleb128 0x27
+ 310 0056 19       		.uleb128 0x19
+ 311 0057 11       		.uleb128 0x11
+ 312 0058 01       		.uleb128 0x1
+ 313 0059 12       		.uleb128 0x12
+ 314 005a 06       		.uleb128 0x6
+ 315 005b 40       		.uleb128 0x40
+ 316 005c 18       		.uleb128 0x18
+ 317 005d 9742     		.uleb128 0x2117
+ 318 005f 19       		.uleb128 0x19
+ 319 0060 01       		.uleb128 0x1
+ 320 0061 13       		.uleb128 0x13
+ 321 0062 00       		.byte	0
+ 322 0063 00       		.byte	0
+ 323 0064 07       		.uleb128 0x7
+ 324 0065 898201   		.uleb128 0x4109
+ 325 0068 00       		.byte	0
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 8
+
+
+ 326 0069 11       		.uleb128 0x11
+ 327 006a 01       		.uleb128 0x1
+ 328 006b 31       		.uleb128 0x31
+ 329 006c 13       		.uleb128 0x13
+ 330 006d 00       		.byte	0
+ 331 006e 00       		.byte	0
+ 332 006f 08       		.uleb128 0x8
+ 333 0070 2E       		.uleb128 0x2e
+ 334 0071 00       		.byte	0
+ 335 0072 3F       		.uleb128 0x3f
+ 336 0073 19       		.uleb128 0x19
+ 337 0074 3C       		.uleb128 0x3c
+ 338 0075 19       		.uleb128 0x19
+ 339 0076 6E       		.uleb128 0x6e
+ 340 0077 0E       		.uleb128 0xe
+ 341 0078 03       		.uleb128 0x3
+ 342 0079 0E       		.uleb128 0xe
+ 343 007a 3A       		.uleb128 0x3a
+ 344 007b 0B       		.uleb128 0xb
+ 345 007c 3B       		.uleb128 0x3b
+ 346 007d 0B       		.uleb128 0xb
+ 347 007e 00       		.byte	0
+ 348 007f 00       		.byte	0
+ 349 0080 00       		.byte	0
+ 350              		.section	.debug_aranges,"",%progbits
+ 351 0000 2C000000 		.4byte	0x2c
+ 352 0004 0200     		.2byte	0x2
+ 353 0006 00000000 		.4byte	.Ldebug_info0
+ 354 000a 04       		.byte	0x4
+ 355 000b 00       		.byte	0
+ 356 000c 0000     		.2byte	0
+ 357 000e 0000     		.2byte	0
+ 358 0010 00000000 		.4byte	.LFB1
+ 359 0014 02000000 		.4byte	.LFE1-.LFB1
+ 360 0018 00000000 		.4byte	.LFB2
+ 361 001c 08000000 		.4byte	.LFE2-.LFB2
+ 362 0020 00000000 		.4byte	.LFB3
+ 363 0024 08000000 		.4byte	.LFE3-.LFB3
+ 364 0028 00000000 		.4byte	0
+ 365 002c 00000000 		.4byte	0
+ 366              		.section	.debug_ranges,"",%progbits
+ 367              	.Ldebug_ranges0:
+ 368 0000 00000000 		.4byte	.LFB1
+ 369 0004 02000000 		.4byte	.LFE1
+ 370 0008 00000000 		.4byte	.LFB2
+ 371 000c 08000000 		.4byte	.LFE2
+ 372 0010 00000000 		.4byte	.LFB3
+ 373 0014 08000000 		.4byte	.LFE3
+ 374 0018 00000000 		.4byte	0
+ 375 001c 00000000 		.4byte	0
+ 376              		.section	.debug_line,"",%progbits
+ 377              	.Ldebug_line0:
+ 378 0000 8E000000 		.section	.debug_str,"MS",%progbits,1
+ 378      02005500 
+ 378      00000201 
+ 378      FB0E0D00 
+ 378      01010101 
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 9
+
+
+ 379              	.LASF14:
+ 380 0000 47726170 		.ascii	"GraphicLCDIntf_Stop\000"
+ 380      6869634C 
+ 380      4344496E 
+ 380      74665F53 
+ 380      746F7000 
+ 381              	.LASF9:
+ 382 0014 666C6F61 		.ascii	"float\000"
+ 382      7400
+ 383              	.LASF13:
+ 384 001a 47726170 		.ascii	"GraphicLCDIntf_Wakeup\000"
+ 384      6869634C 
+ 384      4344496E 
+ 384      74665F57 
+ 384      616B6575 
+ 385              	.LASF1:
+ 386 0030 756E7369 		.ascii	"unsigned char\000"
+ 386      676E6564 
+ 386      20636861 
+ 386      7200
+ 387              	.LASF18:
+ 388 003e 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Dashboard-Firmware-FE10\\Da"
+ 388      635C486F 
+ 388      6D655C44 
+ 388      65736B74 
+ 388      6F705C44 
+ 389 006b 7368626F 		.ascii	"shboard.cydsn\000"
+ 389      6172642E 
+ 389      63796473 
+ 389      6E00
+ 390              	.LASF5:
+ 391 0079 6C6F6E67 		.ascii	"long unsigned int\000"
+ 391      20756E73 
+ 391      69676E65 
+ 391      6420696E 
+ 391      7400
+ 392              	.LASF3:
+ 393 008b 73686F72 		.ascii	"short unsigned int\000"
+ 393      7420756E 
+ 393      7369676E 
+ 393      65642069 
+ 393      6E7400
+ 394              	.LASF10:
+ 395 009e 646F7562 		.ascii	"double\000"
+ 395      6C6500
+ 396              	.LASF17:
+ 397 00a5 47656E65 		.ascii	"Generated_Source\\PSoC4\\GraphicLCDIntf_PM.c\000"
+ 397      72617465 
+ 397      645F536F 
+ 397      75726365 
+ 397      5C50536F 
+ 398              	.LASF8:
+ 399 00d0 756E7369 		.ascii	"unsigned int\000"
+ 399      676E6564 
+ 399      20696E74 
+ 399      00
+ 400              	.LASF7:
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 10
+
+
+ 401 00dd 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 401      206C6F6E 
+ 401      6720756E 
+ 401      7369676E 
+ 401      65642069 
+ 402              	.LASF15:
+ 403 00f4 47726170 		.ascii	"GraphicLCDIntf_Enable\000"
+ 403      6869634C 
+ 403      4344496E 
+ 403      74665F45 
+ 403      6E61626C 
+ 404              	.LASF6:
+ 405 010a 6C6F6E67 		.ascii	"long long int\000"
+ 405      206C6F6E 
+ 405      6720696E 
+ 405      7400
+ 406              	.LASF11:
+ 407 0118 63686172 		.ascii	"char\000"
+ 407      00
+ 408              	.LASF2:
+ 409 011d 73686F72 		.ascii	"short int\000"
+ 409      7420696E 
+ 409      7400
+ 410              	.LASF12:
+ 411 0127 47726170 		.ascii	"GraphicLCDIntf_Sleep\000"
+ 411      6869634C 
+ 411      4344496E 
+ 411      74665F53 
+ 411      6C656570 
+ 412              	.LASF4:
+ 413 013c 6C6F6E67 		.ascii	"long int\000"
+ 413      20696E74 
+ 413      00
+ 414              	.LASF0:
+ 415 0145 7369676E 		.ascii	"signed char\000"
+ 415      65642063 
+ 415      68617200 
+ 416              	.LASF19:
+ 417 0151 47726170 		.ascii	"GraphicLCDIntf_RestoreConfig\000"
+ 417      6869634C 
+ 417      4344496E 
+ 417      74665F52 
+ 417      6573746F 
+ 418              	.LASF16:
+ 419 016e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 419      43313120 
+ 419      352E342E 
+ 419      31203230 
+ 419      31363036 
+ 420 01a1 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 420      20726576 
+ 420      6973696F 
+ 420      6E203233 
+ 420      37373135 
+ 421 01d4 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 421      66756E63 
+ 421      74696F6E 
+ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccU0CKrE.s 			page 11
+
+
+ 421      2D736563 
+ 421      74696F6E 
+ 422              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
