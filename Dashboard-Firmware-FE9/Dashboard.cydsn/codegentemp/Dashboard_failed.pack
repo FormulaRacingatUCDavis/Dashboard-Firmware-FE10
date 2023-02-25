@@ -1,0 +1,28 @@
+set_location_hint "\ReadyToDrive_Timer:TimerUDB:status_tc\" 0 1 0 0
+set_location_hint "\PWM_1:PWMUDB:status_0\" 0 1 0 1
+set_location_hint "\PWM_1:PWMUDB:prevCompare1\" 0 1 0 2
+set_location_hint "Net_78" 0 1 0 3
+set_location_hint "\PWM_1:PWMUDB:runmode_enable\" 0 1 1 0
+set_location_hint "\PWM_1:PWMUDB:status_2\" 0 1 1 1
+set_location_hint "\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0\" 0 1 2 
+set_location_hint "\ReadyToDrive_Timer:TimerUDB:rstSts:stsreg\" 0 1 4 
+set_location_hint "\ReadyToDrive_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 0 1 6
+set_location_hint "\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1\" 1 1 2 
+set_location_hint "\PWM_1:PWMUDB:genblk1:ctrlreg\" 1 1 6
+set_location_hint "\GraphicLCDIntf:state_1\" 1 0 0 0
+set_location_hint "\GraphicLCDIntf:state_3\" 1 0 0 1
+set_location_hint "Net_26" 1 0 0 2
+set_location_hint "Net_39" 1 0 0 3
+set_location_hint "\GraphicLCDIntf:state_2\" 1 0 1 0
+set_location_hint "Net_27" 1 0 1 1
+set_location_hint "\GraphicLCDIntf:status_1\" 1 0 1 2
+set_location_hint "Net_25" 1 0 1 3
+set_location_hint "\GraphicLCDIntf:GraphLcd8:Lsb\" 1 0 2 
+set_location_hint "\GraphicLCDIntf:LsbReg\" 1 0 4 
+set_location_hint "\GraphicLCDIntf:state_0\" 0 0 0 0
+set_location_hint "Net_28" 0 0 0 1
+set_location_hint "\GraphicLCDIntf:full\" 0 0 0 2
+set_location_hint "\PWM_1:PWMUDB:status_1\" 0 0 1 0
+set_location_hint "\PWM_1:PWMUDB:prevCompare2\" 0 0 1 1
+set_location_hint "\PWM_1:PWMUDB:sP8:pwmdp:u0\" 0 0 2 
+set_location_hint "\PWM_1:PWMUDB:genblk8:stsreg\" 0 0 4 

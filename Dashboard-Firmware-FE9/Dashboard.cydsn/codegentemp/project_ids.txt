@@ -1,0 +1,6 @@
+\\Mac\Home\Desktop\Dashboard-Firmware-FE10-Updated\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj|b88a38d2-8909-4258-8dbf-f4a7cc2878a2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|58c41ce1-26bc-4561-9f3a-336d3c144db1
+\\Mac\Home\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|64fa4ebc-5082-4e3a-9232-7b89d7286983
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d5d00aab-4dc4-4768-8456-036f180f327f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|765bc3ff-17ae-40d4-97b9-924ab4a258c6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9eb98eed-34b8-40b7-bb8a-ce2e8c6b6dd4

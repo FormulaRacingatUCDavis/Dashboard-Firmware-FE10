@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard-Firmware-FE9">
+<ExpandedNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\TopDesign</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Pins</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Analog</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\DMA</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Clocks</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Interrupts</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\System</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Directives</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Flash Security</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Header Files</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Header Files\cyapicallbacks.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\frucd_display.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\frucd_display.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui_config.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\can_manga.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\can_manga.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\data.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\device.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\fonts.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\LED.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\main.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Generated_Source</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Generated_Source\PSoC4</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Generated_Source\PSoC4\CAN</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\TopDesign</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Pins</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Analog</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\DMA</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Clocks</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Interrupts</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\System</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Directives</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.cydwr\Flash Security</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Header Files</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Header Files\cyapicallbacks.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\frucd_display.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\frucd_display.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui_config.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\can_manga.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\can_manga.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\data.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\device.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\fonts.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\LED.h</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Source Files\main.c</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Generated_Source</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\TopDesign</v>
+<v>Dashboard-Firmware-FE9\Dashboard\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\TopDesign</v>
+<v>Dashboard-Firmware-FE9\Dashboard\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_INT.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_intClock.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_IRQ.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\BMS_LED.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\BMS_LED_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_HFCLK.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_INT.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_isr.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_TX_RX_func.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_HFCLK.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_isr.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\can_manga.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\D_BL.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\D_BL_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\D_RST.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\D_RST_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital2.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital2_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital3.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital3_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital4.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Digital4_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\DISP.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\DISP_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Drive.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Drive_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\frucd_display.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\GraphicLCDIntf.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\GraphicLCDIntf_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\HV.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\HV_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\IMD_LED.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\IMD_LED_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ReadyToDrive_Int.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ReadyToDrive_Timer.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ReadyToDrive_Timer_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB1_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB1_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB2_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB2_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB3_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB3_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_CAN1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_CAN1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_CAN1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_CAN1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ugui.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ugui_SSD1963.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Dashboard.elf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Dashboard.hex</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Dashboard.map</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.gpdsc</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard.rpt</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Dashboard_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_INT.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_intClock.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_IRQ.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\BMS_LED.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\BMS_LED_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_HFCLK.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_INT.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_isr.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_TX_RX_func.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_HFCLK.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_isr.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\can_manga.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\PSoC 4 Architecture TRM</v>
+<v>Dashboard-Firmware-FE9\Dashboard\PSoC 4200M Family Datasheet</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides\cy_boot_v6_0</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides\cy_dmac_v1_10</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Dashboard-Firmware-FE9\Dashboard\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CAN_v3_0</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CAN_v3_0\CAN_v3_0.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_clock_v2_20</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_isr_v1_71.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_pins_v2_20</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\GraphicLCDIntf_v1_80.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\PWM_v3_30.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Timer_v2_80.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\ZeroTerminal.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Dashboard-Firmware-FE9</v>
+<v>Dashboard-Firmware-FE9\Dashboard</v>
+<v>Dashboard-Firmware-FE9\Dashboard\PSoC 4 Architecture TRM</v>
+<v>Dashboard-Firmware-FE9\Dashboard\PSoC 4200M Family Datasheet</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides\cy_boot_v6_0</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides\cy_dmac_v1_10</v>
+<v>Dashboard-Firmware-FE9\Dashboard\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Dashboard-Firmware-FE9\Dashboard\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CAN_v3_0</v>
+<v>Dashboard-Firmware-FE9\Dashboard\CAN_v3_0\CAN_v3_0.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_clock_v2_20</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_isr_v1_71.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_pins_v2_20</v>
+<v>Dashboard-Firmware-FE9\Dashboard\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\GraphicLCDIntf_v1_80.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\PWM_v3_30.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\Timer_v2_80.pdf</v>
+<v>Dashboard-Firmware-FE9\Dashboard\ZeroTerminal.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Dashboard.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Dashboard.cydsn\Dashboard.cydwr" />
+<name v=".\Dashboard.cydsn\frucd_display.c" />
+<name v=".\Dashboard.cydsn\Dashboard.rpt" />
+<name v=".\Dashboard.cydsn\frucd_display.h" />
+<name v=".\Dashboard.cydsn\can_manga.c" />
+<name v=".\Dashboard.cydsn\can_manga.h" />
+<name v=".\Dashboard.cydsn\main.c" />
+<name v=".\Dashboard.cydsn\fonts.h" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\CAN.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="589, 388" SelectedTabbedMdiWindow="beadfc45-6ac5-49bd-9d64-f6690be0a04d"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1821e8e0-552d-4edf-8ed5-0c157b6e048a" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="beadfc45-6ac5-49bd-9d64-f6690be0a04d" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cydwr" Guid="7bb4aa43-7dde-42cf-b2a8-8c618d018d47" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.c" Guid="16754fd4-9823-47f4-b3d5-354fae11aa3e" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.rpt" Guid="ddd71b04-debf-4af4-b5c0-134a2bb7cbd4" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.h" Guid="c6db29bb-d2b3-49ec-8504-7b0c155012fe" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.c" Guid="fcd56172-496f-4f8b-8d60-790272b99cc4" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.h" Guid="53a20b29-fe65-4012-b149-49710511fd9f" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\main.c" Guid="8a54effc-c21e-4a70-9cb6-55d4aeaaf1d9" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\fonts.h" Guid="bb9c81c9-5b44-43ea-87dc-37c80c987535" /><DocumentWindow Key="\\Mac\Home\Downloads\Dashboard-Firmware-FE9-CURSED-main\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\CAN.h" Guid="64c93d65-e172-4e81-99b2-f15b1ecf2956" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
