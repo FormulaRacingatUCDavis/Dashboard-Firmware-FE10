@@ -1,0 +1,410 @@
+
+======================================================
+UDB 0
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\ReadyToDrive_Timer:TimerUDB:status_tc\
+			Net_78
+			\PWM_1:PWMUDB:status_0\
+			\PWM_1:PWMUDB:prevCompare1\
+
+		 Clock net: Net_946_digital
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\PWM_1:PWMUDB:cmp1_less\
+			\PWM_1:PWMUDB:prevCompare1\
+			\PWM_1:PWMUDB:runmode_enable\
+			\ReadyToDrive_Timer:TimerUDB:control_7\
+			\ReadyToDrive_Timer:TimerUDB:per_zero\
+
+		 Output nets:
+			Net_78
+			\PWM_1:PWMUDB:prevCompare1\
+			\PWM_1:PWMUDB:status_0\
+			\ReadyToDrive_Timer:TimerUDB:status_tc\
+
+		 Product terms:
+			!\PWM_1:PWMUDB:prevCompare1\ * \PWM_1:PWMUDB:cmp1_less\
+			\PWM_1:PWMUDB:cmp1_less\
+			\PWM_1:PWMUDB:cmp1_less\ * \PWM_1:PWMUDB:runmode_enable\
+			\ReadyToDrive_Timer:TimerUDB:control_7\ * \ReadyToDrive_Timer:TimerUDB:per_zero\
+
+	PLD 1:
+		 Instances:
+			\PWM_1:PWMUDB:runmode_enable\
+			\PWM_1:PWMUDB:status_2\
+
+		 Clock net: Net_946_digital
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\PWM_1:PWMUDB:control_7\
+			\PWM_1:PWMUDB:runmode_enable\
+			\PWM_1:PWMUDB:tc_i\
+
+		 Output nets:
+			\PWM_1:PWMUDB:runmode_enable\
+			\PWM_1:PWMUDB:status_2\
+
+		 Product terms:
+			\PWM_1:PWMUDB:control_7\
+			\PWM_1:PWMUDB:runmode_enable\ * \PWM_1:PWMUDB:tc_i\
+
+	Datapath:
+		 Instances:
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0\
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFClk
+			\ReadyToDrive_Timer:TimerUDB:control_7\
+			\ReadyToDrive_Timer:TimerUDB:per_zero\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1.cmsbo__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1.sor__sig\
+
+		 Output nets:
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ce0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ce1__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.cfbo__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.cl0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.cl1__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.co_msb__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ff0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ff1__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.sol_msb__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.z0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.z1__sig\
+
+	Control, status and sync:
+		 Instances:
+			\ReadyToDrive_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : controlcell
+			\ReadyToDrive_Timer:TimerUDB:rstSts:stsreg\ : statusicell
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFClk
+			\ReadyToDrive_Timer:TimerUDB:status_2\
+			\ReadyToDrive_Timer:TimerUDB:status_3\
+			\ReadyToDrive_Timer:TimerUDB:status_tc\
+
+		 Output nets:
+			Net_1263
+			\ReadyToDrive_Timer:TimerUDB:control_7\
+
+	Local clock and reset nets:
+
+======================================================
+UDB 1
+------------------------------------------------------
+	PLD 0:
+
+	PLD 1:
+
+	Datapath:
+		 Instances:
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1\
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFClk
+			\ReadyToDrive_Timer:TimerUDB:control_7\
+			\ReadyToDrive_Timer:TimerUDB:per_zero\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ce0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ce1__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.cfbo__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.cl0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.cl1__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.co_msb__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ff0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.ff1__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.sol_msb__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.z0__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0.z1__sig\
+
+		 Output nets:
+			\ReadyToDrive_Timer:TimerUDB:per_zero\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1.cmsbo__sig\
+			\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1.sor__sig\
+			\ReadyToDrive_Timer:TimerUDB:status_2\
+			\ReadyToDrive_Timer:TimerUDB:status_3\
+
+	Control, status and sync:
+		 Instances:
+			\PWM_1:PWMUDB:genblk1:ctrlreg\ : controlcell
+
+		 Clock net: Net_946_digital
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFClk
+
+		 Output nets:
+			\PWM_1:PWMUDB:control_7\
+
+	Local clock and reset nets:
+
+======================================================
+UDB 2
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\GraphicLCDIntf:state_1\
+			Net_39
+			\GraphicLCDIntf:state_3\
+			Net_26
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			Net_31_1
+			\GraphicLCDIntf:data_empty\
+			\GraphicLCDIntf:state_0\
+			\GraphicLCDIntf:state_1\
+			\GraphicLCDIntf:state_2\
+			\GraphicLCDIntf:state_3\
+			\GraphicLCDIntf:z0_detect\
+			\GraphicLCDIntf:z1_detect\
+
+		 Output nets:
+			Net_26
+			Net_39
+			\GraphicLCDIntf:state_1\
+			\GraphicLCDIntf:state_3\
+
+		 Product terms:
+			!Net_31_1 * !\GraphicLCDIntf:data_empty\ * !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_2\ * \GraphicLCDIntf:state_3\
+			!Net_31_1 * !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_2\ * \GraphicLCDIntf:data_empty\ * \GraphicLCDIntf:state_3\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:z0_detect\ * \GraphicLCDIntf:state_1\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\
+			!\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\
+			!\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_0\
+			!\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\
+			!\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:z1_detect\ * \GraphicLCDIntf:state_0\ * \GraphicLCDIntf:state_1\
+
+	PLD 1:
+		 Instances:
+			\GraphicLCDIntf:state_2\
+			Net_25
+			Net_27
+			\GraphicLCDIntf:status_1\
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			Net_25
+			Net_31_0
+			Net_31_1
+			\GraphicLCDIntf:state_0\
+			\GraphicLCDIntf:state_1\
+			\GraphicLCDIntf:state_2\
+			\GraphicLCDIntf:state_3\
+			\GraphicLCDIntf:z0_detect\
+			\GraphicLCDIntf:z1_detect\
+
+		 Output nets:
+			Net_25
+			Net_27
+			\GraphicLCDIntf:state_2\
+			\GraphicLCDIntf:status_1\
+
+		 Product terms:
+			!Net_25 * !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_2\ * Net_31_0 * \GraphicLCDIntf:state_3\
+			!Net_31_0 * !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_2\ * Net_25 * \GraphicLCDIntf:state_3\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_1\ * Net_31_1 * \GraphicLCDIntf:state_3\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * \GraphicLCDIntf:state_2\ * \GraphicLCDIntf:z0_detect\
+			\GraphicLCDIntf:state_0\ * \GraphicLCDIntf:state_1\ * \GraphicLCDIntf:state_2\ * \GraphicLCDIntf:z1_detect\
+			\GraphicLCDIntf:state_2\ * \GraphicLCDIntf:state_3\
+
+	Datapath:
+		 Instances:
+			\GraphicLCDIntf:GraphLcd8:Lsb\
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFClk
+			\GraphicLCDIntf:state_0\
+			\GraphicLCDIntf:state_1\
+			\GraphicLCDIntf:state_2\
+
+		 Output nets:
+			Net_31_0
+			Net_31_1
+			Net_31_2
+			Net_31_3
+			Net_31_4
+			Net_31_5
+			Net_31_6
+			Net_31_7
+			\GraphicLCDIntf:cmd_empty\
+			\GraphicLCDIntf:cmd_not_full\
+			\GraphicLCDIntf:data_empty\
+			\GraphicLCDIntf:data_not_full\
+			\GraphicLCDIntf:z0_detect\
+			\GraphicLCDIntf:z1_detect\
+
+	Control, status and sync:
+		 Instances:
+			\GraphicLCDIntf:LsbReg\ : statuscell
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: \GraphicLCDIntf:status_1\
+
+		 Input nets:
+			Net_109_0
+			Net_109_1
+			Net_109_2
+			Net_109_3
+			Net_109_4
+			Net_109_5
+			Net_109_6
+			Net_109_7
+
+		 Output nets:
+
+	Local clock and reset nets:
+			\GraphicLCDIntf:status_1\
+
+======================================================
+UDB 3
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			Net_28
+			\GraphicLCDIntf:full\
+			\GraphicLCDIntf:state_0\
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\GraphicLCDIntf:cmd_empty\
+			\GraphicLCDIntf:cmd_not_full\
+			\GraphicLCDIntf:data_not_full\
+			\GraphicLCDIntf:state_0\
+			\GraphicLCDIntf:state_1\
+			\GraphicLCDIntf:state_2\
+			\GraphicLCDIntf:state_3\
+			\GraphicLCDIntf:z0_detect\
+			\GraphicLCDIntf:z1_detect\
+
+		 Output nets:
+			Net_28
+			\GraphicLCDIntf:full\
+			\GraphicLCDIntf:state_0\
+
+		 Product terms:
+			!\GraphicLCDIntf:cmd_empty\ * !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_3\
+			!\GraphicLCDIntf:cmd_empty\ * !\GraphicLCDIntf:state_2\ * \GraphicLCDIntf:state_0\ * \GraphicLCDIntf:state_1\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * \GraphicLCDIntf:z0_detect\
+			!\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\
+			!\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_0\ * \GraphicLCDIntf:state_2\
+			!\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\
+			!\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:z1_detect\ * \GraphicLCDIntf:state_0\ * \GraphicLCDIntf:state_1\
+			\GraphicLCDIntf:cmd_not_full\ * \GraphicLCDIntf:data_not_full\
+
+	PLD 1:
+		 Instances:
+			\PWM_1:PWMUDB:status_1\
+			\PWM_1:PWMUDB:prevCompare2\
+
+		 Clock net: Net_946_digital
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\PWM_1:PWMUDB:cmp2_less\
+			\PWM_1:PWMUDB:prevCompare2\
+
+		 Output nets:
+			\PWM_1:PWMUDB:prevCompare2\
+			\PWM_1:PWMUDB:status_1\
+
+		 Product terms:
+			!\PWM_1:PWMUDB:prevCompare2\ * \PWM_1:PWMUDB:cmp2_less\
+			\PWM_1:PWMUDB:cmp2_less\
+
+	Datapath:
+		 Instances:
+			\PWM_1:PWMUDB:sP8:pwmdp:u0\
+
+		 Clock net: Net_946_digital
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFClk
+			\PWM_1:PWMUDB:runmode_enable\
+			\PWM_1:PWMUDB:tc_i\
+
+		 Output nets:
+			\PWM_1:PWMUDB:cmp1_less\
+			\PWM_1:PWMUDB:cmp2_less\
+			\PWM_1:PWMUDB:status_3\
+			\PWM_1:PWMUDB:tc_i\
+
+	Control, status and sync:
+		 Instances:
+			\PWM_1:PWMUDB:genblk8:stsreg\ : statusicell
+
+		 Clock net: Net_946_digital
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\PWM_1:PWMUDB:status_0\
+			\PWM_1:PWMUDB:status_1\
+			\PWM_1:PWMUDB:status_2\
+			\PWM_1:PWMUDB:status_3\
+
+		 Output nets:
+
+	Local clock and reset nets:
+
+======================================================
+UDB 4
+------------------------------------------------------
+	PLD 0:
+
+	PLD 1:
+
+	Datapath:
+
+	Control, status and sync:
+		 Instances:
+			\GraphicLCDIntf:StsReg\ : statuscell
+
+		 Clock net: ClockBlock_HFClk
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\GraphicLCDIntf:full\
+			\GraphicLCDIntf:status_1\
+
+		 Output nets:
+
+	Local clock and reset nets:
