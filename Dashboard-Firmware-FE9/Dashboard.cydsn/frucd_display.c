@@ -49,7 +49,8 @@ void driveTemplate(){
     UG_FillScreen(C_BLACK);
     UG_PutString(68, 10, "PACK SOC");
     UG_PutString(297, 10, "MAX PACK T");
-    UG_PutString(35, 225, "STATE:");
+    UG_PutString(5, 180, "STATE:");
+    UG_PutString(275, 180, "GLV V:");
     
 }
 /*
@@ -189,8 +190,12 @@ void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, 
             data_s[1] = '%';
             data_s[2] = '\0';
             color = C_RED;
-            UG_FillFrame(x1, y1, x2, y2, C_BLACK);
-            UG_FillFrame(x1, y1, x2, y2, color);
+            if (color != last_SOC_color) {
+            // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_SOC_color = color;
+            }
+           
             UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
         }   
     }
@@ -254,21 +259,24 @@ void disp_max_pack_temp(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uin
         color = C_ORANGE;
     } else {
         color = C_RED; 
+        
         UG_FillFrame(x1, y1, x2, y2, C_BLACK);
         UG_FillFrame(x1, y1, x2, y2, color);
     
     }
+
+   
     
+   
     if (color != last_max_pack_temp_color) {
-        // only draw rectangle if color changed
         UG_FillFrame(x1, y1, x2, y2, color);
         last_max_pack_temp_color = color;
     }
 
     char data_s[4];
-    sprintf(data_s, "%d", data);
-    data_s[2] = 'C';
-    data_s[3] = '\0';
+    sprintf(data_s, "%d C", data);
+   // data_s[2] = 'C';
+    //data_s[3] = '\0';
     UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
     UG_FontSelect(&FONT_12X16);
 }
@@ -560,7 +568,6 @@ void disp_glv_v(uint32_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y
     xFont = (x1 + x2)/2 - ((horizFontSize*stringSize)/2);
     yFont = (y1 + y2)/2 - 5 - (size*17);    
     
-    UG_PutString(x1 - 85, yFont, "GLV V:");
     
     if(size == 1){
         UG_FontSelect(&FONT_32X53);  

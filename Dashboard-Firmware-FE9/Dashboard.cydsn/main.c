@@ -146,9 +146,15 @@ int main()
     
 	ADC_GLV_V_Start();
     
-    // initialize display layout for driving
-    driveTemplate();
     disp_state(FAULT, 95, 185, 240, 215, SMALL_FONT); // effectively STARTUP
+    
+    // initialize display layout for driving
+    if(debugMode){
+        debugTemplate();
+    }else{
+       driveTemplate();
+    }
+    
     
     for(;;)
     {
@@ -200,7 +206,6 @@ int main()
         // need to adjust size of squares for changing fontSize
         
         if(debugMode){
-            debugTemplate();
             
             disp_SOC(soc, 95, 35, 240, 170, SMALL_FONT);
             disp_max_pack_temp(PACK_TEMP, 410, 35, 470, 170, SMALL_FONT);
@@ -211,10 +216,10 @@ int main()
             disp_mc_temp(mc_temp, 410, 185, 470, 215, SMALL_FONT);
             disp_motor_temp(motor_temp, 410, 230, 470, 260, SMALL_FONT);
         }else{
-            driveTemplate();
             disp_SOC(soc, 30, 35, 210, 170, BIG_FONT);
             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);
-            disp_state(state, 80, 190, 400, 270, BIG_FONT);
+            disp_state(state, 20, 200, 200, 230, SMALL_FONT);
+            disp_glv_v(glv_v, 290, 200, 470, 230, SMALL_FONT);
         
         }
         

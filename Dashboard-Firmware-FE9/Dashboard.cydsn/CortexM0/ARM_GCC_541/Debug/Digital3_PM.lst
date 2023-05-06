@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
   28:Generated_Source\PSoC4/Digital3_PM.c **** *  deep-sleep/hibernate modes. This function applies only to SIO and USBIO pins.
   29:Generated_Source\PSoC4/Digital3_PM.c **** *  It should not be called for GPIO or GPIO_OVT pins.
   30:Generated_Source\PSoC4/Digital3_PM.c **** *
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 2
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 2
 
 
   31:Generated_Source\PSoC4/Digital3_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
   50              		.size	Digital3_Sleep, .-Digital3_Sleep
   51              		.section	.text.Digital3_Wakeup,"ax",%progbits
   52              		.align	1
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 3
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 3
 
 
   53              		.global	Digital3_Wakeup
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
   70 0004 024B     		ldr	r3, .L5+4
   71 0006 1A60     		str	r2, [r3]
   72              		.loc 1 97 0
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 4
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 4
 
 
   73 0008 7047     		bx	lr
@@ -210,48 +210,48 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
   97 0006 00000000 		.4byte	.Ldebug_abbrev0
   98 000a 04       		.byte	0x4
   99 000b 01       		.uleb128 0x1
- 100 000c 87010000 		.4byte	.LASF20
+ 100 000c 97010000 		.4byte	.LASF20
  101 0010 0C       		.byte	0xc
- 102 0011 1F000000 		.4byte	.LASF21
- 103 0015 94000000 		.4byte	.LASF22
+ 102 0011 8E000000 		.4byte	.LASF21
+ 103 0015 00000000 		.4byte	.LASF22
  104 0019 00000000 		.4byte	.Ldebug_ranges0+0
  105 001d 00000000 		.4byte	0
  106 0021 00000000 		.4byte	.Ldebug_line0
  107 0025 02       		.uleb128 0x2
  108 0026 01       		.byte	0x1
  109 0027 06       		.byte	0x6
- 110 0028 7B010000 		.4byte	.LASF0
+ 110 0028 8B010000 		.4byte	.LASF0
  111 002c 02       		.uleb128 0x2
  112 002d 01       		.byte	0x1
  113 002e 08       		.byte	0x8
- 114 002f 4A000000 		.4byte	.LASF1
+ 114 002f B9000000 		.4byte	.LASF1
  115 0033 02       		.uleb128 0x2
  116 0034 02       		.byte	0x2
  117 0035 05       		.byte	0x5
- 118 0036 51010000 		.4byte	.LASF2
+ 118 0036 61010000 		.4byte	.LASF2
  119 003a 02       		.uleb128 0x2
  120 003b 02       		.byte	0x2
  121 003c 07       		.byte	0x7
- 122 003d 6A000000 		.4byte	.LASF3
+ 122 003d D9000000 		.4byte	.LASF3
  123 0041 02       		.uleb128 0x2
  124 0042 04       		.byte	0x4
  125 0043 05       		.byte	0x5
- 126 0044 63010000 		.4byte	.LASF4
+ 126 0044 73010000 		.4byte	.LASF4
  127 0048 02       		.uleb128 0x2
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 5
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 5
 
 
  128 0049 04       		.byte	0x4
  129 004a 07       		.byte	0x7
- 130 004b 58000000 		.4byte	.LASF5
+ 130 004b C7000000 		.4byte	.LASF5
  131 004f 02       		.uleb128 0x2
  132 0050 08       		.byte	0x8
  133 0051 05       		.byte	0x5
- 134 0052 3E010000 		.4byte	.LASF6
+ 134 0052 4E010000 		.4byte	.LASF6
  135 0056 02       		.uleb128 0x2
  136 0057 08       		.byte	0x8
  137 0058 07       		.byte	0x7
- 138 0059 07010000 		.4byte	.LASF7
+ 138 0059 17010000 		.4byte	.LASF7
  139 005d 03       		.uleb128 0x3
  140 005e 04       		.byte	0x4
  141 005f 05       		.byte	0x5
@@ -259,26 +259,26 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  143 0064 02       		.uleb128 0x2
  144 0065 04       		.byte	0x4
  145 0066 07       		.byte	0x7
- 146 0067 FA000000 		.4byte	.LASF8
+ 146 0067 0A010000 		.4byte	.LASF8
  147 006b 04       		.uleb128 0x4
- 148 006c F3000000 		.4byte	.LASF12
+ 148 006c 03010000 		.4byte	.LASF12
  149 0070 02       		.byte	0x2
  150 0071 FD01     		.2byte	0x1fd
  151 0073 48000000 		.4byte	0x48
  152 0077 02       		.uleb128 0x2
  153 0078 04       		.byte	0x4
  154 0079 04       		.byte	0x4
- 155 007a 44000000 		.4byte	.LASF9
+ 155 007a B3000000 		.4byte	.LASF9
  156 007e 02       		.uleb128 0x2
  157 007f 08       		.byte	0x8
  158 0080 04       		.byte	0x4
- 159 0081 8D000000 		.4byte	.LASF10
+ 159 0081 FC000000 		.4byte	.LASF10
  160 0085 02       		.uleb128 0x2
  161 0086 01       		.byte	0x1
  162 0087 08       		.byte	0x8
- 163 0088 4C010000 		.4byte	.LASF11
+ 163 0088 5C010000 		.4byte	.LASF11
  164 008c 04       		.uleb128 0x4
- 165 008d 00000000 		.4byte	.LASF13
+ 165 008d 6F000000 		.4byte	.LASF13
  166 0091 02       		.byte	0x2
  167 0092 A702     		.2byte	0x2a7
  168 0094 98000000 		.4byte	0x98
@@ -290,34 +290,34 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  174 00a0 21       		.byte	0x21
  175 00a1 CA000000 		.4byte	0xca
  176 00a5 07       		.uleb128 0x7
- 177 00a6 5B010000 		.4byte	.LASF14
+ 177 00a6 6B010000 		.4byte	.LASF14
  178 00aa 03       		.byte	0x3
  179 00ab 23       		.byte	0x23
  180 00ac 6B000000 		.4byte	0x6b
  181 00b0 00       		.byte	0
  182 00b1 07       		.uleb128 0x7
- 183 00b2 35010000 		.4byte	.LASF15
+ 183 00b2 45010000 		.4byte	.LASF15
  184 00b6 03       		.byte	0x3
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 6
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 6
 
 
  185 00b7 24       		.byte	0x24
  186 00b8 6B000000 		.4byte	0x6b
  187 00bc 04       		.byte	0x4
  188 00bd 07       		.uleb128 0x7
- 189 00be 06000000 		.4byte	.LASF16
+ 189 00be 75000000 		.4byte	.LASF16
  190 00c2 03       		.byte	0x3
  191 00c3 25       		.byte	0x25
  192 00c4 6B000000 		.4byte	0x6b
  193 00c8 08       		.byte	0x8
  194 00c9 00       		.byte	0
  195 00ca 08       		.uleb128 0x8
- 196 00cb 1E010000 		.4byte	.LASF17
+ 196 00cb 2E010000 		.4byte	.LASF17
  197 00cf 03       		.byte	0x3
  198 00d0 26       		.byte	0x26
  199 00d1 9D000000 		.4byte	0x9d
  200 00d5 09       		.uleb128 0x9
- 201 00d6 6C010000 		.4byte	.LASF18
+ 201 00d6 7C010000 		.4byte	.LASF18
  202 00da 01       		.byte	0x1
  203 00db 2C       		.byte	0x2c
  204 00dc 00000000 		.4byte	.LFB0
@@ -325,7 +325,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  206 00e4 01       		.uleb128 0x1
  207 00e5 9C       		.byte	0x9c
  208 00e6 09       		.uleb128 0x9
- 209 00e7 7D000000 		.4byte	.LASF19
+ 209 00e7 EC000000 		.4byte	.LASF19
  210 00eb 01       		.byte	0x1
  211 00ec 52       		.byte	0x52
  212 00ed 00000000 		.4byte	.LFB1
@@ -333,7 +333,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  214 00f5 01       		.uleb128 0x1
  215 00f6 9C       		.byte	0x9c
  216 00f7 0A       		.uleb128 0xa
- 217 00f8 0F000000 		.4byte	.LASF23
+ 217 00f8 7E000000 		.4byte	.LASF23
  218 00fc 01       		.byte	0x1
  219 00fd 14       		.byte	0x14
  220 00fe CA000000 		.4byte	0xca
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  239 000c 17       		.uleb128 0x17
  240 000d 11       		.uleb128 0x11
  241 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 7
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 7
 
 
  242 000f 10       		.uleb128 0x10
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  296 0045 0B       		.uleb128 0xb
  297 0046 01       		.uleb128 0x1
  298 0047 13       		.uleb128 0x13
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 8
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 8
 
 
  299 0048 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  353 007f 34       		.uleb128 0x34
  354 0080 00       		.byte	0
  355 0081 03       		.uleb128 0x3
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 9
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 9
 
 
  356 0082 0E       		.uleb128 0xe
@@ -522,135 +522,142 @@ ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 1
  392      00000201 
  392      FB0E0D00 
  392      01010101 
- 393              	.LASF13:
- 394 0000 72656733 		.ascii	"reg32\000"
- 394      3200
- 395              	.LASF16:
- 396 0006 75736253 		.ascii	"usbState\000"
- 396      74617465 
- 396      00
- 397              	.LASF23:
- 398 000f 44696769 		.ascii	"Digital3_backup\000"
- 398      74616C33 
- 398      5F626163 
- 398      6B757000 
- 399              	.LASF21:
- 400 001f 47656E65 		.ascii	"Generated_Source\\PSoC4\\Digital3_PM.c\000"
- 400      72617465 
- 400      645F536F 
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 10
+ 393              	.LASF22:
+ 394 0000 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
+ 394      73657273 
+ 394      5C4D656C 
+ 394      6F64795C 
+ 394      4465736B 
+ 395 002e 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
+ 395      7368626F 
+ 395      6172642D 
+ 395      4669726D 
+ 395      77617265 
+ 396 005f 44617368 		.ascii	"Dashboard.cydsn\000"
+ 396      626F6172 
+ 396      642E6379 
+ 396      64736E00 
+ 397              	.LASF13:
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 10
 
 
- 400      75726365 
- 400      5C50536F 
- 401              	.LASF9:
- 402 0044 666C6F61 		.ascii	"float\000"
- 402      7400
- 403              	.LASF1:
- 404 004a 756E7369 		.ascii	"unsigned char\000"
- 404      676E6564 
- 404      20636861 
- 404      7200
- 405              	.LASF5:
- 406 0058 6C6F6E67 		.ascii	"long unsigned int\000"
- 406      20756E73 
- 406      69676E65 
- 406      6420696E 
+ 398 006f 72656733 		.ascii	"reg32\000"
+ 398      3200
+ 399              	.LASF16:
+ 400 0075 75736253 		.ascii	"usbState\000"
+ 400      74617465 
+ 400      00
+ 401              	.LASF23:
+ 402 007e 44696769 		.ascii	"Digital3_backup\000"
+ 402      74616C33 
+ 402      5F626163 
+ 402      6B757000 
+ 403              	.LASF21:
+ 404 008e 47656E65 		.ascii	"Generated_Source\\PSoC4\\Digital3_PM.c\000"
+ 404      72617465 
+ 404      645F536F 
+ 404      75726365 
+ 404      5C50536F 
+ 405              	.LASF9:
+ 406 00b3 666C6F61 		.ascii	"float\000"
  406      7400
- 407              	.LASF3:
- 408 006a 73686F72 		.ascii	"short unsigned int\000"
- 408      7420756E 
- 408      7369676E 
- 408      65642069 
- 408      6E7400
- 409              	.LASF19:
- 410 007d 44696769 		.ascii	"Digital3_Wakeup\000"
- 410      74616C33 
- 410      5F57616B 
- 410      65757000 
- 411              	.LASF10:
- 412 008d 646F7562 		.ascii	"double\000"
- 412      6C6500
- 413              	.LASF22:
- 414 0094 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Downloads\\Dashboard-Firmware-FE9-CU"
- 414      635C486F 
- 414      6D655C44 
- 414      6F776E6C 
- 414      6F616473 
- 415 00c2 52534544 		.ascii	"RSED-main\\Dashboard-Firmware-FE9\\Dashboard.cydsn\000"
- 415      2D6D6169 
- 415      6E5C4461 
- 415      7368626F 
- 415      6172642D 
- 416              	.LASF12:
- 417 00f3 75696E74 		.ascii	"uint32\000"
- 417      333200
- 418              	.LASF8:
- 419 00fa 756E7369 		.ascii	"unsigned int\000"
- 419      676E6564 
- 419      20696E74 
- 419      00
- 420              	.LASF7:
- 421 0107 6C6F6E67 		.ascii	"long long unsigned int\000"
- 421      206C6F6E 
- 421      6720756E 
- 421      7369676E 
- 421      65642069 
- 422              	.LASF17:
- 423 011e 44696769 		.ascii	"Digital3_BACKUP_STRUCT\000"
-ARM GAS  C:\Users\RYANCA~1\AppData\Local\Temp\ccwddRVH.s 			page 11
+ 407              	.LASF1:
+ 408 00b9 756E7369 		.ascii	"unsigned char\000"
+ 408      676E6564 
+ 408      20636861 
+ 408      7200
+ 409              	.LASF5:
+ 410 00c7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 410      20756E73 
+ 410      69676E65 
+ 410      6420696E 
+ 410      7400
+ 411              	.LASF3:
+ 412 00d9 73686F72 		.ascii	"short unsigned int\000"
+ 412      7420756E 
+ 412      7369676E 
+ 412      65642069 
+ 412      6E7400
+ 413              	.LASF19:
+ 414 00ec 44696769 		.ascii	"Digital3_Wakeup\000"
+ 414      74616C33 
+ 414      5F57616B 
+ 414      65757000 
+ 415              	.LASF10:
+ 416 00fc 646F7562 		.ascii	"double\000"
+ 416      6C6500
+ 417              	.LASF12:
+ 418 0103 75696E74 		.ascii	"uint32\000"
+ 418      333200
+ 419              	.LASF8:
+ 420 010a 756E7369 		.ascii	"unsigned int\000"
+ 420      676E6564 
+ 420      20696E74 
+ 420      00
+ 421              	.LASF7:
+ 422 0117 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 422      206C6F6E 
+ 422      6720756E 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 11
 
 
- 423      74616C33 
- 423      5F424143 
- 423      4B55505F 
- 423      53545255 
- 424              	.LASF15:
- 425 0135 73696F53 		.ascii	"sioState\000"
- 425      74617465 
- 425      00
- 426              	.LASF6:
- 427 013e 6C6F6E67 		.ascii	"long long int\000"
- 427      206C6F6E 
- 427      6720696E 
- 427      7400
- 428              	.LASF11:
- 429 014c 63686172 		.ascii	"char\000"
- 429      00
- 430              	.LASF2:
- 431 0151 73686F72 		.ascii	"short int\000"
- 431      7420696E 
- 431      7400
- 432              	.LASF14:
- 433 015b 70635374 		.ascii	"pcState\000"
- 433      61746500 
- 434              	.LASF4:
- 435 0163 6C6F6E67 		.ascii	"long int\000"
- 435      20696E74 
- 435      00
- 436              	.LASF18:
- 437 016c 44696769 		.ascii	"Digital3_Sleep\000"
- 437      74616C33 
- 437      5F536C65 
- 437      657000
- 438              	.LASF0:
- 439 017b 7369676E 		.ascii	"signed char\000"
- 439      65642063 
- 439      68617200 
- 440              	.LASF20:
- 441 0187 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 441      43313120 
- 441      352E342E 
- 441      31203230 
- 441      31363036 
- 442 01ba 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 442      20726576 
- 442      6973696F 
- 442      6E203233 
- 442      37373135 
- 443 01ed 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 443      66756E63 
- 443      74696F6E 
- 443      2D736563 
- 443      74696F6E 
- 444              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 422      7369676E 
+ 422      65642069 
+ 423              	.LASF17:
+ 424 012e 44696769 		.ascii	"Digital3_BACKUP_STRUCT\000"
+ 424      74616C33 
+ 424      5F424143 
+ 424      4B55505F 
+ 424      53545255 
+ 425              	.LASF15:
+ 426 0145 73696F53 		.ascii	"sioState\000"
+ 426      74617465 
+ 426      00
+ 427              	.LASF6:
+ 428 014e 6C6F6E67 		.ascii	"long long int\000"
+ 428      206C6F6E 
+ 428      6720696E 
+ 428      7400
+ 429              	.LASF11:
+ 430 015c 63686172 		.ascii	"char\000"
+ 430      00
+ 431              	.LASF2:
+ 432 0161 73686F72 		.ascii	"short int\000"
+ 432      7420696E 
+ 432      7400
+ 433              	.LASF14:
+ 434 016b 70635374 		.ascii	"pcState\000"
+ 434      61746500 
+ 435              	.LASF4:
+ 436 0173 6C6F6E67 		.ascii	"long int\000"
+ 436      20696E74 
+ 436      00
+ 437              	.LASF18:
+ 438 017c 44696769 		.ascii	"Digital3_Sleep\000"
+ 438      74616C33 
+ 438      5F536C65 
+ 438      657000
+ 439              	.LASF0:
+ 440 018b 7369676E 		.ascii	"signed char\000"
+ 440      65642063 
+ 440      68617200 
+ 441              	.LASF20:
+ 442 0197 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 442      43313120 
+ 442      352E342E 
+ 442      31203230 
+ 442      31363036 
+ 443 01ca 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 443      20726576 
+ 443      6973696F 
+ 443      6E203233 
+ 443      37373135 
+ 444 01fd 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 444      66756E63 
+ 444      74696F6E 
+ 444      2D736563 
+ 444      74696F6E 
+ 445              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccCiDQNL.s 			page 12
+
+
