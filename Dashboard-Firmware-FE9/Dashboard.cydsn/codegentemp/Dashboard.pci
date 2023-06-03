@@ -1,6 +1,10 @@
 # Dashboard
-# 2023-05-06 19:30:41Z
+# 2023-06-03 07:46:39Z
 
+# IO_4@[IOP=(0)][IoId=(4)] is reserved: KhzXtalEnabled
+dont_use_io iocell 0 4
+# IO_5@[IOP=(0)][IoId=(5)] is reserved: KhzXtalEnabled
+dont_use_io iocell 0 5
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
 # IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled

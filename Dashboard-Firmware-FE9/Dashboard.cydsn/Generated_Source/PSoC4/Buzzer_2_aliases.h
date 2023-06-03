@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: BMS_LED.h  
+* File Name: Buzzer_2.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_BMS_LED_ALIASES_H) /* Pins BMS_LED_ALIASES_H */
-#define CY_PINS_BMS_LED_ALIASES_H
+#if !defined(CY_PINS_Buzzer_2_ALIASES_H) /* Pins Buzzer_2_ALIASES_H */
+#define CY_PINS_Buzzer_2_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -26,17 +26,17 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define BMS_LED_0			(BMS_LED__0__PC)
-#define BMS_LED_0_PS		(BMS_LED__0__PS)
-#define BMS_LED_0_PC		(BMS_LED__0__PC)
-#define BMS_LED_0_DR		(BMS_LED__0__DR)
-#define BMS_LED_0_SHIFT	(BMS_LED__0__SHIFT)
-#define BMS_LED_0_INTR	((uint16)((uint16)0x0003u << (BMS_LED__0__SHIFT*2u)))
+#define Buzzer_2_0			(Buzzer_2__0__PC)
+#define Buzzer_2_0_PS		(Buzzer_2__0__PS)
+#define Buzzer_2_0_PC		(Buzzer_2__0__PC)
+#define Buzzer_2_0_DR		(Buzzer_2__0__DR)
+#define Buzzer_2_0_SHIFT	(Buzzer_2__0__SHIFT)
+#define Buzzer_2_0_INTR	((uint16)((uint16)0x0003u << (Buzzer_2__0__SHIFT*2u)))
 
-#define BMS_LED_INTR_ALL	 ((uint16)(BMS_LED_0_INTR))
+#define Buzzer_2_INTR_ALL	 ((uint16)(Buzzer_2_0_INTR))
 
 
-#endif /* End Pins BMS_LED_ALIASES_H */
+#endif /* End Pins Buzzer_2_ALIASES_H */
 
 
 /* [] END OF FILE */

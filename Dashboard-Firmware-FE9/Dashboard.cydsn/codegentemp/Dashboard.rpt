@@ -1,19 +1,13 @@
-Loading plugins phase: Elapsed time ==> 0s.200ms
+Loading plugins phase: Elapsed time ==> 3s.909ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -d CY8C4247AZI-M485 -s C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -d CY8C4247AZI-M485 -s C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
-ADD: sdb.M0060: warning: Warning in component: CAN. The SYSCLK clock accuracy should be 0.5% or better. Please, enable WCO PLL in the Design-Wide Resource (*.cydwr) editor or use an external clock to meet the CAN accurate clocking requirements.
- * C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch (Instance:CAN)
-
-ADD: sdb.M0060: warning: Warning in component: CAN_1. The SYSCLK clock accuracy should be 0.5% or better. Please, enable WCO PLL in the Design-Wide Resource (*.cydwr) editor or use an external clock to meet the CAN accurate clocking requirements.
- * C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch (Instance:CAN_1)
-
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.364ms
+Elaboration phase: Elapsed time ==> 10s.308ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.091ms
+HDL generation phase: Elapsed time ==> 0s.157ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -31,23 +25,23 @@ HDL generation phase: Elapsed time ==> 0s.091ms
 ======================================================================
 Compiling:  Dashboard.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 Dashboard.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 Dashboard.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Dashboard.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 Dashboard.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 Dashboard.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Dashboard.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 -verilog Dashboard.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 -verilog Dashboard.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Sat May 06 12:30:38 2023
+Sat Jun 03 00:46:33 2023
 
 
 ======================================================================
@@ -57,7 +51,7 @@ Options  :    -yv2 -q10 Dashboard.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Sat May 06 12:30:38 2023
+Sat Jun 03 00:46:33 2023
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'
@@ -101,11 +95,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  Dashboard.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 -verilog Dashboard.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 -verilog Dashboard.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Sat May 06 12:30:39 2023
+Sat Jun 03 00:46:33 2023
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -116,9 +110,9 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.ctl'.
+Linking 'C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.v'.
+Linking 'C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_50\Bus_Connect_v2_50.v'.
@@ -138,11 +132,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  Dashboard.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 -verilog Dashboard.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 -verilog Dashboard.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Sat May 06 12:30:39 2023
+Sat Jun 03 00:46:34 2023
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -153,9 +147,9 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.ctl'.
+Linking 'C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.v'.
+Linking 'C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Dashboard.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_50\Bus_Connect_v2_50.v'.
@@ -197,6 +191,7 @@ Detecting unused logic.
 	\PWM_1:PWMUDB:dith_sel\
 	Net_1245
 	Net_1242
+	Net_78
 	Net_1243
 	\PWM_1:PWMUDB:MODULE_1:b_31\
 	\PWM_1:PWMUDB:MODULE_1:b_30\
@@ -354,7 +349,7 @@ Detecting unused logic.
 	\PWM_1:PWMUDB:add_vi_vv_MODGEN_1_3\
 	\PWM_1:PWMUDB:add_vi_vv_MODGEN_1_2\
 
-Deleted 147 User equations/components.
+Deleted 148 User equations/components.
 Deleted 30 Synthesized equations/components.
 
 ------------------------------------------------------
@@ -462,8 +457,6 @@ Aliasing \ReadyToDrive_Timer:TimerUDB:status_5\ to \ADC_GLV_V:Net_3107\
 Aliasing \ReadyToDrive_Timer:TimerUDB:status_4\ to \ADC_GLV_V:Net_3107\
 Aliasing \ReadyToDrive_Timer:TimerUDB:status_0\ to \ReadyToDrive_Timer:TimerUDB:tc_i\
 Aliasing Net_1264 to \ADC_GLV_V:Net_3107\
-Aliasing tmpOE__IMD_LED_net_0 to tmpOE__RGB1_1_net_0
-Aliasing tmpOE__BMS_LED_net_0 to tmpOE__RGB1_1_net_0
 Aliasing \PWM_1:PWMUDB:tc_i_reg\\D\ to \PWM_1:PWMUDB:status_2\
 Aliasing \ReadyToDrive_Timer:TimerUDB:capture_last\\D\ to \ADC_GLV_V:Net_3107\
 Aliasing \ReadyToDrive_Timer:TimerUDB:hwEnable_reg\\D\ to \ReadyToDrive_Timer:TimerUDB:run_mode\
@@ -482,86 +475,85 @@ Removing Lhs of wire tmpOE__RGB2_1_net_0[225] = tmpOE__RGB1_1_net_0[217]
 Removing Lhs of wire tmpOE__RGB3_1_net_0[231] = tmpOE__RGB1_1_net_0[217]
 Removing Lhs of wire tmpOE__Analog_1_net_0[237] = tmpOE__RGB1_1_net_0[217]
 Removing Lhs of wire tmpOE__Buzzer_net_0[243] = tmpOE__RGB1_1_net_0[217]
-Removing Rhs of wire Net_78[244] = \PWM_1:PWMUDB:pwm1_i_reg\[548]
-Removing Lhs of wire tmpOE__HV_net_0[250] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__Drive_net_0[256] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__TX_net_0[262] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__RX_net_0[269] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__RX_CAN1_net_0[283] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__TX_CAN1_net_0[289] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__DISP_net_0[304] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__D_RST_net_0[310] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__D_BL_net_0[316] = tmpOE__RGB1_1_net_0[217]
-Removing Rhs of wire \GraphicLCDIntf:cmd\[321] = \GraphicLCDIntf:data_lsb_1\[322]
-Removing Lhs of wire \GraphicLCDIntf:status_0\[333] = \GraphicLCDIntf:full\[330]
-Removing Rhs of wire \GraphicLCDIntf:status_1\[334] = \GraphicLCDIntf:data_valid\[335]
-Removing Lhs of wire \GraphicLCDIntf:status_7\[336] = zero[218]
-Removing Lhs of wire \GraphicLCDIntf:status_6\[337] = zero[218]
-Removing Lhs of wire \GraphicLCDIntf:status_5\[338] = zero[218]
-Removing Lhs of wire \GraphicLCDIntf:status_4\[339] = zero[218]
-Removing Lhs of wire \GraphicLCDIntf:status_3\[340] = zero[218]
-Removing Lhs of wire \GraphicLCDIntf:status_2\[341] = zero[218]
-Removing Rhs of wire Net_31_7[366] = \GraphicLCDIntf:data_lsb_7\[367]
-Removing Rhs of wire Net_31_6[368] = \GraphicLCDIntf:data_lsb_6\[369]
-Removing Rhs of wire Net_31_5[370] = \GraphicLCDIntf:data_lsb_5\[371]
-Removing Rhs of wire Net_31_4[372] = \GraphicLCDIntf:data_lsb_4\[373]
-Removing Rhs of wire Net_31_3[374] = \GraphicLCDIntf:data_lsb_3\[375]
-Removing Rhs of wire Net_31_2[376] = \GraphicLCDIntf:data_lsb_2\[377]
-Removing Rhs of wire Net_31_1[378] = \GraphicLCDIntf:cmd\[321]
-Removing Rhs of wire Net_31_0[379] = \GraphicLCDIntf:data_lsb_0\[361]
-Removing Lhs of wire tmpOE__D_LSB_net_7[382] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_6[383] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_5[384] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_4[385] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_3[386] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_2[387] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_1[388] = Net_39[365]
-Removing Lhs of wire tmpOE__D_LSB_net_0[389] = Net_39[365]
-Removing Lhs of wire tmpOE__D_RS_net_0[402] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__D_CS_net_0[408] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__D_WR_net_0[414] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__D_RD_net_0[420] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:Net_68\[428] = Net_946[756]
-Removing Lhs of wire \PWM_1:PWMUDB:ctrl_enable\[439] = \PWM_1:PWMUDB:control_7\[431]
-Removing Lhs of wire \PWM_1:Net_180\[447] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:hwCapture\[450] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:hwEnable\[451] = \PWM_1:PWMUDB:control_7\[431]
-Removing Lhs of wire \PWM_1:Net_178\[453] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:trig_out\[456] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:PWMUDB:runmode_enable\\R\[458] = zero[218]
-Removing Lhs of wire \PWM_1:Net_186\[459] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:runmode_enable\\S\[460] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:final_enable\[461] = \PWM_1:PWMUDB:runmode_enable\[457]
-Removing Lhs of wire \PWM_1:Net_179\[464] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:PWMUDB:ltch_kill_reg\\R\[466] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:ltch_kill_reg\\S\[467] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:km_tc\[468] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:min_kill_reg\\R\[469] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:min_kill_reg\\S\[470] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:final_kill\[473] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:PWMUDB:add_vi_vv_MODGEN_1_1\[476] = \PWM_1:PWMUDB:MODULE_1:g2:a0:s_1\[715]
-Removing Lhs of wire \PWM_1:PWMUDB:add_vi_vv_MODGEN_1_0\[478] = \PWM_1:PWMUDB:MODULE_1:g2:a0:s_0\[716]
-Removing Lhs of wire \PWM_1:PWMUDB:dith_count_1\\R\[479] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:dith_count_1\\S\[480] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:dith_count_0\\R\[481] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:dith_count_0\\S\[482] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:status_6\[485] = zero[218]
-Removing Rhs of wire \PWM_1:PWMUDB:status_5\[486] = \PWM_1:PWMUDB:final_kill_reg\[501]
-Removing Lhs of wire \PWM_1:PWMUDB:status_4\[487] = zero[218]
-Removing Rhs of wire \PWM_1:PWMUDB:status_3\[488] = \PWM_1:PWMUDB:fifo_full\[508]
-Removing Rhs of wire \PWM_1:PWMUDB:status_1\[490] = \PWM_1:PWMUDB:cmp2_status_reg\[500]
-Removing Rhs of wire \PWM_1:PWMUDB:status_0\[491] = \PWM_1:PWMUDB:cmp1_status_reg\[499]
-Removing Lhs of wire \PWM_1:PWMUDB:cmp1_status_reg\\R\[502] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:cmp1_status_reg\\S\[503] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:cmp2_status_reg\\R\[504] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:cmp2_status_reg\\S\[505] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:final_kill_reg\\R\[506] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:final_kill_reg\\S\[507] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:cs_addr_2\[509] = \PWM_1:PWMUDB:tc_i\[463]
-Removing Lhs of wire \PWM_1:PWMUDB:cs_addr_1\[510] = \PWM_1:PWMUDB:runmode_enable\[457]
-Removing Lhs of wire \PWM_1:PWMUDB:cs_addr_0\[511] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:compare1\[544] = \PWM_1:PWMUDB:cmp1_less\[515]
-Removing Lhs of wire \PWM_1:PWMUDB:compare2\[545] = \PWM_1:PWMUDB:cmp2_less\[518]
+Removing Lhs of wire tmpOE__HV_net_0[249] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__Drive_net_0[255] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__TX_net_0[261] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__RX_net_0[268] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__RX_CAN1_net_0[282] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__TX_CAN1_net_0[288] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__DISP_net_0[303] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__D_RST_net_0[309] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__D_BL_net_0[315] = tmpOE__RGB1_1_net_0[217]
+Removing Rhs of wire \GraphicLCDIntf:cmd\[320] = \GraphicLCDIntf:data_lsb_1\[321]
+Removing Lhs of wire \GraphicLCDIntf:status_0\[332] = \GraphicLCDIntf:full\[329]
+Removing Rhs of wire \GraphicLCDIntf:status_1\[333] = \GraphicLCDIntf:data_valid\[334]
+Removing Lhs of wire \GraphicLCDIntf:status_7\[335] = zero[218]
+Removing Lhs of wire \GraphicLCDIntf:status_6\[336] = zero[218]
+Removing Lhs of wire \GraphicLCDIntf:status_5\[337] = zero[218]
+Removing Lhs of wire \GraphicLCDIntf:status_4\[338] = zero[218]
+Removing Lhs of wire \GraphicLCDIntf:status_3\[339] = zero[218]
+Removing Lhs of wire \GraphicLCDIntf:status_2\[340] = zero[218]
+Removing Rhs of wire Net_31_7[365] = \GraphicLCDIntf:data_lsb_7\[366]
+Removing Rhs of wire Net_31_6[367] = \GraphicLCDIntf:data_lsb_6\[368]
+Removing Rhs of wire Net_31_5[369] = \GraphicLCDIntf:data_lsb_5\[370]
+Removing Rhs of wire Net_31_4[371] = \GraphicLCDIntf:data_lsb_4\[372]
+Removing Rhs of wire Net_31_3[373] = \GraphicLCDIntf:data_lsb_3\[374]
+Removing Rhs of wire Net_31_2[375] = \GraphicLCDIntf:data_lsb_2\[376]
+Removing Rhs of wire Net_31_1[377] = \GraphicLCDIntf:cmd\[320]
+Removing Rhs of wire Net_31_0[378] = \GraphicLCDIntf:data_lsb_0\[360]
+Removing Lhs of wire tmpOE__D_LSB_net_7[381] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_6[382] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_5[383] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_4[384] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_3[385] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_2[386] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_1[387] = Net_39[364]
+Removing Lhs of wire tmpOE__D_LSB_net_0[388] = Net_39[364]
+Removing Lhs of wire tmpOE__D_RS_net_0[401] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__D_CS_net_0[407] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__D_WR_net_0[413] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire tmpOE__D_RD_net_0[419] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire \PWM_1:Net_68\[427] = Net_946[756]
+Removing Lhs of wire \PWM_1:PWMUDB:ctrl_enable\[438] = \PWM_1:PWMUDB:control_7\[430]
+Removing Lhs of wire \PWM_1:Net_180\[446] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:hwCapture\[449] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:hwEnable\[450] = \PWM_1:PWMUDB:control_7\[430]
+Removing Lhs of wire \PWM_1:Net_178\[452] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:trig_out\[455] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire \PWM_1:PWMUDB:runmode_enable\\R\[457] = zero[218]
+Removing Lhs of wire \PWM_1:Net_186\[458] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:runmode_enable\\S\[459] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:final_enable\[460] = \PWM_1:PWMUDB:runmode_enable\[456]
+Removing Lhs of wire \PWM_1:Net_179\[463] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire \PWM_1:PWMUDB:ltch_kill_reg\\R\[465] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:ltch_kill_reg\\S\[466] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:km_tc\[467] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:min_kill_reg\\R\[468] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:min_kill_reg\\S\[469] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:final_kill\[472] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire \PWM_1:PWMUDB:add_vi_vv_MODGEN_1_1\[475] = \PWM_1:PWMUDB:MODULE_1:g2:a0:s_1\[715]
+Removing Lhs of wire \PWM_1:PWMUDB:add_vi_vv_MODGEN_1_0\[477] = \PWM_1:PWMUDB:MODULE_1:g2:a0:s_0\[716]
+Removing Lhs of wire \PWM_1:PWMUDB:dith_count_1\\R\[478] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:dith_count_1\\S\[479] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:dith_count_0\\R\[480] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:dith_count_0\\S\[481] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:status_6\[484] = zero[218]
+Removing Rhs of wire \PWM_1:PWMUDB:status_5\[485] = \PWM_1:PWMUDB:final_kill_reg\[500]
+Removing Lhs of wire \PWM_1:PWMUDB:status_4\[486] = zero[218]
+Removing Rhs of wire \PWM_1:PWMUDB:status_3\[487] = \PWM_1:PWMUDB:fifo_full\[507]
+Removing Rhs of wire \PWM_1:PWMUDB:status_1\[489] = \PWM_1:PWMUDB:cmp2_status_reg\[499]
+Removing Rhs of wire \PWM_1:PWMUDB:status_0\[490] = \PWM_1:PWMUDB:cmp1_status_reg\[498]
+Removing Lhs of wire \PWM_1:PWMUDB:cmp1_status_reg\\R\[501] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:cmp1_status_reg\\S\[502] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:cmp2_status_reg\\R\[503] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:cmp2_status_reg\\S\[504] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:final_kill_reg\\R\[505] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:final_kill_reg\\S\[506] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:cs_addr_2\[508] = \PWM_1:PWMUDB:tc_i\[462]
+Removing Lhs of wire \PWM_1:PWMUDB:cs_addr_1\[509] = \PWM_1:PWMUDB:runmode_enable\[456]
+Removing Lhs of wire \PWM_1:PWMUDB:cs_addr_0\[510] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:compare1\[543] = \PWM_1:PWMUDB:cmp1_less\[514]
+Removing Lhs of wire \PWM_1:PWMUDB:compare2\[544] = \PWM_1:PWMUDB:cmp2_less\[517]
 Removing Lhs of wire \PWM_1:PWMUDB:pwm_temp\[556] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_23\[597] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_22\[598] = zero[218]
@@ -586,9 +578,9 @@ Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_4\[616] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_3\[617] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_2\[618] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_1\[619] = \PWM_1:PWMUDB:MODIN1_1\[620]
-Removing Lhs of wire \PWM_1:PWMUDB:MODIN1_1\[620] = \PWM_1:PWMUDB:dith_count_1\[475]
+Removing Lhs of wire \PWM_1:PWMUDB:MODIN1_1\[620] = \PWM_1:PWMUDB:dith_count_1\[474]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:a_0\[621] = \PWM_1:PWMUDB:MODIN1_0\[622]
-Removing Lhs of wire \PWM_1:PWMUDB:MODIN1_0\[622] = \PWM_1:PWMUDB:dith_count_0\[477]
+Removing Lhs of wire \PWM_1:PWMUDB:MODIN1_0\[622] = \PWM_1:PWMUDB:dith_count_0\[476]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_0\[754] = tmpOE__RGB1_1_net_0[217]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_0\[755] = tmpOE__RGB1_1_net_0[217]
 Removing Lhs of wire tmpOE__Analog_2_net_0[764] = tmpOE__RGB1_1_net_0[217]
@@ -615,25 +607,23 @@ Removing Lhs of wire Net_1264[844] = zero[218]
 Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:cs_addr_2\[846] = zero[218]
 Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:cs_addr_1\[847] = \ReadyToDrive_Timer:TimerUDB:trig_reg\[833]
 Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:cs_addr_0\[848] = \ReadyToDrive_Timer:TimerUDB:per_zero\[824]
-Removing Lhs of wire tmpOE__IMD_LED_net_0[930] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire tmpOE__BMS_LED_net_0[936] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:PWMUDB:prevCapture\\D\[952] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:trig_last\\D\[953] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:prevCompare1\\D\[959] = \PWM_1:PWMUDB:cmp1\[494]
-Removing Lhs of wire \PWM_1:PWMUDB:prevCompare2\\D\[960] = \PWM_1:PWMUDB:cmp2\[497]
-Removing Lhs of wire \PWM_1:PWMUDB:cmp1_status_reg\\D\[961] = \PWM_1:PWMUDB:cmp1_status\[495]
-Removing Lhs of wire \PWM_1:PWMUDB:cmp2_status_reg\\D\[962] = \PWM_1:PWMUDB:cmp2_status\[498]
-Removing Lhs of wire \PWM_1:PWMUDB:pwm_i_reg\\D\[964] = \PWM_1:PWMUDB:pwm_i\[547]
-Removing Lhs of wire \PWM_1:PWMUDB:pwm1_i_reg\\D\[965] = \PWM_1:PWMUDB:pwm1_i\[549]
-Removing Lhs of wire \PWM_1:PWMUDB:pwm2_i_reg\\D\[966] = \PWM_1:PWMUDB:pwm2_i\[551]
-Removing Lhs of wire \PWM_1:PWMUDB:tc_i_reg\\D\[967] = \PWM_1:PWMUDB:status_2\[489]
-Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:capture_last\\D\[968] = zero[218]
-Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:tc_reg_i\\D\[969] = \ReadyToDrive_Timer:TimerUDB:status_tc\[822]
-Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:hwEnable_reg\\D\[970] = \ReadyToDrive_Timer:TimerUDB:control_7\[800]
-Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:capture_out_reg_i\\D\[971] = \ReadyToDrive_Timer:TimerUDB:capt_fifo_load\[818]
+Removing Lhs of wire \PWM_1:PWMUDB:prevCapture\\D\[939] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:trig_last\\D\[940] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:prevCompare1\\D\[946] = \PWM_1:PWMUDB:cmp1\[493]
+Removing Lhs of wire \PWM_1:PWMUDB:prevCompare2\\D\[947] = \PWM_1:PWMUDB:cmp2\[496]
+Removing Lhs of wire \PWM_1:PWMUDB:cmp1_status_reg\\D\[948] = \PWM_1:PWMUDB:cmp1_status\[494]
+Removing Lhs of wire \PWM_1:PWMUDB:cmp2_status_reg\\D\[949] = \PWM_1:PWMUDB:cmp2_status\[497]
+Removing Lhs of wire \PWM_1:PWMUDB:pwm_i_reg\\D\[951] = \PWM_1:PWMUDB:pwm_i\[546]
+Removing Lhs of wire \PWM_1:PWMUDB:pwm1_i_reg\\D\[952] = \PWM_1:PWMUDB:pwm1_i\[548]
+Removing Lhs of wire \PWM_1:PWMUDB:pwm2_i_reg\\D\[953] = \PWM_1:PWMUDB:pwm2_i\[550]
+Removing Lhs of wire \PWM_1:PWMUDB:tc_i_reg\\D\[954] = \PWM_1:PWMUDB:status_2\[488]
+Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:capture_last\\D\[955] = zero[218]
+Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:tc_reg_i\\D\[956] = \ReadyToDrive_Timer:TimerUDB:status_tc\[822]
+Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:hwEnable_reg\\D\[957] = \ReadyToDrive_Timer:TimerUDB:control_7\[800]
+Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:capture_out_reg_i\\D\[958] = \ReadyToDrive_Timer:TimerUDB:capt_fifo_load\[818]
 
 ------------------------------------------------------
-Aliased 0 equations, 163 wires.
+Aliased 0 equations, 160 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -778,17 +768,17 @@ Aliasing \ReadyToDrive_Timer:TimerUDB:capt_fifo_load\ to zero
 Aliasing \PWM_1:PWMUDB:min_kill_reg\\D\ to tmpOE__RGB1_1_net_0
 Aliasing \PWM_1:PWMUDB:ltch_kill_reg\\D\ to tmpOE__RGB1_1_net_0
 Aliasing \PWM_1:PWMUDB:final_kill_reg\\D\ to zero
-Removing Lhs of wire \PWM_1:PWMUDB:final_capture\[513] = zero[218]
-Removing Lhs of wire \PWM_1:PWMUDB:pwm_i\[547] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:final_capture\[512] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:pwm_i\[546] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_24\[725] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_16\[735] = zero[218]
 Removing Lhs of wire \PWM_1:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_8\[745] = zero[218]
 Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:capt_fifo_load\[818] = zero[218]
 Removing Lhs of wire \ReadyToDrive_Timer:TimerUDB:trig_reg\[833] = \ReadyToDrive_Timer:TimerUDB:control_7\[800]
-Removing Lhs of wire \PWM_1:PWMUDB:min_kill_reg\\D\[951] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:PWMUDB:runmode_enable\\D\[954] = \PWM_1:PWMUDB:control_7\[431]
-Removing Lhs of wire \PWM_1:PWMUDB:ltch_kill_reg\\D\[956] = tmpOE__RGB1_1_net_0[217]
-Removing Lhs of wire \PWM_1:PWMUDB:final_kill_reg\\D\[963] = zero[218]
+Removing Lhs of wire \PWM_1:PWMUDB:min_kill_reg\\D\[938] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire \PWM_1:PWMUDB:runmode_enable\\D\[941] = \PWM_1:PWMUDB:control_7\[430]
+Removing Lhs of wire \PWM_1:PWMUDB:ltch_kill_reg\\D\[943] = tmpOE__RGB1_1_net_0[217]
+Removing Lhs of wire \PWM_1:PWMUDB:final_kill_reg\\D\[950] = zero[218]
 
 ------------------------------------------------------
 Aliased 0 equations, 11 wires.
@@ -819,16 +809,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 Dashboard.v -verilog
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -dcpsoc3 Dashboard.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 1s.588ms
+Warp synthesis phase: Elapsed time ==> 2s.488ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.4.0.80, Family: PSoC3, Started at: Saturday, 06 May 2023 12:30:40
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -d CY8C4247AZI-M485 Dashboard.v -verilog
+cyp3fit: V4.4.0.80, Family: PSoC3, Started at: Saturday, 03 June 2023 00:46:35
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj -d CY8C4247AZI-M485 Dashboard.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.025ms
+Design parsing phase: Elapsed time ==> 0s.047ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -877,8 +867,6 @@ Done removing unused cells.
 
 Removing unused cells resulting from optimization
 Done removing unused cells.
-ADD: pft.M0040: information: The following 2 pin(s) will be assigned a location by the fitter: BMS_LED(0), IMD_LED(0)
-
 Info: plm.M0038: The pin named D_LSB(7) at location P1[7] prevents usage of special purposes: SARADC[0].ext_vref. (App=cydsfit)
 
 Removing unused cells resulting from optimization
@@ -1088,12 +1076,11 @@ Design Equations
             SIO Vtrip: MULTIPLIER_0_5
             SIO Multiplier Index: 0
             SIO RefSel: VCC_IO
-            Required Capabilities: DIGITAL, ROUTABLE
-            Initial Value: 1
+            Required Capabilities: DIGITAL
+            Initial Value: 0
             IO Voltage: 0
         PORT MAP (
             pa_out => Buzzer(0)__PA ,
-            pin_input => Net_78 ,
             pad => Buzzer(0)_PAD );
         Properties:
         {
@@ -2145,78 +2132,6 @@ Design Equations
         Properties:
         {
         }
-
-    Pin : Name = IMD_LED(0)
-        Attributes:
-            In Group/Port: True
-            In Sync Option: AUTO
-            Out Sync Option: NOSYNC
-            Interrupt generated: False
-            Interrupt mode: NONE
-            Drive mode: CMOS_OUT
-            VTrip: EITHER
-            Slew: FAST
-            Input Sync needed: False
-            Output Sync needed: False
-            SC shield enabled: False
-            POR State: ANY
-            LCD Mode: COMMON
-            Register Mode: RegComb
-            CaSense Mode: NEITHER
-            Treat as pin: True
-            Is OE Registered: False
-            Uses Analog: False
-            Can contain Digital: True
-            Is SIO: False
-            SIO Output Buf: NONREGULATED
-            SIO Input Buf: SINGLE_ENDED
-            SIO HiFreq: LOW
-            SIO Hyst: DISABLED
-            SIO Vtrip: MULTIPLIER_0_5
-            SIO Multiplier Index: 0
-            SIO RefSel: VCC_IO
-            Required Capabilities: DIGITAL
-            Initial Value: 1
-            IO Voltage: 0
-        PORT MAP (
-            pa_out => IMD_LED(0)__PA ,
-            pad => IMD_LED(0)_PAD );
-
-    Pin : Name = BMS_LED(0)
-        Attributes:
-            In Group/Port: True
-            In Sync Option: AUTO
-            Out Sync Option: NOSYNC
-            Interrupt generated: False
-            Interrupt mode: NONE
-            Drive mode: CMOS_OUT
-            VTrip: EITHER
-            Slew: FAST
-            Input Sync needed: False
-            Output Sync needed: False
-            SC shield enabled: False
-            POR State: ANY
-            LCD Mode: COMMON
-            Register Mode: RegComb
-            CaSense Mode: NEITHER
-            Treat as pin: True
-            Is OE Registered: False
-            Uses Analog: False
-            Can contain Digital: True
-            Is SIO: False
-            SIO Output Buf: NONREGULATED
-            SIO Input Buf: SINGLE_ENDED
-            SIO HiFreq: LOW
-            SIO Hyst: DISABLED
-            SIO Vtrip: MULTIPLIER_0_5
-            SIO Multiplier Index: 0
-            SIO RefSel: VCC_IO
-            Required Capabilities: DIGITAL
-            Initial Value: 1
-            IO Voltage: 0
-        PORT MAP (
-            pa_out => BMS_LED(0)__PA ,
-            pad => BMS_LED(0)_PAD );
     </CYPRESSTAG>
     <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
 
@@ -2425,7 +2340,7 @@ Design Equations
         (
               \PWM_1:PWMUDB:control_7\
         );
-        Output = \PWM_1:PWMUDB:runmode_enable\ (fanout=3)
+        Output = \PWM_1:PWMUDB:runmode_enable\ (fanout=2)
 
     MacroCell: Name=\PWM_1:PWMUDB:prevCompare1\, Mode=(D-Register)
         Total # of inputs        : 1
@@ -2474,18 +2389,6 @@ Design Equations
               !\PWM_1:PWMUDB:prevCompare2\ * \PWM_1:PWMUDB:cmp2_less\
         );
         Output = \PWM_1:PWMUDB:status_1\ (fanout=1)
-
-    MacroCell: Name=Net_78, Mode=(D-Register)
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_946_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \PWM_1:PWMUDB:runmode_enable\ * \PWM_1:PWMUDB:cmp1_less\
-        );
-        Output = Net_78 (fanout=1)
     </CYPRESSTAG>
     <CYPRESSTAG name="Datapath listing">
 
@@ -2713,8 +2616,7 @@ Design Equations
             clock => ClockBlock_HFClk ,
             status_3 => \ReadyToDrive_Timer:TimerUDB:status_3\ ,
             status_2 => \ReadyToDrive_Timer:TimerUDB:status_2\ ,
-            status_0 => \ReadyToDrive_Timer:TimerUDB:status_tc\ ,
-            interrupt => Net_1263 );
+            status_0 => \ReadyToDrive_Timer:TimerUDB:status_tc\ );
         Properties:
         {
             cy_force_order = 1
@@ -2812,15 +2714,6 @@ Design Equations
             int_type = "10"
             is_nmi = 0
         }
-
-    interrupt: Name =ReadyToDrive_Int
-        PORT MAP (
-            interrupt => Net_1263 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
     </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Technology mapping summary" expanded>
@@ -2832,7 +2725,7 @@ Technology mapping summary
 Resource Type                 : Used : Free :  Max :  % Used
 ============================================================
 Digital Clocks                :    1 :    3 :    4 : 25.00 %
-Interrupts                    :    4 :   28 :   32 : 12.50 %
+Interrupts                    :    3 :   29 :   32 :  9.38 %
 IO                            :   35 :   16 :   51 : 68.63 %
 Segment LCD                   :    0 :    1 :    1 :  0.00 %
 CapSense                      :    0 :    2 :    2 :  0.00 %
@@ -2842,9 +2735,9 @@ Serial Communication (SCB)    :    0 :    4 :    4 :  0.00 %
 DMA Channels                  :    0 :    8 :    8 :  0.00 %
 Timer/Counter/PWM             :    0 :    8 :    8 :  0.00 %
 UDB                           :      :      :      :        
-  Macrocells                  :   19 :   13 :   32 : 59.38 %
-  Unique P-terms              :   28 :   36 :   64 : 43.75 %
-  Total P-terms               :   33 :      :      :        
+  Macrocells                  :   18 :   14 :   32 : 56.25 %
+  Unique P-terms              :   27 :   37 :   64 : 42.19 %
+  Total P-terms               :   32 :      :      :        
   Datapath Cells              :    4 :    0 :    4 : 100.00 %
   Status Cells                :    4 :    0 :    4 : 100.00 %
     Status Registers          :    2 :      :      :        
@@ -2859,8 +2752,8 @@ DAC                           :      :      :      :
   7-bit IDAC                  :    0 :    2 :    2 :  0.00 %
   8-bit IDAC                  :    0 :    2 :    2 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.177ms
-Tech Mapping phase: Elapsed time ==> 0s.210ms
+Technology Mapping: Elapsed time ==> 0s.393ms
+Tech Mapping phase: Elapsed time ==> 0s.628ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -2903,21 +2796,19 @@ ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]
 \ADC_GLV_V:cy_psoc4_sar\            : SARADC_[FFB(SARADC,0)]             
 \CAN:CanIP\                         : CAN_[FFB(CAN,1)]                   
 \CAN_1:CanIP\                       : CAN_[FFB(CAN,0)]                   
-IMD_LED(0)                          : [IOP=(0)][IoId=(4)]                
-BMS_LED(0)                          : [IOP=(0)][IoId=(5)]                
 
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
-Elapsed time ==> 0.3988451s
+Elapsed time ==> 0.6645519s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 0s.875ms
+Analog Placement phase: Elapsed time ==> 3s.288ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0168955 secs
+Route success=True, Iterations=1 Elapsed=0.0371603 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.016ms
+Analog Routing phase: Elapsed time ==> 0s.052ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -3010,11 +2901,11 @@ Mux Info {
     }
   }
 }
-Analog Code Generation phase: Elapsed time ==> 0s.020ms
+Analog Code Generation phase: Elapsed time ==> 0s.057ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 0.6 sec.
+I2076: Total run-time: 1.1 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -3025,27 +2916,27 @@ PLD Packing Summary
 ------------------------------------------------------------
             Resource Type : Used : Free :  Max :  % Used
     ====================================================
-                     PLDs :    6 :    2 :    8 :  75.00%
+                     PLDs :    8 :    0 :    8 : 100.00%
 
 <CYPRESSTAG name="PLD Statistics">
 
         PLD Resource Type :     Average/LAB
     =======================================
-                   Inputs :            5.83
-                   Pterms :            5.17
-               Macrocells :            3.17
+                   Inputs :            4.38
+                   Pterms :            3.75
+               Macrocells :            2.25
 </CYPRESSTAG>
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.001ms
+PLD Packing: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.029ms
+Partitioning: Elapsed time ==> 0s.078ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -3055,7 +2946,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          4 :       7.25 :       4.75
+                 UDB :          4 :       7.00 :       4.50
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -3063,24 +2954,24 @@ Final Placement Summary
 Component Placement Details
 ------------------------------------------------------------
 UDB [UDB=(0,0)] contents:
-LAB@[UDB=(0,0)][LB=0] #macrocells=3, #inputs=4, #pterms=3
+LAB@[UDB=(0,0)][LB=0] #macrocells=2, #inputs=4, #pterms=2
 {
-    [McSlotId=0]:     MacroCell: Name=\PWM_1:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(0,0)][LB=0][MC=0]
-        Total # of inputs        : 1
+    [McSlotId=0]:     MacroCell: Name=\ReadyToDrive_Timer:TimerUDB:status_tc\, Mode=(Combinatorial) @ [UDB=(0,0)][LB=0][MC=0]
+        Total # of inputs        : 2
         Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_946_digital) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \PWM_1:PWMUDB:cmp1_less\
+              \ReadyToDrive_Timer:TimerUDB:control_7\ * 
+              \ReadyToDrive_Timer:TimerUDB:per_zero\
         );
-        Output = \PWM_1:PWMUDB:prevCompare1\ (fanout=1)
+        Output = \ReadyToDrive_Timer:TimerUDB:status_tc\ (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\PWM_1:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(0,0)][LB=0][MC=1]
+    [McSlotId=1]: (empty)
+    [McSlotId=2]:     MacroCell: Name=\PWM_1:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(0,0)][LB=0][MC=2]
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
@@ -3095,26 +2986,28 @@ LAB@[UDB=(0,0)][LB=0] #macrocells=3, #inputs=4, #pterms=3
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=\ReadyToDrive_Timer:TimerUDB:status_tc\, Mode=(Combinatorial) @ [UDB=(0,0)][LB=0][MC=2]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \ReadyToDrive_Timer:TimerUDB:control_7\ * 
-              \ReadyToDrive_Timer:TimerUDB:per_zero\
-        );
-        Output = \ReadyToDrive_Timer:TimerUDB:status_tc\ (fanout=1)
-        Properties               : 
-        {
-        }
-
     [McSlotId=3]: (empty)
 }
 
 LAB@[UDB=(0,0)][LB=1] #macrocells=2, #inputs=3, #pterms=2
 {
-    [McSlotId=0]:     MacroCell: Name=\PWM_1:PWMUDB:status_2\, Mode=(Combinatorial) @ [UDB=(0,0)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\PWM_1:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(0,0)][LB=1][MC=0]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_946_digital) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \PWM_1:PWMUDB:cmp1_less\
+        );
+        Output = \PWM_1:PWMUDB:prevCompare1\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]:     MacroCell: Name=\PWM_1:PWMUDB:status_2\, Mode=(Combinatorial) @ [UDB=(0,0)][LB=1][MC=2]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -3127,22 +3020,6 @@ LAB@[UDB=(0,0)][LB=1] #macrocells=2, #inputs=3, #pterms=2
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=Net_78, Mode=(D-Register) @ [UDB=(0,0)][LB=1][MC=1]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_946_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \PWM_1:PWMUDB:runmode_enable\ * \PWM_1:PWMUDB:cmp1_less\
-        );
-        Output = Net_78 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
     [McSlotId=3]: (empty)
 }
 
@@ -3188,8 +3065,7 @@ statusicell: Name =\ReadyToDrive_Timer:TimerUDB:rstSts:stsreg\
         clock => ClockBlock_HFClk ,
         status_3 => \ReadyToDrive_Timer:TimerUDB:status_3\ ,
         status_2 => \ReadyToDrive_Timer:TimerUDB:status_2\ ,
-        status_0 => \ReadyToDrive_Timer:TimerUDB:status_tc\ ,
-        interrupt => Net_1263 );
+        status_0 => \ReadyToDrive_Timer:TimerUDB:status_tc\ );
     Properties:
     {
         cy_force_order = 1
@@ -3222,6 +3098,63 @@ controlcell: Name =\ReadyToDrive_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\
     Clock Enable: True
 
 UDB [UDB=(0,1)] contents:
+LAB@[UDB=(0,1)][LB=0] #macrocells=1, #inputs=1, #pterms=1
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]: (empty)
+    [McSlotId=2]:     MacroCell: Name=\PWM_1:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_946_digital) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \PWM_1:PWMUDB:control_7\
+        );
+        Output = \PWM_1:PWMUDB:runmode_enable\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(0,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
+{
+    [McSlotId=0]:     MacroCell: Name=\PWM_1:PWMUDB:prevCompare2\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=0]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_946_digital) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \PWM_1:PWMUDB:cmp2_less\
+        );
+        Output = \PWM_1:PWMUDB:prevCompare2\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]:     MacroCell: Name=\PWM_1:PWMUDB:status_1\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=3]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_946_digital) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\PWM_1:PWMUDB:prevCompare2\ * \PWM_1:PWMUDB:cmp2_less\
+        );
+        Output = \PWM_1:PWMUDB:status_1\ (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
 datapathcell: Name =\PWM_1:PWMUDB:sP8:pwmdp:u0\
     PORT MAP (
         clock => Net_946_digital ,
@@ -3272,9 +3205,90 @@ statuscell: Name =\GraphicLCDIntf:StsReg\
     Clock Enable: True
 
 UDB [UDB=(1,0)] contents:
-LAB@[UDB=(1,0)][LB=0] #macrocells=4, #inputs=10, #pterms=7
+LAB@[UDB=(1,0)][LB=0] #macrocells=4, #inputs=8, #pterms=8
 {
-    [McSlotId=0]:     MacroCell: Name=\GraphicLCDIntf:state_2\, Mode=(T-Register) @ [UDB=(1,0)][LB=0][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\GraphicLCDIntf:state_1\, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=0]
+        Total # of inputs        : 8
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (ClockBlock_HFClk) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\GraphicLCDIntf:data_empty\ * \GraphicLCDIntf:state_3\ * 
+              !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_1\ * 
+              !\GraphicLCDIntf:state_0\ * !Net_31_1
+            + !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
+              \GraphicLCDIntf:state_1\
+            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
+              !\GraphicLCDIntf:state_1\
+            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * 
+              !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:z0_detect\
+            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * 
+              \GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:z1_detect\
+        );
+        Output = \GraphicLCDIntf:state_1\ (fanout=10)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\GraphicLCDIntf:state_3\, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=1]
+        Total # of inputs        : 6
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (ClockBlock_HFClk) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              \GraphicLCDIntf:data_empty\ * \GraphicLCDIntf:state_3\ * 
+              !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_1\ * 
+              !\GraphicLCDIntf:state_0\ * !Net_31_1
+            + !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
+              \GraphicLCDIntf:state_0\
+        );
+        Output = \GraphicLCDIntf:state_3\ (fanout=10)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_26, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=2]
+        Total # of inputs        : 4
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (ClockBlock_HFClk) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
+              \GraphicLCDIntf:state_1\
+            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
+              !\GraphicLCDIntf:state_0\
+        );
+        Output = Net_26 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_39, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=3]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (ClockBlock_HFClk) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
+              \GraphicLCDIntf:state_1\
+        );
+        Output = Net_39 (fanout=8)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(1,0)][LB=1] #macrocells=4, #inputs=8, #pterms=7
+{
+    [McSlotId=0]:     MacroCell: Name=\GraphicLCDIntf:state_2\, Mode=(T-Register) @ [UDB=(1,0)][LB=1][MC=0]
         Total # of inputs        : 6
         Total # of product terms : 3
         List of special equations: 
@@ -3289,84 +3303,6 @@ LAB@[UDB=(1,0)][LB=0] #macrocells=4, #inputs=10, #pterms=7
               \GraphicLCDIntf:state_0\ * \GraphicLCDIntf:z1_detect\
         );
         Output = \GraphicLCDIntf:state_2\ (fanout=11)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_28, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=1]
-        Total # of inputs        : 3
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (ClockBlock_HFClk) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        !(
-              !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
-              !\GraphicLCDIntf:state_0\
-        );
-        Output = Net_28 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_25, Mode=(T-Register) @ [UDB=(1,0)][LB=0][MC=2]
-        Total # of inputs        : 6
-        Total # of product terms : 2
-        List of special equations: 
-            Clock  = (ClockBlock_HFClk) => Global
-            Clock Enable: True
-        Main Equation            : 2 pterms
-        (
-              \GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
-              !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_0\ * !Net_25 * 
-              Net_31_0
-            + \GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
-              !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_0\ * Net_25 * 
-              !Net_31_0
-        );
-        Output = Net_25 (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=\GraphicLCDIntf:full\, Mode=(Combinatorial) @ [UDB=(1,0)][LB=0][MC=3]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        !(
-              \GraphicLCDIntf:cmd_not_full\ * \GraphicLCDIntf:data_not_full\
-        );
-        Output = \GraphicLCDIntf:full\ (fanout=1)
-        Properties               : 
-        {
-        }
-}
-
-LAB@[UDB=(1,0)][LB=1] #macrocells=3, #inputs=7, #pterms=8
-{
-    [McSlotId=0]:     MacroCell: Name=\GraphicLCDIntf:state_0\, Mode=(D-Register) @ [UDB=(1,0)][LB=1][MC=0]
-        Total # of inputs        : 7
-        Total # of product terms : 6
-        List of special equations: 
-            Clock  = (ClockBlock_HFClk) => Global
-            Clock Enable: True
-        Main Equation            : 6 pterms
-        (
-              !\GraphicLCDIntf:cmd_empty\ * !\GraphicLCDIntf:state_3\ * 
-              !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_0\
-            + !\GraphicLCDIntf:cmd_empty\ * !\GraphicLCDIntf:state_2\ * 
-              \GraphicLCDIntf:state_1\ * \GraphicLCDIntf:state_0\
-            + !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
-              \GraphicLCDIntf:state_1\
-            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
-              !\GraphicLCDIntf:state_1\ * \GraphicLCDIntf:state_0\
-            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * 
-              !\GraphicLCDIntf:state_0\ * \GraphicLCDIntf:z0_detect\
-            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * 
-              \GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:z1_detect\
-        );
-        Output = \GraphicLCDIntf:state_0\ (fanout=10)
         Properties               : 
         {
         }
@@ -3387,25 +3323,41 @@ LAB@[UDB=(1,0)][LB=1] #macrocells=3, #inputs=7, #pterms=8
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=Net_26, Mode=(D-Register) @ [UDB=(1,0)][LB=1][MC=2]
-        Total # of inputs        : 4
+    [McSlotId=2]:     MacroCell: Name=Net_25, Mode=(T-Register) @ [UDB=(1,0)][LB=1][MC=2]
+        Total # of inputs        : 6
         Total # of product terms : 2
         List of special equations: 
             Clock  = (ClockBlock_HFClk) => Global
             Clock Enable: True
         Main Equation            : 2 pterms
-        !(
-              !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
-              \GraphicLCDIntf:state_1\
-            + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
-              !\GraphicLCDIntf:state_0\
+        (
+              \GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
+              !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_0\ * !Net_25 * 
+              Net_31_0
+            + \GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
+              !\GraphicLCDIntf:state_1\ * !\GraphicLCDIntf:state_0\ * Net_25 * 
+              !Net_31_0
         );
-        Output = Net_26 (fanout=1)
+        Output = Net_25 (fanout=2)
         Properties               : 
         {
         }
 
-    [McSlotId=3]: (empty)
+    [McSlotId=3]:     MacroCell: Name=Net_28, Mode=(D-Register) @ [UDB=(1,0)][LB=1][MC=3]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (ClockBlock_HFClk) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
+              !\GraphicLCDIntf:state_0\
+        );
+        Output = Net_28 (fanout=1)
+        Properties               : 
+        {
+        }
 }
 
 datapathcell: Name =\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0\
@@ -3481,102 +3433,35 @@ controlcell: Name =\PWM_1:PWMUDB:genblk1:ctrlreg\
     Clock Enable: True
 
 UDB [UDB=(1,1)] contents:
-LAB@[UDB=(1,1)][LB=0] #macrocells=3, #inputs=3, #pterms=3
+LAB@[UDB=(1,1)][LB=0] #macrocells=2, #inputs=7, #pterms=7
 {
-    [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=\PWM_1:PWMUDB:prevCompare2\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=1]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_946_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \PWM_1:PWMUDB:cmp2_less\
-        );
-        Output = \PWM_1:PWMUDB:prevCompare2\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=\PWM_1:PWMUDB:status_1\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=2]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_946_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !\PWM_1:PWMUDB:prevCompare2\ * \PWM_1:PWMUDB:cmp2_less\
-        );
-        Output = \PWM_1:PWMUDB:status_1\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=\PWM_1:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=3]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_946_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \PWM_1:PWMUDB:control_7\
-        );
-        Output = \PWM_1:PWMUDB:runmode_enable\ (fanout=3)
-        Properties               : 
-        {
-        }
-}
-
-LAB@[UDB=(1,1)][LB=1] #macrocells=4, #inputs=8, #pterms=8
-{
-    [McSlotId=0]:     MacroCell: Name=\GraphicLCDIntf:state_1\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=0]
-        Total # of inputs        : 8
-        Total # of product terms : 5
+    [McSlotId=0]:     MacroCell: Name=\GraphicLCDIntf:state_0\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=0]
+        Total # of inputs        : 7
+        Total # of product terms : 6
         List of special equations: 
             Clock  = (ClockBlock_HFClk) => Global
             Clock Enable: True
-        Main Equation            : 5 pterms
+        Main Equation            : 6 pterms
         (
-              !\GraphicLCDIntf:data_empty\ * \GraphicLCDIntf:state_3\ * 
-              !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_1\ * 
-              !\GraphicLCDIntf:state_0\ * !Net_31_1
+              !\GraphicLCDIntf:cmd_empty\ * !\GraphicLCDIntf:state_3\ * 
+              !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_0\
+            + !\GraphicLCDIntf:cmd_empty\ * !\GraphicLCDIntf:state_2\ * 
+              \GraphicLCDIntf:state_1\ * \GraphicLCDIntf:state_0\
             + !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
               \GraphicLCDIntf:state_1\
             + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_2\ * 
-              !\GraphicLCDIntf:state_1\
+              !\GraphicLCDIntf:state_1\ * \GraphicLCDIntf:state_0\
             + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * 
-              !\GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:z0_detect\
+              !\GraphicLCDIntf:state_0\ * \GraphicLCDIntf:z0_detect\
             + !\GraphicLCDIntf:state_3\ * \GraphicLCDIntf:state_1\ * 
               \GraphicLCDIntf:state_0\ * !\GraphicLCDIntf:z1_detect\
         );
-        Output = \GraphicLCDIntf:state_1\ (fanout=10)
+        Output = \GraphicLCDIntf:state_0\ (fanout=10)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\GraphicLCDIntf:state_3\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=1]
-        Total # of inputs        : 6
-        Total # of product terms : 2
-        List of special equations: 
-            Clock  = (ClockBlock_HFClk) => Global
-            Clock Enable: True
-        Main Equation            : 2 pterms
-        (
-              \GraphicLCDIntf:data_empty\ * \GraphicLCDIntf:state_3\ * 
-              !\GraphicLCDIntf:state_2\ * !\GraphicLCDIntf:state_1\ * 
-              !\GraphicLCDIntf:state_0\ * !Net_31_1
-            + !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
-              \GraphicLCDIntf:state_0\
-        );
-        Output = \GraphicLCDIntf:state_3\ (fanout=10)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=\GraphicLCDIntf:status_1\, Mode=(Combinatorial) @ [UDB=(1,1)][LB=1][MC=2]
+    [McSlotId=1]:     MacroCell: Name=\GraphicLCDIntf:status_1\, Mode=(Combinatorial) @ [UDB=(1,1)][LB=0][MC=1]
         Total # of inputs        : 5
         Total # of product terms : 1
             Clock Enable: True
@@ -3591,21 +3476,28 @@ LAB@[UDB=(1,1)][LB=1] #macrocells=4, #inputs=8, #pterms=8
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_39, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=3]
-        Total # of inputs        : 3
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(1,1)][LB=1] #macrocells=1, #inputs=2, #pterms=1
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=\GraphicLCDIntf:full\, Mode=(Combinatorial) @ [UDB=(1,1)][LB=1][MC=1]
+        Total # of inputs        : 2
         Total # of product terms : 1
-        List of special equations: 
-            Clock  = (ClockBlock_HFClk) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
-        (
-              !\GraphicLCDIntf:state_3\ * !\GraphicLCDIntf:state_2\ * 
-              \GraphicLCDIntf:state_1\
+        !(
+              \GraphicLCDIntf:cmd_not_full\ * \GraphicLCDIntf:data_not_full\
         );
-        Output = Net_39 (fanout=8)
+        Output = \GraphicLCDIntf:full\ (fanout=1)
         Properties               : 
         {
         }
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
 }
 
 datapathcell: Name =\GraphicLCDIntf:GraphLcd8:Lsb\
@@ -3668,15 +3560,6 @@ statuscell: Name =\GraphicLCDIntf:LsbReg\
     Clock Enable: PosEdge(\GraphicLCDIntf:status_1\)
 
 Intr container @ [IntrContainer=(0)]: 
-  Intr@ [IntrContainer=(0)][IntrId=(0)] 
-    interrupt: Name =ReadyToDrive_Int
-        PORT MAP (
-            interrupt => Net_1263 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
   Intr@ [IntrContainer=(0)][IntrId=(16)] 
     interrupt: Name =\ADC_GLV_V:IRQ\
         PORT MAP (
@@ -3866,86 +3749,6 @@ Pin : Name = D_RD(0)
         pa_out => D_RD(0)__PA ,
         pin_input => Net_28 ,
         pad => D_RD(0)_PAD );
-    Properties:
-    {
-    }
-
-[IoId=4]: 
-Pin : Name = IMD_LED(0)
-    Attributes:
-        In Group/Port: True
-        In Sync Option: AUTO
-        Out Sync Option: NOSYNC
-        Interrupt generated: False
-        Interrupt mode: NONE
-        Drive mode: CMOS_OUT
-        VTrip: EITHER
-        Slew: FAST
-        Input Sync needed: False
-        Output Sync needed: False
-        SC shield enabled: False
-        POR State: ANY
-        LCD Mode: COMMON
-        Register Mode: RegComb
-        CaSense Mode: NEITHER
-        Treat as pin: True
-        Is OE Registered: False
-        Uses Analog: False
-        Can contain Digital: True
-        Is SIO: False
-        SIO Output Buf: NONREGULATED
-        SIO Input Buf: SINGLE_ENDED
-        SIO HiFreq: LOW
-        SIO Hyst: DISABLED
-        SIO Vtrip: MULTIPLIER_0_5
-        SIO Multiplier Index: 0
-        SIO RefSel: VCC_IO
-        Required Capabilities: DIGITAL
-        Initial Value: 1
-        IO Voltage: 0
-    PORT MAP (
-        pa_out => IMD_LED(0)__PA ,
-        pad => IMD_LED(0)_PAD );
-    Properties:
-    {
-    }
-
-[IoId=5]: 
-Pin : Name = BMS_LED(0)
-    Attributes:
-        In Group/Port: True
-        In Sync Option: AUTO
-        Out Sync Option: NOSYNC
-        Interrupt generated: False
-        Interrupt mode: NONE
-        Drive mode: CMOS_OUT
-        VTrip: EITHER
-        Slew: FAST
-        Input Sync needed: False
-        Output Sync needed: False
-        SC shield enabled: False
-        POR State: ANY
-        LCD Mode: COMMON
-        Register Mode: RegComb
-        CaSense Mode: NEITHER
-        Treat as pin: True
-        Is OE Registered: False
-        Uses Analog: False
-        Can contain Digital: True
-        Is SIO: False
-        SIO Output Buf: NONREGULATED
-        SIO Input Buf: SINGLE_ENDED
-        SIO HiFreq: LOW
-        SIO Hyst: DISABLED
-        SIO Vtrip: MULTIPLIER_0_5
-        SIO Multiplier Index: 0
-        SIO RefSel: VCC_IO
-        Required Capabilities: DIGITAL
-        Initial Value: 1
-        IO Voltage: 0
-    PORT MAP (
-        pa_out => BMS_LED(0)__PA ,
-        pad => BMS_LED(0)_PAD );
     Properties:
     {
     }
@@ -4611,12 +4414,11 @@ Pin : Name = Buzzer(0)
         SIO Vtrip: MULTIPLIER_0_5
         SIO Multiplier Index: 0
         SIO RefSel: VCC_IO
-        Required Capabilities: DIGITAL, ROUTABLE
-        Initial Value: 1
+        Required Capabilities: DIGITAL
+        Initial Value: 0
         IO Voltage: 0
     PORT MAP (
         pa_out => Buzzer(0)__PA ,
-        pin_input => Net_78 ,
         pad => Buzzer(0)_PAD );
     Properties:
     {
@@ -5201,8 +5003,6 @@ Port | Pin | Fixed |      Type |       Drive Mode |        Name | Connections
      |   1 |     * |      NONE |         CMOS_OUT |       TX(0) | In(Net_12)
      |   2 |     * |      NONE |         CMOS_OUT |     D_CS(0) | In(Net_26)
      |   3 |     * |      NONE |         CMOS_OUT |     D_RD(0) | In(Net_28)
-     |   4 |       |      NONE |         CMOS_OUT |  IMD_LED(0) | 
-     |   5 |       |      NONE |         CMOS_OUT |  BMS_LED(0) | 
      |   6 |     * |      NONE |         CMOS_OUT |     D_WR(0) | In(Net_27)
      |   7 |     * |      NONE |         CMOS_OUT |     D_RS(0) | In(Net_25)
 -----+-----+-------+-----------+------------------+-------------+----------------------------------------
@@ -5221,7 +5021,7 @@ Port | Pin | Fixed |      Type |       Drive Mode |        Name | Connections
    3 |   4 |     * |      NONE |     HI_Z_DIGITAL | Digital1(0) | 
      |   5 |     * |      NONE |     HI_Z_DIGITAL | Digital2(0) | 
      |   6 |     * |      NONE |     HI_Z_DIGITAL | Digital3(0) | 
-     |   7 |     * |      NONE |         CMOS_OUT |   Buzzer(0) | In(Net_78)
+     |   7 |     * |      NONE |         CMOS_OUT |   Buzzer(0) | 
 -----+-----+-------+-----------+------------------+-------------+----------------------------------------
    4 |   0 |     * |      NONE |     HI_Z_DIGITAL |  RX_CAN1(0) | FB(Net_4)
      |   1 |     * |      NONE |         CMOS_OUT |  TX_CAN1(0) | In(Net_5)
@@ -5241,34 +5041,34 @@ Port | Pin | Fixed |      Type |       Drive Mode |        Name | Connections
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.084ms
-Digital Placement phase: Elapsed time ==> 0s.881ms
+Digital component placer commit/Report: Elapsed time ==> 0s.094ms
+Digital Placement phase: Elapsed time ==> 1s.900ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc4/4/route_arch-rrg.cydata" --vh2-path "Dashboard_r.vh2" --pcf-path "Dashboard.pco" --des-name "Dashboard" --dsf-path "Dashboard.dsf" --sdc-path "Dashboard.sdc" --lib-path "Dashboard_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 1s.001ms
+Digital Routing phase: Elapsed time ==> 1s.717ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.239ms
+Bitstream Generation phase: Elapsed time ==> 0s.501ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.024ms
+Bitstream Verification phase: Elapsed time ==> 0s.047ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
-Warning: sta.M0019: Dashboard_timing.html: Warning-1366: Setup time violation found in a path from clock ( CyHFClk ) to clock ( CyHFClk ). (File=C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard_timing.html)
+Warning: sta.M0019: Dashboard_timing.html: Warning-1366: Setup time violation found in a path from clock ( CyHFClk ) to clock ( CyHFClk ). (File=C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard_timing.html)
 Timing report is in Dashboard_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.418ms
+Static timing analysis phase: Elapsed time ==> 0s.816ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.263ms
+Design database save phase: Elapsed time ==> 0s.449ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 4s.048ms
+cydsfit: Elapsed time ==> 9s.664ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 4s.049ms
-API generation phase: Elapsed time ==> 2s.880ms
-Dependency generation phase: Elapsed time ==> 0s.018ms
-Cleanup phase: Elapsed time ==> 0s.001ms
+Fitter phase: Elapsed time ==> 9s.726ms
+API generation phase: Elapsed time ==> 6s.859ms
+Dependency generation phase: Elapsed time ==> 0s.031ms
+Cleanup phase: Elapsed time ==> 0s.000ms

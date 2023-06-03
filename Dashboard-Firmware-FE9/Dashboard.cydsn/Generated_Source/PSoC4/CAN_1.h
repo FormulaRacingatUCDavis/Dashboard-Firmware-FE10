@@ -444,10 +444,10 @@ void  CAN_1_ReceiveMsg(uint8 rxMailbox) ;
 ***************************************/
 
 /* General */
-#define CAN_1_BITRATE                   (5u)
-#define CAN_1_CFG_REG_TSEG1             (4u - 1u)
-#define CAN_1_CFG_REG_TSEG2             (3u - 1u)
-#define CAN_1_CFG_REG_SJW               (3u - 1u)
+#define CAN_1_BITRATE                   (7u)
+#define CAN_1_CFG_REG_TSEG1             (9u - 1u)
+#define CAN_1_CFG_REG_TSEG2             (2u - 1u)
+#define CAN_1_CFG_REG_SJW               (2u - 1u)
 #define CAN_1_SAMPLING_MODE             (0u)
 #define CAN_1_ARBITER                   (0u)
 #define CAN_1_RESET_TYPE                (0u)

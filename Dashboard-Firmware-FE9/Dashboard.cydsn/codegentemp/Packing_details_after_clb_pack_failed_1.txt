@@ -4,10 +4,10 @@ UDB 0
 ------------------------------------------------------
 	PLD 0:
 		 Instances:
-			\ReadyToDrive_Timer:TimerUDB:status_tc\
-			Net_78
 			\PWM_1:PWMUDB:status_0\
 			\PWM_1:PWMUDB:prevCompare1\
+			\ReadyToDrive_Timer:TimerUDB:status_tc\
+			\PWM_1:PWMUDB:status_2\
 
 		 Clock net: Net_946_digital
 		 Set/Reset net: 
@@ -17,25 +17,25 @@ UDB 0
 			\PWM_1:PWMUDB:cmp1_less\
 			\PWM_1:PWMUDB:prevCompare1\
 			\PWM_1:PWMUDB:runmode_enable\
+			\PWM_1:PWMUDB:tc_i\
 			\ReadyToDrive_Timer:TimerUDB:control_7\
 			\ReadyToDrive_Timer:TimerUDB:per_zero\
 
 		 Output nets:
-			Net_78
 			\PWM_1:PWMUDB:prevCompare1\
 			\PWM_1:PWMUDB:status_0\
+			\PWM_1:PWMUDB:status_2\
 			\ReadyToDrive_Timer:TimerUDB:status_tc\
 
 		 Product terms:
 			!\PWM_1:PWMUDB:prevCompare1\ * \PWM_1:PWMUDB:cmp1_less\
 			\PWM_1:PWMUDB:cmp1_less\
-			\PWM_1:PWMUDB:cmp1_less\ * \PWM_1:PWMUDB:runmode_enable\
+			\PWM_1:PWMUDB:runmode_enable\ * \PWM_1:PWMUDB:tc_i\
 			\ReadyToDrive_Timer:TimerUDB:control_7\ * \ReadyToDrive_Timer:TimerUDB:per_zero\
 
 	PLD 1:
 		 Instances:
 			\PWM_1:PWMUDB:runmode_enable\
-			\PWM_1:PWMUDB:status_2\
 
 		 Clock net: Net_946_digital
 		 Set/Reset net: 
@@ -43,16 +43,12 @@ UDB 0
 
 		 Input nets:
 			\PWM_1:PWMUDB:control_7\
-			\PWM_1:PWMUDB:runmode_enable\
-			\PWM_1:PWMUDB:tc_i\
 
 		 Output nets:
 			\PWM_1:PWMUDB:runmode_enable\
-			\PWM_1:PWMUDB:status_2\
 
 		 Product terms:
 			\PWM_1:PWMUDB:control_7\
-			\PWM_1:PWMUDB:runmode_enable\ * \PWM_1:PWMUDB:tc_i\
 
 	Datapath:
 		 Instances:
@@ -98,7 +94,6 @@ UDB 0
 			\ReadyToDrive_Timer:TimerUDB:status_tc\
 
 		 Output nets:
-			Net_1263
 			\ReadyToDrive_Timer:TimerUDB:control_7\
 
 	Local clock and reset nets:
@@ -162,10 +157,10 @@ UDB 2
 ------------------------------------------------------
 	PLD 0:
 		 Instances:
-			\GraphicLCDIntf:state_1\
-			Net_39
 			\GraphicLCDIntf:state_3\
 			Net_26
+			\GraphicLCDIntf:state_1\
+			Net_39
 
 		 Clock net: ClockBlock_HFClk
 		 Set/Reset net: 
@@ -199,10 +194,10 @@ UDB 2
 
 	PLD 1:
 		 Instances:
-			\GraphicLCDIntf:state_2\
-			Net_25
-			Net_27
 			\GraphicLCDIntf:status_1\
+			\GraphicLCDIntf:state_2\
+			Net_27
+			Net_25
 
 		 Clock net: ClockBlock_HFClk
 		 Set/Reset net: 

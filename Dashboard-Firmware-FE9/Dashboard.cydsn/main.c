@@ -175,22 +175,28 @@ int main()
         }
         
         // check driver switches
-        if (HV_Read()) {
+        if (!HV_Read()) {
             switches |= 0b10;
         } else {
             switches &= 0b11111101;
         }
-        if (Drive_Read()) {
+        if (!Drive_Read()) {
             switches |= 0b1;
         } else {
             switches &= 0b11111110;
+        }
+        
+        if(!Digital1_Read() || !Digital2_Read() || !Digital3_Read() || !Digital4_Read()){
+            Buzzer_Write(1);
+        } else {
+            Buzzer_Write(0);
         }
         // send driver switches
         can_send_switches(switches);
         
         // indicator LEDs (active low)
-        BMS_LED_Write((shutdown_flags >> 4) & 0x01); //bitmask for BMS_OK
-        IMD_LED_Write((shutdown_flags >> 5) & 0x01); // bitmask for IMD_OK 
+        //BMS_LED_Write((shutdown_flags >> 4) & 0x01); //bitmask for BMS_OK
+        //IMD_LED_Write((shutdown_flags >> 5) & 0x01); // bitmask for IMD_OK 
         
         /*      START display latest data       */
         
@@ -234,9 +240,9 @@ int main()
             Buzzer_Write(1);
             // EV.10.5.2: Sounded continuously for minimum 1 second
             // and a maximum of 3 seconds [we use 2 seconds]
-            ReadyToDrive_Int_Start();
-            ReadyToDrive_Timer_Init();
-            ReadyToDrive_Timer_Enable();
+            //ReadyToDrive_Int_Start();
+            //ReadyToDrive_Timer_Init();
+            //ReadyToDrive_Timer_Enable();
         }
         previous_state = state;
         if (state != DRIVE) {

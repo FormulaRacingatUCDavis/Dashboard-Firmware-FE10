@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: BMS_LED.c  
+* File Name: Buzzer_2.c  
 * Version 2.20
 *
 * Description:
@@ -13,35 +13,35 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "BMS_LED.h"
+#include "Buzzer_2.h"
 
 
-#if defined(BMS_LED__PC)
-    #define BMS_LED_SetP4PinDriveMode(shift, mode)  \
+#if defined(Buzzer_2__PC)
+    #define Buzzer_2_SetP4PinDriveMode(shift, mode)  \
     do { \
-        BMS_LED_PC =   (BMS_LED_PC & \
-                                (uint32)(~(uint32)(BMS_LED_DRIVE_MODE_IND_MASK << \
-                                (BMS_LED_DRIVE_MODE_BITS * (shift))))) | \
+        Buzzer_2_PC =   (Buzzer_2_PC & \
+                                (uint32)(~(uint32)(Buzzer_2_DRIVE_MODE_IND_MASK << \
+                                (Buzzer_2_DRIVE_MODE_BITS * (shift))))) | \
                                 (uint32)((uint32)(mode) << \
-                                (BMS_LED_DRIVE_MODE_BITS * (shift))); \
+                                (Buzzer_2_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 #else
     #if (CY_PSOC4_4200L)
-        #define BMS_LED_SetP4PinDriveMode(shift, mode)  \
+        #define Buzzer_2_SetP4PinDriveMode(shift, mode)  \
         do { \
-            BMS_LED_USBIO_CTRL_REG = (BMS_LED_USBIO_CTRL_REG & \
-                                    (uint32)(~(uint32)(BMS_LED_DRIVE_MODE_IND_MASK << \
-                                    (BMS_LED_DRIVE_MODE_BITS * (shift))))) | \
+            Buzzer_2_USBIO_CTRL_REG = (Buzzer_2_USBIO_CTRL_REG & \
+                                    (uint32)(~(uint32)(Buzzer_2_DRIVE_MODE_IND_MASK << \
+                                    (Buzzer_2_DRIVE_MODE_BITS * (shift))))) | \
                                     (uint32)((uint32)(mode) << \
-                                    (BMS_LED_DRIVE_MODE_BITS * (shift))); \
+                                    (Buzzer_2_DRIVE_MODE_BITS * (shift))); \
         } while (0)
     #endif
 #endif
   
 
-#if defined(BMS_LED__PC) || (CY_PSOC4_4200L) 
+#if defined(Buzzer_2__PC) || (CY_PSOC4_4200L) 
     /*******************************************************************************
-    * Function Name: BMS_LED_SetDriveMode
+    * Function Name: Buzzer_2_SetDriveMode
     ****************************************************************************//**
     *
     * \brief Sets the drive mode for each of the Pins component's pins.
@@ -67,17 +67,17 @@
     *  APIs (primary method) or disable interrupts around this function.
     *
     * \funcusage
-    *  \snippet BMS_LED_SUT.c usage_BMS_LED_SetDriveMode
+    *  \snippet Buzzer_2_SUT.c usage_Buzzer_2_SetDriveMode
     *******************************************************************************/
-    void BMS_LED_SetDriveMode(uint8 mode)
+    void Buzzer_2_SetDriveMode(uint8 mode)
     {
-		BMS_LED_SetP4PinDriveMode(BMS_LED__0__SHIFT, mode);
+		Buzzer_2_SetP4PinDriveMode(Buzzer_2__0__SHIFT, mode);
     }
 #endif
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_Write
+* Function Name: Buzzer_2_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -106,18 +106,18 @@
 *  this function.
 *
 * \funcusage
-*  \snippet BMS_LED_SUT.c usage_BMS_LED_Write
+*  \snippet Buzzer_2_SUT.c usage_Buzzer_2_Write
 *******************************************************************************/
-void BMS_LED_Write(uint8 value)
+void Buzzer_2_Write(uint8 value)
 {
-    uint8 drVal = (uint8)(BMS_LED_DR & (uint8)(~BMS_LED_MASK));
-    drVal = (drVal | ((uint8)(value << BMS_LED_SHIFT) & BMS_LED_MASK));
-    BMS_LED_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(Buzzer_2_DR & (uint8)(~Buzzer_2_MASK));
+    drVal = (drVal | ((uint8)(value << Buzzer_2_SHIFT) & Buzzer_2_MASK));
+    Buzzer_2_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_Read
+* Function Name: Buzzer_2_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -131,16 +131,16 @@ void BMS_LED_Write(uint8 value)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet BMS_LED_SUT.c usage_BMS_LED_Read  
+*  \snippet Buzzer_2_SUT.c usage_Buzzer_2_Read  
 *******************************************************************************/
-uint8 BMS_LED_Read(void)
+uint8 Buzzer_2_Read(void)
 {
-    return (uint8)((BMS_LED_PS & BMS_LED_MASK) >> BMS_LED_SHIFT);
+    return (uint8)((Buzzer_2_PS & Buzzer_2_MASK) >> Buzzer_2_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_ReadDataReg
+* Function Name: Buzzer_2_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -149,8 +149,8 @@ uint8 BMS_LED_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred BMS_LED_Read() API because the 
-* BMS_LED_ReadDataReg() reads the data register instead of the status 
+* preferred Buzzer_2_Read() API because the 
+* Buzzer_2_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -159,16 +159,16 @@ uint8 BMS_LED_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet BMS_LED_SUT.c usage_BMS_LED_ReadDataReg 
+*  \snippet Buzzer_2_SUT.c usage_Buzzer_2_ReadDataReg 
 *******************************************************************************/
-uint8 BMS_LED_ReadDataReg(void)
+uint8 Buzzer_2_ReadDataReg(void)
 {
-    return (uint8)((BMS_LED_DR & BMS_LED_MASK) >> BMS_LED_SHIFT);
+    return (uint8)((Buzzer_2_DR & Buzzer_2_MASK) >> Buzzer_2_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_SetInterruptMode
+* Function Name: Buzzer_2_SetInterruptMode
 ****************************************************************************//**
 *
 * \brief Configures the interrupt mode for each of the Pins component's
@@ -181,12 +181,12 @@ uint8 BMS_LED_ReadDataReg(void)
 * \param position
 *  The pin position as listed in the Pins component. You may OR these to be 
 *  able to configure the interrupt mode of multiple pins within a Pins 
-*  component. Or you may use BMS_LED_INTR_ALL to configure the
+*  component. Or you may use Buzzer_2_INTR_ALL to configure the
 *  interrupt mode of all the pins in the Pins component.       
-*  - BMS_LED_0_INTR       (First pin in the list)
-*  - BMS_LED_1_INTR       (Second pin in the list)
+*  - Buzzer_2_0_INTR       (First pin in the list)
+*  - Buzzer_2_1_INTR       (Second pin in the list)
 *  - ...
-*  - BMS_LED_INTR_ALL     (All pins in Pins component)
+*  - Buzzer_2_INTR_ALL     (All pins in Pins component)
 *
 * \param mode
 *  Interrupt mode for the selected pins. Valid options are documented in
@@ -202,19 +202,19 @@ uint8 BMS_LED_ReadDataReg(void)
 *  port.
 *
 * \funcusage
-*  \snippet BMS_LED_SUT.c usage_BMS_LED_SetInterruptMode
+*  \snippet Buzzer_2_SUT.c usage_Buzzer_2_SetInterruptMode
 *******************************************************************************/
-void BMS_LED_SetInterruptMode(uint16 position, uint16 mode)
+void Buzzer_2_SetInterruptMode(uint16 position, uint16 mode)
 {
     uint32 intrCfg;
     
-    intrCfg =  BMS_LED_INTCFG & (uint32)(~(uint32)position);
-    BMS_LED_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+    intrCfg =  Buzzer_2_INTCFG & (uint32)(~(uint32)position);
+    Buzzer_2_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
 }
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_ClearInterrupt
+* Function Name: Buzzer_2_ClearInterrupt
 ****************************************************************************//**
 *
 * \brief Clears any active interrupts attached with the component and returns 
@@ -231,13 +231,13 @@ void BMS_LED_SetInterruptMode(uint16 position, uint16 mode)
 *  those associated with the Pins component.
 *
 * \funcusage
-*  \snippet BMS_LED_SUT.c usage_BMS_LED_ClearInterrupt
+*  \snippet Buzzer_2_SUT.c usage_Buzzer_2_ClearInterrupt
 *******************************************************************************/
-uint8 BMS_LED_ClearInterrupt(void)
+uint8 Buzzer_2_ClearInterrupt(void)
 {
-	uint8 maskedStatus = (uint8)(BMS_LED_INTSTAT & BMS_LED_MASK);
-	BMS_LED_INTSTAT = maskedStatus;
-    return maskedStatus >> BMS_LED_SHIFT;
+	uint8 maskedStatus = (uint8)(Buzzer_2_INTSTAT & Buzzer_2_MASK);
+	Buzzer_2_INTSTAT = maskedStatus;
+    return maskedStatus >> Buzzer_2_SHIFT;
 }
 
 

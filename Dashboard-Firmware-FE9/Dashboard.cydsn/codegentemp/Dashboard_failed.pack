@@ -1,9 +1,8 @@
 set_location_hint "\ReadyToDrive_Timer:TimerUDB:status_tc\" 0 1 0 0
 set_location_hint "\PWM_1:PWMUDB:status_0\" 0 1 0 1
 set_location_hint "\PWM_1:PWMUDB:prevCompare1\" 0 1 0 2
-set_location_hint "Net_78" 0 1 0 3
+set_location_hint "\PWM_1:PWMUDB:status_2\" 0 1 0 3
 set_location_hint "\PWM_1:PWMUDB:runmode_enable\" 0 1 1 0
-set_location_hint "\PWM_1:PWMUDB:status_2\" 0 1 1 1
 set_location_hint "\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0\" 0 1 2 
 set_location_hint "\ReadyToDrive_Timer:TimerUDB:rstSts:stsreg\" 0 1 4 
 set_location_hint "\ReadyToDrive_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 0 1 6

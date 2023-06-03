@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: BMS_LED.c  
+* File Name: Buzzer_2.c  
 * Version 2.20
 *
 * Description:
@@ -15,13 +15,13 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "BMS_LED.h"
+#include "Buzzer_2.h"
 
-static BMS_LED_BACKUP_STRUCT  BMS_LED_backup = {0u, 0u, 0u};
+static Buzzer_2_BACKUP_STRUCT  Buzzer_2_backup = {0u, 0u, 0u};
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_Sleep
+* Function Name: Buzzer_2_Sleep
 ****************************************************************************//**
 *
 * \brief Stores the pin configuration and prepares the pin for entering chip 
@@ -39,30 +39,30 @@ static BMS_LED_BACKUP_STRUCT  BMS_LED_backup = {0u, 0u, 0u};
 *  deep-sleep/hibernate modes.
 *
 * \funcusage
-*  \snippet BMS_LED_SUT.c usage_BMS_LED_Sleep_Wakeup
+*  \snippet Buzzer_2_SUT.c usage_Buzzer_2_Sleep_Wakeup
 *******************************************************************************/
-void BMS_LED_Sleep(void)
+void Buzzer_2_Sleep(void)
 {
-    #if defined(BMS_LED__PC)
-        BMS_LED_backup.pcState = BMS_LED_PC;
+    #if defined(Buzzer_2__PC)
+        Buzzer_2_backup.pcState = Buzzer_2_PC;
     #else
         #if (CY_PSOC4_4200L)
             /* Save the regulator state and put the PHY into suspend mode */
-            BMS_LED_backup.usbState = BMS_LED_CR1_REG;
-            BMS_LED_USB_POWER_REG |= BMS_LED_USBIO_ENTER_SLEEP;
-            BMS_LED_CR1_REG &= BMS_LED_USBIO_CR1_OFF;
+            Buzzer_2_backup.usbState = Buzzer_2_CR1_REG;
+            Buzzer_2_USB_POWER_REG |= Buzzer_2_USBIO_ENTER_SLEEP;
+            Buzzer_2_CR1_REG &= Buzzer_2_USBIO_CR1_OFF;
         #endif
     #endif
-    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(BMS_LED__SIO)
-        BMS_LED_backup.sioState = BMS_LED_SIO_REG;
+    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(Buzzer_2__SIO)
+        Buzzer_2_backup.sioState = Buzzer_2_SIO_REG;
         /* SIO requires unregulated output buffer and single ended input buffer */
-        BMS_LED_SIO_REG &= (uint32)(~BMS_LED_SIO_LPM_MASK);
+        Buzzer_2_SIO_REG &= (uint32)(~Buzzer_2_SIO_LPM_MASK);
     #endif  
 }
 
 
 /*******************************************************************************
-* Function Name: BMS_LED_Wakeup
+* Function Name: Buzzer_2_Wakeup
 ****************************************************************************//**
 *
 * \brief Restores the pin configuration that was saved during Pin_Sleep(). This 
@@ -77,22 +77,22 @@ void BMS_LED_Sleep(void)
 *  None
 *  
 * \funcusage
-*  Refer to BMS_LED_Sleep() for an example usage.
+*  Refer to Buzzer_2_Sleep() for an example usage.
 *******************************************************************************/
-void BMS_LED_Wakeup(void)
+void Buzzer_2_Wakeup(void)
 {
-    #if defined(BMS_LED__PC)
-        BMS_LED_PC = BMS_LED_backup.pcState;
+    #if defined(Buzzer_2__PC)
+        Buzzer_2_PC = Buzzer_2_backup.pcState;
     #else
         #if (CY_PSOC4_4200L)
             /* Restore the regulator state and come out of suspend mode */
-            BMS_LED_USB_POWER_REG &= BMS_LED_USBIO_EXIT_SLEEP_PH1;
-            BMS_LED_CR1_REG = BMS_LED_backup.usbState;
-            BMS_LED_USB_POWER_REG &= BMS_LED_USBIO_EXIT_SLEEP_PH2;
+            Buzzer_2_USB_POWER_REG &= Buzzer_2_USBIO_EXIT_SLEEP_PH1;
+            Buzzer_2_CR1_REG = Buzzer_2_backup.usbState;
+            Buzzer_2_USB_POWER_REG &= Buzzer_2_USBIO_EXIT_SLEEP_PH2;
         #endif
     #endif
-    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(BMS_LED__SIO)
-        BMS_LED_SIO_REG = BMS_LED_backup.sioState;
+    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(Buzzer_2__SIO)
+        Buzzer_2_SIO_REG = Buzzer_2_backup.sioState;
     #endif
 }
 

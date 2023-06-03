@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 6 2023 12:30:41
+#File Generated:     Jun 3 2023 00:46:40
 
 #Purpose:            
 
@@ -45,7 +45,7 @@ Phase 3
 
 Design Statistics after Packing
     Number of Combinational MCs 	:	4
-    Number of Sequential MCs    	:	15
+    Number of Sequential MCs    	:	14
     Number of DPs               	:	4
     Number of Controls          	:	2
     Number of Status            	:	4
@@ -53,9 +53,9 @@ Design Statistics after Packing
     Number of count7cells       	:	0
 
 Device Utilization Summary after Packing
-    Macrocells                  :	19/32
+    Macrocells                  :	18/32
     UDBS                        :	4/4
-    IOs                         :	33/51
+    IOs                         :	31/51
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -76,7 +76,7 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 9
+Number of clocks: 10
 Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   5.3 MHz
 Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   5.3 MHz
 Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
@@ -86,6 +86,7 @@ Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -97,7 +98,7 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 9
+Number of clocks: 10
 Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   5.3 MHz
 Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   5.3 MHz
 Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
@@ -107,25 +108,26 @@ Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.0 (sec)
+D2088: Phase 7, elapsed time : 0.3 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	4
-    Number of Sequential MCs    	:	15
+    Number of Sequential MCs    	:	14
     Number of DPs               	:	4
     Number of Controls          	:	2
     Number of Status            	:	4
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
-    Number of IOs       	:	33
+    Number of IOs       	:	31
 
 Device Utilization Summary
-    Macrocells                  :	19/32
-    IOs                         :	33/51
+    Macrocells                  :	18/32
+    IOs                         :	31/51
 
 
 
@@ -141,7 +143,7 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 9
+Number of clocks: 10
 Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   5.3 MHz
 Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   5.3 MHz
 Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
@@ -151,99 +153,7 @@ Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-
-Phase 6
-
-######################################################################
-Placement Timing Summary
-
-The timing summary is based on estimated routing delays after
-placement. For final timing report, please carry out the timing
-analysis after routing.
-======================================================================
-
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 9
-Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   5.3 MHz
-Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   5.3 MHz
-Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
-Clock: CyHFClk              | Frequency:  41.7 MHz | Target:  48.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-
-D2088: Phase 6, elapsed time : 0.0 (sec)
-
-Phase 7
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 9
-Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   5.3 MHz
-Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   5.3 MHz
-Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
-Clock: CyHFClk              | Frequency:  41.7 MHz | Target:  48.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-D2088: Phase 7, elapsed time : 0.1 (sec)
-
-Final Design Statistics
-    Number of Combinational MCs 	:	4
-    Number of Sequential MCs    	:	15
-    Number of DPs               	:	4
-    Number of Controls          	:	2
-    Number of Status            	:	4
-    Number of SyncCells         	:	0
-    Number of count7cells       	:	0
-    Number of IOs       	:	33
-
-Device Utilization Summary
-    Macrocells                  :	19/32
-    IOs                         :	33/51
-
-
-
-######################################################################
-Placement Timing Summary
-
-The timing summary is based on estimated routing delays after
-placement. For final timing report, please carry out the timing
-analysis after routing.
-======================================================================
-
-
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 9
-Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   5.3 MHz
-Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   5.3 MHz
-Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
-Clock: CyHFClk              | Frequency:  41.7 MHz | Target:  48.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -254,5 +164,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.6 sec.
+I2076: Total run-time: 1.1 sec.
 
