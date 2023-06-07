@@ -667,7 +667,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgVEHICLE_STATE(void) 
     {
         /* `#START MESSAGE_VEHICLE_STATE_RECEIVED` */
-
+        state = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_VEHICLE_STATE);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_VEHICLE_STATE_CALLBACK
@@ -737,7 +737,10 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgBMS_STATUS_MSG(void) 
     {
         /* `#START MESSAGE_BMS_STATUS_MSG_RECEIVED` */
-
+        PACK_TEMP = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_BMS_STATUS_MSG);
+        soc = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BMS_STATUS_MSG);
+        bms_status = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BMS_STATUS_MSG) << 8;    // bms error flags
+        bms_status |= CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_BMS_STATUS_MSG);        // bms error flags
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_BMS_STATUS_MSG_CALLBACK
@@ -807,7 +810,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgBMS_TEMPERATURES(void) 
     {
         /* `#START MESSAGE_BMS_TEMPERATURES_RECEIVED` */
-
+        
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_BMS_TEMPERATURES_CALLBACK
@@ -877,7 +880,9 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgPEI_CURRENT_SHUTDOWN(void) 
     {
         /* `#START MESSAGE_PEI_CURRENT_SHUTDOWN_RECEIVED` */
-
+        CURRENT = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_PEI_CURRENT_SHUTDOWN) << 8; // BYTE #s start at 1 bruh cringe
+        CURRENT |= CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_PEI_CURRENT_SHUTDOWN);
+        shutdown_flags = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_PEI_CURRENT_SHUTDOWN);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_PEI_CURRENT_SHUTDOWN_CALLBACK
@@ -912,7 +917,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_VOLTAGE_INFO(void) 
     {
         /* `#START MESSAGE_MC_VOLTAGE_INFO_RECEIVED` */
-
+        CAPACITOR_VOLT = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_VOLTAGE_INFO) << 8; // upper bits
+        CAPACITOR_VOLT |= CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_VOLTAGE_INFO); // lower bits
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_VOLTAGE_INFO_CALLBACK

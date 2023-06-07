@@ -23,32 +23,20 @@
 
 #include "CAN.h"
 #include "cyapicallbacks.h"
-#include "data.h"
 
+/* `#START TX_RX_FUNCTION` */
 
-extern volatile vcu_state state;
+extern volatile uint8_t state;
 extern volatile uint32_t pedalOK;
 extern volatile uint8_t PACK_TEMP;
 extern volatile uint8_t BSPD_CATCH;
 extern volatile uint16_t CURRENT;
-//extern volatile int ERROR_NODE;
-//extern volatile int ERROR_IDX;
 extern volatile uint8_t soc;
 extern volatile uint32_t voltage;
-extern volatile BMS_STATUS bms_status;
+extern volatile uint16_t bms_status;
 extern volatile uint8_t shutdown_flags;
-
-// info from MC and motor
-extern volatile uint16_t mc_temp;
-extern volatile uint16_t motor_temp;
-
 extern volatile uint8_t CAPACITOR_VOLT;
-extern volatile uint8_t ERROR_TOLERANCE;
-extern volatile uint8_t ABS_MOTOR_RPM;
-extern volatile uint8_t THROTTLE_HIGH;
-extern volatile uint8_t THROTTLE_LOW;
-
-/* `#START TX_RX_FUNCTION` */
+extern volatile uint8_t ACK_RX;
 
 /* `#END` */
 
@@ -761,6 +749,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgBMS_STATUS_MSG(void) 
     {
         /* `#START MESSAGE_BMS_STATUS_MSG_RECEIVED` */
+        PACK_TEMP = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_BMS_STATUS_MSG);
         soc = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BMS_STATUS_MSG);
         bms_status = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BMS_STATUS_MSG) << 8;    // bms error flags
         bms_status |= CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_BMS_STATUS_MSG);        // bms error flags
@@ -833,7 +822,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgBMS_TEMPERATURES(void) 
     {
         /* `#START MESSAGE_BMS_TEMPERATURES_RECEIVED` */
-        PACK_TEMP = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_BMS_TEMPERATURES);
+        
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_BMS_TEMPERATURES_CALLBACK

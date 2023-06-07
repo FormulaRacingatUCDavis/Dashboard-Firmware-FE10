@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.h">
 <ExpandedNodeIds>
 <v>Dashboard-Firmware-FE10</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
@@ -47,6 +47,7 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\main.c</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Generated_Source</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\GraphicLCDIntf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Dashboard-Firmware-FE10</v>
@@ -79,6 +80,44 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\fonts.h</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\LED.h</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\main.c</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ADC_GLV_V</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ADC_GLV_V_intClock</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ADC_GLV_V_IRQ</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Analog_1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Analog_2</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\BUZZER</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN_1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN_1_HFCLK</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN_1_isr</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN_HFCLK</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN_isr</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Clock_2</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\cy_boot</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\cy_dmac</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\cy_lfclk</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\D_BL</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\D_RST</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Digital1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Digital2</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Digital3</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Digital4</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\DISP</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Drive</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\GraphicLCDIntf</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\GraphicLCDIntf\GraphicLCDIntf.c</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\GraphicLCDIntf\GraphicLCDIntf.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\GraphicLCDIntf\GraphicLCDIntf_PM.c</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\HV</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\PWM_1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ReadyToDrive_Timer</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\RGB1_1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\RGB2_1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\RGB3_1</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\RX</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -189,34 +228,6 @@
 <VisibleNodeIds>
 <v>Dashboard-Firmware-FE10</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_INT.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_intClock.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_IRQ.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_HFCLK.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_INT.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_isr.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_TX_RX_func.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_HFCLK.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_isr.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\can_manga.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -275,9 +286,16 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Dashboard.cydsn\Dashboard.cydwr" />
+<name v=".\Dashboard.cydsn\can_manga.c" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\CAN_TX_RX_func.c" />
 <name v=".\Dashboard.cydsn\main.c" />
+<name v=".\Dashboard.cydsn\frucd_display.c" />
+<name v=".\Dashboard.cydsn\ugui_config.h" />
 <name v=".\Dashboard.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Dashboard.cydsn\ugui_SSD1963.c" />
+<name v=".\Dashboard.cydsn\ugui_SSD1963.h" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\GraphicLCDIntf.c" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\GraphicLCDIntf.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -285,7 +303,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1437, 588" SelectedTabbedMdiWindow="9966c6d7-bd6b-4b0c-b8a3-94314cb15d76"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cydwr" Guid="e0a3f61f-e44b-4a38-ba59-952cde8692a8" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\main.c" Guid="9966c6d7-bd6b-4b0c-b8a3-94314cb15d76" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="3762db83-e885-413c-ab15-e782a09a8ea0" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2119, 989" SelectedTabbedMdiWindow="23b554b0-1d53-4767-a290-7103cf43e8b5"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.c" Guid="70b182d2-75bb-427b-b2d5-2b020c380ee0" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\CAN_TX_RX_func.c" Guid="2a9d7797-ea9d-414d-99ce-d0f04602dee3" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\main.c" Guid="23b554b0-1d53-4767-a290-7103cf43e8b5" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.c" Guid="d370d651-00eb-4809-bee8-477fcc0ad474" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui_config.h" Guid="4e4f5e40-cf1e-444f-89db-e390fba84226" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="31147b0e-1af6-42b9-a0d3-a710b7c39d13" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui_SSD1963.c" Guid="c6d5767a-53bf-41f1-8fd6-93a09cef27cc" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui_SSD1963.h" Guid="458beeb5-b483-4d1a-89a8-81103df2065b" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\GraphicLCDIntf.c" Guid="080e3b2f-0bf8-4c64-81aa-51dbc5214249" /><DocumentWindow Key="D:\Users\leoja\Documents\GitHub\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\GraphicLCDIntf.h" Guid="f9d52030-c84e-4cd5-9606-8eec5f3e787a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

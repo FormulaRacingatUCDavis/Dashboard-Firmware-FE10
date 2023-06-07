@@ -592,7 +592,7 @@ void disp_glv_v(uint32_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y
         last_glv_v_color = color;
     }
     char data_s[7];
-    sprintf(data_s, "%d", data);
+    sprintf(data_s, "%lu", data);
     // handle 3 digit cases; 2 and 1 are practically impossible
     if (data < 1000) {
         data_s[3] = data_s[2];

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
   28:can_manga.c   **** extern volatile uint8_t soc;
   29:can_manga.c   **** extern volatile uint32_t voltage;
   30:can_manga.c   **** extern volatile BMS_STATUS bms_status;
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 2
 
 
   31:can_manga.c   **** extern volatile uint8_t shutdown_flags;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
   55:can_manga.c   ****     
   56:can_manga.c   ****     switch (ID) 
   57:can_manga.c   ****     {
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 3
 
 
   58:can_manga.c   ****         case VEHICLE_STATE:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
   62              		.cfi_def_cfa_offset 24
   63              		.cfi_offset 0, -24
   64              		.cfi_offset 1, -20
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 4
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 4
 
 
   65              		.cfi_offset 2, -16
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  119:can_manga.c   ****     HeartB.msg->byte[3] = (uint8) 1;
   96              		.loc 1 119 0
   97 0020 9370     		strb	r3, [r2, #2]
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 5
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 5
 
 
  120:can_manga.c   ****     HeartB.msg->byte[4] = (uint8) 1;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  135:can_manga.c   **** 	message.rtr = 0;
  136:can_manga.c   **** 	message.ide = 0;
  137:can_manga.c   **** 	message.dlc = 0x08;
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 6
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 6
 
 
  138              		.loc 1 137 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  180              	.LFE37:
  181              		.size	can_send, .-can_send
  182              		.section	.text.can_send_switches,"ax",%progbits
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 7
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 7
 
 
  183              		.align	1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  167:can_manga.c   ****         
  168:can_manga.c   **** } // can_send_status()
  213              		.loc 1 168 0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 8
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 8
 
 
  214              		@ sp needed
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  249              		.loc 1 181 0
  250 0008 2070     		strb	r0, [r4]
  183:can_manga.c   ****         data[2] = VCL_Throttle_Low;
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 9
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 9
 
 
  251              		.loc 1 183 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  290              		.type	can_send_charge, %function
  291              	can_send_charge:
  292              	.LFB40:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 10
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 10
 
 
  197:can_manga.c   **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  336 0020 89030000 		.word	905
  337              		.cfi_endproc
  338              	.LFE40:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 11
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 11
 
 
  339              		.size	can_send_charge, .-can_send_charge
@@ -645,10 +645,10 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  380 0006 00000000 		.4byte	.Ldebug_abbrev0
  381 000a 04       		.byte	0x4
  382 000b 01       		.uleb128 0x1
- 383 000c 07050000 		.4byte	.LASF129
+ 383 000c F7040000 		.4byte	.LASF129
  384 0010 0C       		.byte	0xc
- 385 0011 F7050000 		.4byte	.LASF130
- 386 0015 15040000 		.4byte	.LASF131
+ 385 0011 E7050000 		.4byte	.LASF130
+ 386 0015 71030000 		.4byte	.LASF131
  387 0019 00000000 		.4byte	.Ldebug_ranges0+0
  388 001d 00000000 		.4byte	0
  389 0021 00000000 		.4byte	.Ldebug_line0
@@ -658,21 +658,21 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  393 002b 1B       		.byte	0x1b
  394 002c 30000000 		.4byte	0x30
  395 0030 03       		.uleb128 0x3
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 12
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 12
 
 
  396 0031 01       		.byte	0x1
  397 0032 06       		.byte	0x6
- 398 0033 CA050000 		.4byte	.LASF2
+ 398 0033 BA050000 		.4byte	.LASF2
  399 0037 02       		.uleb128 0x2
- 400 0038 0B040000 		.4byte	.LASF1
+ 400 0038 6A040000 		.4byte	.LASF1
  401 003c 02       		.byte	0x2
  402 003d 1D       		.byte	0x1d
  403 003e 42000000 		.4byte	0x42
  404 0042 03       		.uleb128 0x3
  405 0043 01       		.byte	0x1
  406 0044 08       		.byte	0x8
- 407 0045 DE040000 		.4byte	.LASF3
+ 407 0045 CE040000 		.4byte	.LASF3
  408 0049 02       		.uleb128 0x2
  409 004a C3020000 		.4byte	.LASF4
  410 004e 02       		.byte	0x2
@@ -681,7 +681,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  413 0054 03       		.uleb128 0x3
  414 0055 02       		.byte	0x2
  415 0056 05       		.byte	0x5
- 416 0057 9E030000 		.4byte	.LASF5
+ 416 0057 FD030000 		.4byte	.LASF5
  417 005b 02       		.uleb128 0x2
  418 005c 98010000 		.4byte	.LASF6
  419 0060 02       		.byte	0x2
@@ -690,20 +690,20 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  422 0066 03       		.uleb128 0x3
  423 0067 02       		.byte	0x2
  424 0068 07       		.byte	0x7
- 425 0069 E4050000 		.4byte	.LASF7
+ 425 0069 D4050000 		.4byte	.LASF7
  426 006d 03       		.uleb128 0x3
  427 006e 04       		.byte	0x4
  428 006f 05       		.byte	0x5
- 429 0070 B9030000 		.4byte	.LASF8
+ 429 0070 18040000 		.4byte	.LASF8
  430 0074 02       		.uleb128 0x2
- 431 0075 EC040000 		.4byte	.LASF9
+ 431 0075 DC040000 		.4byte	.LASF9
  432 0079 02       		.byte	0x2
  433 007a 41       		.byte	0x41
  434 007b 7F000000 		.4byte	0x7f
  435 007f 03       		.uleb128 0x3
  436 0080 04       		.byte	0x4
  437 0081 07       		.byte	0x7
- 438 0082 92040000 		.4byte	.LASF10
+ 438 0082 82040000 		.4byte	.LASF10
  439 0086 03       		.uleb128 0x3
  440 0087 08       		.byte	0x8
  441 0088 05       		.byte	0x5
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  450 0097 696E7400 		.ascii	"int\000"
  451 009b 03       		.uleb128 0x3
  452 009c 04       		.byte	0x4
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 13
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 13
 
 
  453 009d 07       		.byte	0x7
@@ -749,7 +749,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  478 00d4 30       		.byte	0x30
  479 00d5 74000000 		.4byte	0x74
  480 00d9 05       		.uleb128 0x5
- 481 00da 03060000 		.4byte	.LASF19
+ 481 00da F3050000 		.4byte	.LASF19
  482 00de 04       		.byte	0x4
  483 00df FB01     		.2byte	0x1fb
  484 00e1 42000000 		.4byte	0x42
@@ -765,7 +765,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  494 00f8 03       		.uleb128 0x3
  495 00f9 08       		.byte	0x8
  496 00fa 04       		.byte	0x4
- 497 00fb 09060000 		.4byte	.LASF22
+ 497 00fb F9050000 		.4byte	.LASF22
  498 00ff 03       		.uleb128 0x3
  499 0100 01       		.byte	0x1
  500 0101 08       		.byte	0x8
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  507 0112 06       		.uleb128 0x6
  508 0113 D9000000 		.4byte	0xd9
  509 0117 05       		.uleb128 0x5
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 14
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 14
 
 
  510 0118 6B030000 		.4byte	.LASF25
@@ -794,7 +794,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  520 012f 03       		.uleb128 0x3
  521 0130 04       		.byte	0x4
  522 0131 07       		.byte	0x7
- 523 0132 89040000 		.4byte	.LASF27
+ 523 0132 79040000 		.4byte	.LASF27
  524 0136 07       		.uleb128 0x7
  525 0137 04       		.byte	0x4
  526 0138 08       		.uleb128 0x8
@@ -809,7 +809,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  535 0147 6F       		.byte	0x6f
  536 0148 59010000 		.4byte	0x159
  537 014c 0A       		.uleb128 0xa
- 538 014d B6040000 		.4byte	.LASF29
+ 538 014d A6040000 		.4byte	.LASF29
  539 0151 05       		.byte	0x5
  540 0152 71       		.byte	0x71
  541 0153 59010000 		.4byte	0x159
@@ -833,12 +833,12 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  559 0177 75       		.byte	0x75
  560 0178 89010000 		.4byte	0x189
  561 017c 0A       		.uleb128 0xa
- 562 017d B6040000 		.4byte	.LASF29
+ 562 017d A6040000 		.4byte	.LASF29
  563 0181 05       		.byte	0x5
  564 0182 77       		.byte	0x77
  565 0183 99010000 		.4byte	0x199
  566 0187 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 15
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 15
 
 
  567 0188 00       		.byte	0
@@ -862,7 +862,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  585 01ac 7B       		.byte	0x7b
  586 01ad BE010000 		.4byte	0x1be
  587 01b1 0A       		.uleb128 0xa
- 588 01b2 B6040000 		.4byte	.LASF29
+ 588 01b2 A6040000 		.4byte	.LASF29
  589 01b6 05       		.byte	0x5
  590 01b7 7D       		.byte	0x7d
  591 01b8 CE010000 		.4byte	0x1ce
@@ -878,7 +878,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  601 01ce 06       		.uleb128 0x6
  602 01cf BE010000 		.4byte	0x1be
  603 01d3 02       		.uleb128 0x2
- 604 01d4 A4040000 		.4byte	.LASF31
+ 604 01d4 94040000 		.4byte	.LASF31
  605 01d8 05       		.byte	0x5
  606 01d9 7E       		.byte	0x7e
  607 01da A9010000 		.4byte	0x1a9
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  621 01f6 05       		.byte	0x5
  622 01f7 84       		.byte	0x84
  623 01f8 D9000000 		.4byte	0xd9
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 16
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 16
 
 
  624 01fc 04       		.byte	0x4
@@ -953,23 +953,23 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  673 025a D3010000 		.4byte	0x1d3
  674 025e 00       		.byte	0
  675 025f 0A       		.uleb128 0xa
- 676 0260 38060000 		.4byte	.LASF34
+ 676 0260 28060000 		.4byte	.LASF34
  677 0264 05       		.byte	0x5
  678 0265 AF       		.byte	0xaf
  679 0266 D3010000 		.4byte	0x1d3
  680 026a 04       		.byte	0x4
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 17
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 17
 
 
  681 026b 0A       		.uleb128 0xa
- 682 026c AF040000 		.4byte	.LASF35
+ 682 026c 9F040000 		.4byte	.LASF35
  683 0270 05       		.byte	0x5
  684 0271 B0       		.byte	0xb0
  685 0272 9E010000 		.4byte	0x19e
  686 0276 08       		.byte	0x8
  687 0277 00       		.byte	0
  688 0278 02       		.uleb128 0x2
- 689 0279 D6050000 		.4byte	.LASF36
+ 689 0279 C6050000 		.4byte	.LASF36
  690 027d 05       		.byte	0x5
  691 027e B1       		.byte	0xb1
  692 027f 4B020000 		.4byte	0x24b
@@ -1012,13 +1012,13 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  729 02d1 1F       		.byte	0x1f
  730 02d2 E3020000 		.4byte	0x2e3
  731 02d6 0F       		.uleb128 0xf
- 732 02d7 43060000 		.4byte	.LASF42
+ 732 02d7 33060000 		.4byte	.LASF42
  733 02db 00       		.byte	0
  734 02dc 0F       		.uleb128 0xf
  735 02dd 08000000 		.4byte	.LASF43
  736 02e1 01       		.byte	0x1
  737 02e2 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 18
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 18
 
 
  738 02e3 02       		.uleb128 0x2
@@ -1050,7 +1050,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  764 0313 B4020000 		.4byte	0x2b4
  765 0317 06       		.byte	0x6
  766 0318 0A       		.uleb128 0xa
- 767 0319 92030000 		.4byte	.LASF47
+ 767 0319 F1030000 		.4byte	.LASF47
  768 031d 07       		.byte	0x7
  769 031e 29       		.byte	0x29
  770 031f B4020000 		.4byte	0x2b4
@@ -1062,7 +1062,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  776 032b A9020000 		.4byte	0x2a9
  777 032f 0A       		.byte	0xa
  778 0330 0A       		.uleb128 0xa
- 779 0331 EC030000 		.4byte	.LASF49
+ 779 0331 4B040000 		.4byte	.LASF49
  780 0335 07       		.byte	0x7
  781 0336 2B       		.byte	0x2b
  782 0337 A9020000 		.4byte	0x2a9
@@ -1078,10 +1078,10 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  792 034a 04       		.byte	0x4
  793 034b 93020000 		.4byte	0x293
  794 034f 02       		.uleb128 0x2
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 19
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 19
 
 
- 795 0350 03040000 		.4byte	.LASF51
+ 795 0350 62040000 		.4byte	.LASF51
  796 0354 07       		.byte	0x7
  797 0355 2D       		.byte	0x2d
  798 0356 EE020000 		.4byte	0x2ee
@@ -1091,13 +1091,13 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  802 0360 66       		.byte	0x66
  803 0361 65030000 		.4byte	0x365
  804 0365 10       		.uleb128 0x10
- 805 0366 17060000 		.4byte	.LASF62
+ 805 0366 07060000 		.4byte	.LASF62
  806 036a 20       		.byte	0x20
  807 036b 07       		.byte	0x7
  808 036c F7       		.byte	0xf7
  809 036d DF030000 		.4byte	0x3df
  810 0371 0A       		.uleb128 0xa
- 811 0372 AE050000 		.4byte	.LASF53
+ 811 0372 9E050000 		.4byte	.LASF53
  812 0376 07       		.byte	0x7
  813 0377 F9       		.byte	0xf9
  814 0378 93020000 		.4byte	0x293
@@ -1115,19 +1115,19 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  826 0390 84050000 		.4byte	0x584
  827 0394 04       		.byte	0x4
  828 0395 0A       		.uleb128 0xa
- 829 0396 3D060000 		.4byte	.LASF56
+ 829 0396 2D060000 		.4byte	.LASF56
  830 039a 07       		.byte	0x7
  831 039b FC       		.byte	0xfc
  832 039c CD040000 		.4byte	0x4cd
  833 03a0 08       		.byte	0x8
  834 03a1 0A       		.uleb128 0xa
- 835 03a2 BB050000 		.4byte	.LASF57
+ 835 03a2 AB050000 		.4byte	.LASF57
  836 03a6 07       		.byte	0x7
  837 03a7 FD       		.byte	0xfd
  838 03a8 CD040000 		.4byte	0x4cd
  839 03ac 10       		.byte	0x10
  840 03ad 0A       		.uleb128 0xa
- 841 03ae D9040000 		.4byte	.LASF58
+ 841 03ae C9040000 		.4byte	.LASF58
  842 03b2 07       		.byte	0x7
  843 03b3 FE       		.byte	0xfe
  844 03b4 93020000 		.4byte	0x293
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  849 03be FF       		.byte	0xff
  850 03bf 93020000 		.4byte	0x293
  851 03c3 19       		.byte	0x19
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 20
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 20
 
 
  852 03c4 11       		.uleb128 0x11
@@ -1155,7 +1155,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  863 03dd 1C       		.byte	0x1c
  864 03de 00       		.byte	0
  865 03df 02       		.uleb128 0x2
- 866 03e0 C2030000 		.4byte	.LASF61
+ 866 03e0 21040000 		.4byte	.LASF61
  867 03e4 07       		.byte	0x7
  868 03e5 67       		.byte	0x67
  869 03e6 EA030000 		.4byte	0x3ea
@@ -1178,7 +1178,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  886 040c 7E050000 		.4byte	0x57e
  887 0410 04       		.byte	0x4
  888 0411 11       		.uleb128 0x11
- 889 0412 AE050000 		.4byte	.LASF53
+ 889 0412 9E050000 		.4byte	.LASF53
  890 0416 07       		.byte	0x7
  891 0417 4501     		.2byte	0x145
  892 0419 93020000 		.4byte	0x293
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  906 0436 13       		.uleb128 0x13
  907 0437 787300   		.ascii	"xs\000"
  908 043a 07       		.byte	0x7
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 21
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 21
 
 
  909 043b 4801     		.2byte	0x148
@@ -1223,7 +1223,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  928 0461 B4020000 		.4byte	0x2b4
  929 0465 1A       		.byte	0x1a
  930 0466 11       		.uleb128 0x11
- 931 0467 A8050000 		.4byte	.LASF66
+ 931 0467 98050000 		.4byte	.LASF66
  932 046b 07       		.byte	0x7
  933 046c 4C01     		.2byte	0x14c
  934 046e 93020000 		.4byte	0x293
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  963 04a6 B4020000 		.4byte	0x2b4
  964 04aa 00       		.byte	0
  965 04ab 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 22
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 22
 
 
  966 04ac 797300   		.ascii	"ys\000"
@@ -1295,7 +1295,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  997 04e6 D6       		.byte	0xd6
  998 04e7 27050000 		.4byte	0x527
  999 04eb 0A       		.uleb128 0xa
- 1000 04ec D9040000 		.4byte	.LASF58
+ 1000 04ec C9040000 		.4byte	.LASF58
  1001 04f0 07       		.byte	0x7
  1002 04f1 D8       		.byte	0xd8
  1003 04f2 93020000 		.4byte	0x293
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1020 0514 DB       		.byte	0xdb
  1021 0515 93020000 		.4byte	0x293
  1022 0519 03       		.byte	0x3
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 23
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 23
 
 
  1023 051a 0D       		.uleb128 0xd
@@ -1339,7 +1339,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1038 0535 E8       		.byte	0xe8
  1039 0536 5D050000 		.4byte	0x55d
  1040 053a 0A       		.uleb128 0xa
- 1041 053b AE050000 		.4byte	.LASF53
+ 1041 053b 9E050000 		.4byte	.LASF53
  1042 053f 07       		.byte	0x7
  1043 0540 EA       		.byte	0xea
  1044 0541 93020000 		.4byte	0x293
@@ -1358,7 +1358,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1057 055b 04       		.byte	0x4
  1058 055c 00       		.byte	0
  1059 055d 02       		.uleb128 0x2
- 1060 055e C1050000 		.4byte	.LASF72
+ 1060 055e B1050000 		.4byte	.LASF72
  1061 0562 07       		.byte	0x7
  1062 0563 ED       		.byte	0xed
  1063 0564 32050000 		.4byte	0x532
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1077 0584 08       		.uleb128 0x8
  1078 0585 04       		.byte	0x4
  1079 0586 68050000 		.4byte	0x568
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 24
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 24
 
 
  1080 058a 17       		.uleb128 0x17
@@ -1393,13 +1393,13 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1089 059b 38010000 		.4byte	0x138
  1090 059f 00       		.byte	0
  1091 05a0 11       		.uleb128 0x11
- 1092 05a1 84040000 		.4byte	.LASF73
+ 1092 05a1 74040000 		.4byte	.LASF73
  1093 05a5 07       		.byte	0x7
  1094 05a6 3501     		.2byte	0x135
  1095 05a8 D8040000 		.4byte	0x4d8
  1096 05ac 04       		.byte	0x4
  1097 05ad 11       		.uleb128 0x11
- 1098 05ae F7040000 		.4byte	.LASF74
+ 1098 05ae E7040000 		.4byte	.LASF74
  1099 05b2 07       		.byte	0x7
  1100 05b3 3601     		.2byte	0x136
  1101 05b5 9E020000 		.4byte	0x29e
@@ -1411,7 +1411,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1107 05c2 9E020000 		.4byte	0x29e
  1108 05c6 09       		.byte	0x9
  1109 05c7 11       		.uleb128 0x11
- 1110 05c8 32060000 		.4byte	.LASF76
+ 1110 05c8 22060000 		.4byte	.LASF76
  1111 05cc 07       		.byte	0x7
  1112 05cd 3801     		.2byte	0x138
  1113 05cf 93020000 		.4byte	0x293
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1134 05fa 69626300 		.ascii	"ibc\000"
  1135 05fe 07       		.byte	0x7
  1136 05ff 3C01     		.2byte	0x13c
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 25
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 25
 
 
  1137 0601 8D040000 		.4byte	0x48d
@@ -1451,7 +1451,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1144 0612 1C       		.byte	0x1c
  1145 0613 00       		.byte	0
  1146 0614 05       		.uleb128 0x5
- 1147 0615 79030000 		.4byte	.LASF78
+ 1147 0615 D8030000 		.4byte	.LASF78
  1148 0619 07       		.byte	0x7
  1149 061a 3E01     		.2byte	0x13e
  1150 061c 8A050000 		.4byte	0x58a
@@ -1478,14 +1478,14 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1171 0648 36010000 		.4byte	0x136
  1172 064c 00       		.byte	0
  1173 064d 11       		.uleb128 0x11
- 1174 064e AE050000 		.4byte	.LASF53
+ 1174 064e 9E050000 		.4byte	.LASF53
  1175 0652 07       		.byte	0x7
  1176 0653 2302     		.2byte	0x223
  1177 0655 93020000 		.4byte	0x293
  1178 0659 04       		.byte	0x4
  1179 065a 00       		.byte	0
  1180 065b 05       		.uleb128 0x5
- 1181 065c 82030000 		.4byte	.LASF80
+ 1181 065c E1030000 		.4byte	.LASF80
  1182 0660 07       		.byte	0x7
  1183 0661 2402     		.2byte	0x224
  1184 0663 37060000 		.4byte	0x637
@@ -1495,10 +1495,10 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1188 066a 3C02     		.2byte	0x23c
  1189 066c D9060000 		.4byte	0x6d9
  1190 0670 11       		.uleb128 0x11
- 1191 0671 8C030000 		.4byte	.LASF81
+ 1191 0671 EB030000 		.4byte	.LASF81
  1192 0675 07       		.byte	0x7
  1193 0676 3E02     		.2byte	0x23e
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 26
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 26
 
 
  1194 0678 B4020000 		.4byte	0x2b4
@@ -1510,7 +1510,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1200 0685 B4020000 		.4byte	0x2b4
  1201 0689 02       		.byte	0x2
  1202 068a 11       		.uleb128 0x11
- 1203 068b FF040000 		.4byte	.LASF83
+ 1203 068b EF040000 		.4byte	.LASF83
  1204 068f 07       		.byte	0x7
  1205 0690 4002     		.2byte	0x240
  1206 0692 B4020000 		.4byte	0x2b4
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1248 06ea C8070000 		.4byte	0x7c8
  1249 06ee 00       		.byte	0
  1250 06ef 11       		.uleb128 0x11
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 27
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 27
 
 
  1251 06f0 96020000 		.4byte	.LASF90
@@ -1603,13 +1603,13 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1290 0745 67060000 		.4byte	0x667
  1291 0749 1C       		.byte	0x1c
  1292 074a 11       		.uleb128 0x11
- 1293 074b 84040000 		.4byte	.LASF73
+ 1293 074b 74040000 		.4byte	.LASF73
  1294 074f 07       		.byte	0x7
  1295 0750 4702     		.2byte	0x247
  1296 0752 4F030000 		.4byte	0x34f
  1297 0756 30       		.byte	0x30
  1298 0757 11       		.uleb128 0x11
- 1299 0758 BB040000 		.4byte	.LASF97
+ 1299 0758 AB040000 		.4byte	.LASF97
  1300 075c 07       		.byte	0x7
  1301 075d 4802     		.2byte	0x248
  1302 075f 9E020000 		.4byte	0x29e
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1305 0765 71000000 		.4byte	.LASF98
  1306 0769 07       		.byte	0x7
  1307 076a 4902     		.2byte	0x249
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 28
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 28
 
 
  1308 076c 9E020000 		.4byte	0x29e
@@ -1642,7 +1642,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1326 0793 8D040000 		.4byte	0x48d
  1327 0797 50       		.byte	0x50
  1328 0798 11       		.uleb128 0x11
- 1329 0799 AE050000 		.4byte	.LASF53
+ 1329 0799 9E050000 		.4byte	.LASF53
  1330 079d 07       		.byte	0x7
  1331 079e 4D02     		.2byte	0x24d
  1332 07a0 93020000 		.4byte	0x293
@@ -1674,11 +1674,11 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1358 07dc 03       		.byte	0x3
  1359 07dd 00       		.byte	0
  1360 07de 05       		.uleb128 0x5
- 1361 07df B4050000 		.4byte	.LASF100
+ 1361 07df A4050000 		.4byte	.LASF100
  1362 07e3 07       		.byte	0x7
  1363 07e4 4F02     		.2byte	0x24f
  1364 07e6 D9060000 		.4byte	0x6d9
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 29
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 29
 
 
  1365 07ea 18       		.uleb128 0x18
@@ -1691,7 +1691,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1372 07fd 01       		.uleb128 0x1
  1373 07fe 9C       		.byte	0x9c
  1374 07ff 19       		.uleb128 0x19
- 1375 0800 F5030000 		.4byte	.LASF133
+ 1375 0800 54040000 		.4byte	.LASF133
  1376 0804 01       		.byte	0x1
  1377 0805 69       		.byte	0x69
  1378 0806 00000000 		.4byte	.LFB36
@@ -1700,7 +1700,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1381 080f 9C       		.byte	0x9c
  1382 0810 33080000 		.4byte	0x833
  1383 0814 1A       		.uleb128 0x1a
- 1384 0815 E5030000 		.4byte	.LASF101
+ 1384 0815 44040000 		.4byte	.LASF101
  1385 0819 01       		.byte	0x1
  1386 081a 6C       		.byte	0x6c
  1387 081b 40020000 		.4byte	0x240
@@ -1719,7 +1719,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1400 0831 00       		.byte	0
  1401 0832 00       		.byte	0
  1402 0833 1D       		.uleb128 0x1d
- 1403 0834 CC030000 		.4byte	.LASF104
+ 1403 0834 2B040000 		.4byte	.LASF104
  1404 0838 01       		.byte	0x1
  1405 0839 81       		.byte	0x81
  1406 083a 00000000 		.4byte	.LFB37
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1419 085b 01       		.byte	0x1
  1420 085c 81       		.byte	0x81
  1421 085d CE000000 		.4byte	0xce
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 30
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 30
 
 
  1422 0861 21000000 		.4byte	.LLST1
@@ -1779,7 +1779,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1457 08a0 04       		.byte	0x4
  1458 08a1 AD000000 		.4byte	0xad
  1459 08a5 1D       		.uleb128 0x1d
- 1460 08a6 20060000 		.4byte	.LASF105
+ 1460 08a6 10060000 		.4byte	.LASF105
  1461 08aa 01       		.byte	0x1
  1462 08ab 91       		.byte	0x91
  1463 08ac 00000000 		.4byte	.LFB38
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1476 08ce B00A0000 		.4byte	0xab0
  1477 08d2 00       		.byte	0
  1478 08d3 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 31
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 31
 
 
  1479 08d4 2E030000 		.4byte	.LASF107
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1533 0949 0A       		.byte	0xa
  1534 094a 6607     		.2byte	0x766
  1535 094c 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 32
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 32
 
 
  1536 094d 1B       		.uleb128 0x1b
@@ -1872,7 +1872,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1544 095b 00       		.byte	0
  1545 095c 00       		.byte	0
  1546 095d 1D       		.uleb128 0x1d
- 1547 095e D5030000 		.4byte	.LASF112
+ 1547 095e 34040000 		.4byte	.LASF112
  1548 0962 01       		.byte	0x1
  1549 0963 C6       		.byte	0xc6
  1550 0964 00000000 		.4byte	.LFB40
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1590 09b6 1C       		.uleb128 0x1c
  1591 09b7 01       		.uleb128 0x1
  1592 09b8 52       		.byte	0x52
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 33
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 33
 
 
  1593 09b9 01       		.uleb128 0x1
@@ -1942,7 +1942,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1611 09d2 00       		.byte	0
  1612 09d3 00       		.byte	0
  1613 09d4 23       		.uleb128 0x23
- 1614 09d5 71030000 		.4byte	.LASF115
+ 1614 09d5 D0030000 		.4byte	.LASF115
  1615 09d9 08       		.byte	0x8
  1616 09da 33       		.byte	0x33
  1617 09db DE070000 		.4byte	0x7de
@@ -1966,7 +1966,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1635 0a02 03       		.byte	0x3
  1636 0a03 00000000 		.4byte	last_max_pack_temp_color
  1637 0a07 23       		.uleb128 0x23
- 1638 0a08 A8030000 		.4byte	.LASF118
+ 1638 0a08 07040000 		.4byte	.LASF118
  1639 0a0c 09       		.byte	0x9
  1640 0a0d 11       		.byte	0x11
  1641 0a0e 8D040000 		.4byte	0x48d
@@ -1974,18 +1974,18 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1643 0a13 03       		.byte	0x3
  1644 0a14 00000000 		.4byte	last_state_color
  1645 0a18 23       		.uleb128 0x23
- 1646 0a19 C8040000 		.4byte	.LASF119
+ 1646 0a19 B8040000 		.4byte	.LASF119
  1647 0a1d 09       		.byte	0x9
  1648 0a1e 12       		.byte	0x12
  1649 0a1f 8D040000 		.4byte	0x48d
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 34
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 34
 
 
  1650 0a23 05       		.uleb128 0x5
  1651 0a24 03       		.byte	0x3
  1652 0a25 00000000 		.4byte	last_glv_v_color
  1653 0a29 23       		.uleb128 0x23
- 1654 0a2a 95050000 		.4byte	.LASF120
+ 1654 0a2a 85050000 		.4byte	.LASF120
  1655 0a2e 09       		.byte	0x9
  1656 0a2f 13       		.byte	0x13
  1657 0a30 8D040000 		.4byte	0x48d
@@ -2019,7 +2019,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1685 0a6d 06       		.uleb128 0x6
  1686 0a6e AD000000 		.4byte	0xad
  1687 0a72 23       		.uleb128 0x23
- 1688 0a73 10060000 		.4byte	.LASF124
+ 1688 0a73 00060000 		.4byte	.LASF124
  1689 0a77 01       		.byte	0x1
  1690 0a78 26       		.byte	0x26
  1691 0a79 6D0A0000 		.4byte	0xa6d
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1704 0a98 01       		.byte	0x1
  1705 0a99 29       		.byte	0x29
  1706 0a9a 830A0000 		.4byte	0xa83
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 35
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 35
 
 
  1707 0a9e 05       		.uleb128 0x5
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1761 001e 00       		.byte	0
  1762 001f 00       		.byte	0
  1763 0020 03       		.uleb128 0x3
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 36
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 36
 
 
  1764 0021 24       		.uleb128 0x24
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1818 0057 13       		.uleb128 0x13
  1819 0058 00       		.byte	0
  1820 0059 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 37
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 37
 
 
  1821 005a 09       		.uleb128 0x9
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1875 0090 0B       		.uleb128 0xb
  1876 0091 49       		.uleb128 0x49
  1877 0092 13       		.uleb128 0x13
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 38
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 38
 
 
  1878 0093 38       		.uleb128 0x38
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1932 00c9 38       		.uleb128 0x38
  1933 00ca 0B       		.uleb128 0xb
  1934 00cb 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 39
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 39
 
 
  1935 00cc 00       		.byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  1989 0102 17       		.uleb128 0x17
  1990 0103 13       		.uleb128 0x13
  1991 0104 01       		.byte	0x1
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 40
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 40
 
 
  1992 0105 0B       		.uleb128 0xb
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2046 013d 00       		.byte	0
  2047 013e 00       		.byte	0
  2048 013f 1A       		.uleb128 0x1a
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 41
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 41
 
 
  2049 0140 34       		.uleb128 0x34
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2103 017c 13       		.uleb128 0x13
  2104 017d 00       		.byte	0
  2105 017e 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 42
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 42
 
 
  2106 017f 1E       		.uleb128 0x1e
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2160 01b7 22       		.uleb128 0x22
  2161 01b8 898201   		.uleb128 0x4109
  2162 01bb 01       		.byte	0x1
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 43
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 43
 
 
  2163 01bc 11       		.uleb128 0x11
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2217 01f2 0B       		.uleb128 0xb
  2218 01f3 3B       		.uleb128 0x3b
  2219 01f4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 44
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 44
 
 
  2220 01f5 00       		.byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2274 0052 00000000 		.4byte	0
  2275 0056 00000000 		.4byte	0
  2276              	.LLST2:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 45
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 45
 
 
  2277 005a 18000000 		.4byte	.LVL4
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2331 00de 01       		.uleb128 0x1
  2332 00df 51       		.byte	0x51
  2333 00e0 9F       		.byte	0x9f
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 46
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 46
 
 
  2334 00e1 00000000 		.4byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2388 0163 51       		.byte	0x51
  2389 0164 9F       		.byte	0x9f
  2390 0165 00000000 		.4byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 47
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 47
 
 
  2391 0169 00000000 		.4byte	0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2437              	.LASF99:
  2438 0017 6465736B 		.ascii	"desktop_color\000"
  2438      746F705F 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 48
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 48
 
 
  2438      636F6C6F 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2465              	.LASF125:
  2466 00b3 63757272 		.ascii	"current_bytes\000"
  2466      656E745F 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 49
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 49
 
 
  2466      62797465 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2496 013e 666C6F61 		.ascii	"float\000"
  2496      7400
  2497              	.LASF59:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 50
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 50
 
 
  2498 0144 6576656E 		.ascii	"event\000"
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2524      6E5F636F 
  2524      6C6F7200 
  2525              	.LASF103:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 51
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 51
 
 
  2526 01e4 7061796C 		.ascii	"payload\000"
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2554 0277 746F7563 		.ascii	"touch\000"
  2554      6800
  2555              	.LASF79:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 52
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 52
 
 
  2556 027d 64726976 		.ascii	"driver\000"
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2584 030d 68656967 		.ascii	"height\000"
  2584      687400
  2585              	.LASF48:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 53
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 53
 
 
  2586 0314 73746172 		.ascii	"start_char\000"
@@ -3156,237 +3156,233 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 1
  2601              	.LASF25:
  2602 036b 72656733 		.ascii	"reg32\000"
  2602      3200
- 2603              	.LASF115:
- 2604 0371 67756931 		.ascii	"gui1963\000"
- 2604      39363300 
- 2605              	.LASF78:
- 2606 0379 55475F54 		.ascii	"UG_TITLE\000"
- 2606      49544C45 
- 2606      00
- 2607              	.LASF80:
- 2608 0382 55475F44 		.ascii	"UG_DRIVER\000"
- 2608      52495645 
- 2608      5200
- 2609              	.LASF81:
- 2610 038c 785F706F 		.ascii	"x_pos\000"
- 2610      7300
- 2611              	.LASF47:
- 2612 0392 63686172 		.ascii	"char_height\000"
- 2612      5F686569 
- 2612      67687400 
- 2613              	.LASF5:
- 2614 039e 73686F72 		.ascii	"short int\000"
- 2614      7420696E 
- 2614      7400
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 54
+ 2603              	.LASF131:
+ 2604 0371 443A5C55 		.ascii	"D:\\Users\\leoja\\Documents\\GitHub\\Dashboard-Firm"
+ 2604      73657273 
+ 2604      5C6C656F 
+ 2604      6A615C44 
+ 2604      6F63756D 
+ 2605 039f 77617265 		.ascii	"ware-FE10\\Dashboard-Firmware-FE9\\Dashboard.cydsn\000"
+ 2605      2D464531 
+ 2605      305C4461 
+ 2605      7368626F 
+ 2605      6172642D 
+ 2606              	.LASF115:
+ 2607 03d0 67756931 		.ascii	"gui1963\000"
+ 2607      39363300 
+ 2608              	.LASF78:
+ 2609 03d8 55475F54 		.ascii	"UG_TITLE\000"
+ 2609      49544C45 
+ 2609      00
+ 2610              	.LASF80:
+ 2611 03e1 55475F44 		.ascii	"UG_DRIVER\000"
+ 2611      52495645 
+ 2611      5200
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 54
 
 
- 2615              	.LASF118:
- 2616 03a8 6C617374 		.ascii	"last_state_color\000"
- 2616      5F737461 
- 2616      74655F63 
- 2616      6F6C6F72 
- 2616      00
- 2617              	.LASF8:
- 2618 03b9 6C6F6E67 		.ascii	"long int\000"
- 2618      20696E74 
- 2618      00
- 2619              	.LASF61:
- 2620 03c2 55475F57 		.ascii	"UG_WINDOW\000"
- 2620      494E444F 
- 2620      5700
- 2621              	.LASF104:
- 2622 03cc 63616E5F 		.ascii	"can_send\000"
- 2622      73656E64 
- 2622      00
- 2623              	.LASF112:
- 2624 03d5 63616E5F 		.ascii	"can_send_charge\000"
- 2624      73656E64 
- 2624      5F636861 
- 2624      72676500 
- 2625              	.LASF101:
- 2626 03e5 48656172 		.ascii	"HeartB\000"
- 2626      744200
- 2627              	.LASF49:
- 2628 03ec 656E645F 		.ascii	"end_char\000"
- 2628      63686172 
- 2628      00
- 2629              	.LASF133:
- 2630 03f5 63616E5F 		.ascii	"can_test_send\000"
- 2630      74657374 
- 2630      5F73656E 
- 2630      6400
- 2631              	.LASF51:
- 2632 0403 55475F46 		.ascii	"UG_FONT\000"
- 2632      4F4E5400 
- 2633              	.LASF1:
- 2634 040b 5F5F7569 		.ascii	"__uint8_t\000"
- 2634      6E74385F 
- 2634      7400
- 2635              	.LASF131:
- 2636 0415 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
- 2636      73657273 
- 2636      5C4D656C 
- 2636      6F64795C 
- 2636      4465736B 
- 2637 0443 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
- 2637      7368626F 
- 2637      6172642D 
- 2637      4669726D 
- 2637      77617265 
- 2638 0474 44617368 		.ascii	"Dashboard.cydsn\000"
- 2638      626F6172 
- 2638      642E6379 
- 2638      64736E00 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 55
+ 2612              	.LASF81:
+ 2613 03eb 785F706F 		.ascii	"x_pos\000"
+ 2613      7300
+ 2614              	.LASF47:
+ 2615 03f1 63686172 		.ascii	"char_height\000"
+ 2615      5F686569 
+ 2615      67687400 
+ 2616              	.LASF5:
+ 2617 03fd 73686F72 		.ascii	"short int\000"
+ 2617      7420696E 
+ 2617      7400
+ 2618              	.LASF118:
+ 2619 0407 6C617374 		.ascii	"last_state_color\000"
+ 2619      5F737461 
+ 2619      74655F63 
+ 2619      6F6C6F72 
+ 2619      00
+ 2620              	.LASF8:
+ 2621 0418 6C6F6E67 		.ascii	"long int\000"
+ 2621      20696E74 
+ 2621      00
+ 2622              	.LASF61:
+ 2623 0421 55475F57 		.ascii	"UG_WINDOW\000"
+ 2623      494E444F 
+ 2623      5700
+ 2624              	.LASF104:
+ 2625 042b 63616E5F 		.ascii	"can_send\000"
+ 2625      73656E64 
+ 2625      00
+ 2626              	.LASF112:
+ 2627 0434 63616E5F 		.ascii	"can_send_charge\000"
+ 2627      73656E64 
+ 2627      5F636861 
+ 2627      72676500 
+ 2628              	.LASF101:
+ 2629 0444 48656172 		.ascii	"HeartB\000"
+ 2629      744200
+ 2630              	.LASF49:
+ 2631 044b 656E645F 		.ascii	"end_char\000"
+ 2631      63686172 
+ 2631      00
+ 2632              	.LASF133:
+ 2633 0454 63616E5F 		.ascii	"can_test_send\000"
+ 2633      74657374 
+ 2633      5F73656E 
+ 2633      6400
+ 2634              	.LASF51:
+ 2635 0462 55475F46 		.ascii	"UG_FONT\000"
+ 2635      4F4E5400 
+ 2636              	.LASF1:
+ 2637 046a 5F5F7569 		.ascii	"__uint8_t\000"
+ 2637      6E74385F 
+ 2637      7400
+ 2638              	.LASF73:
+ 2639 0474 666F6E74 		.ascii	"font\000"
+ 2639      00
+ 2640              	.LASF27:
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 55
 
 
- 2639              	.LASF73:
- 2640 0484 666F6E74 		.ascii	"font\000"
- 2640      00
- 2641              	.LASF27:
- 2642 0489 73697A65 		.ascii	"sizetype\000"
- 2642      74797065 
- 2642      00
- 2643              	.LASF10:
- 2644 0492 6C6F6E67 		.ascii	"long unsigned int\000"
- 2644      20756E73 
- 2644      69676E65 
- 2644      6420696E 
- 2644      7400
- 2645              	.LASF31:
- 2646 04a4 43414E5F 		.ascii	"CAN_REG_32\000"
- 2646      5245475F 
- 2646      333200
- 2647              	.LASF35:
- 2648 04af 74786461 		.ascii	"txdata\000"
- 2648      746100
- 2649              	.LASF29:
- 2650 04b6 62797465 		.ascii	"byte\000"
- 2650      00
- 2651              	.LASF97:
- 2652 04bb 63686172 		.ascii	"char_h_space\000"
- 2652      5F685F73 
- 2652      70616365 
- 2652      00
- 2653              	.LASF119:
- 2654 04c8 6C617374 		.ascii	"last_glv_v_color\000"
- 2654      5F676C76 
- 2654      5F765F63 
- 2654      6F6C6F72 
- 2654      00
- 2655              	.LASF58:
- 2656 04d9 74797065 		.ascii	"type\000"
- 2656      00
- 2657              	.LASF3:
- 2658 04de 756E7369 		.ascii	"unsigned char\000"
- 2658      676E6564 
- 2658      20636861 
- 2658      7200
- 2659              	.LASF9:
- 2660 04ec 5F5F7569 		.ascii	"__uint32_t\000"
- 2660      6E743332 
- 2660      5F7400
- 2661              	.LASF74:
- 2662 04f7 685F7370 		.ascii	"h_space\000"
- 2662      61636500 
- 2663              	.LASF83:
- 2664 04ff 785F7374 		.ascii	"x_start\000"
- 2664      61727400 
- 2665              	.LASF129:
- 2666 0507 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2666      43313120 
- 2666      352E342E 
- 2666      31203230 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 56
+ 2641 0479 73697A65 		.ascii	"sizetype\000"
+ 2641      74797065 
+ 2641      00
+ 2642              	.LASF10:
+ 2643 0482 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2643      20756E73 
+ 2643      69676E65 
+ 2643      6420696E 
+ 2643      7400
+ 2644              	.LASF31:
+ 2645 0494 43414E5F 		.ascii	"CAN_REG_32\000"
+ 2645      5245475F 
+ 2645      333200
+ 2646              	.LASF35:
+ 2647 049f 74786461 		.ascii	"txdata\000"
+ 2647      746100
+ 2648              	.LASF29:
+ 2649 04a6 62797465 		.ascii	"byte\000"
+ 2649      00
+ 2650              	.LASF97:
+ 2651 04ab 63686172 		.ascii	"char_h_space\000"
+ 2651      5F685F73 
+ 2651      70616365 
+ 2651      00
+ 2652              	.LASF119:
+ 2653 04b8 6C617374 		.ascii	"last_glv_v_color\000"
+ 2653      5F676C76 
+ 2653      5F765F63 
+ 2653      6F6C6F72 
+ 2653      00
+ 2654              	.LASF58:
+ 2655 04c9 74797065 		.ascii	"type\000"
+ 2655      00
+ 2656              	.LASF3:
+ 2657 04ce 756E7369 		.ascii	"unsigned char\000"
+ 2657      676E6564 
+ 2657      20636861 
+ 2657      7200
+ 2658              	.LASF9:
+ 2659 04dc 5F5F7569 		.ascii	"__uint32_t\000"
+ 2659      6E743332 
+ 2659      5F7400
+ 2660              	.LASF74:
+ 2661 04e7 685F7370 		.ascii	"h_space\000"
+ 2661      61636500 
+ 2662              	.LASF83:
+ 2663 04ef 785F7374 		.ascii	"x_start\000"
+ 2663      61727400 
+ 2664              	.LASF129:
+ 2665 04f7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2665      43313120 
+ 2665      352E342E 
+ 2665      31203230 
+ 2665      31363036 
+ 2666 052a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2666      20726576 
+ 2666      6973696F 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 56
 
 
- 2666      31363036 
- 2667 053a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 2667      20726576 
- 2667      6973696F 
- 2667      6E203233 
- 2667      37373135 
- 2668 056d 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 2668      66756E63 
- 2668      74696F6E 
- 2668      2D736563 
- 2668      74696F6E 
- 2669              	.LASF120:
- 2670 0595 6C617374 		.ascii	"last_mc_temp_color\000"
- 2670      5F6D635F 
- 2670      74656D70 
- 2670      5F636F6C 
- 2670      6F7200
- 2671              	.LASF66:
- 2672 05a8 7374796C 		.ascii	"style\000"
- 2672      6500
- 2673              	.LASF53:
- 2674 05ae 73746174 		.ascii	"state\000"
- 2674      6500
- 2675              	.LASF100:
- 2676 05b4 55475F47 		.ascii	"UG_GUI\000"
- 2676      554900
- 2677              	.LASF57:
- 2678 05bb 615F7265 		.ascii	"a_rel\000"
- 2678      6C00
- 2679              	.LASF72:
- 2680 05c1 55475F54 		.ascii	"UG_TOUCH\000"
- 2680      4F554348 
- 2680      00
- 2681              	.LASF2:
- 2682 05ca 7369676E 		.ascii	"signed char\000"
- 2682      65642063 
- 2682      68617200 
- 2683              	.LASF36:
- 2684 05d6 43414E5F 		.ascii	"CAN_TX_STRUCT\000"
- 2684      54585F53 
- 2684      54525543 
- 2684      5400
- 2685              	.LASF7:
- 2686 05e4 73686F72 		.ascii	"short unsigned int\000"
- 2686      7420756E 
- 2686      7369676E 
- 2686      65642069 
- 2686      6E7400
- 2687              	.LASF130:
- 2688 05f7 63616E5F 		.ascii	"can_manga.c\000"
- 2688      6D616E67 
- 2688      612E6300 
- 2689              	.LASF19:
- 2690 0603 75696E74 		.ascii	"uint8\000"
- 2690      3800
- 2691              	.LASF22:
- 2692 0609 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccdIUP66.s 			page 57
+ 2666      6E203233 
+ 2666      37373135 
+ 2667 055d 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 2667      66756E63 
+ 2667      74696F6E 
+ 2667      2D736563 
+ 2667      74696F6E 
+ 2668              	.LASF120:
+ 2669 0585 6C617374 		.ascii	"last_mc_temp_color\000"
+ 2669      5F6D635F 
+ 2669      74656D70 
+ 2669      5F636F6C 
+ 2669      6F7200
+ 2670              	.LASF66:
+ 2671 0598 7374796C 		.ascii	"style\000"
+ 2671      6500
+ 2672              	.LASF53:
+ 2673 059e 73746174 		.ascii	"state\000"
+ 2673      6500
+ 2674              	.LASF100:
+ 2675 05a4 55475F47 		.ascii	"UG_GUI\000"
+ 2675      554900
+ 2676              	.LASF57:
+ 2677 05ab 615F7265 		.ascii	"a_rel\000"
+ 2677      6C00
+ 2678              	.LASF72:
+ 2679 05b1 55475F54 		.ascii	"UG_TOUCH\000"
+ 2679      4F554348 
+ 2679      00
+ 2680              	.LASF2:
+ 2681 05ba 7369676E 		.ascii	"signed char\000"
+ 2681      65642063 
+ 2681      68617200 
+ 2682              	.LASF36:
+ 2683 05c6 43414E5F 		.ascii	"CAN_TX_STRUCT\000"
+ 2683      54585F53 
+ 2683      54525543 
+ 2683      5400
+ 2684              	.LASF7:
+ 2685 05d4 73686F72 		.ascii	"short unsigned int\000"
+ 2685      7420756E 
+ 2685      7369676E 
+ 2685      65642069 
+ 2685      6E7400
+ 2686              	.LASF130:
+ 2687 05e7 63616E5F 		.ascii	"can_manga.c\000"
+ 2687      6D616E67 
+ 2687      612E6300 
+ 2688              	.LASF19:
+ 2689 05f3 75696E74 		.ascii	"uint8\000"
+ 2689      3800
+ 2690              	.LASF22:
+ 2691 05f9 646F7562 		.ascii	"double\000"
+ 2691      6C6500
+ 2692              	.LASF124:
+ 2693 0600 41434B5F 		.ascii	"ACK_RX\000"
+ 2693      525800
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqpy1eM.s 			page 57
 
 
- 2692      6C6500
- 2693              	.LASF124:
- 2694 0610 41434B5F 		.ascii	"ACK_RX\000"
- 2694      525800
- 2695              	.LASF62:
- 2696 0617 535F4F42 		.ascii	"S_OBJECT\000"
- 2696      4A454354 
- 2696      00
- 2697              	.LASF105:
- 2698 0620 63616E5F 		.ascii	"can_send_switches\000"
- 2698      73656E64 
- 2698      5F737769 
- 2698      74636865 
- 2698      7300
- 2699              	.LASF76:
- 2700 0632 616C6967 		.ascii	"align\000"
- 2700      6E00
- 2701              	.LASF34:
- 2702 0638 74786964 		.ascii	"txid\000"
- 2702      00
- 2703              	.LASF56:
- 2704 063d 615F6162 		.ascii	"a_abs\000"
- 2704      7300
- 2705              	.LASF42:
- 2706 0643 464F4E54 		.ascii	"FONT_TYPE_1BPP\000"
- 2706      5F545950 
- 2706      455F3142 
- 2706      505000
- 2707              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2694              	.LASF62:
+ 2695 0607 535F4F42 		.ascii	"S_OBJECT\000"
+ 2695      4A454354 
+ 2695      00
+ 2696              	.LASF105:
+ 2697 0610 63616E5F 		.ascii	"can_send_switches\000"
+ 2697      73656E64 
+ 2697      5F737769 
+ 2697      74636865 
+ 2697      7300
+ 2698              	.LASF76:
+ 2699 0622 616C6967 		.ascii	"align\000"
+ 2699      6E00
+ 2700              	.LASF34:
+ 2701 0628 74786964 		.ascii	"txid\000"
+ 2701      00
+ 2702              	.LASF56:
+ 2703 062d 615F6162 		.ascii	"a_abs\000"
+ 2703      7300
+ 2704              	.LASF42:
+ 2705 0633 464F4E54 		.ascii	"FONT_TYPE_1BPP\000"
+ 2705      5F545950 
+ 2705      455F3142 
+ 2705      505000
+ 2706              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
