@@ -25,6 +25,16 @@ typedef enum {
     ESTOP
 } vcu_fault;
 
+typedef enum {
+    // 00| IMD_OK | BMS_OK | Shutdown Final | AIR1 | AIR2 | Precharge
+    IMD_OK = 0b00100000,
+    BMS_OK = 0b00010000,
+    Shutdown_Final = 0b00001000,
+    AIR1 = 0b00000100,
+    AIR2 = 0b00000010,
+    Precharge = 0b00000001
+} shutdown_flag_type;
+
 typedef enum{
     NO_ERROR = 0x0000,
     CHARGEMODE = 0x0001,

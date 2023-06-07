@@ -85,6 +85,9 @@ volatile BMS_STATUS bms_status = NO_ERROR;
 volatile uint16 mc_temp = 0;
 volatile uint16 motor_temp = 0;
 
+// debug data over CAN
+volatile uint16 debug_data = 0;
+
 /*******************************************************************************
 * Function Name: main
 ********************************************************************************
@@ -127,16 +130,13 @@ int main()
     //uint8_t value=0; // replace the value with 
     //int8_t direction=1;
     
-    //precharging time counter
-    //volatile uint32_t PrechargingTimeCount = 0;
-    //uint32_t DriveTimeCount = 0;
 
     CyGlobalIntEnable;
     
     int bms_error;
     int faulted = 0;
     
-    int debugMode = 0;
+    uint8_t debugMode = 1;
     
     //Initialize CAN
     CAN_GlobalIntEnable();
@@ -186,11 +186,31 @@ int main()
             switches &= 0b11111110;
         }
         
-        if(!Digital1_Read() || !Digital2_Read() || !Digital3_Read() || !Digital4_Read()){
+        /*if(!Digital1_Read() || !Digital2_Read() || !Digital3_Read() || !Digital4_Read()){
             Buzzer_Write(1);
         } else {
             Buzzer_Write(0);
-        }
+        }*/
+        
+        if (Digital2_Read()) {
+            if (debug_data) { // switch to drive mode
+                debug_data = 0;
+            }
+            else {
+                debug_data = 1;
+            }
+            
+            /*if (debugMode) { // switch to drive mode
+                driveTemplate();
+                debugMode = 0;
+            }
+            else {
+                debugTemplate();
+                debugMode = 1;
+            }*/
+        } 
+        
+        
         // send driver switches
         can_send_switches(switches);
         
@@ -213,14 +233,15 @@ int main()
         
         if(debugMode){
             
-            disp_SOC(soc, 95, 35, 240, 170, SMALL_FONT);
-            disp_max_pack_temp(PACK_TEMP, 410, 35, 470, 170, SMALL_FONT);
-        
-            disp_state(state, 95, 185, 240, 215, SMALL_FONT);
-           
-            disp_glv_v(glv_v, 95, 230, 182, 260, SMALL_FONT);
-            disp_mc_temp(mc_temp, 410, 185, 470, 215, SMALL_FONT);
-            disp_motor_temp(motor_temp, 410, 230, 470, 260, SMALL_FONT);
+            disp_SOC(soc, 10, 35, 240, 65, SMALL_FONT);
+            disp_max_pack_temp(PACK_TEMP, 250, 35, 470, 65, SMALL_FONT);
+            disp_state(state, 10, 100, 240, 130, SMALL_FONT);
+            disp_mc_temp(mc_temp, 250, 100, 470, 130, SMALL_FONT);
+            disp_glv_v(glv_v, 10, 165, 240, 195, SMALL_FONT);
+            disp_motor_temp(motor_temp, 250, 165, 470, 195, SMALL_FONT);
+            disp_shutdown_circuit(shutdown_flags, 10, 230, 240, 260, SMALL_FONT);
+            disp_debug(debug_data, 250, 230, 470, 260, SMALL_FONT);
+            //disp_mc_fault();
         }else{
             disp_SOC(soc, 30, 35, 210, 170, BIG_FONT);
             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);

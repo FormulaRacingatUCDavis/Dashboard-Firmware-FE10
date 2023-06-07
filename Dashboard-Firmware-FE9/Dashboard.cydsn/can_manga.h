@@ -17,17 +17,17 @@
 //volatile uint32 CURRENT = 0; 
     
 typedef enum {
-    VEHICLE_STATE = 0x0c0,
     DRIVER_SWITCHES = 0x0d0,
-    TORQUE_REQUEST_COMMAND = 0x766,
+    VEHICLE_STATE = 0x766,
+    BSPD_FLAGS = 0x0c1,
+    MC_COMMAND = 0x0C0, 
+    PEI_ESTOP = 0x366,
+    PEI_CURRENT_SHUTDOWN = 0x387,
     BMS_STATUS_MSG = 0x380,
-    PEI_CURRENT = 0x387,
     BMS_VOLTAGES = 0x388,
     BMS_TEMPERATURES = 0x389,
-    MC_ESTOP = 0x366,
-    MC_DEBUG = 0x466,
-    MC_PDO_SEND = 0x566,
-    MC_PDO_ACK = 0x666
+    MC_VOLTAGE_INFO = 0x0A7,
+    MC_INTERNAL_STATES = 0xAA
 } CAN_ID;
     
 // Basic CAN functionality
@@ -41,15 +41,13 @@ void can_send_switches(uint8_t sw_status);
 void can_send_charge(uint8_t charge, uint8_t save_soc);
 
 uint8_t getCapacitorVoltage();
-uint8_t getCurtisFaultCheck();
+/*uint8_t getCurtisFaultCheck();
 uint8_t getCurtisHeartBeatCheck();
 uint8_t getAckRx();
 uint8_t getErrorTolerance();
-uint8_t getABSMotorRPM();
+uint8_t getABSMotorRPM();*/
 uint8_t getPedalLow();
 uint8_t getPedalHigh();
-uint8_t getEStop(); //Tehya test
-void tempAttenuate();
 
 #endif
 

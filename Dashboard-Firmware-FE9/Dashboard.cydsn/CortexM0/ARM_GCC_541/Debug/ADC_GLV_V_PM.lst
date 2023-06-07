@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
   11:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** * Copyright 2008-2017, Cypress Semiconductor Corporation.  All rights reserved.
   12:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
   13:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 2
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 2
 
 
   14:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** * the software package with which this file was provided.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
   46              		.cfi_startproc
   47              		@ args = 0, pretend = 0, frame = 0
   48              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 3
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 3
 
 
   49              		@ link register save eliminated.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
   73 0006 1368     		ldr	r3, [r2]
   90:Generated_Source\PSoC4/ADC_GLV_V_PM.c ****     /* During deepsleep/ hibernate mode keep SARMUX active, i.e. do not open
   74              		.loc 1 90 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 4
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 4
 
 
   75 0008 70B5     		push	{r4, r5, r6, lr}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  108:Generated_Source\PSoC4/ADC_GLV_V_PM.c ****         
  109:Generated_Source\PSoC4/ADC_GLV_V_PM.c ****         /* Disable the SAR internal pump before entering the chip low power mode */
  110:Generated_Source\PSoC4/ADC_GLV_V_PM.c ****         if((ADC_GLV_V_SAR_CTRL_REG & ADC_GLV_V_BOOSTPUMP_EN) != 0u)
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 5
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 5
 
 
  116              		.loc 1 110 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  122:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** 
  123:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** /*******************************************************************************
  124:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** * Function Name: ADC_GLV_V_Wakeup
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 6
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 6
 
 
  125:Generated_Source\PSoC4/ADC_GLV_V_PM.c **** ********************************************************************************
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  150:Generated_Source\PSoC4/ADC_GLV_V_PM.c ****         }
  151:Generated_Source\PSoC4/ADC_GLV_V_PM.c ****         ADC_GLV_V_Enable();
  188              		.loc 1 151 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 7
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 7
 
 
  189 0022 FFF7FEFF 		bl	ADC_GLV_V_Enable
@@ -408,48 +408,48 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  226 0006 00000000 		.4byte	.Ldebug_abbrev0
  227 000a 04       		.byte	0x4
  228 000b 01       		.uleb128 0x1
- 229 000c F2010000 		.4byte	.LASF26
+ 229 000c 02020000 		.4byte	.LASF26
  230 0010 0C       		.byte	0xc
- 231 0011 26010000 		.4byte	.LASF27
- 232 0015 AA000000 		.4byte	.LASF28
+ 231 0011 36010000 		.4byte	.LASF27
+ 232 0015 00000000 		.4byte	.LASF28
  233 0019 00000000 		.4byte	.Ldebug_ranges0+0
  234 001d 00000000 		.4byte	0
  235 0021 00000000 		.4byte	.Ldebug_line0
  236 0025 02       		.uleb128 0x2
  237 0026 01       		.byte	0x1
  238 0027 06       		.byte	0x6
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 8
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 8
 
 
- 239 0028 D5010000 		.4byte	.LASF0
+ 239 0028 E5010000 		.4byte	.LASF0
  240 002c 02       		.uleb128 0x2
  241 002d 01       		.byte	0x1
  242 002e 08       		.byte	0x8
- 243 002f 59000000 		.4byte	.LASF1
+ 243 002f C8000000 		.4byte	.LASF1
  244 0033 02       		.uleb128 0x2
  245 0034 02       		.byte	0x2
  246 0035 05       		.byte	0x5
- 247 0036 98010000 		.4byte	.LASF2
+ 247 0036 A8010000 		.4byte	.LASF2
  248 003a 02       		.uleb128 0x2
  249 003b 02       		.byte	0x2
  250 003c 07       		.byte	0x7
- 251 003d 2F000000 		.4byte	.LASF3
+ 251 003d 9E000000 		.4byte	.LASF3
  252 0041 02       		.uleb128 0x2
  253 0042 04       		.byte	0x4
  254 0043 05       		.byte	0x5
- 255 0044 BA010000 		.4byte	.LASF4
+ 255 0044 CA010000 		.4byte	.LASF4
  256 0048 02       		.uleb128 0x2
  257 0049 04       		.byte	0x4
  258 004a 07       		.byte	0x7
- 259 004b 67000000 		.4byte	.LASF5
+ 259 004b D6000000 		.4byte	.LASF5
  260 004f 02       		.uleb128 0x2
  261 0050 08       		.byte	0x8
  262 0051 05       		.byte	0x5
- 263 0052 76010000 		.4byte	.LASF6
+ 263 0052 86010000 		.4byte	.LASF6
  264 0056 02       		.uleb128 0x2
  265 0057 08       		.byte	0x8
  266 0058 07       		.byte	0x7
- 267 0059 4C010000 		.4byte	.LASF7
+ 267 0059 5C010000 		.4byte	.LASF7
  268 005d 03       		.uleb128 0x3
  269 005e 04       		.byte	0x4
  270 005f 05       		.byte	0x5
@@ -457,34 +457,34 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  272 0064 02       		.uleb128 0x2
  273 0065 04       		.byte	0x4
  274 0066 07       		.byte	0x7
- 275 0067 09010000 		.4byte	.LASF8
+ 275 0067 19010000 		.4byte	.LASF8
  276 006b 04       		.uleb128 0x4
- 277 006c 79000000 		.4byte	.LASF9
+ 277 006c E8000000 		.4byte	.LASF9
  278 0070 02       		.byte	0x2
  279 0071 FB01     		.2byte	0x1fb
  280 0073 2C000000 		.4byte	0x2c
  281 0077 04       		.uleb128 0x4
- 282 0078 97000000 		.4byte	.LASF10
+ 282 0078 06010000 		.4byte	.LASF10
  283 007c 02       		.byte	0x2
  284 007d FD01     		.2byte	0x1fd
  285 007f 48000000 		.4byte	0x48
  286 0083 02       		.uleb128 0x2
  287 0084 04       		.byte	0x4
  288 0085 04       		.byte	0x4
- 289 0086 42000000 		.4byte	.LASF11
+ 289 0086 B1000000 		.4byte	.LASF11
  290 008a 02       		.uleb128 0x2
  291 008b 08       		.byte	0x8
  292 008c 04       		.byte	0x4
- 293 008d 90000000 		.4byte	.LASF12
+ 293 008d FF000000 		.4byte	.LASF12
  294 0091 02       		.uleb128 0x2
  295 0092 01       		.byte	0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 9
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 9
 
 
  296 0093 08       		.byte	0x8
- 297 0094 84010000 		.4byte	.LASF13
+ 297 0094 94010000 		.4byte	.LASF13
  298 0098 04       		.uleb128 0x4
- 299 0099 C3010000 		.4byte	.LASF14
+ 299 0099 D3010000 		.4byte	.LASF14
  300 009d 02       		.byte	0x2
  301 009e A702     		.2byte	0x2a7
  302 00a0 A4000000 		.4byte	0xa4
@@ -493,36 +493,36 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  305 00a9 02       		.uleb128 0x2
  306 00aa 08       		.byte	0x8
  307 00ab 04       		.byte	0x4
- 308 00ac C9010000 		.4byte	.LASF15
+ 308 00ac D9010000 		.4byte	.LASF15
  309 00b0 02       		.uleb128 0x2
  310 00b1 04       		.byte	0x4
  311 00b2 07       		.byte	0x7
- 312 00b3 6D010000 		.4byte	.LASF16
+ 312 00b3 7D010000 		.4byte	.LASF16
  313 00b7 06       		.uleb128 0x6
  314 00b8 08       		.byte	0x8
  315 00b9 03       		.byte	0x3
  316 00ba 1E       		.byte	0x1e
  317 00bb D8000000 		.4byte	0xd8
  318 00bf 07       		.uleb128 0x7
- 319 00c0 9E000000 		.4byte	.LASF17
+ 319 00c0 0D010000 		.4byte	.LASF17
  320 00c4 03       		.byte	0x3
  321 00c5 20       		.byte	0x20
  322 00c6 6B000000 		.4byte	0x6b
  323 00ca 00       		.byte	0
  324 00cb 07       		.uleb128 0x7
- 325 00cc 63010000 		.4byte	.LASF18
+ 325 00cc 73010000 		.4byte	.LASF18
  326 00d0 03       		.byte	0x3
  327 00d1 21       		.byte	0x21
  328 00d2 77000000 		.4byte	0x77
  329 00d6 04       		.byte	0x4
  330 00d7 00       		.byte	0
  331 00d8 08       		.uleb128 0x8
- 332 00d9 A2010000 		.4byte	.LASF19
+ 332 00d9 B2010000 		.4byte	.LASF19
  333 00dd 03       		.byte	0x3
  334 00de 22       		.byte	0x22
  335 00df B7000000 		.4byte	0xb7
  336 00e3 09       		.uleb128 0x9
- 337 00e4 00000000 		.4byte	.LASF29
+ 337 00e4 6F000000 		.4byte	.LASF29
  338 00e8 01       		.byte	0x1
  339 00e9 41       		.byte	0x41
  340 00ea 01       		.byte	0x1
@@ -533,12 +533,12 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  345 00f8 01       		.uleb128 0x1
  346 00f9 9C       		.byte	0x9c
  347 00fa 0B       		.uleb128 0xb
- 348 00fb 16010000 		.4byte	.LASF20
+ 348 00fb 26010000 		.4byte	.LASF20
  349 00ff 01       		.byte	0x1
  350 0100 59       		.byte	0x59
  351 0101 00000000 		.4byte	.LFB3
  352 0105 70000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 10
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 10
 
 
  353 0109 01       		.uleb128 0x1
@@ -552,7 +552,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  361 011d 66010000 		.4byte	0x166
  362 0121 00       		.byte	0
  363 0122 0B       		.uleb128 0xb
- 364 0123 7F000000 		.4byte	.LASF21
+ 364 0123 EE000000 		.4byte	.LASF21
  365 0127 01       		.byte	0x1
  366 0128 8D       		.byte	0x8d
  367 0129 00000000 		.4byte	.LFB4
@@ -568,7 +568,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  377 0145 7C010000 		.4byte	0x17c
  378 0149 00       		.byte	0
  379 014a 0D       		.uleb128 0xd
- 380 014b 48000000 		.4byte	.LASF30
+ 380 014b B7000000 		.4byte	.LASF30
  381 014f 01       		.byte	0x1
  382 0150 18       		.byte	0x18
  383 0151 D8000000 		.4byte	0xd8
@@ -576,29 +576,29 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  385 0156 03       		.byte	0x3
  386 0157 00000000 		.4byte	ADC_GLV_V_backup
  387 015b 0E       		.uleb128 0xe
- 388 015c 80020000 		.4byte	.LASF22
- 389 0160 80020000 		.4byte	.LASF22
+ 388 015c 90020000 		.4byte	.LASF22
+ 389 0160 90020000 		.4byte	.LASF22
  390 0164 03       		.byte	0x3
  391 0165 9E       		.byte	0x9e
  392 0166 0E       		.uleb128 0xe
- 393 0167 89010000 		.4byte	.LASF23
- 394 016b 89010000 		.4byte	.LASF23
+ 393 0167 99010000 		.4byte	.LASF23
+ 394 016b 99010000 		.4byte	.LASF23
  395 016f 03       		.byte	0x3
  396 0170 9A       		.byte	0x9a
  397 0171 0E       		.uleb128 0xe
- 398 0172 E1010000 		.4byte	.LASF24
- 399 0176 E1010000 		.4byte	.LASF24
+ 398 0172 F1010000 		.4byte	.LASF24
+ 399 0176 F1010000 		.4byte	.LASF24
  400 017a 03       		.byte	0x3
  401 017b 9C       		.byte	0x9c
  402 017c 0E       		.uleb128 0xe
- 403 017d 18000000 		.4byte	.LASF25
- 404 0181 18000000 		.4byte	.LASF25
+ 403 017d 87000000 		.4byte	.LASF25
+ 404 0181 87000000 		.4byte	.LASF25
  405 0185 03       		.byte	0x3
  406 0186 9D       		.byte	0x9d
  407 0187 00       		.byte	0
  408              		.section	.debug_abbrev,"",%progbits
  409              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 11
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 11
 
 
  410 0000 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  464 0036 05       		.uleb128 0x5
  465 0037 35       		.uleb128 0x35
  466 0038 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 12
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 12
 
 
  467 0039 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  521 006f 3B       		.uleb128 0x3b
  522 0070 0B       		.uleb128 0xb
  523 0071 27       		.uleb128 0x27
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 13
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 13
 
 
  524 0072 19       		.uleb128 0x19
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  578 00ac 0D       		.uleb128 0xd
  579 00ad 34       		.uleb128 0x34
  580 00ae 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 14
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 14
 
 
  581 00af 03       		.uleb128 0x3
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  635 0018 00000000 		.4byte	0
  636 001c 00000000 		.4byte	0
  637              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 15
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 15
 
 
  638              	.Ldebug_line0:
@@ -847,177 +847,181 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 1
  639      00000201 
  639      FB0E0D00 
  639      01010101 
- 640              	.LASF29:
- 641 0000 4144435F 		.ascii	"ADC_GLV_V_RestoreConfig\000"
- 641      474C565F 
- 641      565F5265 
- 641      73746F72 
- 641      65436F6E 
- 642              	.LASF25:
- 643 0018 4144435F 		.ascii	"ADC_GLV_V_StartConvert\000"
- 643      474C565F 
- 643      565F5374 
- 643      61727443 
- 643      6F6E7665 
- 644              	.LASF3:
- 645 002f 73686F72 		.ascii	"short unsigned int\000"
- 645      7420756E 
- 645      7369676E 
- 645      65642069 
- 645      6E7400
- 646              	.LASF11:
- 647 0042 666C6F61 		.ascii	"float\000"
- 647      7400
- 648              	.LASF30:
- 649 0048 4144435F 		.ascii	"ADC_GLV_V_backup\000"
- 649      474C565F 
- 649      565F6261 
- 649      636B7570 
- 649      00
- 650              	.LASF1:
- 651 0059 756E7369 		.ascii	"unsigned char\000"
- 651      676E6564 
- 651      20636861 
- 651      7200
- 652              	.LASF5:
- 653 0067 6C6F6E67 		.ascii	"long unsigned int\000"
- 653      20756E73 
- 653      69676E65 
- 653      6420696E 
- 653      7400
- 654              	.LASF9:
- 655 0079 75696E74 		.ascii	"uint8\000"
- 655      3800
- 656              	.LASF21:
- 657 007f 4144435F 		.ascii	"ADC_GLV_V_Wakeup\000"
- 657      474C565F 
- 657      565F5761 
- 657      6B657570 
- 657      00
- 658              	.LASF12:
- 659 0090 646F7562 		.ascii	"double\000"
- 659      6C6500
- 660              	.LASF10:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 16
+ 640              	.LASF28:
+ 641 0000 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
+ 641      73657273 
+ 641      5C4D656C 
+ 641      6F64795C 
+ 641      4465736B 
+ 642 002e 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
+ 642      7368626F 
+ 642      6172642D 
+ 642      4669726D 
+ 642      77617265 
+ 643 005f 44617368 		.ascii	"Dashboard.cydsn\000"
+ 643      626F6172 
+ 643      642E6379 
+ 643      64736E00 
+ 644              	.LASF29:
+ 645 006f 4144435F 		.ascii	"ADC_GLV_V_RestoreConfig\000"
+ 645      474C565F 
+ 645      565F5265 
+ 645      73746F72 
+ 645      65436F6E 
+ 646              	.LASF25:
+ 647 0087 4144435F 		.ascii	"ADC_GLV_V_StartConvert\000"
+ 647      474C565F 
+ 647      565F5374 
+ 647      61727443 
+ 647      6F6E7665 
+ 648              	.LASF3:
+ 649 009e 73686F72 		.ascii	"short unsigned int\000"
+ 649      7420756E 
+ 649      7369676E 
+ 649      65642069 
+ 649      6E7400
+ 650              	.LASF11:
+ 651 00b1 666C6F61 		.ascii	"float\000"
+ 651      7400
+ 652              	.LASF30:
+ 653 00b7 4144435F 		.ascii	"ADC_GLV_V_backup\000"
+ 653      474C565F 
+ 653      565F6261 
+ 653      636B7570 
+ 653      00
+ 654              	.LASF1:
+ 655 00c8 756E7369 		.ascii	"unsigned char\000"
+ 655      676E6564 
+ 655      20636861 
+ 655      7200
+ 656              	.LASF5:
+ 657 00d6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 657      20756E73 
+ 657      69676E65 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 16
 
 
- 661 0097 75696E74 		.ascii	"uint32\000"
- 661      333200
- 662              	.LASF17:
- 663 009e 656E6162 		.ascii	"enableState\000"
- 663      6C655374 
- 663      61746500 
- 664              	.LASF28:
- 665 00aa 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\Dashboard-Firm"
- 665      73657273 
- 665      5C6C656F 
- 665      6A615C44 
- 665      6F63756D 
- 666 00d8 77617265 		.ascii	"ware-FE10\\Dashboard-Firmware-FE9\\Dashboard.cydsn\000"
- 666      2D464531 
- 666      305C4461 
- 666      7368626F 
- 666      6172642D 
- 667              	.LASF8:
- 668 0109 756E7369 		.ascii	"unsigned int\000"
- 668      676E6564 
- 668      20696E74 
- 668      00
- 669              	.LASF20:
- 670 0116 4144435F 		.ascii	"ADC_GLV_V_Sleep\000"
- 670      474C565F 
- 670      565F536C 
- 670      65657000 
- 671              	.LASF27:
- 672 0126 47656E65 		.ascii	"Generated_Source\\PSoC4\\ADC_GLV_V_PM.c\000"
- 672      72617465 
- 672      645F536F 
- 672      75726365 
- 672      5C50536F 
- 673              	.LASF7:
- 674 014c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 674      206C6F6E 
- 674      6720756E 
- 674      7369676E 
- 674      65642069 
- 675              	.LASF18:
- 676 0163 64667452 		.ascii	"dftRegVal\000"
- 676      65675661 
- 676      6C00
- 677              	.LASF16:
- 678 016d 73697A65 		.ascii	"sizetype\000"
- 678      74797065 
- 678      00
- 679              	.LASF6:
- 680 0176 6C6F6E67 		.ascii	"long long int\000"
- 680      206C6F6E 
- 680      6720696E 
- 680      7400
- 681              	.LASF13:
- 682 0184 63686172 		.ascii	"char\000"
- 682      00
- 683              	.LASF23:
- 684 0189 4144435F 		.ascii	"ADC_GLV_V_Stop\000"
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 17
+ 657      6420696E 
+ 657      7400
+ 658              	.LASF9:
+ 659 00e8 75696E74 		.ascii	"uint8\000"
+ 659      3800
+ 660              	.LASF21:
+ 661 00ee 4144435F 		.ascii	"ADC_GLV_V_Wakeup\000"
+ 661      474C565F 
+ 661      565F5761 
+ 661      6B657570 
+ 661      00
+ 662              	.LASF12:
+ 663 00ff 646F7562 		.ascii	"double\000"
+ 663      6C6500
+ 664              	.LASF10:
+ 665 0106 75696E74 		.ascii	"uint32\000"
+ 665      333200
+ 666              	.LASF17:
+ 667 010d 656E6162 		.ascii	"enableState\000"
+ 667      6C655374 
+ 667      61746500 
+ 668              	.LASF8:
+ 669 0119 756E7369 		.ascii	"unsigned int\000"
+ 669      676E6564 
+ 669      20696E74 
+ 669      00
+ 670              	.LASF20:
+ 671 0126 4144435F 		.ascii	"ADC_GLV_V_Sleep\000"
+ 671      474C565F 
+ 671      565F536C 
+ 671      65657000 
+ 672              	.LASF27:
+ 673 0136 47656E65 		.ascii	"Generated_Source\\PSoC4\\ADC_GLV_V_PM.c\000"
+ 673      72617465 
+ 673      645F536F 
+ 673      75726365 
+ 673      5C50536F 
+ 674              	.LASF7:
+ 675 015c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 675      206C6F6E 
+ 675      6720756E 
+ 675      7369676E 
+ 675      65642069 
+ 676              	.LASF18:
+ 677 0173 64667452 		.ascii	"dftRegVal\000"
+ 677      65675661 
+ 677      6C00
+ 678              	.LASF16:
+ 679 017d 73697A65 		.ascii	"sizetype\000"
+ 679      74797065 
+ 679      00
+ 680              	.LASF6:
+ 681 0186 6C6F6E67 		.ascii	"long long int\000"
+ 681      206C6F6E 
+ 681      6720696E 
+ 681      7400
+ 682              	.LASF13:
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 17
 
 
- 684      474C565F 
- 684      565F5374 
- 684      6F7000
- 685              	.LASF2:
- 686 0198 73686F72 		.ascii	"short int\000"
- 686      7420696E 
- 686      7400
- 687              	.LASF19:
- 688 01a2 4144435F 		.ascii	"ADC_GLV_V_BACKUP_STRUCT\000"
- 688      474C565F 
- 688      565F4241 
- 688      434B5550 
- 688      5F535452 
- 689              	.LASF4:
- 690 01ba 6C6F6E67 		.ascii	"long int\000"
- 690      20696E74 
- 690      00
- 691              	.LASF14:
- 692 01c3 72656733 		.ascii	"reg32\000"
- 692      3200
- 693              	.LASF15:
- 694 01c9 6C6F6E67 		.ascii	"long double\000"
- 694      20646F75 
- 694      626C6500 
- 695              	.LASF0:
- 696 01d5 7369676E 		.ascii	"signed char\000"
- 696      65642063 
- 696      68617200 
- 697              	.LASF24:
- 698 01e1 4144435F 		.ascii	"ADC_GLV_V_Enable\000"
- 698      474C565F 
- 698      565F456E 
- 698      61626C65 
- 698      00
- 699              	.LASF26:
- 700 01f2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 700      43313120 
- 700      352E342E 
- 700      31203230 
- 700      31363036 
- 701 0225 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 701      20726576 
- 701      6973696F 
- 701      6E203233 
- 701      37373135 
- 702 0258 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 702      66756E63 
- 702      74696F6E 
- 702      2D736563 
- 702      74696F6E 
- 703              	.LASF22:
- 704 0280 4144435F 		.ascii	"ADC_GLV_V_StopConvert\000"
- 704      474C565F 
- 704      565F5374 
- 704      6F70436F 
- 704      6E766572 
- 705              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccCJ7PDJ.s 			page 18
+ 683 0194 63686172 		.ascii	"char\000"
+ 683      00
+ 684              	.LASF23:
+ 685 0199 4144435F 		.ascii	"ADC_GLV_V_Stop\000"
+ 685      474C565F 
+ 685      565F5374 
+ 685      6F7000
+ 686              	.LASF2:
+ 687 01a8 73686F72 		.ascii	"short int\000"
+ 687      7420696E 
+ 687      7400
+ 688              	.LASF19:
+ 689 01b2 4144435F 		.ascii	"ADC_GLV_V_BACKUP_STRUCT\000"
+ 689      474C565F 
+ 689      565F4241 
+ 689      434B5550 
+ 689      5F535452 
+ 690              	.LASF4:
+ 691 01ca 6C6F6E67 		.ascii	"long int\000"
+ 691      20696E74 
+ 691      00
+ 692              	.LASF14:
+ 693 01d3 72656733 		.ascii	"reg32\000"
+ 693      3200
+ 694              	.LASF15:
+ 695 01d9 6C6F6E67 		.ascii	"long double\000"
+ 695      20646F75 
+ 695      626C6500 
+ 696              	.LASF0:
+ 697 01e5 7369676E 		.ascii	"signed char\000"
+ 697      65642063 
+ 697      68617200 
+ 698              	.LASF24:
+ 699 01f1 4144435F 		.ascii	"ADC_GLV_V_Enable\000"
+ 699      474C565F 
+ 699      565F456E 
+ 699      61626C65 
+ 699      00
+ 700              	.LASF26:
+ 701 0202 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 701      43313120 
+ 701      352E342E 
+ 701      31203230 
+ 701      31363036 
+ 702 0235 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 702      20726576 
+ 702      6973696F 
+ 702      6E203233 
+ 702      37373135 
+ 703 0268 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 703      66756E63 
+ 703      74696F6E 
+ 703      2D736563 
+ 703      74696F6E 
+ 704              	.LASF22:
+ 705 0290 4144435F 		.ascii	"ADC_GLV_V_StopConvert\000"
+ 705      474C565F 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc0NtI7e.s 			page 18
 
 
+ 705      565F5374 
+ 705      6F70436F 
+ 705      6E766572 
+ 706              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -646,7 +646,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX0_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg0
+    * FUNCTION NAME:   CAN_ReceiveMsgVEHICLE_STATE
     ********************************************************************************
     *
     * Summary:
@@ -664,15 +664,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg0(void) 
+    void CAN_ReceiveMsgVEHICLE_STATE(void) 
     {
-        /* `#START MESSAGE_0_RECEIVED` */
+        /* `#START MESSAGE_VEHICLE_STATE_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_0_CALLBACK
-            CAN_ReceiveMsg_0_Callback();
-        #endif /* CAN_RECEIVE_MSG_0_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_VEHICLE_STATE_CALLBACK
+            CAN_ReceiveMsg_VEHICLE_STATE_Callback();
+        #endif /* CAN_RECEIVE_MSG_VEHICLE_STATE_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(0u);
     }
@@ -681,7 +681,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX1_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:    CAN_ReceiveMsg1
+    * FUNCTION NAME:    CAN_ReceiveMsgBSPD_FLAGS
     ********************************************************************************
     *
     * Summary:
@@ -699,15 +699,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg1(void) 
+    void CAN_ReceiveMsgBSPD_FLAGS(void) 
     {
-        /* `#START MESSAGE_1_RECEIVED` */
+        /* `#START MESSAGE_BSPD_FLAGS_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_1_CALLBACK
-            CAN_ReceiveMsg_1_Callback();
-        #endif /* CAN_RECEIVE_MSG_1_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BSPD_FLAGS_CALLBACK
+            CAN_ReceiveMsg_BSPD_FLAGS_Callback();
+        #endif /* CAN_RECEIVE_MSG_BSPD_FLAGS_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(1u);
     }
@@ -716,7 +716,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg2
+    * FUNCTION NAME:   CAN_ReceiveMsgBMS_STATUS_MSG
     ********************************************************************************
     *
     * Summary:
@@ -734,15 +734,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg2(void) 
+    void CAN_ReceiveMsgBMS_STATUS_MSG(void) 
     {
-        /* `#START MESSAGE_2_RECEIVED` */
+        /* `#START MESSAGE_BMS_STATUS_MSG_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_2_CALLBACK
-            CAN_ReceiveMsg_2_Callback();
-        #endif /* CAN_RECEIVE_MSG_2_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BMS_STATUS_MSG_CALLBACK
+            CAN_ReceiveMsg_BMS_STATUS_MSG_Callback();
+        #endif /* CAN_RECEIVE_MSG_BMS_STATUS_MSG_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(2u);
     }
@@ -751,7 +751,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg3
+    * FUNCTION NAME:   CAN_ReceiveMsgBMS_VOLTAGES
     ********************************************************************************
     *
     * Summary:
@@ -769,15 +769,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg3(void) 
+    void CAN_ReceiveMsgBMS_VOLTAGES(void) 
     {
-        /* `#START MESSAGE_3_RECEIVED` */
+        /* `#START MESSAGE_BMS_VOLTAGES_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_3_CALLBACK
-            CAN_ReceiveMsg_3_Callback();
-        #endif /* CAN_RECEIVE_MSG_3_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BMS_VOLTAGES_CALLBACK
+            CAN_ReceiveMsg_BMS_VOLTAGES_Callback();
+        #endif /* CAN_RECEIVE_MSG_BMS_VOLTAGES_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(3u);
     }
@@ -786,7 +786,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX4_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg4
+    * FUNCTION NAME:   CAN_ReceiveMsgBMS_TEMPERATURES
     ********************************************************************************
     *
     * Summary:
@@ -804,15 +804,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg4(void) 
+    void CAN_ReceiveMsgBMS_TEMPERATURES(void) 
     {
-        /* `#START MESSAGE_4_RECEIVED` */
+        /* `#START MESSAGE_BMS_TEMPERATURES_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_4_CALLBACK
-            CAN_ReceiveMsg_4_Callback();
-        #endif /* CAN_RECEIVE_MSG_4_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BMS_TEMPERATURES_CALLBACK
+            CAN_ReceiveMsg_BMS_TEMPERATURES_Callback();
+        #endif /* CAN_RECEIVE_MSG_BMS_TEMPERATURES_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(4u);
     }
@@ -821,7 +821,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX5_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg5
+    * FUNCTION NAME:   CAN_ReceiveMsgPEI_ESTOP
     ********************************************************************************
     *
     * Summary:
@@ -839,15 +839,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg5(void) 
+    void CAN_ReceiveMsgPEI_ESTOP(void) 
     {
-        /* `#START MESSAGE_5_RECEIVED` */
+        /* `#START MESSAGE_PEI_ESTOP_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_5_CALLBACK
-            CAN_ReceiveMsg_5_Callback();
-        #endif /* CAN_RECEIVE_MSG_5_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_PEI_ESTOP_CALLBACK
+            CAN_ReceiveMsg_PEI_ESTOP_Callback();
+        #endif /* CAN_RECEIVE_MSG_PEI_ESTOP_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(5u);
     }
@@ -856,7 +856,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX6_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg6
+    * FUNCTION NAME:   CAN_ReceiveMsgPEI_CURRENT_SHUTDOWN
     ********************************************************************************
     *
     * Summary:
@@ -874,15 +874,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg6(void) 
+    void CAN_ReceiveMsgPEI_CURRENT_SHUTDOWN(void) 
     {
-        /* `#START MESSAGE_6_RECEIVED` */
+        /* `#START MESSAGE_PEI_CURRENT_SHUTDOWN_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_6_CALLBACK
-            CAN_ReceiveMsg_6_Callback();
-        #endif /* CAN_RECEIVE_MSG_6_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_PEI_CURRENT_SHUTDOWN_CALLBACK
+            CAN_ReceiveMsg_PEI_CURRENT_SHUTDOWN_Callback();
+        #endif /* CAN_RECEIVE_MSG_PEI_CURRENT_SHUTDOWN_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(6u);
     }
@@ -891,7 +891,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX7_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg7
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_VOLTAGE_INFO
     ********************************************************************************
     *
     * Summary:
@@ -909,15 +909,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg7(void) 
+    void CAN_ReceiveMsgMC_VOLTAGE_INFO(void) 
     {
-        /* `#START MESSAGE_7_RECEIVED` */
+        /* `#START MESSAGE_MC_VOLTAGE_INFO_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_7_CALLBACK
-            CAN_ReceiveMsg_7_Callback();
-        #endif /* CAN_RECEIVE_MSG_7_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_VOLTAGE_INFO_CALLBACK
+            CAN_ReceiveMsg_MC_VOLTAGE_INFO_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_VOLTAGE_INFO_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(7u);
     }
@@ -926,7 +926,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX8_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg8
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_INTERNAL_STATES
     ********************************************************************************
     *
     * Summary:
@@ -944,15 +944,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg8(void) 
+    void CAN_ReceiveMsgMC_INTERNAL_STATES(void) 
     {
-        /* `#START MESSAGE_8_RECEIVED` */
+        /* `#START MESSAGE_MC_INTERNAL_STATES_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_8_CALLBACK
-            CAN_ReceiveMsg_8_Callback();
-        #endif /* CAN_RECEIVE_MSG_8_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_INTERNAL_STATES_CALLBACK
+            CAN_ReceiveMsg_MC_INTERNAL_STATES_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_INTERNAL_STATES_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(8u);
     }

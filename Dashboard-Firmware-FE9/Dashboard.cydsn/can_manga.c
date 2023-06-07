@@ -25,8 +25,6 @@ extern volatile uint32_t pedalOK;
 extern volatile uint8_t PACK_TEMP;
 extern volatile uint8_t BSPD_CATCH;
 extern volatile uint16_t CURRENT;
-//extern volatile int ERROR_NODE;
-//extern volatile int ERROR_IDX;
 extern volatile uint8_t soc;
 extern volatile uint32_t voltage;
 extern volatile BMS_STATUS bms_status;
@@ -37,15 +35,7 @@ extern volatile uint16_t mc_temp;
 extern volatile uint16_t motor_temp;
 
 volatile uint8_t CAPACITOR_VOLT = 0;
-volatile uint8_t CURTIS_FAULT_CHECK = 0;
-volatile uint8_t CURTIS_HEART_BEAT_CHECK = 0;
 volatile uint8_t ACK_RX = 0;
-volatile uint8_t ERROR_TOLERANCE = 0;
-volatile uint8_t ABS_MOTOR_RPM = 0;
-volatile uint8_t THROTTLE_HIGH = 0;
-volatile uint8_t THROTTLE_LOW = 0;
-
-//volatile uint8_t ESTOP; //Tehya test
 
 
 uint8 current_bytes[4] = {0};
@@ -56,67 +46,28 @@ uint8_t getCapacitorVoltage()
     return CAPACITOR_VOLT;
 }
 
-// returns true if there is a fault in motor controller
-uint8_t getCurtisFaultCheck()
-{
-    return CURTIS_FAULT_CHECK;
-}
-
-// returns true if motor controller node is still active
-// if node is in active check the fault code using 1314
-uint8_t getCurtisHeartBeatCheck()
-{
-    return CURTIS_HEART_BEAT_CHECK;
-}
-
-// returns 1 always... not sure whats up in the motor controller
-uint8_t getAckRx()
-{
-    return ACK_RX;
-}
-
-// true if break depressed more than 10%
-// this value typically used for drive request
-uint8_t getErrorTolerance()
-{
-    return ERROR_TOLERANCE;
-}
-
-// from motor controller
-// look this one up in 1239E manual, im not super sure
-uint8_t getABSMotorRPM()
-{
-    return ABS_MOTOR_RPM;
-}
-
-//Tehya test
-//will be a 1 if the estop was pressed (I'm making it a special case because I want to test rn)
-uint8_t getEStop()
-{
-    return ESTOP;
-}
 
 // called from CAN_TX_RX_func.c in the generic RX func
-/*/ tldr: part of an interrupt service routine
-void can_receive(uint8_t *msg, int ID)
+// tldr: part of an interrupt service routine
+/*void can_receive(uint8_t *msg, int ID)
 {
     uint8 InterruptState = CyEnterCriticalSection();
     
     switch (ID) 
     {
         case VEHICLE_STATE:
-            state = msg[CAN_DATA_BYTE_1];
+            state = msg[1];
             break;
         case MC_PDO_SEND:
-            CAPACITOR_VOLT = msg[CAN_DATA_BYTE_1];
-            ABS_MOTOR_RPM = msg[CAN_DATA_BYTE_3];
-            mc_temp = msg[CAN_DATA_BYTE_7] << 8;
-            mc_temp += msg[CAN_DATA_BYTE_8];
+            CAPACITOR_VOLT = msg[1];
+            ABS_MOTOR_RPM = msg[3];
+            mc_temp = msg[7] << 8;
+            mc_temp += msg[8];
             break;
         case MC_PDO_ACK:
-            ACK_RX = msg[CAN_DATA_BYTE_1];
-            motor_temp = msg[CAN_DATA_BYTE_5] << 8;
-            motor_temp |= msg[CAN_DATA_BYTE_6];
+            ACK_RX = msg[1];
+            motor_temp = msg[5] << 8;
+            motor_temp |= msg[6];
             break;
         case 0xA6:  // errors sent from MC node
             CURTIS_FAULT_CHECK = 0x1;
@@ -125,23 +76,23 @@ void can_receive(uint8_t *msg, int ID)
             CURTIS_HEART_BEAT_CHECK = 0x1;
             break;
         case BMS_VOLTAGES:
-            voltage = msg[CAN_DATA_BYTE_5] << 24;
-            voltage |= msg[CAN_DATA_BYTE_6] << 16;
-            voltage |= msg[CAN_DATA_BYTE_7] << 8;
-            voltage |= msg[CAN_DATA_BYTE_8];
+            voltage = msg[5] << 24;
+            voltage |= msg[6] << 16;
+            voltage |= msg[7] << 8;
+            voltage |= msg[8];
             break;
         case BMS_STATUS_MSG:
-            soc = msg[CAN_DATA_BYTE_2];
-            bms_status = msg[CAN_DATA_BYTE_3] << 8;    // bms error flags
-            bms_status |= msg[CAN_DATA_BYTE_4];        // bms error flags
+            soc = msg[2];
+            bms_status = msg[3] << 8;    // bms error flags
+            bms_status |= msg[4];        // bms error flags
             break;
         case BMS_TEMPERATURES:
-            PACK_TEMP = msg[CAN_DATA_BYTE_8];
+            PACK_TEMP = msg[8];
             break;
         case PEI_CURRENT:
-            CURRENT = msg[CAN_DATA_BYTE_1] << 8;
-            CURRENT |= msg[CAN_DATA_BYTE_2];
-            shutdown_flags = msg[CAN_DATA_BYTE_3];
+            CURRENT = msg[1] << 8;
+            CURRENT |= msg[2];
+            shutdown_flags = msg[3];
             break;
         case 0x366: //Tehya test
             //ESTOP = msg[CAN_DATA_BYTE_1];

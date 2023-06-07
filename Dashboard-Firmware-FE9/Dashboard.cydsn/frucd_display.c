@@ -35,15 +35,14 @@ void initDashTemplate() {
 
 void debugTemplate(){
     UG_FillScreen(C_BLACK);
-    UG_PutString(68, 10, "PACK SOC");
-    UG_PutString(297, 10, "MAX PACK T");
-    UG_PutString(10, 195, "STATE:");
-    UG_PutString(10, 240, "GLV V:");
-    UG_PutString(339, 195, "MC T:");
-    UG_PutString(300, 240, "MOTOR T:");
-    
-    
-    
+    UG_PutString(10, 10, "PACK SOC:");
+    UG_PutString(250, 10, "MAX PACK T:");
+    UG_PutString(10, 75, "STATE:");
+    UG_PutString(250, 75, "MC T:");
+    UG_PutString(10, 140, "GLV V:");
+    UG_PutString(250, 140, "MOTOR T:");
+    UG_PutString(10, 205, "SHUTDOWN:");
+    UG_PutString(250, 205, "DEBUG:");
 }
 void driveTemplate(){
     UG_FillScreen(C_BLACK);
@@ -735,4 +734,107 @@ void disp_gen_voltage(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint
     UG_FontSelect(&FONT_12X16);
 }
 
+void disp_shutdown_circuit(uint8_t shutdown_flags, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
+    int xFont, yFont;
+    int horizFontSize = 12 + 20*size;
+    int stringSize;
+    stringSize = 10;
+    xFont = (x1 + x2)/2 - ((horizFontSize*stringSize)/2);
+    yFont = (y1 + y2)/2 - 5 - (size*17);    
+    if(size == 1){
+        UG_FontSelect(&FONT_32X53);
+        
+    }
+    UG_COLOR color;
+
+    switch(shutdown_flags) {
+        case IMD_OK:
+            color = C_RED;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "IMD_OK", C_BLACK, color);
+            break;
+        case BMS_OK:
+            color = C_RED;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "BMS_OK", C_BLACK, color);
+            break;
+        case Shutdown_Final:
+            color = C_RED;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "Shutdown_Final", C_BLACK, color);
+            break;
+        case AIR1:
+            color = C_RED;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "AIR_1", C_BLACK, color);
+            break;
+        case AIR2:
+            color = C_RED;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "AIR_2", C_BLACK, color);
+            break;
+        case Precharge:
+            color = C_RED;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "Precharge", C_BLACK, color);
+            break;
+        default:
+            color = C_GREEN;
+            if (color != last_shutdown_color) {
+                // only draw rectangle if color changed
+                UG_FillFrame(x1, y1, x2, y2, color);
+                last_shutdown_color = color;
+            }
+            UG_PutColorString(xFont, yFont, "None", C_BLACK, color);
+            break;
+    }
+    
+    UG_FontSelect(&FONT_12X16);
+}
+
+void disp_debug(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
+    int xFont, yFont;
+    int horizFontSize = 12 + 20*size;
+    int stringSize;
+    stringSize = 10;
+    xFont = (x1 + x2)/2 - ((horizFontSize*stringSize)/2);
+    yFont = (y1 + y2)/2 - 5 - (size*17);    
+    if(size == 1){
+        UG_FontSelect(&FONT_32X53);
+    }
+    
+    // choose color
+    UG_COLOR color = C_GREEN_YELLOW;
+
+    char data_s[10];
+    sprintf(data_s, "%d", data);
+    UG_FillFrame(x1, y1, x2, y2, color);
+    UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
+    UG_FontSelect(&FONT_12X16);
+}
+    
 /* [] END OF FILE */

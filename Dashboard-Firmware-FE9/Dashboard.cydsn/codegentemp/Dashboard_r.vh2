@@ -1,5 +1,5 @@
 -- Project:   Dashboard
--- Generated: 06/03/2023 00:46:41
+-- Generated: 06/06/2023 18:05:54
 -- PSoC Creator  4.4
 
 ENTITY Dashboard IS
@@ -80,7 +80,6 @@ ARCHITECTURE __DEFAULT__ OF Dashboard IS
     SIGNAL Digital4(0)__PA : bit;
     SIGNAL Drive(0)__PA : bit;
     SIGNAL HV(0)__PA : bit;
-    SIGNAL Net_10 : bit;
     SIGNAL Net_109_0 : bit;
     SIGNAL Net_109_1 : bit;
     SIGNAL Net_109_2 : bit;
@@ -91,7 +90,8 @@ ARCHITECTURE __DEFAULT__ OF Dashboard IS
     SIGNAL Net_109_7 : bit;
     SIGNAL Net_11 : bit;
     SIGNAL Net_12 : bit;
-    SIGNAL Net_13 : bit;
+    SIGNAL Net_1271 : bit;
+    SIGNAL Net_1272 : bit;
     SIGNAL Net_25 : bit;
     ATTRIBUTE placement_force OF Net_25 : SIGNAL IS "U(1,0,B)2";
     SIGNAL Net_26 : bit;
@@ -3198,7 +3198,7 @@ BEGIN
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_10,
+            interrupt => Net_1271,
             clock => ClockBlock_HFClk);
 
     \CAN:CanIP\:cancell
@@ -3207,8 +3207,8 @@ BEGIN
         PORT MAP(
             can_rx => Net_11,
             can_tx => Net_12,
-            can_tx_en => Net_13,
-            interrupt => Net_10);
+            can_tx_en => Net_1272,
+            interrupt => Net_1271);
 
     \CAN_1:isr\:interrupt
         GENERIC MAP(

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 30, 4
   11              		.eabi_attribute 34, 0
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -20,7 +20,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.section	.text.RX_CAN0_SetDriveMode,"ax",%progbits
-  20              		.align	2
+  20              		.align	1
   21              		.global	RX_CAN0_SetDriveMode
   22              		.code	16
   23              		.thumb_func
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
   28:Generated_Source\PSoC4/RX_CAN0.c **** #else
   29:Generated_Source\PSoC4/RX_CAN0.c ****     #if (CY_PSOC4_4200L)
   30:Generated_Source\PSoC4/RX_CAN0.c ****         #define RX_CAN0_SetP4PinDriveMode(shift, mode)  \
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 2
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 2
 
 
   31:Generated_Source\PSoC4/RX_CAN0.c ****         do { \
@@ -112,35 +112,38 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
   33              	.LVL0:
   74:Generated_Source\PSoC4/RX_CAN0.c **** 		RX_CAN0_SetP4PinDriveMode(RX_CAN0__0__SHIFT, mode);
   34              		.loc 1 74 0
-  35 0000 034A     		ldr	r2, .L2
-  36 0002 1368     		ldr	r3, [r2]
-  37 0004 0721     		movs	r1, #7
-  38 0006 8B43     		bics	r3, r1
-  39 0008 1843     		orrs	r0, r3
-  40              	.LVL1:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 3
-
-
-  41 000a 1060     		str	r0, [r2]
+  35 0000 0721     		movs	r1, #7
+  36 0002 034A     		ldr	r2, .L2
   75:Generated_Source\PSoC4/RX_CAN0.c ****     }
-  42              		.loc 1 75 0
-  43              		@ sp needed
-  44 000c 7047     		bx	lr
-  45              	.L3:
-  46 000e C046     		.align	2
-  47              	.L2:
-  48 0010 08000440 		.word	1074003976
-  49              		.cfi_endproc
-  50              	.LFE0:
-  51              		.size	RX_CAN0_SetDriveMode, .-RX_CAN0_SetDriveMode
-  52              		.section	.text.RX_CAN0_Write,"ax",%progbits
-  53              		.align	2
-  54              		.global	RX_CAN0_Write
-  55              		.code	16
-  56              		.thumb_func
-  57              		.type	RX_CAN0_Write, %function
-  58              	RX_CAN0_Write:
-  59              	.LFB1:
+  37              		.loc 1 75 0
+  38              		@ sp needed
+  74:Generated_Source\PSoC4/RX_CAN0.c **** 		RX_CAN0_SetP4PinDriveMode(RX_CAN0__0__SHIFT, mode);
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 3
+
+
+  39              		.loc 1 74 0
+  40 0004 1368     		ldr	r3, [r2]
+  41 0006 8B43     		bics	r3, r1
+  42 0008 1843     		orrs	r0, r3
+  43              	.LVL1:
+  44 000a 1060     		str	r0, [r2]
+  45              		.loc 1 75 0
+  46 000c 7047     		bx	lr
+  47              	.L3:
+  48 000e C046     		.align	2
+  49              	.L2:
+  50 0010 08000440 		.word	1074003976
+  51              		.cfi_endproc
+  52              	.LFE0:
+  53              		.size	RX_CAN0_SetDriveMode, .-RX_CAN0_SetDriveMode
+  54              		.section	.text.RX_CAN0_Write,"ax",%progbits
+  55              		.align	1
+  56              		.global	RX_CAN0_Write
+  57              		.code	16
+  58              		.thumb_func
+  59              		.type	RX_CAN0_Write, %function
+  60              	RX_CAN0_Write:
+  61              	.LFB1:
   76:Generated_Source\PSoC4/RX_CAN0.c **** #endif
   77:Generated_Source\PSoC4/RX_CAN0.c **** 
   78:Generated_Source\PSoC4/RX_CAN0.c **** 
@@ -175,54 +178,55 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  107:Generated_Source\PSoC4/RX_CAN0.c **** *
  108:Generated_Source\PSoC4/RX_CAN0.c **** * \funcusage
  109:Generated_Source\PSoC4/RX_CAN0.c **** *  \snippet RX_CAN0_SUT.c usage_RX_CAN0_Write
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 4
+
+
  110:Generated_Source\PSoC4/RX_CAN0.c **** *******************************************************************************/
  111:Generated_Source\PSoC4/RX_CAN0.c **** void RX_CAN0_Write(uint8 value)
  112:Generated_Source\PSoC4/RX_CAN0.c **** {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 4
-
-
-  60              		.loc 1 112 0
-  61              		.cfi_startproc
-  62              		@ args = 0, pretend = 0, frame = 0
-  63              		@ frame_needed = 0, uses_anonymous_args = 0
-  64              		@ link register save eliminated.
-  65              	.LVL2:
+  62              		.loc 1 112 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67              	.LVL2:
  113:Generated_Source\PSoC4/RX_CAN0.c ****     uint8 drVal = (uint8)(RX_CAN0_DR & (uint8)(~RX_CAN0_MASK));
-  66              		.loc 1 113 0
-  67 0000 044A     		ldr	r2, .L5
-  68 0002 1368     		ldr	r3, [r2]
-  69 0004 DBB2     		uxtb	r3, r3
-  70 0006 0121     		movs	r1, #1
-  71 0008 8B43     		bics	r3, r1
-  72              	.LVL3:
+  68              		.loc 1 113 0
+  69 0000 0123     		movs	r3, #1
+  70 0002 0449     		ldr	r1, .L5
  114:Generated_Source\PSoC4/RX_CAN0.c ****     drVal = (drVal | ((uint8)(value << RX_CAN0_SHIFT) & RX_CAN0_MASK));
-  73              		.loc 1 114 0
-  74 000a 0840     		ands	r0, r1
-  75              	.LVL4:
-  76 000c 1843     		orrs	r0, r3
-  77              	.LVL5:
  115:Generated_Source\PSoC4/RX_CAN0.c ****     RX_CAN0_DR = (uint32)drVal;
-  78              		.loc 1 115 0
-  79 000e 1060     		str	r0, [r2]
  116:Generated_Source\PSoC4/RX_CAN0.c **** }
-  80              		.loc 1 116 0
-  81              		@ sp needed
-  82 0010 7047     		bx	lr
-  83              	.L6:
-  84 0012 C046     		.align	2
-  85              	.L5:
-  86 0014 00000440 		.word	1074003968
-  87              		.cfi_endproc
-  88              	.LFE1:
-  89              		.size	RX_CAN0_Write, .-RX_CAN0_Write
-  90              		.section	.text.RX_CAN0_Read,"ax",%progbits
-  91              		.align	2
-  92              		.global	RX_CAN0_Read
-  93              		.code	16
-  94              		.thumb_func
-  95              		.type	RX_CAN0_Read, %function
-  96              	RX_CAN0_Read:
-  97              	.LFB2:
+  71              		.loc 1 116 0
+  72              		@ sp needed
+ 113:Generated_Source\PSoC4/RX_CAN0.c ****     uint8 drVal = (uint8)(RX_CAN0_DR & (uint8)(~RX_CAN0_MASK));
+  73              		.loc 1 113 0
+  74 0004 0A68     		ldr	r2, [r1]
+  75 0006 9A43     		bics	r2, r3
+  76 0008 D2B2     		uxtb	r2, r2
+  77              	.LVL3:
+ 115:Generated_Source\PSoC4/RX_CAN0.c **** }
+  78              		.loc 1 115 0
+  79 000a 0340     		ands	r3, r0
+  80 000c 1343     		orrs	r3, r2
+  81 000e 0B60     		str	r3, [r1]
+  82              		.loc 1 116 0
+  83 0010 7047     		bx	lr
+  84              	.L6:
+  85 0012 C046     		.align	2
+  86              	.L5:
+  87 0014 00000440 		.word	1074003968
+  88              		.cfi_endproc
+  89              	.LFE1:
+  90              		.size	RX_CAN0_Write, .-RX_CAN0_Write
+  91              		.section	.text.RX_CAN0_Read,"ax",%progbits
+  92              		.align	1
+  93              		.global	RX_CAN0_Read
+  94              		.code	16
+  95              		.thumb_func
+  96              		.type	RX_CAN0_Read, %function
+  97              	RX_CAN0_Read:
+  98              	.LFB2:
  117:Generated_Source\PSoC4/RX_CAN0.c **** 
  118:Generated_Source\PSoC4/RX_CAN0.c **** 
  119:Generated_Source\PSoC4/RX_CAN0.c **** /*******************************************************************************
@@ -234,49 +238,52 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  125:Generated_Source\PSoC4/RX_CAN0.c **** *  instance. 
  126:Generated_Source\PSoC4/RX_CAN0.c **** *
  127:Generated_Source\PSoC4/RX_CAN0.c **** * The pin's status register returns the current logic level present on the 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 5
+
+
  128:Generated_Source\PSoC4/RX_CAN0.c **** * physical pin.
  129:Generated_Source\PSoC4/RX_CAN0.c **** *
  130:Generated_Source\PSoC4/RX_CAN0.c **** * \return 
  131:Generated_Source\PSoC4/RX_CAN0.c **** *  The current value for the pins in the component as a right justified number.
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 5
-
-
  132:Generated_Source\PSoC4/RX_CAN0.c **** *
  133:Generated_Source\PSoC4/RX_CAN0.c **** * \funcusage
  134:Generated_Source\PSoC4/RX_CAN0.c **** *  \snippet RX_CAN0_SUT.c usage_RX_CAN0_Read  
  135:Generated_Source\PSoC4/RX_CAN0.c **** *******************************************************************************/
  136:Generated_Source\PSoC4/RX_CAN0.c **** uint8 RX_CAN0_Read(void)
  137:Generated_Source\PSoC4/RX_CAN0.c **** {
-  98              		.loc 1 137 0
-  99              		.cfi_startproc
- 100              		@ args = 0, pretend = 0, frame = 0
- 101              		@ frame_needed = 0, uses_anonymous_args = 0
- 102              		@ link register save eliminated.
+  99              		.loc 1 137 0
+ 100              		.cfi_startproc
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
  138:Generated_Source\PSoC4/RX_CAN0.c ****     return (uint8)((RX_CAN0_PS & RX_CAN0_MASK) >> RX_CAN0_SHIFT);
- 103              		.loc 1 138 0
- 104 0000 024B     		ldr	r3, .L8
- 105 0002 1B68     		ldr	r3, [r3]
- 106 0004 0120     		movs	r0, #1
- 107 0006 1840     		ands	r0, r3
+ 104              		.loc 1 138 0
+ 105 0000 024B     		ldr	r3, .L8
  139:Generated_Source\PSoC4/RX_CAN0.c **** }
- 108              		.loc 1 139 0
- 109              		@ sp needed
- 110 0008 7047     		bx	lr
- 111              	.L9:
- 112 000a C046     		.align	2
- 113              	.L8:
- 114 000c 04000440 		.word	1074003972
- 115              		.cfi_endproc
- 116              	.LFE2:
- 117              		.size	RX_CAN0_Read, .-RX_CAN0_Read
- 118              		.section	.text.RX_CAN0_ReadDataReg,"ax",%progbits
- 119              		.align	2
- 120              		.global	RX_CAN0_ReadDataReg
- 121              		.code	16
- 122              		.thumb_func
- 123              		.type	RX_CAN0_ReadDataReg, %function
- 124              	RX_CAN0_ReadDataReg:
- 125              	.LFB3:
+ 106              		.loc 1 139 0
+ 107              		@ sp needed
+ 138:Generated_Source\PSoC4/RX_CAN0.c ****     return (uint8)((RX_CAN0_PS & RX_CAN0_MASK) >> RX_CAN0_SHIFT);
+ 108              		.loc 1 138 0
+ 109 0002 1868     		ldr	r0, [r3]
+ 110 0004 0123     		movs	r3, #1
+ 111 0006 1840     		ands	r0, r3
+ 112              		.loc 1 139 0
+ 113 0008 7047     		bx	lr
+ 114              	.L9:
+ 115 000a C046     		.align	2
+ 116              	.L8:
+ 117 000c 04000440 		.word	1074003972
+ 118              		.cfi_endproc
+ 119              	.LFE2:
+ 120              		.size	RX_CAN0_Read, .-RX_CAN0_Read
+ 121              		.section	.text.RX_CAN0_ReadDataReg,"ax",%progbits
+ 122              		.align	1
+ 123              		.global	RX_CAN0_ReadDataReg
+ 124              		.code	16
+ 125              		.thumb_func
+ 126              		.type	RX_CAN0_ReadDataReg, %function
+ 127              	RX_CAN0_ReadDataReg:
+ 128              	.LFB3:
  140:Generated_Source\PSoC4/RX_CAN0.c **** 
  141:Generated_Source\PSoC4/RX_CAN0.c **** 
  142:Generated_Source\PSoC4/RX_CAN0.c **** /*******************************************************************************
@@ -291,6 +298,9 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  151:Generated_Source\PSoC4/RX_CAN0.c **** * conjunction with the drive mode parameter. This is not the same as the 
  152:Generated_Source\PSoC4/RX_CAN0.c **** * preferred RX_CAN0_Read() API because the 
  153:Generated_Source\PSoC4/RX_CAN0.c **** * RX_CAN0_ReadDataReg() reads the data register instead of the status 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 6
+
+
  154:Generated_Source\PSoC4/RX_CAN0.c **** * register. For output pins this is a useful function to determine the value 
  155:Generated_Source\PSoC4/RX_CAN0.c **** * just written to the pin.
  156:Generated_Source\PSoC4/RX_CAN0.c **** *
@@ -298,44 +308,44 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  158:Generated_Source\PSoC4/RX_CAN0.c **** *  The current value of the data register masked and shifted into a right 
  159:Generated_Source\PSoC4/RX_CAN0.c **** *  justified number for the component instance.
  160:Generated_Source\PSoC4/RX_CAN0.c **** *
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 6
-
-
  161:Generated_Source\PSoC4/RX_CAN0.c **** * \funcusage
  162:Generated_Source\PSoC4/RX_CAN0.c **** *  \snippet RX_CAN0_SUT.c usage_RX_CAN0_ReadDataReg 
  163:Generated_Source\PSoC4/RX_CAN0.c **** *******************************************************************************/
  164:Generated_Source\PSoC4/RX_CAN0.c **** uint8 RX_CAN0_ReadDataReg(void)
  165:Generated_Source\PSoC4/RX_CAN0.c **** {
- 126              		.loc 1 165 0
- 127              		.cfi_startproc
- 128              		@ args = 0, pretend = 0, frame = 0
- 129              		@ frame_needed = 0, uses_anonymous_args = 0
- 130              		@ link register save eliminated.
+ 129              		.loc 1 165 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
  166:Generated_Source\PSoC4/RX_CAN0.c ****     return (uint8)((RX_CAN0_DR & RX_CAN0_MASK) >> RX_CAN0_SHIFT);
- 131              		.loc 1 166 0
- 132 0000 024B     		ldr	r3, .L11
- 133 0002 1B68     		ldr	r3, [r3]
- 134 0004 0120     		movs	r0, #1
- 135 0006 1840     		ands	r0, r3
+ 134              		.loc 1 166 0
+ 135 0000 024B     		ldr	r3, .L11
  167:Generated_Source\PSoC4/RX_CAN0.c **** }
  136              		.loc 1 167 0
  137              		@ sp needed
- 138 0008 7047     		bx	lr
- 139              	.L12:
- 140 000a C046     		.align	2
- 141              	.L11:
- 142 000c 00000440 		.word	1074003968
- 143              		.cfi_endproc
- 144              	.LFE3:
- 145              		.size	RX_CAN0_ReadDataReg, .-RX_CAN0_ReadDataReg
- 146              		.section	.text.RX_CAN0_SetInterruptMode,"ax",%progbits
- 147              		.align	2
- 148              		.global	RX_CAN0_SetInterruptMode
- 149              		.code	16
- 150              		.thumb_func
- 151              		.type	RX_CAN0_SetInterruptMode, %function
- 152              	RX_CAN0_SetInterruptMode:
- 153              	.LFB4:
+ 166:Generated_Source\PSoC4/RX_CAN0.c ****     return (uint8)((RX_CAN0_DR & RX_CAN0_MASK) >> RX_CAN0_SHIFT);
+ 138              		.loc 1 166 0
+ 139 0002 1868     		ldr	r0, [r3]
+ 140 0004 0123     		movs	r3, #1
+ 141 0006 1840     		ands	r0, r3
+ 142              		.loc 1 167 0
+ 143 0008 7047     		bx	lr
+ 144              	.L12:
+ 145 000a C046     		.align	2
+ 146              	.L11:
+ 147 000c 00000440 		.word	1074003968
+ 148              		.cfi_endproc
+ 149              	.LFE3:
+ 150              		.size	RX_CAN0_ReadDataReg, .-RX_CAN0_ReadDataReg
+ 151              		.section	.text.RX_CAN0_SetInterruptMode,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	RX_CAN0_SetInterruptMode
+ 154              		.code	16
+ 155              		.thumb_func
+ 156              		.type	RX_CAN0_SetInterruptMode, %function
+ 157              	RX_CAN0_SetInterruptMode:
+ 158              	.LFB4:
  168:Generated_Source\PSoC4/RX_CAN0.c **** 
  169:Generated_Source\PSoC4/RX_CAN0.c **** 
  170:Generated_Source\PSoC4/RX_CAN0.c **** /*******************************************************************************
@@ -348,6 +358,9 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  177:Generated_Source\PSoC4/RX_CAN0.c **** *
  178:Generated_Source\PSoC4/RX_CAN0.c **** *  <b>Note</b> The interrupt is port-wide and therefore any enabled pin
  179:Generated_Source\PSoC4/RX_CAN0.c **** *  interrupt may trigger it.
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 7
+
+
  180:Generated_Source\PSoC4/RX_CAN0.c **** *
  181:Generated_Source\PSoC4/RX_CAN0.c **** * \param position
  182:Generated_Source\PSoC4/RX_CAN0.c **** *  The pin position as listed in the Pins component. You may OR these to be 
@@ -358,9 +371,6 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  187:Generated_Source\PSoC4/RX_CAN0.c **** *  - RX_CAN0_1_INTR       (Second pin in the list)
  188:Generated_Source\PSoC4/RX_CAN0.c **** *  - ...
  189:Generated_Source\PSoC4/RX_CAN0.c **** *  - RX_CAN0_INTR_ALL     (All pins in Pins component)
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 7
-
-
  190:Generated_Source\PSoC4/RX_CAN0.c **** *
  191:Generated_Source\PSoC4/RX_CAN0.c **** * \param mode
  192:Generated_Source\PSoC4/RX_CAN0.c **** *  Interrupt mode for the selected pins. Valid options are documented in
@@ -380,48 +390,53 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  206:Generated_Source\PSoC4/RX_CAN0.c **** *******************************************************************************/
  207:Generated_Source\PSoC4/RX_CAN0.c **** void RX_CAN0_SetInterruptMode(uint16 position, uint16 mode)
  208:Generated_Source\PSoC4/RX_CAN0.c **** {
- 154              		.loc 1 208 0
- 155              		.cfi_startproc
- 156              		@ args = 0, pretend = 0, frame = 0
- 157              		@ frame_needed = 0, uses_anonymous_args = 0
- 158              		@ link register save eliminated.
- 159              	.LVL6:
+ 159              		.loc 1 208 0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164              	.LVL4:
  209:Generated_Source\PSoC4/RX_CAN0.c ****     uint32 intrCfg;
  210:Generated_Source\PSoC4/RX_CAN0.c ****     
  211:Generated_Source\PSoC4/RX_CAN0.c ****     intrCfg =  RX_CAN0_INTCFG & (uint32)(~(uint32)position);
- 160              		.loc 1 211 0
- 161 0000 034A     		ldr	r2, .L14
- 162 0002 1368     		ldr	r3, [r2]
- 163 0004 8343     		bics	r3, r0
- 164              	.LVL7:
+ 165              		.loc 1 211 0
+ 166 0000 034A     		ldr	r2, .L14
  212:Generated_Source\PSoC4/RX_CAN0.c ****     RX_CAN0_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
- 165              		.loc 1 212 0
- 166 0006 0840     		ands	r0, r1
- 167              	.LVL8:
- 168 0008 1843     		orrs	r0, r3
- 169 000a 1060     		str	r0, [r2]
  213:Generated_Source\PSoC4/RX_CAN0.c **** }
- 170              		.loc 1 213 0
- 171              		@ sp needed
- 172 000c 7047     		bx	lr
- 173              	.L15:
- 174 000e C046     		.align	2
- 175              	.L14:
- 176 0010 0C000440 		.word	1074003980
- 177              		.cfi_endproc
- 178              	.LFE4:
- 179              		.size	RX_CAN0_SetInterruptMode, .-RX_CAN0_SetInterruptMode
- 180              		.section	.text.RX_CAN0_ClearInterrupt,"ax",%progbits
- 181              		.align	2
- 182              		.global	RX_CAN0_ClearInterrupt
- 183              		.code	16
- 184              		.thumb_func
- 185              		.type	RX_CAN0_ClearInterrupt, %function
- 186              	RX_CAN0_ClearInterrupt:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 8
+ 167              		.loc 1 213 0
+ 168              		@ sp needed
+ 211:Generated_Source\PSoC4/RX_CAN0.c ****     RX_CAN0_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+ 169              		.loc 1 211 0
+ 170 0002 1368     		ldr	r3, [r2]
+ 171              	.LVL5:
+ 212:Generated_Source\PSoC4/RX_CAN0.c ****     RX_CAN0_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+ 172              		.loc 1 212 0
+ 173 0004 8343     		bics	r3, r0
+ 174              	.LVL6:
+ 175 0006 0840     		ands	r0, r1
+ 176              	.LVL7:
+ 177 0008 1843     		orrs	r0, r3
+ 178 000a 1060     		str	r0, [r2]
+ 179              		.loc 1 213 0
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 8
 
 
- 187              	.LFB5:
+ 180 000c 7047     		bx	lr
+ 181              	.L15:
+ 182 000e C046     		.align	2
+ 183              	.L14:
+ 184 0010 0C000440 		.word	1074003980
+ 185              		.cfi_endproc
+ 186              	.LFE4:
+ 187              		.size	RX_CAN0_SetInterruptMode, .-RX_CAN0_SetInterruptMode
+ 188              		.section	.text.RX_CAN0_ClearInterrupt,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	RX_CAN0_ClearInterrupt
+ 191              		.code	16
+ 192              		.thumb_func
+ 193              		.type	RX_CAN0_ClearInterrupt, %function
+ 194              	RX_CAN0_ClearInterrupt:
+ 195              	.LFB5:
  214:Generated_Source\PSoC4/RX_CAN0.c **** 
  215:Generated_Source\PSoC4/RX_CAN0.c **** 
  216:Generated_Source\PSoC4/RX_CAN0.c **** /*******************************************************************************
@@ -446,717 +461,722 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 1
  235:Generated_Source\PSoC4/RX_CAN0.c **** *******************************************************************************/
  236:Generated_Source\PSoC4/RX_CAN0.c **** uint8 RX_CAN0_ClearInterrupt(void)
  237:Generated_Source\PSoC4/RX_CAN0.c **** {
- 188              		.loc 1 237 0
- 189              		.cfi_startproc
- 190              		@ args = 0, pretend = 0, frame = 0
- 191              		@ frame_needed = 0, uses_anonymous_args = 0
- 192              		@ link register save eliminated.
+ 196              		.loc 1 237 0
+ 197              		.cfi_startproc
+ 198              		@ args = 0, pretend = 0, frame = 0
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200              		@ link register save eliminated.
  238:Generated_Source\PSoC4/RX_CAN0.c **** 	uint8 maskedStatus = (uint8)(RX_CAN0_INTSTAT & RX_CAN0_MASK);
- 193              		.loc 1 238 0
- 194 0000 024A     		ldr	r2, .L17
- 195 0002 1068     		ldr	r0, [r2]
- 196 0004 0123     		movs	r3, #1
- 197 0006 1840     		ands	r0, r3
- 198              	.LVL9:
+ 201              		.loc 1 238 0
+ 202 0000 0123     		movs	r3, #1
+ 203 0002 024A     		ldr	r2, .L17
  239:Generated_Source\PSoC4/RX_CAN0.c **** 	RX_CAN0_INTSTAT = maskedStatus;
- 199              		.loc 1 239 0
- 200 0008 1060     		str	r0, [r2]
  240:Generated_Source\PSoC4/RX_CAN0.c ****     return maskedStatus >> RX_CAN0_SHIFT;
  241:Generated_Source\PSoC4/RX_CAN0.c **** }
- 201              		.loc 1 241 0
- 202              		@ sp needed
- 203 000a 7047     		bx	lr
- 204              	.L18:
- 205              		.align	2
- 206              	.L17:
- 207 000c 10000440 		.word	1074003984
- 208              		.cfi_endproc
- 209              	.LFE5:
- 210              		.size	RX_CAN0_ClearInterrupt, .-RX_CAN0_ClearInterrupt
- 211              		.text
- 212              	.Letext0:
- 213              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
- 214              		.section	.debug_info,"",%progbits
- 215              	.Ldebug_info0:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 9
+ 204              		.loc 1 241 0
+ 205              		@ sp needed
+ 238:Generated_Source\PSoC4/RX_CAN0.c **** 	uint8 maskedStatus = (uint8)(RX_CAN0_INTSTAT & RX_CAN0_MASK);
+ 206              		.loc 1 238 0
+ 207 0004 1068     		ldr	r0, [r2]
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 9
 
 
- 216 0000 97010000 		.4byte	0x197
- 217 0004 0400     		.2byte	0x4
- 218 0006 00000000 		.4byte	.Ldebug_abbrev0
- 219 000a 04       		.byte	0x4
- 220 000b 01       		.uleb128 0x1
- 221 000c 05010000 		.4byte	.LASF28
- 222 0010 0C       		.byte	0xc
- 223 0011 93010000 		.4byte	.LASF29
- 224 0015 C6010000 		.4byte	.LASF30
- 225 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 226 001d 00000000 		.4byte	0
- 227 0021 00000000 		.4byte	.Ldebug_line0
- 228 0025 02       		.uleb128 0x2
- 229 0026 01       		.byte	0x1
- 230 0027 06       		.byte	0x6
- 231 0028 5B020000 		.4byte	.LASF0
- 232 002c 02       		.uleb128 0x2
- 233 002d 01       		.byte	0x1
- 234 002e 08       		.byte	0x8
- 235 002f 70000000 		.4byte	.LASF1
- 236 0033 02       		.uleb128 0x2
- 237 0034 02       		.byte	0x2
- 238 0035 05       		.byte	0x5
- 239 0036 2B020000 		.4byte	.LASF2
- 240 003a 02       		.uleb128 0x2
- 241 003b 02       		.byte	0x2
- 242 003c 07       		.byte	0x7
- 243 003d 96000000 		.4byte	.LASF3
- 244 0041 02       		.uleb128 0x2
- 245 0042 04       		.byte	0x4
- 246 0043 05       		.byte	0x5
- 247 0044 3B020000 		.4byte	.LASF4
- 248 0048 02       		.uleb128 0x2
- 249 0049 04       		.byte	0x4
- 250 004a 07       		.byte	0x7
- 251 004b 84000000 		.4byte	.LASF5
- 252 004f 02       		.uleb128 0x2
- 253 0050 08       		.byte	0x8
- 254 0051 05       		.byte	0x5
- 255 0052 00000000 		.4byte	.LASF6
- 256 0056 02       		.uleb128 0x2
- 257 0057 08       		.byte	0x8
- 258 0058 07       		.byte	0x7
- 259 0059 DC000000 		.4byte	.LASF7
- 260 005d 03       		.uleb128 0x3
- 261 005e 04       		.byte	0x4
- 262 005f 05       		.byte	0x5
- 263 0060 696E7400 		.ascii	"int\000"
- 264 0064 02       		.uleb128 0x2
- 265 0065 04       		.byte	0x4
- 266 0066 07       		.byte	0x7
- 267 0067 CF000000 		.4byte	.LASF8
- 268 006b 04       		.uleb128 0x4
- 269 006c 35020000 		.4byte	.LASF9
- 270 0070 02       		.byte	0x2
- 271 0071 FB01     		.2byte	0x1fb
- 272 0073 2C000000 		.4byte	0x2c
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 10
+ 208 0006 1840     		ands	r0, r3
+ 209              	.LVL8:
+ 239:Generated_Source\PSoC4/RX_CAN0.c **** 	RX_CAN0_INTSTAT = maskedStatus;
+ 210              		.loc 1 239 0
+ 211 0008 1060     		str	r0, [r2]
+ 212              		.loc 1 241 0
+ 213 000a 7047     		bx	lr
+ 214              	.L18:
+ 215              		.align	2
+ 216              	.L17:
+ 217 000c 10000440 		.word	1074003984
+ 218              		.cfi_endproc
+ 219              	.LFE5:
+ 220              		.size	RX_CAN0_ClearInterrupt, .-RX_CAN0_ClearInterrupt
+ 221              		.text
+ 222              	.Letext0:
+ 223              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 224              		.section	.debug_info,"",%progbits
+ 225              	.Ldebug_info0:
+ 226 0000 9C010000 		.4byte	0x19c
+ 227 0004 0400     		.2byte	0x4
+ 228 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 229 000a 04       		.byte	0x4
+ 230 000b 01       		.uleb128 0x1
+ 231 000c E3010000 		.4byte	.LASF28
+ 232 0010 0C       		.byte	0xc
+ 233 0011 74010000 		.4byte	.LASF29
+ 234 0015 0E000000 		.4byte	.LASF30
+ 235 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 236 001d 00000000 		.4byte	0
+ 237 0021 00000000 		.4byte	.Ldebug_line0
+ 238 0025 02       		.uleb128 0x2
+ 239 0026 01       		.byte	0x1
+ 240 0027 06       		.byte	0x6
+ 241 0028 D7010000 		.4byte	.LASF0
+ 242 002c 02       		.uleb128 0x2
+ 243 002d 01       		.byte	0x1
+ 244 002e 08       		.byte	0x8
+ 245 002f DF000000 		.4byte	.LASF1
+ 246 0033 02       		.uleb128 0x2
+ 247 0034 02       		.byte	0x2
+ 248 0035 05       		.byte	0x5
+ 249 0036 A7010000 		.4byte	.LASF2
+ 250 003a 02       		.uleb128 0x2
+ 251 003b 02       		.byte	0x2
+ 252 003c 07       		.byte	0x7
+ 253 003d 05010000 		.4byte	.LASF3
+ 254 0041 02       		.uleb128 0x2
+ 255 0042 04       		.byte	0x4
+ 256 0043 05       		.byte	0x5
+ 257 0044 B7010000 		.4byte	.LASF4
+ 258 0048 02       		.uleb128 0x2
+ 259 0049 04       		.byte	0x4
+ 260 004a 07       		.byte	0x7
+ 261 004b F3000000 		.4byte	.LASF5
+ 262 004f 02       		.uleb128 0x2
+ 263 0050 08       		.byte	0x8
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 10
 
 
- 273 0077 04       		.uleb128 0x4
- 274 0078 B0000000 		.4byte	.LASF10
- 275 007c 02       		.byte	0x2
- 276 007d FC01     		.2byte	0x1fc
- 277 007f 3A000000 		.4byte	0x3a
- 278 0083 04       		.uleb128 0x4
- 279 0084 C0000000 		.4byte	.LASF11
- 280 0088 02       		.byte	0x2
- 281 0089 FD01     		.2byte	0x1fd
- 282 008b 48000000 		.4byte	0x48
- 283 008f 02       		.uleb128 0x2
- 284 0090 04       		.byte	0x4
- 285 0091 04       		.byte	0x4
- 286 0092 55000000 		.4byte	.LASF12
- 287 0096 02       		.uleb128 0x2
- 288 0097 08       		.byte	0x8
- 289 0098 04       		.byte	0x4
- 290 0099 A9000000 		.4byte	.LASF13
- 291 009d 02       		.uleb128 0x2
- 292 009e 01       		.byte	0x1
- 293 009f 08       		.byte	0x8
- 294 00a0 C1010000 		.4byte	.LASF14
- 295 00a4 04       		.uleb128 0x4
- 296 00a5 0E000000 		.4byte	.LASF15
- 297 00a9 02       		.byte	0x2
- 298 00aa A702     		.2byte	0x2a7
- 299 00ac B0000000 		.4byte	0xb0
- 300 00b0 05       		.uleb128 0x5
- 301 00b1 83000000 		.4byte	0x83
- 302 00b5 06       		.uleb128 0x6
- 303 00b6 5B000000 		.4byte	.LASF16
- 304 00ba 01       		.byte	0x1
- 305 00bb 48       		.byte	0x48
- 306 00bc 00000000 		.4byte	.LFB0
- 307 00c0 14000000 		.4byte	.LFE0-.LFB0
- 308 00c4 01       		.uleb128 0x1
- 309 00c5 9C       		.byte	0x9c
- 310 00c6 DA000000 		.4byte	0xda
- 311 00ca 07       		.uleb128 0x7
- 312 00cb F3000000 		.4byte	.LASF18
- 313 00cf 01       		.byte	0x1
- 314 00d0 48       		.byte	0x48
- 315 00d1 6B000000 		.4byte	0x6b
- 316 00d5 00000000 		.4byte	.LLST0
- 317 00d9 00       		.byte	0
- 318 00da 06       		.uleb128 0x6
- 319 00db 33000000 		.4byte	.LASF17
- 320 00df 01       		.byte	0x1
- 321 00e0 6F       		.byte	0x6f
- 322 00e1 00000000 		.4byte	.LFB1
- 323 00e5 18000000 		.4byte	.LFE1-.LFB1
- 324 00e9 01       		.uleb128 0x1
- 325 00ea 9C       		.byte	0x9c
- 326 00eb 0E010000 		.4byte	0x10e
- 327 00ef 07       		.uleb128 0x7
- 328 00f0 2D000000 		.4byte	.LASF19
- 329 00f4 01       		.byte	0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 11
+ 264 0051 05       		.byte	0x5
+ 265 0052 00000000 		.4byte	.LASF6
+ 266 0056 02       		.uleb128 0x2
+ 267 0057 08       		.byte	0x8
+ 268 0058 07       		.byte	0x7
+ 269 0059 4B010000 		.4byte	.LASF7
+ 270 005d 03       		.uleb128 0x3
+ 271 005e 04       		.byte	0x4
+ 272 005f 05       		.byte	0x5
+ 273 0060 696E7400 		.ascii	"int\000"
+ 274 0064 02       		.uleb128 0x2
+ 275 0065 04       		.byte	0x4
+ 276 0066 07       		.byte	0x7
+ 277 0067 3E010000 		.4byte	.LASF8
+ 278 006b 04       		.uleb128 0x4
+ 279 006c B1010000 		.4byte	.LASF9
+ 280 0070 02       		.byte	0x2
+ 281 0071 FB01     		.2byte	0x1fb
+ 282 0073 2C000000 		.4byte	0x2c
+ 283 0077 04       		.uleb128 0x4
+ 284 0078 1F010000 		.4byte	.LASF10
+ 285 007c 02       		.byte	0x2
+ 286 007d FC01     		.2byte	0x1fc
+ 287 007f 3A000000 		.4byte	0x3a
+ 288 0083 04       		.uleb128 0x4
+ 289 0084 2F010000 		.4byte	.LASF11
+ 290 0088 02       		.byte	0x2
+ 291 0089 FD01     		.2byte	0x1fd
+ 292 008b 48000000 		.4byte	0x48
+ 293 008f 02       		.uleb128 0x2
+ 294 0090 04       		.byte	0x4
+ 295 0091 04       		.byte	0x4
+ 296 0092 C4000000 		.4byte	.LASF12
+ 297 0096 02       		.uleb128 0x2
+ 298 0097 08       		.byte	0x8
+ 299 0098 04       		.byte	0x4
+ 300 0099 18010000 		.4byte	.LASF13
+ 301 009d 02       		.uleb128 0x2
+ 302 009e 01       		.byte	0x1
+ 303 009f 08       		.byte	0x8
+ 304 00a0 A2010000 		.4byte	.LASF14
+ 305 00a4 04       		.uleb128 0x4
+ 306 00a5 7D000000 		.4byte	.LASF15
+ 307 00a9 02       		.byte	0x2
+ 308 00aa A702     		.2byte	0x2a7
+ 309 00ac B0000000 		.4byte	0xb0
+ 310 00b0 05       		.uleb128 0x5
+ 311 00b1 83000000 		.4byte	0x83
+ 312 00b5 06       		.uleb128 0x6
+ 313 00b6 CA000000 		.4byte	.LASF16
+ 314 00ba 01       		.byte	0x1
+ 315 00bb 48       		.byte	0x48
+ 316 00bc 00000000 		.4byte	.LFB0
+ 317 00c0 14000000 		.4byte	.LFE0-.LFB0
+ 318 00c4 01       		.uleb128 0x1
+ 319 00c5 9C       		.byte	0x9c
+ 320 00c6 DA000000 		.4byte	0xda
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 11
 
 
- 330 00f5 6F       		.byte	0x6f
- 331 00f6 6B000000 		.4byte	0x6b
- 332 00fa 21000000 		.4byte	.LLST1
- 333 00fe 08       		.uleb128 0x8
- 334 00ff 7E000000 		.4byte	.LASF24
- 335 0103 01       		.byte	0x1
- 336 0104 71       		.byte	0x71
- 337 0105 6B000000 		.4byte	0x6b
- 338 0109 42000000 		.4byte	.LLST2
- 339 010d 00       		.byte	0
- 340 010e 09       		.uleb128 0x9
- 341 010f F8000000 		.4byte	.LASF20
- 342 0113 01       		.byte	0x1
- 343 0114 88       		.byte	0x88
- 344 0115 6B000000 		.4byte	0x6b
- 345 0119 00000000 		.4byte	.LFB2
- 346 011d 10000000 		.4byte	.LFE2-.LFB2
- 347 0121 01       		.uleb128 0x1
- 348 0122 9C       		.byte	0x9c
- 349 0123 09       		.uleb128 0x9
- 350 0124 41000000 		.4byte	.LASF21
- 351 0128 01       		.byte	0x1
- 352 0129 A4       		.byte	0xa4
- 353 012a 6B000000 		.4byte	0x6b
- 354 012e 00000000 		.4byte	.LFB3
- 355 0132 10000000 		.4byte	.LFE3-.LFB3
- 356 0136 01       		.uleb128 0x1
- 357 0137 9C       		.byte	0x9c
- 358 0138 06       		.uleb128 0x6
- 359 0139 14000000 		.4byte	.LASF22
- 360 013d 01       		.byte	0x1
- 361 013e CF       		.byte	0xcf
- 362 013f 00000000 		.4byte	.LFB4
- 363 0143 14000000 		.4byte	.LFE4-.LFB4
- 364 0147 01       		.uleb128 0x1
- 365 0148 9C       		.byte	0x9c
- 366 0149 77010000 		.4byte	0x177
- 367 014d 07       		.uleb128 0x7
- 368 014e B7000000 		.4byte	.LASF23
- 369 0152 01       		.byte	0x1
- 370 0153 CF       		.byte	0xcf
- 371 0154 77000000 		.4byte	0x77
- 372 0158 60000000 		.4byte	.LLST3
- 373 015c 0A       		.uleb128 0xa
- 374 015d F3000000 		.4byte	.LASF18
- 375 0161 01       		.byte	0x1
- 376 0162 CF       		.byte	0xcf
- 377 0163 77000000 		.4byte	0x77
- 378 0167 01       		.uleb128 0x1
- 379 0168 51       		.byte	0x51
- 380 0169 0B       		.uleb128 0xb
- 381 016a C7000000 		.4byte	.LASF25
- 382 016e 01       		.byte	0x1
- 383 016f D1       		.byte	0xd1
- 384 0170 83000000 		.4byte	0x83
- 385 0174 01       		.uleb128 0x1
- 386 0175 53       		.byte	0x53
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 12
+ 321 00ca 07       		.uleb128 0x7
+ 322 00cb 62010000 		.4byte	.LASF18
+ 323 00cf 01       		.byte	0x1
+ 324 00d0 48       		.byte	0x48
+ 325 00d1 6B000000 		.4byte	0x6b
+ 326 00d5 00000000 		.4byte	.LLST0
+ 327 00d9 00       		.byte	0
+ 328 00da 06       		.uleb128 0x6
+ 329 00db A2000000 		.4byte	.LASF17
+ 330 00df 01       		.byte	0x1
+ 331 00e0 6F       		.byte	0x6f
+ 332 00e1 00000000 		.4byte	.LFB1
+ 333 00e5 18000000 		.4byte	.LFE1-.LFB1
+ 334 00e9 01       		.uleb128 0x1
+ 335 00ea 9C       		.byte	0x9c
+ 336 00eb 11010000 		.4byte	0x111
+ 337 00ef 08       		.uleb128 0x8
+ 338 00f0 9C000000 		.4byte	.LASF19
+ 339 00f4 01       		.byte	0x1
+ 340 00f5 6F       		.byte	0x6f
+ 341 00f6 6B000000 		.4byte	0x6b
+ 342 00fa 01       		.uleb128 0x1
+ 343 00fb 50       		.byte	0x50
+ 344 00fc 09       		.uleb128 0x9
+ 345 00fd ED000000 		.4byte	.LASF24
+ 346 0101 01       		.byte	0x1
+ 347 0102 71       		.byte	0x71
+ 348 0103 6B000000 		.4byte	0x6b
+ 349 0107 08       		.uleb128 0x8
+ 350 0108 70       		.byte	0x70
+ 351 0109 00       		.sleb128 0
+ 352 010a 31       		.byte	0x31
+ 353 010b 1A       		.byte	0x1a
+ 354 010c 72       		.byte	0x72
+ 355 010d 00       		.sleb128 0
+ 356 010e 21       		.byte	0x21
+ 357 010f 9F       		.byte	0x9f
+ 358 0110 00       		.byte	0
+ 359 0111 0A       		.uleb128 0xa
+ 360 0112 67010000 		.4byte	.LASF20
+ 361 0116 01       		.byte	0x1
+ 362 0117 88       		.byte	0x88
+ 363 0118 6B000000 		.4byte	0x6b
+ 364 011c 00000000 		.4byte	.LFB2
+ 365 0120 10000000 		.4byte	.LFE2-.LFB2
+ 366 0124 01       		.uleb128 0x1
+ 367 0125 9C       		.byte	0x9c
+ 368 0126 0A       		.uleb128 0xa
+ 369 0127 B0000000 		.4byte	.LASF21
+ 370 012b 01       		.byte	0x1
+ 371 012c A4       		.byte	0xa4
+ 372 012d 6B000000 		.4byte	0x6b
+ 373 0131 00000000 		.4byte	.LFB3
+ 374 0135 10000000 		.4byte	.LFE3-.LFB3
+ 375 0139 01       		.uleb128 0x1
+ 376 013a 9C       		.byte	0x9c
+ 377 013b 06       		.uleb128 0x6
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 12
 
 
- 387 0176 00       		.byte	0
- 388 0177 0C       		.uleb128 0xc
- 389 0178 44020000 		.4byte	.LASF26
- 390 017c 01       		.byte	0x1
- 391 017d EC       		.byte	0xec
- 392 017e 6B000000 		.4byte	0x6b
- 393 0182 00000000 		.4byte	.LFB5
- 394 0186 10000000 		.4byte	.LFE5-.LFB5
- 395 018a 01       		.uleb128 0x1
- 396 018b 9C       		.byte	0x9c
- 397 018c 0B       		.uleb128 0xb
- 398 018d B4010000 		.4byte	.LASF27
- 399 0191 01       		.byte	0x1
- 400 0192 EE       		.byte	0xee
- 401 0193 6B000000 		.4byte	0x6b
- 402 0197 01       		.uleb128 0x1
- 403 0198 50       		.byte	0x50
- 404 0199 00       		.byte	0
- 405 019a 00       		.byte	0
- 406              		.section	.debug_abbrev,"",%progbits
- 407              	.Ldebug_abbrev0:
- 408 0000 01       		.uleb128 0x1
- 409 0001 11       		.uleb128 0x11
- 410 0002 01       		.byte	0x1
- 411 0003 25       		.uleb128 0x25
- 412 0004 0E       		.uleb128 0xe
- 413 0005 13       		.uleb128 0x13
- 414 0006 0B       		.uleb128 0xb
- 415 0007 03       		.uleb128 0x3
- 416 0008 0E       		.uleb128 0xe
- 417 0009 1B       		.uleb128 0x1b
- 418 000a 0E       		.uleb128 0xe
- 419 000b 55       		.uleb128 0x55
- 420 000c 17       		.uleb128 0x17
- 421 000d 11       		.uleb128 0x11
- 422 000e 01       		.uleb128 0x1
- 423 000f 10       		.uleb128 0x10
- 424 0010 17       		.uleb128 0x17
- 425 0011 00       		.byte	0
- 426 0012 00       		.byte	0
- 427 0013 02       		.uleb128 0x2
- 428 0014 24       		.uleb128 0x24
- 429 0015 00       		.byte	0
- 430 0016 0B       		.uleb128 0xb
- 431 0017 0B       		.uleb128 0xb
- 432 0018 3E       		.uleb128 0x3e
- 433 0019 0B       		.uleb128 0xb
- 434 001a 03       		.uleb128 0x3
- 435 001b 0E       		.uleb128 0xe
- 436 001c 00       		.byte	0
- 437 001d 00       		.byte	0
- 438 001e 03       		.uleb128 0x3
- 439 001f 24       		.uleb128 0x24
- 440 0020 00       		.byte	0
- 441 0021 0B       		.uleb128 0xb
- 442 0022 0B       		.uleb128 0xb
- 443 0023 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 13
+ 378 013c 83000000 		.4byte	.LASF22
+ 379 0140 01       		.byte	0x1
+ 380 0141 CF       		.byte	0xcf
+ 381 0142 00000000 		.4byte	.LFB4
+ 382 0146 14000000 		.4byte	.LFE4-.LFB4
+ 383 014a 01       		.uleb128 0x1
+ 384 014b 9C       		.byte	0x9c
+ 385 014c 7C010000 		.4byte	0x17c
+ 386 0150 07       		.uleb128 0x7
+ 387 0151 26010000 		.4byte	.LASF23
+ 388 0155 01       		.byte	0x1
+ 389 0156 CF       		.byte	0xcf
+ 390 0157 77000000 		.4byte	0x77
+ 391 015b 21000000 		.4byte	.LLST1
+ 392 015f 08       		.uleb128 0x8
+ 393 0160 62010000 		.4byte	.LASF18
+ 394 0164 01       		.byte	0x1
+ 395 0165 CF       		.byte	0xcf
+ 396 0166 77000000 		.4byte	0x77
+ 397 016a 01       		.uleb128 0x1
+ 398 016b 51       		.byte	0x51
+ 399 016c 0B       		.uleb128 0xb
+ 400 016d 36010000 		.4byte	.LASF25
+ 401 0171 01       		.byte	0x1
+ 402 0172 D1       		.byte	0xd1
+ 403 0173 83000000 		.4byte	0x83
+ 404 0177 42000000 		.4byte	.LLST2
+ 405 017b 00       		.byte	0
+ 406 017c 0C       		.uleb128 0xc
+ 407 017d C0010000 		.4byte	.LASF26
+ 408 0181 01       		.byte	0x1
+ 409 0182 EC       		.byte	0xec
+ 410 0183 6B000000 		.4byte	0x6b
+ 411 0187 00000000 		.4byte	.LFB5
+ 412 018b 10000000 		.4byte	.LFE5-.LFB5
+ 413 018f 01       		.uleb128 0x1
+ 414 0190 9C       		.byte	0x9c
+ 415 0191 09       		.uleb128 0x9
+ 416 0192 95010000 		.4byte	.LASF27
+ 417 0196 01       		.byte	0x1
+ 418 0197 EE       		.byte	0xee
+ 419 0198 6B000000 		.4byte	0x6b
+ 420 019c 01       		.uleb128 0x1
+ 421 019d 50       		.byte	0x50
+ 422 019e 00       		.byte	0
+ 423 019f 00       		.byte	0
+ 424              		.section	.debug_abbrev,"",%progbits
+ 425              	.Ldebug_abbrev0:
+ 426 0000 01       		.uleb128 0x1
+ 427 0001 11       		.uleb128 0x11
+ 428 0002 01       		.byte	0x1
+ 429 0003 25       		.uleb128 0x25
+ 430 0004 0E       		.uleb128 0xe
+ 431 0005 13       		.uleb128 0x13
+ 432 0006 0B       		.uleb128 0xb
+ 433 0007 03       		.uleb128 0x3
+ 434 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 13
 
 
- 444 0024 0B       		.uleb128 0xb
- 445 0025 03       		.uleb128 0x3
- 446 0026 08       		.uleb128 0x8
- 447 0027 00       		.byte	0
- 448 0028 00       		.byte	0
- 449 0029 04       		.uleb128 0x4
- 450 002a 16       		.uleb128 0x16
- 451 002b 00       		.byte	0
- 452 002c 03       		.uleb128 0x3
- 453 002d 0E       		.uleb128 0xe
- 454 002e 3A       		.uleb128 0x3a
- 455 002f 0B       		.uleb128 0xb
- 456 0030 3B       		.uleb128 0x3b
- 457 0031 05       		.uleb128 0x5
- 458 0032 49       		.uleb128 0x49
- 459 0033 13       		.uleb128 0x13
- 460 0034 00       		.byte	0
- 461 0035 00       		.byte	0
- 462 0036 05       		.uleb128 0x5
- 463 0037 35       		.uleb128 0x35
- 464 0038 00       		.byte	0
- 465 0039 49       		.uleb128 0x49
- 466 003a 13       		.uleb128 0x13
- 467 003b 00       		.byte	0
- 468 003c 00       		.byte	0
- 469 003d 06       		.uleb128 0x6
- 470 003e 2E       		.uleb128 0x2e
- 471 003f 01       		.byte	0x1
- 472 0040 3F       		.uleb128 0x3f
- 473 0041 19       		.uleb128 0x19
- 474 0042 03       		.uleb128 0x3
- 475 0043 0E       		.uleb128 0xe
- 476 0044 3A       		.uleb128 0x3a
- 477 0045 0B       		.uleb128 0xb
- 478 0046 3B       		.uleb128 0x3b
- 479 0047 0B       		.uleb128 0xb
- 480 0048 27       		.uleb128 0x27
- 481 0049 19       		.uleb128 0x19
- 482 004a 11       		.uleb128 0x11
- 483 004b 01       		.uleb128 0x1
- 484 004c 12       		.uleb128 0x12
- 485 004d 06       		.uleb128 0x6
- 486 004e 40       		.uleb128 0x40
- 487 004f 18       		.uleb128 0x18
- 488 0050 9742     		.uleb128 0x2117
- 489 0052 19       		.uleb128 0x19
- 490 0053 01       		.uleb128 0x1
- 491 0054 13       		.uleb128 0x13
- 492 0055 00       		.byte	0
- 493 0056 00       		.byte	0
- 494 0057 07       		.uleb128 0x7
- 495 0058 05       		.uleb128 0x5
- 496 0059 00       		.byte	0
- 497 005a 03       		.uleb128 0x3
- 498 005b 0E       		.uleb128 0xe
- 499 005c 3A       		.uleb128 0x3a
- 500 005d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 14
+ 435 0009 1B       		.uleb128 0x1b
+ 436 000a 0E       		.uleb128 0xe
+ 437 000b 55       		.uleb128 0x55
+ 438 000c 17       		.uleb128 0x17
+ 439 000d 11       		.uleb128 0x11
+ 440 000e 01       		.uleb128 0x1
+ 441 000f 10       		.uleb128 0x10
+ 442 0010 17       		.uleb128 0x17
+ 443 0011 00       		.byte	0
+ 444 0012 00       		.byte	0
+ 445 0013 02       		.uleb128 0x2
+ 446 0014 24       		.uleb128 0x24
+ 447 0015 00       		.byte	0
+ 448 0016 0B       		.uleb128 0xb
+ 449 0017 0B       		.uleb128 0xb
+ 450 0018 3E       		.uleb128 0x3e
+ 451 0019 0B       		.uleb128 0xb
+ 452 001a 03       		.uleb128 0x3
+ 453 001b 0E       		.uleb128 0xe
+ 454 001c 00       		.byte	0
+ 455 001d 00       		.byte	0
+ 456 001e 03       		.uleb128 0x3
+ 457 001f 24       		.uleb128 0x24
+ 458 0020 00       		.byte	0
+ 459 0021 0B       		.uleb128 0xb
+ 460 0022 0B       		.uleb128 0xb
+ 461 0023 3E       		.uleb128 0x3e
+ 462 0024 0B       		.uleb128 0xb
+ 463 0025 03       		.uleb128 0x3
+ 464 0026 08       		.uleb128 0x8
+ 465 0027 00       		.byte	0
+ 466 0028 00       		.byte	0
+ 467 0029 04       		.uleb128 0x4
+ 468 002a 16       		.uleb128 0x16
+ 469 002b 00       		.byte	0
+ 470 002c 03       		.uleb128 0x3
+ 471 002d 0E       		.uleb128 0xe
+ 472 002e 3A       		.uleb128 0x3a
+ 473 002f 0B       		.uleb128 0xb
+ 474 0030 3B       		.uleb128 0x3b
+ 475 0031 05       		.uleb128 0x5
+ 476 0032 49       		.uleb128 0x49
+ 477 0033 13       		.uleb128 0x13
+ 478 0034 00       		.byte	0
+ 479 0035 00       		.byte	0
+ 480 0036 05       		.uleb128 0x5
+ 481 0037 35       		.uleb128 0x35
+ 482 0038 00       		.byte	0
+ 483 0039 49       		.uleb128 0x49
+ 484 003a 13       		.uleb128 0x13
+ 485 003b 00       		.byte	0
+ 486 003c 00       		.byte	0
+ 487 003d 06       		.uleb128 0x6
+ 488 003e 2E       		.uleb128 0x2e
+ 489 003f 01       		.byte	0x1
+ 490 0040 3F       		.uleb128 0x3f
+ 491 0041 19       		.uleb128 0x19
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 14
 
 
- 501 005e 3B       		.uleb128 0x3b
- 502 005f 0B       		.uleb128 0xb
- 503 0060 49       		.uleb128 0x49
- 504 0061 13       		.uleb128 0x13
- 505 0062 02       		.uleb128 0x2
- 506 0063 17       		.uleb128 0x17
- 507 0064 00       		.byte	0
- 508 0065 00       		.byte	0
- 509 0066 08       		.uleb128 0x8
- 510 0067 34       		.uleb128 0x34
- 511 0068 00       		.byte	0
- 512 0069 03       		.uleb128 0x3
- 513 006a 0E       		.uleb128 0xe
- 514 006b 3A       		.uleb128 0x3a
- 515 006c 0B       		.uleb128 0xb
- 516 006d 3B       		.uleb128 0x3b
- 517 006e 0B       		.uleb128 0xb
- 518 006f 49       		.uleb128 0x49
- 519 0070 13       		.uleb128 0x13
- 520 0071 02       		.uleb128 0x2
- 521 0072 17       		.uleb128 0x17
- 522 0073 00       		.byte	0
- 523 0074 00       		.byte	0
- 524 0075 09       		.uleb128 0x9
- 525 0076 2E       		.uleb128 0x2e
- 526 0077 00       		.byte	0
- 527 0078 3F       		.uleb128 0x3f
- 528 0079 19       		.uleb128 0x19
- 529 007a 03       		.uleb128 0x3
- 530 007b 0E       		.uleb128 0xe
- 531 007c 3A       		.uleb128 0x3a
- 532 007d 0B       		.uleb128 0xb
- 533 007e 3B       		.uleb128 0x3b
- 534 007f 0B       		.uleb128 0xb
- 535 0080 27       		.uleb128 0x27
- 536 0081 19       		.uleb128 0x19
- 537 0082 49       		.uleb128 0x49
- 538 0083 13       		.uleb128 0x13
- 539 0084 11       		.uleb128 0x11
- 540 0085 01       		.uleb128 0x1
- 541 0086 12       		.uleb128 0x12
- 542 0087 06       		.uleb128 0x6
- 543 0088 40       		.uleb128 0x40
- 544 0089 18       		.uleb128 0x18
- 545 008a 9742     		.uleb128 0x2117
- 546 008c 19       		.uleb128 0x19
- 547 008d 00       		.byte	0
- 548 008e 00       		.byte	0
- 549 008f 0A       		.uleb128 0xa
- 550 0090 05       		.uleb128 0x5
- 551 0091 00       		.byte	0
- 552 0092 03       		.uleb128 0x3
- 553 0093 0E       		.uleb128 0xe
- 554 0094 3A       		.uleb128 0x3a
- 555 0095 0B       		.uleb128 0xb
- 556 0096 3B       		.uleb128 0x3b
- 557 0097 0B       		.uleb128 0xb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 15
+ 492 0042 03       		.uleb128 0x3
+ 493 0043 0E       		.uleb128 0xe
+ 494 0044 3A       		.uleb128 0x3a
+ 495 0045 0B       		.uleb128 0xb
+ 496 0046 3B       		.uleb128 0x3b
+ 497 0047 0B       		.uleb128 0xb
+ 498 0048 27       		.uleb128 0x27
+ 499 0049 19       		.uleb128 0x19
+ 500 004a 11       		.uleb128 0x11
+ 501 004b 01       		.uleb128 0x1
+ 502 004c 12       		.uleb128 0x12
+ 503 004d 06       		.uleb128 0x6
+ 504 004e 40       		.uleb128 0x40
+ 505 004f 18       		.uleb128 0x18
+ 506 0050 9742     		.uleb128 0x2117
+ 507 0052 19       		.uleb128 0x19
+ 508 0053 01       		.uleb128 0x1
+ 509 0054 13       		.uleb128 0x13
+ 510 0055 00       		.byte	0
+ 511 0056 00       		.byte	0
+ 512 0057 07       		.uleb128 0x7
+ 513 0058 05       		.uleb128 0x5
+ 514 0059 00       		.byte	0
+ 515 005a 03       		.uleb128 0x3
+ 516 005b 0E       		.uleb128 0xe
+ 517 005c 3A       		.uleb128 0x3a
+ 518 005d 0B       		.uleb128 0xb
+ 519 005e 3B       		.uleb128 0x3b
+ 520 005f 0B       		.uleb128 0xb
+ 521 0060 49       		.uleb128 0x49
+ 522 0061 13       		.uleb128 0x13
+ 523 0062 02       		.uleb128 0x2
+ 524 0063 17       		.uleb128 0x17
+ 525 0064 00       		.byte	0
+ 526 0065 00       		.byte	0
+ 527 0066 08       		.uleb128 0x8
+ 528 0067 05       		.uleb128 0x5
+ 529 0068 00       		.byte	0
+ 530 0069 03       		.uleb128 0x3
+ 531 006a 0E       		.uleb128 0xe
+ 532 006b 3A       		.uleb128 0x3a
+ 533 006c 0B       		.uleb128 0xb
+ 534 006d 3B       		.uleb128 0x3b
+ 535 006e 0B       		.uleb128 0xb
+ 536 006f 49       		.uleb128 0x49
+ 537 0070 13       		.uleb128 0x13
+ 538 0071 02       		.uleb128 0x2
+ 539 0072 18       		.uleb128 0x18
+ 540 0073 00       		.byte	0
+ 541 0074 00       		.byte	0
+ 542 0075 09       		.uleb128 0x9
+ 543 0076 34       		.uleb128 0x34
+ 544 0077 00       		.byte	0
+ 545 0078 03       		.uleb128 0x3
+ 546 0079 0E       		.uleb128 0xe
+ 547 007a 3A       		.uleb128 0x3a
+ 548 007b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 15
 
 
- 558 0098 49       		.uleb128 0x49
- 559 0099 13       		.uleb128 0x13
- 560 009a 02       		.uleb128 0x2
- 561 009b 18       		.uleb128 0x18
- 562 009c 00       		.byte	0
- 563 009d 00       		.byte	0
- 564 009e 0B       		.uleb128 0xb
- 565 009f 34       		.uleb128 0x34
- 566 00a0 00       		.byte	0
- 567 00a1 03       		.uleb128 0x3
- 568 00a2 0E       		.uleb128 0xe
- 569 00a3 3A       		.uleb128 0x3a
- 570 00a4 0B       		.uleb128 0xb
- 571 00a5 3B       		.uleb128 0x3b
- 572 00a6 0B       		.uleb128 0xb
- 573 00a7 49       		.uleb128 0x49
- 574 00a8 13       		.uleb128 0x13
- 575 00a9 02       		.uleb128 0x2
- 576 00aa 18       		.uleb128 0x18
- 577 00ab 00       		.byte	0
- 578 00ac 00       		.byte	0
- 579 00ad 0C       		.uleb128 0xc
- 580 00ae 2E       		.uleb128 0x2e
- 581 00af 01       		.byte	0x1
- 582 00b0 3F       		.uleb128 0x3f
- 583 00b1 19       		.uleb128 0x19
- 584 00b2 03       		.uleb128 0x3
- 585 00b3 0E       		.uleb128 0xe
- 586 00b4 3A       		.uleb128 0x3a
- 587 00b5 0B       		.uleb128 0xb
- 588 00b6 3B       		.uleb128 0x3b
- 589 00b7 0B       		.uleb128 0xb
- 590 00b8 27       		.uleb128 0x27
- 591 00b9 19       		.uleb128 0x19
- 592 00ba 49       		.uleb128 0x49
- 593 00bb 13       		.uleb128 0x13
- 594 00bc 11       		.uleb128 0x11
- 595 00bd 01       		.uleb128 0x1
- 596 00be 12       		.uleb128 0x12
- 597 00bf 06       		.uleb128 0x6
- 598 00c0 40       		.uleb128 0x40
- 599 00c1 18       		.uleb128 0x18
- 600 00c2 9742     		.uleb128 0x2117
- 601 00c4 19       		.uleb128 0x19
- 602 00c5 00       		.byte	0
- 603 00c6 00       		.byte	0
- 604 00c7 00       		.byte	0
- 605              		.section	.debug_loc,"",%progbits
- 606              	.Ldebug_loc0:
- 607              	.LLST0:
- 608 0000 00000000 		.4byte	.LVL0
- 609 0004 0A000000 		.4byte	.LVL1
- 610 0008 0100     		.2byte	0x1
- 611 000a 50       		.byte	0x50
- 612 000b 0A000000 		.4byte	.LVL1
- 613 000f 14000000 		.4byte	.LFE0
- 614 0013 0400     		.2byte	0x4
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 16
+ 549 007c 3B       		.uleb128 0x3b
+ 550 007d 0B       		.uleb128 0xb
+ 551 007e 49       		.uleb128 0x49
+ 552 007f 13       		.uleb128 0x13
+ 553 0080 02       		.uleb128 0x2
+ 554 0081 18       		.uleb128 0x18
+ 555 0082 00       		.byte	0
+ 556 0083 00       		.byte	0
+ 557 0084 0A       		.uleb128 0xa
+ 558 0085 2E       		.uleb128 0x2e
+ 559 0086 00       		.byte	0
+ 560 0087 3F       		.uleb128 0x3f
+ 561 0088 19       		.uleb128 0x19
+ 562 0089 03       		.uleb128 0x3
+ 563 008a 0E       		.uleb128 0xe
+ 564 008b 3A       		.uleb128 0x3a
+ 565 008c 0B       		.uleb128 0xb
+ 566 008d 3B       		.uleb128 0x3b
+ 567 008e 0B       		.uleb128 0xb
+ 568 008f 27       		.uleb128 0x27
+ 569 0090 19       		.uleb128 0x19
+ 570 0091 49       		.uleb128 0x49
+ 571 0092 13       		.uleb128 0x13
+ 572 0093 11       		.uleb128 0x11
+ 573 0094 01       		.uleb128 0x1
+ 574 0095 12       		.uleb128 0x12
+ 575 0096 06       		.uleb128 0x6
+ 576 0097 40       		.uleb128 0x40
+ 577 0098 18       		.uleb128 0x18
+ 578 0099 9742     		.uleb128 0x2117
+ 579 009b 19       		.uleb128 0x19
+ 580 009c 00       		.byte	0
+ 581 009d 00       		.byte	0
+ 582 009e 0B       		.uleb128 0xb
+ 583 009f 34       		.uleb128 0x34
+ 584 00a0 00       		.byte	0
+ 585 00a1 03       		.uleb128 0x3
+ 586 00a2 0E       		.uleb128 0xe
+ 587 00a3 3A       		.uleb128 0x3a
+ 588 00a4 0B       		.uleb128 0xb
+ 589 00a5 3B       		.uleb128 0x3b
+ 590 00a6 0B       		.uleb128 0xb
+ 591 00a7 49       		.uleb128 0x49
+ 592 00a8 13       		.uleb128 0x13
+ 593 00a9 02       		.uleb128 0x2
+ 594 00aa 17       		.uleb128 0x17
+ 595 00ab 00       		.byte	0
+ 596 00ac 00       		.byte	0
+ 597 00ad 0C       		.uleb128 0xc
+ 598 00ae 2E       		.uleb128 0x2e
+ 599 00af 01       		.byte	0x1
+ 600 00b0 3F       		.uleb128 0x3f
+ 601 00b1 19       		.uleb128 0x19
+ 602 00b2 03       		.uleb128 0x3
+ 603 00b3 0E       		.uleb128 0xe
+ 604 00b4 3A       		.uleb128 0x3a
+ 605 00b5 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 16
 
 
- 615 0015 F3       		.byte	0xf3
- 616 0016 01       		.uleb128 0x1
- 617 0017 50       		.byte	0x50
- 618 0018 9F       		.byte	0x9f
- 619 0019 00000000 		.4byte	0
- 620 001d 00000000 		.4byte	0
- 621              	.LLST1:
- 622 0021 00000000 		.4byte	.LVL2
- 623 0025 0C000000 		.4byte	.LVL4
- 624 0029 0100     		.2byte	0x1
- 625 002b 50       		.byte	0x50
- 626 002c 0C000000 		.4byte	.LVL4
- 627 0030 18000000 		.4byte	.LFE1
- 628 0034 0400     		.2byte	0x4
- 629 0036 F3       		.byte	0xf3
- 630 0037 01       		.uleb128 0x1
- 631 0038 50       		.byte	0x50
- 632 0039 9F       		.byte	0x9f
- 633 003a 00000000 		.4byte	0
- 634 003e 00000000 		.4byte	0
- 635              	.LLST2:
- 636 0042 0A000000 		.4byte	.LVL3
- 637 0046 0E000000 		.4byte	.LVL5
- 638 004a 0100     		.2byte	0x1
- 639 004c 53       		.byte	0x53
- 640 004d 0E000000 		.4byte	.LVL5
- 641 0051 18000000 		.4byte	.LFE1
- 642 0055 0100     		.2byte	0x1
- 643 0057 50       		.byte	0x50
- 644 0058 00000000 		.4byte	0
- 645 005c 00000000 		.4byte	0
- 646              	.LLST3:
- 647 0060 00000000 		.4byte	.LVL6
- 648 0064 08000000 		.4byte	.LVL8
- 649 0068 0100     		.2byte	0x1
- 650 006a 50       		.byte	0x50
- 651 006b 08000000 		.4byte	.LVL8
- 652 006f 14000000 		.4byte	.LFE4
- 653 0073 0400     		.2byte	0x4
- 654 0075 F3       		.byte	0xf3
- 655 0076 01       		.uleb128 0x1
- 656 0077 50       		.byte	0x50
- 657 0078 9F       		.byte	0x9f
- 658 0079 00000000 		.4byte	0
- 659 007d 00000000 		.4byte	0
- 660              		.section	.debug_aranges,"",%progbits
- 661 0000 44000000 		.4byte	0x44
- 662 0004 0200     		.2byte	0x2
- 663 0006 00000000 		.4byte	.Ldebug_info0
- 664 000a 04       		.byte	0x4
- 665 000b 00       		.byte	0
- 666 000c 0000     		.2byte	0
- 667 000e 0000     		.2byte	0
- 668 0010 00000000 		.4byte	.LFB0
- 669 0014 14000000 		.4byte	.LFE0-.LFB0
- 670 0018 00000000 		.4byte	.LFB1
- 671 001c 18000000 		.4byte	.LFE1-.LFB1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 17
+ 606 00b6 3B       		.uleb128 0x3b
+ 607 00b7 0B       		.uleb128 0xb
+ 608 00b8 27       		.uleb128 0x27
+ 609 00b9 19       		.uleb128 0x19
+ 610 00ba 49       		.uleb128 0x49
+ 611 00bb 13       		.uleb128 0x13
+ 612 00bc 11       		.uleb128 0x11
+ 613 00bd 01       		.uleb128 0x1
+ 614 00be 12       		.uleb128 0x12
+ 615 00bf 06       		.uleb128 0x6
+ 616 00c0 40       		.uleb128 0x40
+ 617 00c1 18       		.uleb128 0x18
+ 618 00c2 9742     		.uleb128 0x2117
+ 619 00c4 19       		.uleb128 0x19
+ 620 00c5 00       		.byte	0
+ 621 00c6 00       		.byte	0
+ 622 00c7 00       		.byte	0
+ 623              		.section	.debug_loc,"",%progbits
+ 624              	.Ldebug_loc0:
+ 625              	.LLST0:
+ 626 0000 00000000 		.4byte	.LVL0
+ 627 0004 0A000000 		.4byte	.LVL1
+ 628 0008 0100     		.2byte	0x1
+ 629 000a 50       		.byte	0x50
+ 630 000b 0A000000 		.4byte	.LVL1
+ 631 000f 14000000 		.4byte	.LFE0
+ 632 0013 0400     		.2byte	0x4
+ 633 0015 F3       		.byte	0xf3
+ 634 0016 01       		.uleb128 0x1
+ 635 0017 50       		.byte	0x50
+ 636 0018 9F       		.byte	0x9f
+ 637 0019 00000000 		.4byte	0
+ 638 001d 00000000 		.4byte	0
+ 639              	.LLST1:
+ 640 0021 00000000 		.4byte	.LVL4
+ 641 0025 08000000 		.4byte	.LVL7
+ 642 0029 0100     		.2byte	0x1
+ 643 002b 50       		.byte	0x50
+ 644 002c 08000000 		.4byte	.LVL7
+ 645 0030 14000000 		.4byte	.LFE4
+ 646 0034 0400     		.2byte	0x4
+ 647 0036 F3       		.byte	0xf3
+ 648 0037 01       		.uleb128 0x1
+ 649 0038 50       		.byte	0x50
+ 650 0039 9F       		.byte	0x9f
+ 651 003a 00000000 		.4byte	0
+ 652 003e 00000000 		.4byte	0
+ 653              	.LLST2:
+ 654 0042 04000000 		.4byte	.LVL5
+ 655 0046 06000000 		.4byte	.LVL6
+ 656 004a 0B00     		.2byte	0xb
+ 657 004c 70       		.byte	0x70
+ 658 004d 00       		.sleb128 0
+ 659 004e 0A       		.byte	0xa
+ 660 004f FFFF     		.2byte	0xffff
+ 661 0051 1A       		.byte	0x1a
+ 662 0052 20       		.byte	0x20
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 17
 
 
- 672 0020 00000000 		.4byte	.LFB2
- 673 0024 10000000 		.4byte	.LFE2-.LFB2
- 674 0028 00000000 		.4byte	.LFB3
- 675 002c 10000000 		.4byte	.LFE3-.LFB3
- 676 0030 00000000 		.4byte	.LFB4
- 677 0034 14000000 		.4byte	.LFE4-.LFB4
- 678 0038 00000000 		.4byte	.LFB5
- 679 003c 10000000 		.4byte	.LFE5-.LFB5
- 680 0040 00000000 		.4byte	0
- 681 0044 00000000 		.4byte	0
- 682              		.section	.debug_ranges,"",%progbits
- 683              	.Ldebug_ranges0:
- 684 0000 00000000 		.4byte	.LFB0
- 685 0004 14000000 		.4byte	.LFE0
- 686 0008 00000000 		.4byte	.LFB1
- 687 000c 18000000 		.4byte	.LFE1
- 688 0010 00000000 		.4byte	.LFB2
- 689 0014 10000000 		.4byte	.LFE2
- 690 0018 00000000 		.4byte	.LFB3
- 691 001c 10000000 		.4byte	.LFE3
- 692 0020 00000000 		.4byte	.LFB4
- 693 0024 14000000 		.4byte	.LFE4
- 694 0028 00000000 		.4byte	.LFB5
- 695 002c 10000000 		.4byte	.LFE5
- 696 0030 00000000 		.4byte	0
- 697 0034 00000000 		.4byte	0
- 698              		.section	.debug_line,"",%progbits
- 699              	.Ldebug_line0:
- 700 0000 BA000000 		.section	.debug_str,"MS",%progbits,1
- 700      02004400 
- 700      00000201 
- 700      FB0E0D00 
- 700      01010101 
- 701              	.LASF6:
- 702 0000 6C6F6E67 		.ascii	"long long int\000"
- 702      206C6F6E 
- 702      6720696E 
- 702      7400
- 703              	.LASF15:
- 704 000e 72656733 		.ascii	"reg32\000"
- 704      3200
- 705              	.LASF22:
- 706 0014 52585F43 		.ascii	"RX_CAN0_SetInterruptMode\000"
- 706      414E305F 
- 706      53657449 
- 706      6E746572 
- 706      72757074 
- 707              	.LASF19:
- 708 002d 76616C75 		.ascii	"value\000"
- 708      6500
- 709              	.LASF17:
- 710 0033 52585F43 		.ascii	"RX_CAN0_Write\000"
- 710      414E305F 
- 710      57726974 
- 710      6500
- 711              	.LASF21:
- 712 0041 52585F43 		.ascii	"RX_CAN0_ReadDataReg\000"
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 18
+ 663 0053 73       		.byte	0x73
+ 664 0054 00       		.sleb128 0
+ 665 0055 1A       		.byte	0x1a
+ 666 0056 9F       		.byte	0x9f
+ 667 0057 00000000 		.4byte	0
+ 668 005b 00000000 		.4byte	0
+ 669              		.section	.debug_aranges,"",%progbits
+ 670 0000 44000000 		.4byte	0x44
+ 671 0004 0200     		.2byte	0x2
+ 672 0006 00000000 		.4byte	.Ldebug_info0
+ 673 000a 04       		.byte	0x4
+ 674 000b 00       		.byte	0
+ 675 000c 0000     		.2byte	0
+ 676 000e 0000     		.2byte	0
+ 677 0010 00000000 		.4byte	.LFB0
+ 678 0014 14000000 		.4byte	.LFE0-.LFB0
+ 679 0018 00000000 		.4byte	.LFB1
+ 680 001c 18000000 		.4byte	.LFE1-.LFB1
+ 681 0020 00000000 		.4byte	.LFB2
+ 682 0024 10000000 		.4byte	.LFE2-.LFB2
+ 683 0028 00000000 		.4byte	.LFB3
+ 684 002c 10000000 		.4byte	.LFE3-.LFB3
+ 685 0030 00000000 		.4byte	.LFB4
+ 686 0034 14000000 		.4byte	.LFE4-.LFB4
+ 687 0038 00000000 		.4byte	.LFB5
+ 688 003c 10000000 		.4byte	.LFE5-.LFB5
+ 689 0040 00000000 		.4byte	0
+ 690 0044 00000000 		.4byte	0
+ 691              		.section	.debug_ranges,"",%progbits
+ 692              	.Ldebug_ranges0:
+ 693 0000 00000000 		.4byte	.LFB0
+ 694 0004 14000000 		.4byte	.LFE0
+ 695 0008 00000000 		.4byte	.LFB1
+ 696 000c 18000000 		.4byte	.LFE1
+ 697 0010 00000000 		.4byte	.LFB2
+ 698 0014 10000000 		.4byte	.LFE2
+ 699 0018 00000000 		.4byte	.LFB3
+ 700 001c 10000000 		.4byte	.LFE3
+ 701 0020 00000000 		.4byte	.LFB4
+ 702 0024 14000000 		.4byte	.LFE4
+ 703 0028 00000000 		.4byte	.LFB5
+ 704 002c 10000000 		.4byte	.LFE5
+ 705 0030 00000000 		.4byte	0
+ 706 0034 00000000 		.4byte	0
+ 707              		.section	.debug_line,"",%progbits
+ 708              	.Ldebug_line0:
+ 709 0000 C5000000 		.section	.debug_str,"MS",%progbits,1
+ 709      02004400 
+ 709      00000201 
+ 709      FB0E0D00 
+ 709      01010101 
+ 710              	.LASF6:
+ 711 0000 6C6F6E67 		.ascii	"long long int\000"
+ 711      206C6F6E 
+ 711      6720696E 
+ 711      7400
+ 712              	.LASF30:
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 18
 
 
- 712      414E305F 
- 712      52656164 
- 712      44617461 
- 712      52656700 
- 713              	.LASF12:
- 714 0055 666C6F61 		.ascii	"float\000"
- 714      7400
- 715              	.LASF16:
- 716 005b 52585F43 		.ascii	"RX_CAN0_SetDriveMode\000"
- 716      414E305F 
- 716      53657444 
- 716      72697665 
- 716      4D6F6465 
- 717              	.LASF1:
- 718 0070 756E7369 		.ascii	"unsigned char\000"
- 718      676E6564 
- 718      20636861 
- 718      7200
- 719              	.LASF24:
- 720 007e 64725661 		.ascii	"drVal\000"
- 720      6C00
- 721              	.LASF5:
- 722 0084 6C6F6E67 		.ascii	"long unsigned int\000"
- 722      20756E73 
- 722      69676E65 
- 722      6420696E 
- 722      7400
- 723              	.LASF3:
- 724 0096 73686F72 		.ascii	"short unsigned int\000"
- 724      7420756E 
- 724      7369676E 
- 724      65642069 
- 724      6E7400
- 725              	.LASF13:
- 726 00a9 646F7562 		.ascii	"double\000"
- 726      6C6500
- 727              	.LASF10:
- 728 00b0 75696E74 		.ascii	"uint16\000"
- 728      313600
- 729              	.LASF23:
- 730 00b7 706F7369 		.ascii	"position\000"
- 730      74696F6E 
- 730      00
- 731              	.LASF11:
- 732 00c0 75696E74 		.ascii	"uint32\000"
- 732      333200
- 733              	.LASF25:
- 734 00c7 696E7472 		.ascii	"intrCfg\000"
- 734      43666700 
- 735              	.LASF8:
- 736 00cf 756E7369 		.ascii	"unsigned int\000"
- 736      676E6564 
- 736      20696E74 
- 736      00
- 737              	.LASF7:
- 738 00dc 6C6F6E67 		.ascii	"long long unsigned int\000"
- 738      206C6F6E 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 19
+ 713 000e 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
+ 713      73657273 
+ 713      5C4D656C 
+ 713      6F64795C 
+ 713      4465736B 
+ 714 003c 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
+ 714      7368626F 
+ 714      6172642D 
+ 714      4669726D 
+ 714      77617265 
+ 715 006d 44617368 		.ascii	"Dashboard.cydsn\000"
+ 715      626F6172 
+ 715      642E6379 
+ 715      64736E00 
+ 716              	.LASF15:
+ 717 007d 72656733 		.ascii	"reg32\000"
+ 717      3200
+ 718              	.LASF22:
+ 719 0083 52585F43 		.ascii	"RX_CAN0_SetInterruptMode\000"
+ 719      414E305F 
+ 719      53657449 
+ 719      6E746572 
+ 719      72757074 
+ 720              	.LASF19:
+ 721 009c 76616C75 		.ascii	"value\000"
+ 721      6500
+ 722              	.LASF17:
+ 723 00a2 52585F43 		.ascii	"RX_CAN0_Write\000"
+ 723      414E305F 
+ 723      57726974 
+ 723      6500
+ 724              	.LASF21:
+ 725 00b0 52585F43 		.ascii	"RX_CAN0_ReadDataReg\000"
+ 725      414E305F 
+ 725      52656164 
+ 725      44617461 
+ 725      52656700 
+ 726              	.LASF12:
+ 727 00c4 666C6F61 		.ascii	"float\000"
+ 727      7400
+ 728              	.LASF16:
+ 729 00ca 52585F43 		.ascii	"RX_CAN0_SetDriveMode\000"
+ 729      414E305F 
+ 729      53657444 
+ 729      72697665 
+ 729      4D6F6465 
+ 730              	.LASF1:
+ 731 00df 756E7369 		.ascii	"unsigned char\000"
+ 731      676E6564 
+ 731      20636861 
+ 731      7200
+ 732              	.LASF24:
+ 733 00ed 64725661 		.ascii	"drVal\000"
+ 733      6C00
+ 734              	.LASF5:
+ 735 00f3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 735      20756E73 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 19
 
 
- 738      6720756E 
- 738      7369676E 
- 738      65642069 
- 739              	.LASF18:
- 740 00f3 6D6F6465 		.ascii	"mode\000"
- 740      00
- 741              	.LASF20:
- 742 00f8 52585F43 		.ascii	"RX_CAN0_Read\000"
- 742      414E305F 
- 742      52656164 
- 742      00
- 743              	.LASF28:
- 744 0105 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 744      43313120 
- 744      352E342E 
- 744      31203230 
- 744      31363036 
- 745 0138 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 745      20726576 
- 745      6973696F 
- 745      6E203233 
- 745      37373135 
- 746 016b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 746      66756E63 
- 746      74696F6E 
- 746      2D736563 
- 746      74696F6E 
- 747              	.LASF29:
- 748 0193 47656E65 		.ascii	"Generated_Source\\PSoC4\\RX_CAN0.c\000"
- 748      72617465 
- 748      645F536F 
- 748      75726365 
- 748      5C50536F 
- 749              	.LASF27:
- 750 01b4 6D61736B 		.ascii	"maskedStatus\000"
- 750      65645374 
- 750      61747573 
- 750      00
- 751              	.LASF14:
- 752 01c1 63686172 		.ascii	"char\000"
- 752      00
- 753              	.LASF30:
- 754 01c6 443A5C55 		.ascii	"D:\\Users\\leoja\\Documents\\GitHub\\Dashboard-Firm"
- 754      73657273 
- 754      5C6C656F 
- 754      6A615C44 
- 754      6F63756D 
- 755 01f4 77617265 		.ascii	"ware-FE9-CURSED\\Dashboard-Firmware-FE9\\Dashboard."
- 755      2D464539 
- 755      2D435552 
- 755      5345445C 
- 755      44617368 
- 756 0225 63796473 		.ascii	"cydsn\000"
- 756      6E00
- 757              	.LASF2:
- 758 022b 73686F72 		.ascii	"short int\000"
- 758      7420696E 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccNw0kdT.s 			page 20
+ 735      69676E65 
+ 735      6420696E 
+ 735      7400
+ 736              	.LASF3:
+ 737 0105 73686F72 		.ascii	"short unsigned int\000"
+ 737      7420756E 
+ 737      7369676E 
+ 737      65642069 
+ 737      6E7400
+ 738              	.LASF13:
+ 739 0118 646F7562 		.ascii	"double\000"
+ 739      6C6500
+ 740              	.LASF10:
+ 741 011f 75696E74 		.ascii	"uint16\000"
+ 741      313600
+ 742              	.LASF23:
+ 743 0126 706F7369 		.ascii	"position\000"
+ 743      74696F6E 
+ 743      00
+ 744              	.LASF11:
+ 745 012f 75696E74 		.ascii	"uint32\000"
+ 745      333200
+ 746              	.LASF25:
+ 747 0136 696E7472 		.ascii	"intrCfg\000"
+ 747      43666700 
+ 748              	.LASF8:
+ 749 013e 756E7369 		.ascii	"unsigned int\000"
+ 749      676E6564 
+ 749      20696E74 
+ 749      00
+ 750              	.LASF7:
+ 751 014b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 751      206C6F6E 
+ 751      6720756E 
+ 751      7369676E 
+ 751      65642069 
+ 752              	.LASF18:
+ 753 0162 6D6F6465 		.ascii	"mode\000"
+ 753      00
+ 754              	.LASF20:
+ 755 0167 52585F43 		.ascii	"RX_CAN0_Read\000"
+ 755      414E305F 
+ 755      52656164 
+ 755      00
+ 756              	.LASF29:
+ 757 0174 47656E65 		.ascii	"Generated_Source\\PSoC4\\RX_CAN0.c\000"
+ 757      72617465 
+ 757      645F536F 
+ 757      75726365 
+ 757      5C50536F 
+ 758              	.LASF27:
+ 759 0195 6D61736B 		.ascii	"maskedStatus\000"
+ 759      65645374 
+ 759      61747573 
+ 759      00
+ 760              	.LASF14:
+ 761 01a2 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc10GWHK.s 			page 20
 
 
- 758      7400
- 759              	.LASF9:
- 760 0235 75696E74 		.ascii	"uint8\000"
- 760      3800
- 761              	.LASF4:
- 762 023b 6C6F6E67 		.ascii	"long int\000"
- 762      20696E74 
- 762      00
- 763              	.LASF26:
- 764 0244 52585F43 		.ascii	"RX_CAN0_ClearInterrupt\000"
- 764      414E305F 
- 764      436C6561 
- 764      72496E74 
- 764      65727275 
- 765              	.LASF0:
- 766 025b 7369676E 		.ascii	"signed char\000"
- 766      65642063 
- 766      68617200 
- 767              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 761      00
+ 762              	.LASF2:
+ 763 01a7 73686F72 		.ascii	"short int\000"
+ 763      7420696E 
+ 763      7400
+ 764              	.LASF9:
+ 765 01b1 75696E74 		.ascii	"uint8\000"
+ 765      3800
+ 766              	.LASF4:
+ 767 01b7 6C6F6E67 		.ascii	"long int\000"
+ 767      20696E74 
+ 767      00
+ 768              	.LASF26:
+ 769 01c0 52585F43 		.ascii	"RX_CAN0_ClearInterrupt\000"
+ 769      414E305F 
+ 769      436C6561 
+ 769      72496E74 
+ 769      65727275 
+ 770              	.LASF0:
+ 771 01d7 7369676E 		.ascii	"signed char\000"
+ 771      65642063 
+ 771      68617200 
+ 772              	.LASF28:
+ 773 01e3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 773      43313120 
+ 773      352E342E 
+ 773      31203230 
+ 773      31363036 
+ 774 0216 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 774      20726576 
+ 774      6973696F 
+ 774      6E203233 
+ 774      37373135 
+ 775 0249 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 775      66756E63 
+ 775      74696F6E 
+ 775      2D736563 
+ 775      74696F6E 
+ 776              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

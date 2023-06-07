@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2023-06-03T07:46:44Z")
+ (DATE "2023-06-07T01:05:56Z")
  (DESIGN "Dashboard")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -49,7 +49,6 @@
     (INTERCONNECT D_RD\(0\).pad_out D_RD\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT D_RS\(0\).pad_out D_RS\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT D_WR\(0\).pad_out D_WR\(0\).pad_in (0.000:0.000:0.000))
-    (INTERCONNECT \\CAN\:CanIP\\.interrupt \\CAN\:isr\\.interrupt (1.000:1.000:1.000))
     (INTERCONNECT D_LSB\(0\).fb \\GraphicLCDIntf\:LsbReg\\.status_0 (5.751:5.751:5.751))
     (INTERCONNECT D_LSB\(1\).fb \\GraphicLCDIntf\:LsbReg\\.status_1 (5.754:5.754:5.754))
     (INTERCONNECT D_LSB\(2\).fb \\GraphicLCDIntf\:LsbReg\\.status_2 (5.742:5.742:5.742))
@@ -60,6 +59,7 @@
     (INTERCONNECT D_LSB\(7\).fb \\GraphicLCDIntf\:LsbReg\\.status_7 (5.182:5.182:5.182))
     (INTERCONNECT RX\(0\).fb \\CAN\:CanIP\\.can_rx (1.000:1.000:1.000))
     (INTERCONNECT \\CAN\:CanIP\\.can_tx TX\(0\).pin_input (1.000:1.000:1.000))
+    (INTERCONNECT \\CAN\:CanIP\\.interrupt \\CAN\:isr\\.interrupt (1.000:1.000:1.000))
     (INTERCONNECT Net_25.q D_RS\(0\).pin_input (6.361:6.361:6.361))
     (INTERCONNECT Net_25.q Net_25.main_4 (3.416:3.416:3.416))
     (INTERCONNECT Net_26.q D_CS\(0\).pin_input (6.085:6.085:6.085))

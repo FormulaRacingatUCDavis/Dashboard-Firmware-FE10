@@ -426,6 +426,29 @@
                     if ((CAN_0_RX_MAILBOX_TYPE & shift) != 0u)
                     {
                         /* RX Full mailboxes handler */
+                        switch(mailboxNumber)
+                        {
+                            case 0u : CAN_0_ReceiveMsgVEHICLE_STATE();
+                            break;
+                            case 1u : CAN_0_ReceiveMsgBSPD_FLAGS();
+                            break;
+                            case 2u : CAN_0_ReceiveMsgBMS_STATUS_MSG();
+                            break;
+                            case 3u : CAN_0_ReceiveMsgBMS_VOLTAGES();
+                            break;
+                            case 4u : CAN_0_ReceiveMsgBMS_TEMPERATURES();
+                            break;
+                            case 5u : CAN_0_ReceiveMsgPEI_ESTOP();
+                            break;
+                            case 6u : CAN_0_ReceiveMsgPEI_CURRENT_SHUTDOWN();
+                            break;
+                            case 7u : CAN_0_ReceiveMsgMC_VOLTAGE_INFO();
+                            break;
+                            case 8u : CAN_0_ReceiveMsgMC_INTERNAL_STATES();
+                            break;
+                            default:
+                            break;
+                        }
                     }
                     else
                     {

@@ -651,12 +651,6 @@ net \PWM_1:PWMUDB:cmp2_less\
 	switch ":udb@[UDB=(0,1)]:pld1:input_permute.mc3_main_1==>:udb@[UDB=(0,1)]:pld1:mc3.main_1"
 	term   ":udb@[UDB=(0,1)]:pld1:mc3.main_1"
 end \PWM_1:PWMUDB:cmp2_less\
-net Net_10
-	term   ":cancell_1.interrupt"
-	switch ":cancell_1.interrupt==>:interrupt_idmux_28.in_0"
-	switch ":interrupt_idmux_28.interrupt_idmux_28__out==>:interrupt_28.interrupt"
-	term   ":interrupt_28.interrupt"
-end Net_10
 net Net_109_0
 	term   ":ioport1:pin0.fb"
 	switch ":ioport1:pin0.fb==>:ioport1:hsiom_in0.hsiom0_in"
@@ -790,6 +784,12 @@ net Net_12
 	switch ":ioport0:hsiom_out1.hsiom1_out==>:ioport0:pin1.pin_input"
 	term   ":ioport0:pin1.pin_input"
 end Net_12
+net Net_1271
+	term   ":cancell_1.interrupt"
+	switch ":cancell_1.interrupt==>:interrupt_idmux_28.in_0"
+	switch ":interrupt_idmux_28.interrupt_idmux_28__out==>:interrupt_28.interrupt"
+	term   ":interrupt_28.interrupt"
+end Net_1271
 net Net_26
 	term   ":udb@[UDB=(1,0)]:pld0:mc2.q"
 	switch ":udb@[UDB=(1,0)]:pld0:mc2.q==>:udb@[UDB=(1,0)]:pld0:output_permute3.q_2"
