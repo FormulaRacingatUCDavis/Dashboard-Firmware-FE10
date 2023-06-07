@@ -2,12 +2,13 @@
 <CyXmlSerializer>
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
-<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="Dashboard-Firmware-FE9" persistent="Dashboard-Firmware-FE9.cywrk" platform="NOT_USED">
+<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="Dashboard-Firmware-FE10" persistent="Dashboard-Firmware-FE10.cywrk" platform="NOT_USED">
 <current_project name=".\Dashboard.cydsn\Dashboard.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
 <v>.\Dashboard.cydsn\Dashboard.cyprj</v>
+<v>.\CAN_Full_P4_Example01.cydsn\CAN_Full_P4_Example01.cyprj</v>
 </projects>
 <workspace_id v="98cb9a9f-1580-4bdd-ba67-1a6483b879f3" />
 <WriteAppVersionLastSavedWith v="4.4.0.80" />

@@ -3,13 +3,13 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
 
    1              	/***************************************************************************//**
    2              	* \file CyBootAsmGnu.s
-   3              	* \version 6.0
+   3              	* \version 6.10
    4              	*
    5              	* \brief Assembly routines for GNU as.
    6              	*
    7              	********************************************************************************
    8              	* \copyright
-   9              	* Copyright 2010-2018, Cypress Semiconductor Corporation.  All rights reserved.
+   9              	* Copyright 2010-2021, Cypress Semiconductor Corporation.  All rights reserved.
   10              	* You may use this file only in accordance with the license, terms, conditions,
   11              	* disclaimers, and limitations in the end user license agreement accompanying
   12              	* the software package with which this file was provided.
@@ -10629,7 +10629,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  701              	.set D_CS__0__MASK, 0x04
  702              	.set D_CS__0__OUT_SEL, CYREG_UDB_PA0_CFG10
  703              	.set D_CS__0__OUT_SEL_SHIFT, 4
- 704              	.set D_CS__0__OUT_SEL_VAL, 0
+ 704              	.set D_CS__0__OUT_SEL_VAL, 2
  705              	.set D_CS__0__PA__CFG0, CYREG_UDB_PA0_CFG0
  706              	.set D_CS__0__PA__CFG1, CYREG_UDB_PA0_CFG1
  707              	.set D_CS__0__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -10698,7 +10698,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  767              	.set D_RD__0__MASK, 0x08
  768              	.set D_RD__0__OUT_SEL, CYREG_UDB_PA0_CFG10
  769              	.set D_RD__0__OUT_SEL_SHIFT, 6
- 770              	.set D_RD__0__OUT_SEL_VAL, 3
+ 770              	.set D_RD__0__OUT_SEL_VAL, 1
  771              	.set D_RD__0__PA__CFG0, CYREG_UDB_PA0_CFG0
  772              	.set D_RD__0__PA__CFG1, CYREG_UDB_PA0_CFG1
  773              	.set D_RD__0__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -10836,7 +10836,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  899              	.set D_WR__0__MASK, 0x40
  900              	.set D_WR__0__OUT_SEL, CYREG_UDB_PA0_CFG10
  901              	.set D_WR__0__OUT_SEL_SHIFT, 12
- 902              	.set D_WR__0__OUT_SEL_VAL, 3
+ 902              	.set D_WR__0__OUT_SEL_VAL, 2
  903              	.set D_WR__0__PA__CFG0, CYREG_UDB_PA0_CFG0
  904              	.set D_WR__0__PA__CFG1, CYREG_UDB_PA0_CFG1
  905              	.set D_WR__0__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -10905,7 +10905,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  965              	.set D_LSB__0__MASK, 0x01
  966              	.set D_LSB__0__OUT_SEL, CYREG_UDB_PA1_CFG10
  967              	.set D_LSB__0__OUT_SEL_SHIFT, 0
- 968              	.set D_LSB__0__OUT_SEL_VAL, 1
+ 968              	.set D_LSB__0__OUT_SEL_VAL, 0
  969              	.set D_LSB__0__PA__CFG0, CYREG_UDB_PA1_CFG0
  970              	.set D_LSB__0__PA__CFG1, CYREG_UDB_PA1_CFG1
  971              	.set D_LSB__0__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -10943,7 +10943,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1000              	.set D_LSB__1__MASK, 0x02
  1001              	.set D_LSB__1__OUT_SEL, CYREG_UDB_PA1_CFG10
  1002              	.set D_LSB__1__OUT_SEL_SHIFT, 2
- 1003              	.set D_LSB__1__OUT_SEL_VAL, 0
+ 1003              	.set D_LSB__1__OUT_SEL_VAL, 1
  1004              	.set D_LSB__1__PA__CFG0, CYREG_UDB_PA1_CFG0
  1005              	.set D_LSB__1__PA__CFG1, CYREG_UDB_PA1_CFG1
  1006              	.set D_LSB__1__PA__CFG10, CYREG_UDB_PA1_CFG10
@@ -12213,12 +12213,12 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  2207              	.set ReadyToDrive_Timer_TimerUDB_sT16_timerdp_u1__PER_DP_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK3
  2208              	
  2209              	/* Miscellaneous */
- 2210              	.set CYDEV_BCLK__HFCLK__HZ, 48000000
- 2211              	.set CYDEV_BCLK__HFCLK__KHZ, 48000
- 2212              	.set CYDEV_BCLK__HFCLK__MHZ, 48
- 2213              	.set CYDEV_BCLK__SYSCLK__HZ, 48000000
- 2214              	.set CYDEV_BCLK__SYSCLK__KHZ, 48000
- 2215              	.set CYDEV_BCLK__SYSCLK__MHZ, 48
+ 2210              	.set CYDEV_BCLK__HFCLK__HZ, 24000000
+ 2211              	.set CYDEV_BCLK__HFCLK__KHZ, 24000
+ 2212              	.set CYDEV_BCLK__HFCLK__MHZ, 24
+ 2213              	.set CYDEV_BCLK__SYSCLK__HZ, 24000000
+ 2214              	.set CYDEV_BCLK__SYSCLK__KHZ, 24000
+ 2215              	.set CYDEV_BCLK__SYSCLK__MHZ, 24
  2216              	.set CYDEV_CHIP_DIE_LEOPARD, 1
  2217              	.set CYDEV_CHIP_DIE_PSOC4A, 26
  2218              	.set CYDEV_CHIP_DIE_PSOC5LP, 2

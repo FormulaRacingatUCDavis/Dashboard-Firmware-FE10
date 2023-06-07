@@ -140,6 +140,7 @@ int main()
     //LED_color_wheel(200);
 	
     //draw splashscreen
+    UG_FillScreen(C_WHITE);
     HW_DrawImage_Special(40,68,399+40,68+135,logo,1970);
     CyDelay(2000);
     

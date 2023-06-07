@@ -22,7 +22,9 @@ typedef enum {
     HV_DISABLED_WHILE_DRIVING,
     SENSOR_DISCREPANCY,
     BRAKE_IMPLAUSIBLE,
-    ESTOP
+    SHUTDOWN_CIRCUIT_OPEN,
+    UNCALIBRATED,
+    HARD_BSPD
 } vcu_fault;
 
 typedef enum {

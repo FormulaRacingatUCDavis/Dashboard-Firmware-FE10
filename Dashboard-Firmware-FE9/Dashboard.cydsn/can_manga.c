@@ -142,11 +142,21 @@ void can_send(uint8_t data[8], uint32_t ID)
 	CAN_SendMsg(&message); 
 }
 
-void can_send_switches(
-    uint8_t sw_status)
-{
-        CAN_TX_DATA_BYTE1( 0u, sw_status); 
-        CAN_SendMsgDRIVER_SWITCHES(); 
+void can_send_switches(uint8_t sw_status){
+      
+        CAN_DATA_BYTES_MSG data_switches;
+        CAN_TX_MSG message_switches;
+    
+        /* BASIC CAN mailbox configuration */
+        message_switches.dlc = 1;
+        message_switches.id  = DRIVER_SWITCHES;
+        message_switches.ide = 0;
+        message_switches.irq = 0;
+        message_switches.msg = &data_switches;
+        message_switches.rtr = 0;
+    
+        data_switches.byte[0u] = sw_status;
+        CAN_SendMsg(&message_switches);
     
         /*
         uint8_t data[8];

@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: ADC_GLV_V_IRQ.c  
-* Version 1.70
+* Version 1.71
 *
 *  Description:
 *   API for controlling the state of an interrupt.
@@ -252,7 +252,7 @@ void ADC_GLV_V_IRQ_SetPriority(uint8 priority)
     uint32 priorityOffset = ((ADC_GLV_V_IRQ__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *ADC_GLV_V_IRQ_INTC_PRIOR = (*ADC_GLV_V_IRQ_INTC_PRIOR & (uint32)(~ADC_GLV_V_IRQ__INTC_PRIOR_MASK)) |
+    *ADC_GLV_V_IRQ_INTC_PRIOR = (*ADC_GLV_V_IRQ_INTC_PRIOR & (uint32)(~(uint32)ADC_GLV_V_IRQ__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }

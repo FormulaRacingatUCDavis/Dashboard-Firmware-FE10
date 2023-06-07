@@ -2,11 +2,11 @@
 <DesignWideResources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cydwr">
   <Group key="Component">
     <Group key="v1">
-      <Data key="cy_boot" value="cy_boot_v6_0" />
+      <Data key="cy_boot" value="cy_boot_v6_10" />
       <Data key="cy_dmac" value="cy_dmac_v1_10" />
       <Data key="cy_lfclk" value="cy_lfclk_v1_20" />
       <Data key="Em_EEPROM_Dynamic" value="Em_EEPROM_Dynamic_v2_20" />
-      <Data key="LIN_Dynamic" value="LIN_Dynamic_v5_0" />
+      <Data key="LIN_Dynamic" value="LIN_Dynamic_v6_0" />
     </Group>
   </Group>
   <Data key="DataVersionKey" value="2" />
@@ -3184,7 +3184,7 @@
         <Data key="derive_type" value="AUTO" />
         <Data key="desired_freq" value="12" />
         <Data key="desired_unit" value="6" />
-        <Data key="divider" value="4" />
+        <Data key="divider" value="2" />
         <Data key="enabled" value="True" />
         <Data key="fract_divider_denominator" value="0" />
         <Data key="fract_divider_numerator" value="0" />
@@ -3205,7 +3205,7 @@
       <Group key="9ab7b47d-4a3a-4a50-ae8f-21e085933d32">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="NAMED_DIVIDER" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3231,7 +3231,7 @@
         <Data key="derive_type" value="AUTO" />
         <Data key="desired_freq" value="5.333312" />
         <Data key="desired_unit" value="6" />
-        <Data key="divider" value="9" />
+        <Data key="divider" value="5" />
         <Data key="enabled" value="True" />
         <Data key="fract_divider_denominator" value="0" />
         <Data key="fract_divider_numerator" value="0" />
@@ -3252,7 +3252,7 @@
       <Group key="eae209c1-0724-4de4-8d48-0c98798b0a9b">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="NAMED_DIVIDER" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3318,7 +3318,7 @@
       <Group key="3E3A6273-3DC0-49b9-A765-A81596A23306">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3372,7 +3372,7 @@
       <Group key="13A80296-70D5-4f89-B0D3-510602484A50">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3408,7 +3408,7 @@
       <Group key="223AFA12-A351-4b16-AC47-BAC268E7B826">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3447,7 +3447,7 @@
       <Group key="413DE2EF-D9F2-4233-A808-DFAF137FD877">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="1" />
         <Data key="enabled" value="True" />
@@ -3525,7 +3525,7 @@
       <Group key="06587E14-7ADD-4811-9EA1-A17991CA4BBA">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3543,7 +3543,7 @@
       <Group key="25052E45-97E1-4618-A621-47712D88CDFB">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3579,7 +3579,7 @@
       <Group key="A8C3204D-9BE8-4092-97CC-B0B247063044">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3598,7 +3598,7 @@
       <Group key="BA1FF31D-570B-4ee4-8086-5A1087FF2AD2">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3672,7 +3672,7 @@
       <Group key="E08F1AEE-48D4-466e-B1C4-06141E81C5F4">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
@@ -3710,7 +3710,7 @@
         <Data key="derive_type" value="BUILTIN" />
         <Data key="desired_freq" value="0" />
         <Data key="desired_unit" value="0" />
-        <Data key="divider" value="2" />
+        <Data key="divider" value="1" />
         <Data key="enabled" value="False" />
         <Data key="minus_tolerance" value="0" />
         <Data key="name" value="HALFSYSCLK" />
@@ -3726,7 +3726,7 @@
       <Group key="F19A89AE-D2B5-4d11-9670-CE5139C8F272">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="BUILTIN" />
-        <Data key="desired_freq" value="48" />
+        <Data key="desired_freq" value="24" />
         <Data key="desired_unit" value="6" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />

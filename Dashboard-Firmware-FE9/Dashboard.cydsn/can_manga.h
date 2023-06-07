@@ -17,7 +17,7 @@
 //volatile uint32 CURRENT = 0; 
     
 typedef enum {
-    DRIVER_SWITCHES = 0x0d0,
+    DRIVER_SWITCHES = 0x050,
     VEHICLE_STATE = 0x766,
     BSPD_FLAGS = 0x0c1,
     MC_COMMAND = 0x0C0, 

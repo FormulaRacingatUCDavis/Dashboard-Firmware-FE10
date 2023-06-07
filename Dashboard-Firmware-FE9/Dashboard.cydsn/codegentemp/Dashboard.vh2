@@ -2,7 +2,7 @@
 --	Conversion of Dashboard.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jun 07 13:39:50 2023
+--	Wed Jun 07 15:56:54 2023
 --
 
 USE cypress.cypress.all;
@@ -84,7 +84,7 @@ TERMINAL \ADC_GLV_V:Net_3167\ : bit;
 TERMINAL \ADC_GLV_V:Net_3166\ : bit;
 TERMINAL \ADC_GLV_V:Net_8\ : bit;
 SIGNAL \ADC_GLV_V:Net_17\ : bit;
-SIGNAL Net_269 : bit;
+SIGNAL Net_1279 : bit;
 SIGNAL \ADC_GLV_V:Net_3108\ : bit;
 SIGNAL \ADC_GLV_V:Net_3109_3\ : bit;
 SIGNAL \ADC_GLV_V:Net_3109_2\ : bit;
@@ -103,7 +103,7 @@ SIGNAL \ADC_GLV_V:Net_3111_3\ : bit;
 SIGNAL \ADC_GLV_V:Net_3111_2\ : bit;
 SIGNAL \ADC_GLV_V:Net_3111_1\ : bit;
 SIGNAL \ADC_GLV_V:Net_3111_0\ : bit;
-SIGNAL Net_268 : bit;
+SIGNAL Net_1278 : bit;
 SIGNAL \ADC_GLV_V:Net_3207_1\ : bit;
 SIGNAL \ADC_GLV_V:Net_3207_0\ : bit;
 SIGNAL \ADC_GLV_V:Net_3235\ : bit;
@@ -1129,14 +1129,14 @@ Net_39D <= ((not \GraphicLCDIntf:state_3\ and not \GraphicLCDIntf:state_2\ and \
 		vref=>\ADC_GLV_V:Net_8\,
 		ext_vref=>\ADC_GLV_V:Net_43\,
 		clock=>\ADC_GLV_V:Net_1845\,
-		sample_done=>Net_269,
+		sample_done=>Net_1279,
 		chan_id_valid=>\ADC_GLV_V:Net_3108\,
 		chan_id=>(\ADC_GLV_V:Net_3109_3\, \ADC_GLV_V:Net_3109_2\, \ADC_GLV_V:Net_3109_1\, \ADC_GLV_V:Net_3109_0\),
 		data_valid=>\ADC_GLV_V:Net_3110\,
 		data=>(\ADC_GLV_V:Net_3111_11\, \ADC_GLV_V:Net_3111_10\, \ADC_GLV_V:Net_3111_9\, \ADC_GLV_V:Net_3111_8\,
 			\ADC_GLV_V:Net_3111_7\, \ADC_GLV_V:Net_3111_6\, \ADC_GLV_V:Net_3111_5\, \ADC_GLV_V:Net_3111_4\,
 			\ADC_GLV_V:Net_3111_3\, \ADC_GLV_V:Net_3111_2\, \ADC_GLV_V:Net_3111_1\, \ADC_GLV_V:Net_3111_0\),
-		eos_intr=>Net_268,
+		eos_intr=>Net_1278,
 		irq=>\ADC_GLV_V:Net_3112\,
 		sw_negvref=>zero,
 		cfg_st_sel=>(zero, zero),
@@ -2296,7 +2296,7 @@ D_BL:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"02150ba5-aa63-4d05-9263-07888a07a679",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
-		init_dr_st=>"0",
+		init_dr_st=>"1",
 		input_sync=>"1",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",

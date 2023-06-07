@@ -1,5 +1,5 @@
 -- Project:   Dashboard
--- Generated: 06/07/2023 13:39:51
+-- Generated: 06/07/2023 15:56:56
 -- PSoC Creator  4.4
 
 ENTITY Dashboard IS
@@ -92,10 +92,10 @@ ARCHITECTURE __DEFAULT__ OF Dashboard IS
     SIGNAL Net_12 : bit;
     SIGNAL Net_1271 : bit;
     SIGNAL Net_1272 : bit;
+    SIGNAL Net_1278 : bit;
+    SIGNAL Net_1279 : bit;
     SIGNAL Net_25 : bit;
     SIGNAL Net_26 : bit;
-    SIGNAL Net_268 : bit;
-    SIGNAL Net_269 : bit;
     SIGNAL Net_27 : bit;
     SIGNAL Net_28 : bit;
     SIGNAL Net_31_0 : bit;
@@ -1921,7 +1921,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "02150ba5-aa63-4d05-9263-07888a07a679",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -3126,7 +3126,7 @@ BEGIN
             cy_registers => "")
         PORT MAP(
             clock => \ADC_GLV_V:Net_1845_ff10\,
-            sample_done => Net_269,
+            sample_done => Net_1279,
             chan_id_valid => \ADC_GLV_V:Net_3108\,
             chan_id_3 => \ADC_GLV_V:Net_3109_3\,
             chan_id_2 => \ADC_GLV_V:Net_3109_2\,
@@ -3145,7 +3145,7 @@ BEGIN
             data_2 => \ADC_GLV_V:Net_3111_2\,
             data_1 => \ADC_GLV_V:Net_3111_1\,
             data_0 => \ADC_GLV_V:Net_3111_0\,
-            tr_sar_out => Net_268,
+            tr_sar_out => Net_1278,
             irq => \ADC_GLV_V:Net_3112\,
             sw_negvref => open,
             cfg_st_sel_1 => open,

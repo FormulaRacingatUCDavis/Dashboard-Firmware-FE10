@@ -26,6 +26,18 @@
 
 /* `#START TX_RX_FUNCTION` */
 
+extern volatile uint8_t state;
+extern volatile uint32_t pedalOK;
+extern volatile uint8_t PACK_TEMP;
+extern volatile uint8_t BSPD_CATCH;
+extern volatile uint16_t CURRENT;
+extern volatile uint8_t soc;
+extern volatile uint32_t voltage;
+extern volatile uint16_t bms_status;
+extern volatile uint8_t shutdown_flags;
+extern volatile uint8_t CAPACITOR_VOLT;
+extern volatile uint8_t ACK_RX;
+
 /* `#END` */
 
 

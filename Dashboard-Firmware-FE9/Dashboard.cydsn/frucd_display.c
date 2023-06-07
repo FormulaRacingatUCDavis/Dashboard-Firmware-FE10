@@ -477,7 +477,7 @@ void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y
                 }
                 UG_PutColorString(xFont, yFont, "BSPD TRIPD", C_BLACK, color); //whitespace to clear
                 break;
-            case ESTOP:
+            case SHUTDOWN_CIRCUIT_OPEN:
                 color = C_RED;
                 if (color != last_state_color) {
                     // only draw rectangle if color changed
@@ -486,8 +486,35 @@ void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y
                 }
                 UG_PutColorString(xFont, yFont, "SHTDWN OPN", C_BLACK, color); //whitespace to clear
                 break;
+            case UNCALIBRATED:
+                color = C_RED;
+                if (color != last_state_color) {
+                    // only draw rectangle if color changed
+                    UG_FillFrame(x1, y1, x2, y2, color);
+                    last_state_color = color;
+                }
+                UG_PutColorString(xFont, yFont, "UNCALIBRTD", C_BLACK, color); //whitespace to clear
+                break;
+            case HARD_BSPD:
+                color = C_RED;
+                if (color != last_state_color) {
+                    // only draw rectangle if color changed
+                    UG_FillFrame(x1, y1, x2, y2, color);
+                    last_state_color = color;
+                }
+                UG_PutColorString(xFont, yFont, "HARD BSPD", C_BLACK, color); //whitespace to clear
+                break;
+            default:
+                color = C_RED;
+                if (color != last_state_color) {
+                    // only draw rectangle if color changed
+                    UG_FillFrame(x1, y1, x2, y2, color);
+                    last_state_color = color;
+                }
+                UG_PutColorString(xFont, yFont, "YO WTF?", C_BLACK, color); //whitespace to clear
+                break;
+           
         }
-        
     } else {
         // *************** NO FAULTS ***************
         color = C_GREEN;

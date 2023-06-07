@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: ADC_GLV_V.h
-* Version 2.50
+* Version 2.60
 *
 * Description:
 *  This file contains the function prototypes and constants used in
@@ -136,7 +136,7 @@ typedef struct
 #define ADC_GLV_V_TOTAL_CHANNELS_NUM             (2u)
 #define ADC_GLV_V_SEQUENCED_CHANNELS_NUM         (2u)
 #define ADC_GLV_V_DEFAULT_EN_CHANNELS            (3u)
-#define ADC_GLV_V_NOMINAL_CLOCK_FREQ             (5333333)
+#define ADC_GLV_V_NOMINAL_CLOCK_FREQ             (4800000)
 #define ADC_GLV_V_INJ_CHANNEL_ENABLED            (0u)
 #define ADC_GLV_V_IRQ_REMOVE                     (0u)
 
