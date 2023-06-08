@@ -228,7 +228,8 @@ int main()
         
         /*      END display latest data         */
         
-        if (state == DRIVE && previous_state == HV_ENABLED) {
+        // if (state == DRIVE && previous_state == HV_ENABLED) {
+        if (state == FAULT) {
             // entered drive; sound ready to drive buzzer
             Buzzer_Write(1);
             // EV.10.5.2: Sounded continuously for minimum 1 second

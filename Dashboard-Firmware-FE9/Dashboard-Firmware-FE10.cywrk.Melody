@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard-Firmware-FE10\Dashboard\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\frucd_display.c">
 <ExpandedNodeIds>
 <v>Dashboard-Firmware-FE10</v>
 <v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign</v>
@@ -65,18 +65,6 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\Dashboard</v>
-<v>Dashboard-Firmware-FE10\Dashboard\TopDesign</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Pins</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Analog</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\DMA</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Clocks</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Interrupts</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\System</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Directives</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Flash Security</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Header Files</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Header Files\cyapicallbacks.h</v>
@@ -89,6 +77,18 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_config.h</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.c</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\can_manga.c</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\can_manga.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\data.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\device.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\fonts.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\LED.h</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Source Files\main.c</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ADC_GLV_V</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ADC_GLV_V_intClock</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ADC_GLV_V_IRQ</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -225,28 +225,9 @@
 <VisibleNodeIds>
 <v>Dashboard-Firmware-FE10</v>
 <v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.elf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.hex</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.map</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.gpdsc</v>
 <v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.rpt</v>
 <v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01_timing.html</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_INT.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_intClock.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_IRQ.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

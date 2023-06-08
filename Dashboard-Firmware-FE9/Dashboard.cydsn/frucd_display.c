@@ -42,7 +42,7 @@ void debugTemplate(){
     UG_PutString(10, 140, "GLV V:");
     UG_PutString(250, 140, "MOTOR T:");
     UG_PutString(10, 205, "SHUTDOWN:");
-    UG_PutString(250, 205, "MOTOR FAULT:");
+    UG_PutString(250, 205, "MC FAULT:");
 }
 void driveTemplate(){
     UG_FillScreen(C_BLACK);
@@ -395,7 +395,7 @@ void disp_state(uint8_t state) { // TODO
 */
 
 
-void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) { // TODO
+void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) { 
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
     int stringSize;
@@ -503,6 +503,15 @@ void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y
                     last_state_color = color;
                 }
                 UG_PutColorString(xFont, yFont, "HARD BSPD", C_BLACK, color); //whitespace to clear
+                break;
+            case MC_FAULT:
+                color = C_RED;
+                if (color != last_state_color) {
+                    // only draw rectangle if color changed
+                    UG_FillFrame(x1, y1, x2, y2, color);
+                    last_state_color = color;
+                }
+                UG_PutColorString(xFont, yFont, "MC FAULT", C_BLACK, color); //whitespace to clear
                 break;
             default:
                 color = C_RED;

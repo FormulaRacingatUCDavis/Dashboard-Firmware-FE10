@@ -24,7 +24,8 @@ typedef enum {
     BRAKE_IMPLAUSIBLE,
     SHUTDOWN_CIRCUIT_OPEN,
     UNCALIBRATED,
-    HARD_BSPD
+    HARD_BSPD,
+    MC_FAULT
 } vcu_fault;
 
 typedef enum {
