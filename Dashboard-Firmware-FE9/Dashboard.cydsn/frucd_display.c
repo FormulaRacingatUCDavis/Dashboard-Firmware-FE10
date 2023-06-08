@@ -782,72 +782,72 @@ void disp_shutdown_circuit(uint8_t shutdown_flags, uint16_t x1, uint16_t y1, uin
         
     }
     UG_COLOR color;
-
-    switch(shutdown_flags) {
-        case IMD_OK:
-            color = C_RED;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "IMD_OK", C_BLACK, color);
-            break;
-        case BMS_OK:
-            color = C_RED;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "BMS_OK", C_BLACK, color);
-            break;
-        case Shutdown_Final:
-            color = C_RED;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "Shutdown_Final", C_BLACK, color);
-            break;
-        case AIR1:
-            color = C_RED;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "AIR_1", C_BLACK, color);
-            break;
-        case AIR2:
-            color = C_RED;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "AIR_2", C_BLACK, color);
-            break;
-        case Precharge:
-            color = C_RED;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "Precharge", C_BLACK, color);
-            break;
-        default:
-            color = C_GREEN;
-            if (color != last_shutdown_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_shutdown_color = color;
-            }
-            UG_PutColorString(xFont, yFont, "None", C_BLACK, color);
-            break;
+    
+    // 00| IMD_OK | BMS_OK | Shutdown Final | AIR1 | AIR2 | Precharge
+    if (shutdown_flags & 0b00100000){
+        color = C_RED;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "IMD_OK", C_BLACK, color);
     }
+    else if (shutdown_flags & 0b00010000) {
+        color = C_RED;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "BMS_OK", C_BLACK, color);
+    }
+    else if (shutdown_flags & 0b00001000) {
+        color = C_RED;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "Shutdown_Final", C_BLACK, color);
+    }
+    else if (shutdown_flags & 0b00000100) {
+        color = C_RED;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "AIR_1", C_BLACK, color);
+    }
+    else if (shutdown_flags & 0b00000010) {
+        color = C_RED;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "AIR_2", C_BLACK, color);
+    }
+    else if (shutdown_flags & 0b00000001) {
+        color = C_RED;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "Precharge", C_BLACK, color);
+    }
+    else {
+        color = C_GREEN;
+        if (color != last_shutdown_color) {
+            // only draw rectangle if color changed
+            UG_FillFrame(x1, y1, x2, y2, color);
+            last_shutdown_color = color;
+        }
+        UG_PutColorString(xFont, yFont, "None", C_BLACK, color);
+    }
+    
     
     UG_FontSelect(&FONT_12X16);
 }
