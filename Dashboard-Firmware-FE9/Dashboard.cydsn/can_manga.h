@@ -27,7 +27,8 @@ typedef enum {
     BMS_VOLTAGES = 0x388,
     BMS_TEMPERATURES = 0x389,
     MC_VOLTAGE_INFO = 0x0A7,
-    MC_INTERNAL_STATES = 0xAA
+    MC_INTERNAL_STATES = 0xAA,
+    MC_TEMPERATURE_3 = 0xA2
 } CAN_ID;
     
 // Basic CAN functionality
@@ -41,11 +42,6 @@ void can_send_switches(uint8_t sw_status);
 void can_send_charge(uint8_t charge, uint8_t save_soc);
 
 uint8_t getCapacitorVoltage();
-/*uint8_t getCurtisFaultCheck();
-uint8_t getCurtisHeartBeatCheck();
-uint8_t getAckRx();
-uint8_t getErrorTolerance();
-uint8_t getABSMotorRPM();*/
 uint8_t getPedalLow();
 uint8_t getPedalHigh();
 

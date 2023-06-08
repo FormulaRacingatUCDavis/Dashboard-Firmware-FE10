@@ -17,6 +17,7 @@ volatile int ERROR_IDX;
 volatile uint32_t voltage = 0;
 uint8_t charge = 0;
 uint16_t curr_voltage = 0;
+uint8_t mc_fault_codes[8];
 
 uint8_t SMALL_FONT = 0;
 uint8_t BIG_FONT = 1;
@@ -214,8 +215,8 @@ int main()
             disp_glv_v(glv_v, 10, 165, 240, 195, SMALL_FONT);
             disp_motor_temp(motor_temp, 250, 165, 470, 195, SMALL_FONT);
             disp_shutdown_circuit(shutdown_flags, 10, 230, 240, 260, SMALL_FONT);
-            disp_debug(debug_data, 250, 230, 470, 260, SMALL_FONT);
-            //disp_mc_fault();
+            //disp_debug(debug_data, 250, 230, 470, 260, SMALL_FONT);
+            disp_mc_fault(mc_fault_codes, 250, 230, 470, 260, SMALL_FONT);
         }else{
             disp_SOC(soc, 30, 35, 210, 170, BIG_FONT);
             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);

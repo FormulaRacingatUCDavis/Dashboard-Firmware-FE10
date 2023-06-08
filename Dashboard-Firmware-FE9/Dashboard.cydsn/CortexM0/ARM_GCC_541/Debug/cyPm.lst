@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
   28:Generated_Source\PSoC4/cyPm.c **** * It means that the CPU has indicated that it is in the sleep mode and
   29:Generated_Source\PSoC4/cyPm.c **** * its main clock can be removed. It is identical to Active from a peripheral
   30:Generated_Source\PSoC4/cyPm.c **** * point of view. Any enabled interrupts can cause wakeup from the Sleep mode.
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 2
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 2
 
 
   31:Generated_Source\PSoC4/cyPm.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
   66              		.section	.text.CySysPmDeepSleep,"ax",%progbits
   67              		.align	1
   68              		.global	CySysPmDeepSleep
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 3
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 3
 
 
   69              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
   80:Generated_Source\PSoC4/cyPm.c **** 
   81:Generated_Source\PSoC4/cyPm.c ****     #if(CY_IP_ECO_SRSSLT)
   82:Generated_Source\PSoC4/cyPm.c ****         if(0u != (CY_SYS_ECO_CLK_SELECT_REG & CY_SYS_ECO_CLK_SELECT_ECO_PLL_MASK))
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 4
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 4
 
 
   83:Generated_Source\PSoC4/cyPm.c ****         {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  118 0026 9B05     		lsls	r3, r3, #22
  119 0028 8905     		lsls	r1, r1, #22
  120 002a 1940     		ands	r1, r3
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 5
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 5
 
 
  121 002c 0B00     		movs	r3, r1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  153              	.LVL8:
  122:Generated_Source\PSoC4/cyPm.c ****     #endif /* (CY_IP_SRSSV2) */
  123:Generated_Source\PSoC4/cyPm.c ****     
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 6
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 6
 
 
  124:Generated_Source\PSoC4/cyPm.c ****     /* Sleep and wait for interrupt */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  143:Generated_Source\PSoC4/cyPm.c ****         CY_PM_CPUSS_CONFIG_REG &= (uint32) (~CY_PM_CPUSS_CONFIG_FLSH_ACC_BYPASS);
  144:Generated_Source\PSoC4/cyPm.c ****     #endif /* (CY_IP_CPUSS && CY_IP_SRSSV2) */
  145:Generated_Source\PSoC4/cyPm.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 7
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 7
 
 
  146:Generated_Source\PSoC4/cyPm.c ****     #if(CY_IP_ECO_SRSSLT)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  169:Generated_Source\PSoC4/cyPm.c ****     * omitted, the IO-cells will be frozen in the same way as they are
  170:Generated_Source\PSoC4/cyPm.c ****     * in the Active to Deep Sleep transition, but will lose their state on wake up
  171:Generated_Source\PSoC4/cyPm.c ****     * (because of the reset occurring at that time).
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 8
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 8
 
 
  172:Generated_Source\PSoC4/cyPm.c ****     *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
   24:Generated_Source\PSoC4/cyPm.h **** 
   25:Generated_Source\PSoC4/cyPm.h **** /**
   26:Generated_Source\PSoC4/cyPm.h **** * \addtogroup group_power_management Power Management API
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 9
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 9
 
 
   27:Generated_Source\PSoC4/cyPm.h **** * @{
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
   81:Generated_Source\PSoC4/cyPm.h **** 
   82:Generated_Source\PSoC4/cyPm.h **** 
   83:Generated_Source\PSoC4/cyPm.h **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 10
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 10
 
 
   84:Generated_Source\PSoC4/cyPm.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  138:Generated_Source\PSoC4/cyPm.h **** /* CPU System Control Register */
  139:Generated_Source\PSoC4/cyPm.h **** #if (CY_IP_CPUSS_CM0)
  140:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_CPU_SCR_REG                   (*(reg32 *) CYREG_CM0_SCR)
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 11
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 11
 
 
  141:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_CPU_SCR_PTR                   ( (reg32 *) CYREG_CM0_SCR)
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  195:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_PWR_STOP_STOP                 ((uint32)((uint32)1u << CY_PM_PWR_STOP_STOP_SHIFT))
  196:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_PWR_STOP_TOKEN_MASK           ((uint32)(0xFFu))
  197:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_PWR_STOP_TOKEN_XRES           ((uint32)(0x00u))
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 12
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 12
 
 
  198:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_PWR_STOP_TOKEN_HIB            ((uint32)(0xF1u))
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  245 000c 0906     		lsls	r1, r1, #24
  246              	.LBB9:
  247              	.LBB7:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 13
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 13
 
 
  248              		.loc 2 230 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  251:Generated_Source\PSoC4/cyPm.h ****             #endif /* CYREG_GPIO_PRT5_PC */
  252:Generated_Source\PSoC4/cyPm.h **** 
  253:Generated_Source\PSoC4/cyPm.h ****             #ifdef CYREG_GPIO_PRT6_PC
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 14
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 14
 
 
  254:Generated_Source\PSoC4/cyPm.h ****                 CY_CLEAR_REG32_FIELD( CYREG_GPIO_PRT6_PC, CYFLD_GPIO_PRT_PORT_IB_MODE_SEL);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  317 0078 FB31     		adds	r1, r1, #251
  318 007a 1368     		ldr	r3, [r2]
  319 007c 8B43     		bics	r3, r1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 15
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 15
 
 
  320 007e 0E39     		subs	r1, r1, #14
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  219:Generated_Source\PSoC4/cyPm.c **** 
  220:Generated_Source\PSoC4/cyPm.c **** 
  221:Generated_Source\PSoC4/cyPm.c ****     /*******************************************************************************
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 16
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 16
 
 
  222:Generated_Source\PSoC4/cyPm.c ****     * Function Name: CySysPmStop
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  276:Generated_Source\PSoC4/cyPm.c ****     ****************************************************************************//**
  277:Generated_Source\PSoC4/cyPm.c ****     *
  278:Generated_Source\PSoC4/cyPm.c ****     * Wake up from the stop mode is performed by toggling the wakeup pin,
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 17
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 17
 
 
  279:Generated_Source\PSoC4/cyPm.c ****     * causing a normal boot procedure to occur. This function assigns
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  298:Generated_Source\PSoC4/cyPm.c ****         CyExitCriticalSection(interruptState);
  397              		.loc 1 298 0
  398 0020 FFF7FEFF 		bl	CyExitCriticalSection
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 18
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 18
 
 
  399              	.LVL18:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  324:Generated_Source\PSoC4/cyPm.c ****             reason = CY_PM_RESET_REASON_XRES;
  325:Generated_Source\PSoC4/cyPm.c ****             break;
  326:Generated_Source\PSoC4/cyPm.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 19
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 19
 
 
  327:Generated_Source\PSoC4/cyPm.c ****         /* Wakeup from Hibernate */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  462              	.LFB8:
  344:Generated_Source\PSoC4/cyPm.c **** 
  345:Generated_Source\PSoC4/cyPm.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 20
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 20
 
 
  346:Generated_Source\PSoC4/cyPm.c ****     /*******************************************************************************
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  375:Generated_Source\PSoC4/cyPm.c **** 
  376:Generated_Source\PSoC4/cyPm.c ****             /* If reading after writing, read this register three times to delay
  377:Generated_Source\PSoC4/cyPm.c ****             *  enough time for internal settling.
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 21
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 21
 
 
  378:Generated_Source\PSoC4/cyPm.c ****             */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  248:Generated_Source\PSoC4/cyPm.c **** 
  529              		.loc 1 248 0
  530 0006 8023     		movs	r3, #128
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 22
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 22
 
 
  531 0008 084C     		ldr	r4, .L37
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  579              		.thumb_func
  580              		.type	CySysPmUnfreezeIo, %function
  581              	CySysPmUnfreezeIo:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 23
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 23
 
 
  582              	.LFB9:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  604 0010 0A40     		ands	r2, r1
  605 0012 2243     		orrs	r2, r4
  606 0014 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 24
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 24
 
 
  417:Generated_Source\PSoC4/cyPm.c **** 
@@ -1430,48 +1430,48 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  639 0006 00000000 		.4byte	.Ldebug_abbrev0
  640 000a 04       		.byte	0x4
  641 000b 01       		.uleb128 0x1
- 642 000c 73020000 		.4byte	.LASF34
+ 642 000c 83020000 		.4byte	.LASF34
  643 0010 0C       		.byte	0xc
- 644 0011 2D020000 		.4byte	.LASF35
- 645 0015 17010000 		.4byte	.LASF36
+ 644 0011 3D020000 		.4byte	.LASF35
+ 645 0015 06000000 		.4byte	.LASF36
  646 0019 20000000 		.4byte	.Ldebug_ranges0+0x20
  647 001d 00000000 		.4byte	0
  648 0021 00000000 		.4byte	.Ldebug_line0
  649 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 25
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 25
 
 
  650 0026 01       		.byte	0x1
  651 0027 06       		.byte	0x6
- 652 0028 57020000 		.4byte	.LASF0
+ 652 0028 67020000 		.4byte	.LASF0
  653 002c 02       		.uleb128 0x2
  654 002d 01       		.byte	0x1
  655 002e 08       		.byte	0x8
- 656 002f 98000000 		.4byte	.LASF1
+ 656 002f 07010000 		.4byte	.LASF1
  657 0033 02       		.uleb128 0x2
  658 0034 02       		.byte	0x2
  659 0035 05       		.byte	0x5
- 660 0036 09020000 		.4byte	.LASF2
+ 660 0036 19020000 		.4byte	.LASF2
  661 003a 02       		.uleb128 0x2
  662 003b 02       		.byte	0x2
  663 003c 07       		.byte	0x7
- 664 003d 39000000 		.4byte	.LASF3
+ 664 003d A8000000 		.4byte	.LASF3
  665 0041 02       		.uleb128 0x2
  666 0042 04       		.byte	0x4
  667 0043 05       		.byte	0x5
- 668 0044 24020000 		.4byte	.LASF4
+ 668 0044 34020000 		.4byte	.LASF4
  669 0048 02       		.uleb128 0x2
  670 0049 04       		.byte	0x4
  671 004a 07       		.byte	0x7
- 672 004b B5000000 		.4byte	.LASF5
+ 672 004b 24010000 		.4byte	.LASF5
  673 004f 02       		.uleb128 0x2
  674 0050 08       		.byte	0x8
  675 0051 05       		.byte	0x5
- 676 0052 DF010000 		.4byte	.LASF6
+ 676 0052 EF010000 		.4byte	.LASF6
  677 0056 02       		.uleb128 0x2
  678 0057 08       		.byte	0x8
  679 0058 07       		.byte	0x7
- 680 0059 81000000 		.4byte	.LASF7
+ 680 0059 F0000000 		.4byte	.LASF7
  681 005d 03       		.uleb128 0x3
  682 005e 04       		.byte	0x4
  683 005f 05       		.byte	0x5
@@ -1479,37 +1479,37 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  685 0064 02       		.uleb128 0x2
  686 0065 04       		.byte	0x4
  687 0066 07       		.byte	0x7
- 688 0067 76010000 		.4byte	.LASF8
+ 688 0067 86010000 		.4byte	.LASF8
  689 006b 04       		.uleb128 0x4
- 690 006c C7000000 		.4byte	.LASF9
+ 690 006c 36010000 		.4byte	.LASF9
  691 0070 03       		.byte	0x3
  692 0071 FC01     		.2byte	0x1fc
  693 0073 2C000000 		.4byte	0x2c
  694 0077 04       		.uleb128 0x4
- 695 0078 F2000000 		.4byte	.LASF10
+ 695 0078 61010000 		.4byte	.LASF10
  696 007c 03       		.byte	0x3
  697 007d FD01     		.2byte	0x1fd
  698 007f 3A000000 		.4byte	0x3a
  699 0083 04       		.uleb128 0x4
- 700 0084 F9000000 		.4byte	.LASF11
+ 700 0084 68010000 		.4byte	.LASF11
  701 0088 03       		.byte	0x3
  702 0089 FE01     		.2byte	0x1fe
  703 008b 48000000 		.4byte	0x48
  704 008f 02       		.uleb128 0x2
  705 0090 04       		.byte	0x4
  706 0091 04       		.byte	0x4
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 26
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 26
 
 
- 707 0092 7B000000 		.4byte	.LASF12
+ 707 0092 EA000000 		.4byte	.LASF12
  708 0096 02       		.uleb128 0x2
  709 0097 08       		.byte	0x8
  710 0098 04       		.byte	0x4
- 711 0099 D9000000 		.4byte	.LASF13
+ 711 0099 48010000 		.4byte	.LASF13
  712 009d 02       		.uleb128 0x2
  713 009e 01       		.byte	0x1
  714 009f 08       		.byte	0x8
- 715 00a0 F7010000 		.4byte	.LASF14
+ 715 00a0 07020000 		.4byte	.LASF14
  716 00a4 04       		.uleb128 0x4
  717 00a5 00000000 		.4byte	.LASF15
  718 00a9 03       		.byte	0x3
@@ -1518,7 +1518,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  721 00b0 05       		.uleb128 0x5
  722 00b1 77000000 		.4byte	0x77
  723 00b5 04       		.uleb128 0x4
- 724 00b6 06000000 		.4byte	.LASF16
+ 724 00b6 75000000 		.4byte	.LASF16
  725 00ba 03       		.byte	0x3
  726 00bb A802     		.2byte	0x2a8
  727 00bd C1000000 		.4byte	0xc1
@@ -1527,13 +1527,13 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  730 00c6 02       		.uleb128 0x2
  731 00c7 08       		.byte	0x8
  732 00c8 04       		.byte	0x4
- 733 00c9 4B020000 		.4byte	.LASF17
+ 733 00c9 5B020000 		.4byte	.LASF17
  734 00cd 02       		.uleb128 0x2
  735 00ce 04       		.byte	0x4
  736 00cf 07       		.byte	0x7
- 737 00d0 D6010000 		.4byte	.LASF18
+ 737 00d0 E6010000 		.4byte	.LASF18
  738 00d4 06       		.uleb128 0x6
- 739 00d5 25000000 		.4byte	.LASF19
+ 739 00d5 94000000 		.4byte	.LASF19
  740 00d9 01       		.byte	0x1
  741 00da 21       		.byte	0x21
  742 00db 00000000 		.4byte	.LFB2
@@ -1542,7 +1542,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  745 00e4 9C       		.byte	0x9c
  746 00e5 0B010000 		.4byte	0x10b
  747 00e9 07       		.uleb128 0x7
- 748 00ea A6000000 		.4byte	.LASF21
+ 748 00ea 15010000 		.4byte	.LASF21
  749 00ee 01       		.byte	0x1
  750 00ef 23       		.byte	0x23
  751 00f0 6B000000 		.4byte	0x6b
@@ -1555,10 +1555,10 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  758 0106 F4020000 		.4byte	0x2f4
  759 010a 00       		.byte	0
  760 010b 06       		.uleb128 0x6
- 761 010c 13020000 		.4byte	.LASF20
+ 761 010c 23020000 		.4byte	.LASF20
  762 0110 01       		.byte	0x1
  763 0111 40       		.byte	0x40
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 27
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 27
 
 
  764 0112 00000000 		.4byte	.LFB3
@@ -1567,13 +1567,13 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  767 011b 9C       		.byte	0x9c
  768 011c 8D010000 		.4byte	0x18d
  769 0120 07       		.uleb128 0x7
- 770 0121 A6000000 		.4byte	.LASF21
+ 770 0121 15010000 		.4byte	.LASF21
  771 0125 01       		.byte	0x1
  772 0126 42       		.byte	0x42
  773 0127 6B000000 		.4byte	0x6b
  774 012b 13000000 		.4byte	.LLST1
  775 012f 09       		.uleb128 0x9
- 776 0130 FC010000 		.4byte	.LASF22
+ 776 0130 0C020000 		.4byte	.LASF22
  777 0134 01       		.byte	0x1
  778 0135 44       		.byte	0x44
  779 0136 C1000000 		.4byte	0xc1
@@ -1581,7 +1581,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  781 013b 91       		.byte	0x91
  782 013c 6C       		.sleb128 -20
  783 013d 07       		.uleb128 0x7
- 784 013e 32000000 		.4byte	.LASF23
+ 784 013e A1000000 		.4byte	.LASF23
  785 0142 01       		.byte	0x1
  786 0143 4C       		.byte	0x4c
  787 0144 83000000 		.4byte	0x83
@@ -1618,19 +1618,19 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  818 0187 50       		.byte	0x50
  819 0188 02       		.uleb128 0x2
  820 0189 75       		.byte	0x75
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 28
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 28
 
 
  821 018a 00       		.sleb128 0
  822 018b 00       		.byte	0
  823 018c 00       		.byte	0
  824 018d 0D       		.uleb128 0xd
- 825 018e 5D000000 		.4byte	.LASF37
+ 825 018e CC000000 		.4byte	.LASF37
  826 0192 02       		.byte	0x2
  827 0193 E3       		.byte	0xe3
  828 0194 03       		.byte	0x3
  829 0195 06       		.uleb128 0x6
- 830 0196 4C000000 		.4byte	.LASF24
+ 830 0196 BB000000 		.4byte	.LASF24
  831 019a 01       		.byte	0x1
  832 019b B8       		.byte	0xb8
  833 019c 00000000 		.4byte	.LFB4
@@ -1639,7 +1639,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  836 01a5 9C       		.byte	0x9c
  837 01a6 DB010000 		.4byte	0x1db
  838 01aa 07       		.uleb128 0x7
- 839 01ab A6000000 		.4byte	.LASF21
+ 839 01ab 15010000 		.4byte	.LASF21
  840 01af 01       		.byte	0x1
  841 01b0 BA       		.byte	0xba
  842 01b1 6B000000 		.4byte	0x6b
@@ -1658,7 +1658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  855 01d6 F4020000 		.4byte	0x2f4
  856 01da 00       		.byte	0
  857 01db 0F       		.uleb128 0xf
- 858 01dc 0C000000 		.4byte	.LASF25
+ 858 01dc 7B000000 		.4byte	.LASF25
  859 01e0 01       		.byte	0x1
  860 01e1 2001     		.2byte	0x120
  861 01e3 00000000 		.4byte	.LFB6
@@ -1667,18 +1667,18 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  864 01ec 9C       		.byte	0x9c
  865 01ed 24020000 		.4byte	0x224
  866 01f1 10       		.uleb128 0x10
- 867 01f2 B7010000 		.4byte	.LASF38
+ 867 01f2 C7010000 		.4byte	.LASF38
  868 01f6 01       		.byte	0x1
  869 01f7 2001     		.2byte	0x120
  870 01f9 83000000 		.4byte	0x83
  871 01fd 80000000 		.4byte	.LLST4
  872 0201 11       		.uleb128 0x11
- 873 0202 A6000000 		.4byte	.LASF21
+ 873 0202 15010000 		.4byte	.LASF21
  874 0206 01       		.byte	0x1
  875 0207 2201     		.2byte	0x122
  876 0209 6B000000 		.4byte	0x6b
  877 020d AC000000 		.4byte	.LLST5
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 29
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 29
 
 
  878 0211 08       		.uleb128 0x8
@@ -1689,7 +1689,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  883 021f F4020000 		.4byte	0x2f4
  884 0223 00       		.byte	0
  885 0224 12       		.uleb128 0x12
- 886 0225 C0010000 		.4byte	.LASF39
+ 886 0225 D0010000 		.4byte	.LASF39
  887 0229 01       		.byte	0x1
  888 022a 3C01     		.2byte	0x13c
  889 022c 83000000 		.4byte	0x83
@@ -1699,14 +1699,14 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  893 0239 9C       		.byte	0x9c
  894 023a 4F020000 		.4byte	0x24f
  895 023e 11       		.uleb128 0x11
- 896 023f B0010000 		.4byte	.LASF26
+ 896 023f C0010000 		.4byte	.LASF26
  897 0243 01       		.byte	0x1
  898 0244 3E01     		.2byte	0x13e
  899 0246 83000000 		.4byte	0x83
  900 024a BF000000 		.4byte	.LLST6
  901 024e 00       		.byte	0
  902 024f 0F       		.uleb128 0xf
- 903 0250 63020000 		.4byte	.LASF27
+ 903 0250 73020000 		.4byte	.LASF27
  904 0254 01       		.byte	0x1
  905 0255 6601     		.2byte	0x166
  906 0257 00000000 		.4byte	.LFB8
@@ -1715,7 +1715,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  909 0260 9C       		.byte	0x9c
  910 0261 88020000 		.4byte	0x288
  911 0265 11       		.uleb128 0x11
- 912 0266 A6000000 		.4byte	.LASF21
+ 912 0266 15010000 		.4byte	.LASF21
  913 026a 01       		.byte	0x1
  914 026b 6801     		.2byte	0x168
  915 026d 6B000000 		.4byte	0x6b
@@ -1728,7 +1728,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  922 0283 F4020000 		.4byte	0x2f4
  923 0287 00       		.byte	0
  924 0288 06       		.uleb128 0x6
- 925 0289 CD000000 		.4byte	.LASF28
+ 925 0289 3C010000 		.4byte	.LASF28
  926 028d 01       		.byte	0x1
  927 028e F3       		.byte	0xf3
  928 028f 00000000 		.4byte	.LFB5
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  932 0299 B0020000 		.4byte	0x2b0
  933 029d 08       		.uleb128 0x8
  934 029e 06000000 		.4byte	.LVL24
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 30
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 30
 
 
  935 02a2 E9020000 		.4byte	0x2e9
@@ -1747,7 +1747,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  938 02ab 4F020000 		.4byte	0x24f
  939 02af 00       		.byte	0
  940 02b0 0F       		.uleb128 0xf
- 941 02b1 E0000000 		.4byte	.LASF29
+ 941 02b1 4F010000 		.4byte	.LASF29
  942 02b5 01       		.byte	0x1
  943 02b6 9601     		.2byte	0x196
  944 02b8 00000000 		.4byte	.LFB9
@@ -1756,7 +1756,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  947 02c1 9C       		.byte	0x9c
  948 02c2 E9020000 		.4byte	0x2e9
  949 02c6 11       		.uleb128 0x11
- 950 02c7 A6000000 		.4byte	.LASF21
+ 950 02c7 15010000 		.4byte	.LASF21
  951 02cb 01       		.byte	0x1
  952 02cc 9801     		.2byte	0x198
  953 02ce 6B000000 		.4byte	0x6b
@@ -1769,23 +1769,23 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  960 02e4 F4020000 		.4byte	0x2f4
  961 02e8 00       		.byte	0
  962 02e9 13       		.uleb128 0x13
- 963 02ea 00010000 		.4byte	.LASF30
- 964 02ee 00010000 		.4byte	.LASF30
+ 963 02ea 6F010000 		.4byte	.LASF30
+ 964 02ee 6F010000 		.4byte	.LASF30
  965 02f2 04       		.byte	0x4
  966 02f3 F8       		.byte	0xf8
  967 02f4 13       		.uleb128 0x13
- 968 02f5 83010000 		.4byte	.LASF31
- 969 02f9 83010000 		.4byte	.LASF31
+ 968 02f5 93010000 		.4byte	.LASF31
+ 969 02f9 93010000 		.4byte	.LASF31
  970 02fd 04       		.byte	0x4
  971 02fe F9       		.byte	0xf9
  972 02ff 13       		.uleb128 0x13
- 973 0300 99010000 		.4byte	.LASF32
- 974 0304 99010000 		.4byte	.LASF32
+ 973 0300 A9010000 		.4byte	.LASF32
+ 974 0304 A9010000 		.4byte	.LASF32
  975 0308 04       		.byte	0x4
  976 0309 6B       		.byte	0x6b
  977 030a 13       		.uleb128 0x13
- 978 030b ED010000 		.4byte	.LASF33
- 979 030f ED010000 		.4byte	.LASF33
+ 978 030b FD010000 		.4byte	.LASF33
+ 979 030f FD010000 		.4byte	.LASF33
  980 0313 04       		.byte	0x4
  981 0314 ED       		.byte	0xed
  982 0315 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  989 0004 0E       		.uleb128 0xe
  990 0005 13       		.uleb128 0x13
  991 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 31
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 31
 
 
  992 0007 03       		.uleb128 0x3
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1046 003d 06       		.uleb128 0x6
  1047 003e 2E       		.uleb128 0x2e
  1048 003f 01       		.byte	0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 32
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 32
 
 
  1049 0040 3F       		.uleb128 0x3f
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1103 0079 0B       		.uleb128 0xb
  1104 007a 49       		.uleb128 0x49
  1105 007b 13       		.uleb128 0x13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 33
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 33
 
 
  1106 007c 02       		.uleb128 0x2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1160 00b9 01       		.uleb128 0x1
  1161 00ba 55       		.uleb128 0x55
  1162 00bb 17       		.uleb128 0x17
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 34
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 34
 
 
  1163 00bc 58       		.uleb128 0x58
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1217 00f3 05       		.uleb128 0x5
  1218 00f4 49       		.uleb128 0x49
  1219 00f5 13       		.uleb128 0x13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 35
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 35
 
 
  1220 00f6 02       		.uleb128 0x2
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1274 0008 0100     		.2byte	0x1
  1275 000a 50       		.byte	0x50
  1276 000b 00000000 		.4byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 36
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 36
 
 
  1277 000f 00000000 		.4byte	0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1329 0093 0100     		.2byte	0x1
  1330 0095 54       		.byte	0x54
  1331 0096 24000000 		.4byte	.LVL19
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 37
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 37
 
 
  1332 009a 30000000 		.4byte	.LFE6
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1386 0024 C0000000 		.4byte	.LFE4-.LFB4
  1387 0028 00000000 		.4byte	.LFB6
  1388 002c 30000000 		.4byte	.LFE6-.LFB6
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 38
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 38
 
 
  1389 0030 00000000 		.4byte	.LFB7
@@ -2269,215 +2269,219 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 1
  1430              	.LASF15:
  1431 0000 72656731 		.ascii	"reg16\000"
  1431      3600
- 1432              	.LASF16:
- 1433 0006 72656733 		.ascii	"reg32\000"
- 1433      3200
- 1434              	.LASF25:
- 1435 000c 43795379 		.ascii	"CySysPmSetWakeupPolarity\000"
- 1435      73506D53 
- 1435      65745761 
- 1435      6B657570 
- 1435      506F6C61 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 39
+ 1432              	.LASF36:
+ 1433 0006 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
+ 1433      73657273 
+ 1433      5C4D656C 
+ 1433      6F64795C 
+ 1433      4465736B 
+ 1434 0034 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
+ 1434      7368626F 
+ 1434      6172642D 
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 39
 
 
- 1436              	.LASF19:
- 1437 0025 43795379 		.ascii	"CySysPmSleep\000"
- 1437      73506D53 
- 1437      6C656570 
- 1437      00
- 1438              	.LASF23:
- 1439 0032 72656754 		.ascii	"regTmp\000"
- 1439      6D7000
- 1440              	.LASF3:
- 1441 0039 73686F72 		.ascii	"short unsigned int\000"
- 1441      7420756E 
- 1441      7369676E 
- 1441      65642069 
- 1441      6E7400
- 1442              	.LASF24:
- 1443 004c 43795379 		.ascii	"CySysPmHibernate\000"
- 1443      73506D48 
- 1443      69626572 
- 1443      6E617465 
- 1443      00
- 1444              	.LASF37:
- 1445 005d 43795379 		.ascii	"CySysPmHibPinsDisableInputBuf\000"
- 1445      73506D48 
- 1445      69625069 
- 1445      6E734469 
- 1445      7361626C 
- 1446              	.LASF12:
- 1447 007b 666C6F61 		.ascii	"float\000"
- 1447      7400
- 1448              	.LASF7:
- 1449 0081 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1449      206C6F6E 
- 1449      6720756E 
- 1449      7369676E 
- 1449      65642069 
- 1450              	.LASF1:
- 1451 0098 756E7369 		.ascii	"unsigned char\000"
- 1451      676E6564 
- 1451      20636861 
- 1451      7200
- 1452              	.LASF21:
- 1453 00a6 696E7465 		.ascii	"interruptState\000"
- 1453      72727570 
- 1453      74537461 
- 1453      746500
- 1454              	.LASF5:
- 1455 00b5 6C6F6E67 		.ascii	"long unsigned int\000"
- 1455      20756E73 
- 1455      69676E65 
- 1455      6420696E 
- 1455      7400
- 1456              	.LASF9:
- 1457 00c7 75696E74 		.ascii	"uint8\000"
- 1457      3800
- 1458              	.LASF28:
- 1459 00cd 43795379 		.ascii	"CySysPmStop\000"
- 1459      73506D53 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 40
+ 1434      4669726D 
+ 1434      77617265 
+ 1435 0065 44617368 		.ascii	"Dashboard.cydsn\000"
+ 1435      626F6172 
+ 1435      642E6379 
+ 1435      64736E00 
+ 1436              	.LASF16:
+ 1437 0075 72656733 		.ascii	"reg32\000"
+ 1437      3200
+ 1438              	.LASF25:
+ 1439 007b 43795379 		.ascii	"CySysPmSetWakeupPolarity\000"
+ 1439      73506D53 
+ 1439      65745761 
+ 1439      6B657570 
+ 1439      506F6C61 
+ 1440              	.LASF19:
+ 1441 0094 43795379 		.ascii	"CySysPmSleep\000"
+ 1441      73506D53 
+ 1441      6C656570 
+ 1441      00
+ 1442              	.LASF23:
+ 1443 00a1 72656754 		.ascii	"regTmp\000"
+ 1443      6D7000
+ 1444              	.LASF3:
+ 1445 00a8 73686F72 		.ascii	"short unsigned int\000"
+ 1445      7420756E 
+ 1445      7369676E 
+ 1445      65642069 
+ 1445      6E7400
+ 1446              	.LASF24:
+ 1447 00bb 43795379 		.ascii	"CySysPmHibernate\000"
+ 1447      73506D48 
+ 1447      69626572 
+ 1447      6E617465 
+ 1447      00
+ 1448              	.LASF37:
+ 1449 00cc 43795379 		.ascii	"CySysPmHibPinsDisableInputBuf\000"
+ 1449      73506D48 
+ 1449      69625069 
+ 1449      6E734469 
+ 1449      7361626C 
+ 1450              	.LASF12:
+ 1451 00ea 666C6F61 		.ascii	"float\000"
+ 1451      7400
+ 1452              	.LASF7:
+ 1453 00f0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1453      206C6F6E 
+ 1453      6720756E 
+ 1453      7369676E 
+ 1453      65642069 
+ 1454              	.LASF1:
+ 1455 0107 756E7369 		.ascii	"unsigned char\000"
+ 1455      676E6564 
+ 1455      20636861 
+ 1455      7200
+ 1456              	.LASF21:
+ 1457 0115 696E7465 		.ascii	"interruptState\000"
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 40
 
 
- 1459      746F7000 
- 1460              	.LASF13:
- 1461 00d9 646F7562 		.ascii	"double\000"
- 1461      6C6500
- 1462              	.LASF29:
- 1463 00e0 43795379 		.ascii	"CySysPmUnfreezeIo\000"
- 1463      73506D55 
- 1463      6E667265 
- 1463      657A6549 
- 1463      6F00
- 1464              	.LASF10:
- 1465 00f2 75696E74 		.ascii	"uint16\000"
- 1465      313600
- 1466              	.LASF11:
- 1467 00f9 75696E74 		.ascii	"uint32\000"
- 1467      333200
- 1468              	.LASF30:
- 1469 0100 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 1469      74657243 
- 1469      72697469 
- 1469      63616C53 
- 1469      65637469 
- 1470              	.LASF36:
- 1471 0117 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\Dashboard-Firm"
- 1471      73657273 
- 1471      5C6C656F 
- 1471      6A615C44 
- 1471      6F63756D 
- 1472 0145 77617265 		.ascii	"ware-FE10\\Dashboard-Firmware-FE9\\Dashboard.cydsn\000"
- 1472      2D464531 
- 1472      305C4461 
- 1472      7368626F 
- 1472      6172642D 
- 1473              	.LASF8:
- 1474 0176 756E7369 		.ascii	"unsigned int\000"
- 1474      676E6564 
- 1474      20696E74 
- 1474      00
- 1475              	.LASF31:
- 1476 0183 43794578 		.ascii	"CyExitCriticalSection\000"
- 1476      69744372 
- 1476      69746963 
- 1476      616C5365 
- 1476      6374696F 
- 1477              	.LASF32:
- 1478 0199 43795379 		.ascii	"CySysClkWriteSysclkDiv\000"
- 1478      73436C6B 
- 1478      57726974 
- 1478      65537973 
- 1478      636C6B44 
- 1479              	.LASF26:
- 1480 01b0 72656173 		.ascii	"reason\000"
- 1480      6F6E00
- 1481              	.LASF38:
- 1482 01b7 706F6C61 		.ascii	"polarity\000"
- 1482      72697479 
- 1482      00
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 41
+ 1457      72727570 
+ 1457      74537461 
+ 1457      746500
+ 1458              	.LASF5:
+ 1459 0124 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1459      20756E73 
+ 1459      69676E65 
+ 1459      6420696E 
+ 1459      7400
+ 1460              	.LASF9:
+ 1461 0136 75696E74 		.ascii	"uint8\000"
+ 1461      3800
+ 1462              	.LASF28:
+ 1463 013c 43795379 		.ascii	"CySysPmStop\000"
+ 1463      73506D53 
+ 1463      746F7000 
+ 1464              	.LASF13:
+ 1465 0148 646F7562 		.ascii	"double\000"
+ 1465      6C6500
+ 1466              	.LASF29:
+ 1467 014f 43795379 		.ascii	"CySysPmUnfreezeIo\000"
+ 1467      73506D55 
+ 1467      6E667265 
+ 1467      657A6549 
+ 1467      6F00
+ 1468              	.LASF10:
+ 1469 0161 75696E74 		.ascii	"uint16\000"
+ 1469      313600
+ 1470              	.LASF11:
+ 1471 0168 75696E74 		.ascii	"uint32\000"
+ 1471      333200
+ 1472              	.LASF30:
+ 1473 016f 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1473      74657243 
+ 1473      72697469 
+ 1473      63616C53 
+ 1473      65637469 
+ 1474              	.LASF8:
+ 1475 0186 756E7369 		.ascii	"unsigned int\000"
+ 1475      676E6564 
+ 1475      20696E74 
+ 1475      00
+ 1476              	.LASF31:
+ 1477 0193 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1477      69744372 
+ 1477      69746963 
+ 1477      616C5365 
+ 1477      6374696F 
+ 1478              	.LASF32:
+ 1479 01a9 43795379 		.ascii	"CySysClkWriteSysclkDiv\000"
+ 1479      73436C6B 
+ 1479      57726974 
+ 1479      65537973 
+ 1479      636C6B44 
+ 1480              	.LASF26:
+ 1481 01c0 72656173 		.ascii	"reason\000"
+ 1481      6F6E00
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 41
 
 
- 1483              	.LASF39:
- 1484 01c0 43795379 		.ascii	"CySysPmGetResetReason\000"
- 1484      73506D47 
- 1484      65745265 
- 1484      73657452 
- 1484      6561736F 
- 1485              	.LASF18:
- 1486 01d6 73697A65 		.ascii	"sizetype\000"
- 1486      74797065 
- 1486      00
- 1487              	.LASF6:
- 1488 01df 6C6F6E67 		.ascii	"long long int\000"
- 1488      206C6F6E 
- 1488      6720696E 
- 1488      7400
- 1489              	.LASF33:
- 1490 01ed 43794465 		.ascii	"CyDelayUs\000"
- 1490      6C617955 
- 1490      7300
- 1491              	.LASF14:
- 1492 01f7 63686172 		.ascii	"char\000"
- 1492      00
- 1493              	.LASF22:
- 1494 01fc 636C6B53 		.ascii	"clkSelectReg\000"
- 1494      656C6563 
- 1494      74526567 
- 1494      00
- 1495              	.LASF2:
- 1496 0209 73686F72 		.ascii	"short int\000"
- 1496      7420696E 
- 1496      7400
- 1497              	.LASF20:
- 1498 0213 43795379 		.ascii	"CySysPmDeepSleep\000"
- 1498      73506D44 
- 1498      65657053 
- 1498      6C656570 
- 1498      00
- 1499              	.LASF4:
- 1500 0224 6C6F6E67 		.ascii	"long int\000"
- 1500      20696E74 
- 1500      00
- 1501              	.LASF35:
- 1502 022d 47656E65 		.ascii	"Generated_Source\\PSoC4\\cyPm.c\000"
- 1502      72617465 
- 1502      645F536F 
- 1502      75726365 
- 1502      5C50536F 
- 1503              	.LASF17:
- 1504 024b 6C6F6E67 		.ascii	"long double\000"
- 1504      20646F75 
- 1504      626C6500 
- 1505              	.LASF0:
- 1506 0257 7369676E 		.ascii	"signed char\000"
- 1506      65642063 
- 1506      68617200 
- 1507              	.LASF27:
- 1508 0263 43795379 		.ascii	"CySysPmFreezeIo\000"
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccqt6ths.s 			page 42
+ 1482              	.LASF38:
+ 1483 01c7 706F6C61 		.ascii	"polarity\000"
+ 1483      72697479 
+ 1483      00
+ 1484              	.LASF39:
+ 1485 01d0 43795379 		.ascii	"CySysPmGetResetReason\000"
+ 1485      73506D47 
+ 1485      65745265 
+ 1485      73657452 
+ 1485      6561736F 
+ 1486              	.LASF18:
+ 1487 01e6 73697A65 		.ascii	"sizetype\000"
+ 1487      74797065 
+ 1487      00
+ 1488              	.LASF6:
+ 1489 01ef 6C6F6E67 		.ascii	"long long int\000"
+ 1489      206C6F6E 
+ 1489      6720696E 
+ 1489      7400
+ 1490              	.LASF33:
+ 1491 01fd 43794465 		.ascii	"CyDelayUs\000"
+ 1491      6C617955 
+ 1491      7300
+ 1492              	.LASF14:
+ 1493 0207 63686172 		.ascii	"char\000"
+ 1493      00
+ 1494              	.LASF22:
+ 1495 020c 636C6B53 		.ascii	"clkSelectReg\000"
+ 1495      656C6563 
+ 1495      74526567 
+ 1495      00
+ 1496              	.LASF2:
+ 1497 0219 73686F72 		.ascii	"short int\000"
+ 1497      7420696E 
+ 1497      7400
+ 1498              	.LASF20:
+ 1499 0223 43795379 		.ascii	"CySysPmDeepSleep\000"
+ 1499      73506D44 
+ 1499      65657053 
+ 1499      6C656570 
+ 1499      00
+ 1500              	.LASF4:
+ 1501 0234 6C6F6E67 		.ascii	"long int\000"
+ 1501      20696E74 
+ 1501      00
+ 1502              	.LASF35:
+ 1503 023d 47656E65 		.ascii	"Generated_Source\\PSoC4\\cyPm.c\000"
+ 1503      72617465 
+ 1503      645F536F 
+ 1503      75726365 
+ 1503      5C50536F 
+ 1504              	.LASF17:
+ 1505 025b 6C6F6E67 		.ascii	"long double\000"
+ 1505      20646F75 
+ 1505      626C6500 
+ 1506              	.LASF0:
+ 1507 0267 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccKDrm71.s 			page 42
 
 
- 1508      73506D46 
- 1508      7265657A 
- 1508      65496F00 
- 1509              	.LASF34:
- 1510 0273 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1510      43313120 
- 1510      352E342E 
- 1510      31203230 
- 1510      31363036 
- 1511 02a6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 1511      20726576 
- 1511      6973696F 
- 1511      6E203233 
- 1511      37373135 
- 1512 02d9 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 1512      66756E63 
- 1512      74696F6E 
- 1512      2D736563 
- 1512      74696F6E 
- 1513              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1507      65642063 
+ 1507      68617200 
+ 1508              	.LASF27:
+ 1509 0273 43795379 		.ascii	"CySysPmFreezeIo\000"
+ 1509      73506D46 
+ 1509      7265657A 
+ 1509      65496F00 
+ 1510              	.LASF34:
+ 1511 0283 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1511      43313120 
+ 1511      352E342E 
+ 1511      31203230 
+ 1511      31363036 
+ 1512 02b6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1512      20726576 
+ 1512      6973696F 
+ 1512      6E203233 
+ 1512      37373135 
+ 1513 02e9 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 1513      66756E63 
+ 1513      74696F6E 
+ 1513      2D736563 
+ 1513      74696F6E 
+ 1514              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

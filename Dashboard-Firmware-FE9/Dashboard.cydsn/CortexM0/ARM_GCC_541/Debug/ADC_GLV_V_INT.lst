@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
   28:Generated_Source\PSoC4/ADC_GLV_V_INT.c **** 
   29:Generated_Source\PSoC4/ADC_GLV_V_INT.c **** /* `#END`  */
   30:Generated_Source\PSoC4/ADC_GLV_V_INT.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 2
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 2
 
 
   31:Generated_Source\PSoC4/ADC_GLV_V_INT.c **** #if(ADC_GLV_V_IRQ_REMOVE == 0u)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
   38 0002 1A68     		ldr	r2, [r3]
   39              	.LVL0:
   72:Generated_Source\PSoC4/ADC_GLV_V_INT.c ****     }
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 3
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 3
 
 
   40              		.loc 1 72 0
@@ -144,46 +144,46 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
   60 000b 01       		.uleb128 0x1
   61 000c 30000000 		.4byte	.LASF16
   62 0010 0C       		.byte	0xc
-  63 0011 BE000000 		.4byte	.LASF17
-  64 0015 20010000 		.4byte	.LASF18
+  63 0011 7B010000 		.4byte	.LASF17
+  64 0015 BE000000 		.4byte	.LASF18
   65 0019 00000000 		.4byte	.Ldebug_ranges0+0
   66 001d 00000000 		.4byte	0
   67 0021 00000000 		.4byte	.Ldebug_line0
   68 0025 02       		.uleb128 0x2
   69 0026 01       		.byte	0x1
   70 0027 06       		.byte	0x6
-  71 0028 AD010000 		.4byte	.LASF0
+  71 0028 CB010000 		.4byte	.LASF0
   72 002c 02       		.uleb128 0x2
   73 002d 01       		.byte	0x1
   74 002e 08       		.byte	0x8
-  75 002f B9010000 		.4byte	.LASF1
+  75 002f 6D010000 		.4byte	.LASF1
   76 0033 02       		.uleb128 0x2
   77 0034 02       		.byte	0x2
   78 0035 05       		.byte	0x5
-  79 0036 D3010000 		.4byte	.LASF2
+  79 0036 E3010000 		.4byte	.LASF2
   80 003a 02       		.uleb128 0x2
   81 003b 02       		.byte	0x2
   82 003c 07       		.byte	0x7
-  83 003d 9A010000 		.4byte	.LASF3
+  83 003d B8010000 		.4byte	.LASF3
   84 0041 02       		.uleb128 0x2
   85 0042 04       		.byte	0x4
   86 0043 05       		.byte	0x5
-  87 0044 84010000 		.4byte	.LASF4
+  87 0044 A2010000 		.4byte	.LASF4
   88 0048 02       		.uleb128 0x2
   89 0049 04       		.byte	0x4
   90 004a 07       		.byte	0x7
-  91 004b E5000000 		.4byte	.LASF5
+  91 004b 2D010000 		.4byte	.LASF5
   92 004f 02       		.uleb128 0x2
   93 0050 08       		.byte	0x8
   94 0051 05       		.byte	0x5
   95 0052 00000000 		.4byte	.LASF6
   96 0056 02       		.uleb128 0x2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 4
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 4
 
 
   97 0057 08       		.byte	0x8
   98 0058 07       		.byte	0x7
-  99 0059 F7000000 		.4byte	.LASF7
+  99 0059 3F010000 		.4byte	.LASF7
  100 005d 03       		.uleb128 0x3
  101 005e 04       		.byte	0x4
  102 005f 05       		.byte	0x5
@@ -200,17 +200,17 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
  113 0077 02       		.uleb128 0x2
  114 0078 04       		.byte	0x4
  115 0079 04       		.byte	0x4
- 116 007a 0E010000 		.4byte	.LASF9
+ 116 007a 5B010000 		.4byte	.LASF9
  117 007e 02       		.uleb128 0x2
  118 007f 08       		.byte	0x8
  119 0080 04       		.byte	0x4
- 120 0081 8D010000 		.4byte	.LASF10
+ 120 0081 AB010000 		.4byte	.LASF10
  121 0085 02       		.uleb128 0x2
  122 0086 01       		.byte	0x1
  123 0087 08       		.byte	0x8
- 124 0088 7F010000 		.4byte	.LASF11
+ 124 0088 56010000 		.4byte	.LASF11
  125 008c 04       		.uleb128 0x4
- 126 008d 94010000 		.4byte	.LASF13
+ 126 008d B2010000 		.4byte	.LASF13
  127 0091 02       		.byte	0x2
  128 0092 A802     		.2byte	0x2a8
  129 0094 98000000 		.4byte	0x98
@@ -219,11 +219,11 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
  132 009d 02       		.uleb128 0x2
  133 009e 08       		.byte	0x8
  134 009f 04       		.byte	0x4
- 135 00a0 C7010000 		.4byte	.LASF14
+ 135 00a0 D7010000 		.4byte	.LASF14
  136 00a4 02       		.uleb128 0x2
  137 00a5 04       		.byte	0x4
  138 00a6 07       		.byte	0x7
- 139 00a7 DD010000 		.4byte	.LASF15
+ 139 00a7 ED010000 		.4byte	.LASF15
  140 00ab 06       		.uleb128 0x6
  141 00ac 22000000 		.4byte	.LASF19
  142 00b0 01       		.byte	0x1
@@ -233,12 +233,12 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
  146 00ba 01       		.uleb128 0x1
  147 00bb 9C       		.byte	0x9c
  148 00bc 07       		.uleb128 0x7
- 149 00bd 14010000 		.4byte	.LASF20
+ 149 00bd 61010000 		.4byte	.LASF20
  150 00c1 01       		.byte	0x1
  151 00c2 35       		.byte	0x35
  152 00c3 6B000000 		.4byte	0x6b
  153 00c7 01       		.uleb128 0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 5
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 5
 
 
  154 00c8 52       		.byte	0x52
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
  208 0031 05       		.uleb128 0x5
  209 0032 49       		.uleb128 0x49
  210 0033 13       		.uleb128 0x13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 6
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 6
 
 
  211 0034 00       		.byte	0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
  265 000c 0000     		.2byte	0
  266 000e 0000     		.2byte	0
  267 0010 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 7
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 7
 
 
  268 0014 0C000000 		.4byte	.LFE1-.LFB1
@@ -411,86 +411,90 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 1
  291      74696F6E 
  291      2D736563 
  291      74696F6E 
- 292              	.LASF17:
- 293 00be 47656E65 		.ascii	"Generated_Source\\PSoC4\\ADC_GLV_V_INT.c\000"
- 293      72617465 
- 293      645F536F 
- 293      75726365 
- 293      5C50536F 
- 294              	.LASF5:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 8
+ 292              	.LASF18:
+ 293 00be 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
+ 293      73657273 
+ 293      5C4D656C 
+ 293      6F64795C 
+ 293      4465736B 
+ 294 00ec 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 8
 
 
- 295 00e5 6C6F6E67 		.ascii	"long unsigned int\000"
- 295      20756E73 
- 295      69676E65 
- 295      6420696E 
- 295      7400
- 296              	.LASF7:
- 297 00f7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 297      206C6F6E 
- 297      6720756E 
- 297      7369676E 
- 297      65642069 
- 298              	.LASF9:
- 299 010e 666C6F61 		.ascii	"float\000"
- 299      7400
- 300              	.LASF20:
- 301 0114 696E7472 		.ascii	"intr_status\000"
- 301      5F737461 
- 301      74757300 
- 302              	.LASF18:
- 303 0120 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\Dashboard-Firm"
- 303      73657273 
- 303      5C6C656F 
- 303      6A615C44 
- 303      6F63756D 
- 304 014e 77617265 		.ascii	"ware-FE10\\Dashboard-Firmware-FE9\\Dashboard.cydsn\000"
- 304      2D464531 
- 304      305C4461 
- 304      7368626F 
- 304      6172642D 
- 305              	.LASF11:
- 306 017f 63686172 		.ascii	"char\000"
- 306      00
- 307              	.LASF4:
- 308 0184 6C6F6E67 		.ascii	"long int\000"
- 308      20696E74 
- 308      00
- 309              	.LASF10:
- 310 018d 646F7562 		.ascii	"double\000"
- 310      6C6500
- 311              	.LASF13:
- 312 0194 72656733 		.ascii	"reg32\000"
- 312      3200
- 313              	.LASF3:
- 314 019a 73686F72 		.ascii	"short unsigned int\000"
- 314      7420756E 
- 314      7369676E 
- 314      65642069 
- 314      6E7400
- 315              	.LASF0:
- 316 01ad 7369676E 		.ascii	"signed char\000"
- 316      65642063 
- 316      68617200 
- 317              	.LASF1:
- 318 01b9 756E7369 		.ascii	"unsigned char\000"
- 318      676E6564 
- 318      20636861 
- 318      7200
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccHSz11O.s 			page 9
+ 294      7368626F 
+ 294      6172642D 
+ 294      4669726D 
+ 294      77617265 
+ 295 011d 44617368 		.ascii	"Dashboard.cydsn\000"
+ 295      626F6172 
+ 295      642E6379 
+ 295      64736E00 
+ 296              	.LASF5:
+ 297 012d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 297      20756E73 
+ 297      69676E65 
+ 297      6420696E 
+ 297      7400
+ 298              	.LASF7:
+ 299 013f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 299      206C6F6E 
+ 299      6720756E 
+ 299      7369676E 
+ 299      65642069 
+ 300              	.LASF11:
+ 301 0156 63686172 		.ascii	"char\000"
+ 301      00
+ 302              	.LASF9:
+ 303 015b 666C6F61 		.ascii	"float\000"
+ 303      7400
+ 304              	.LASF20:
+ 305 0161 696E7472 		.ascii	"intr_status\000"
+ 305      5F737461 
+ 305      74757300 
+ 306              	.LASF1:
+ 307 016d 756E7369 		.ascii	"unsigned char\000"
+ 307      676E6564 
+ 307      20636861 
+ 307      7200
+ 308              	.LASF17:
+ 309 017b 47656E65 		.ascii	"Generated_Source\\PSoC4\\ADC_GLV_V_INT.c\000"
+ 309      72617465 
+ 309      645F536F 
+ 309      75726365 
+ 309      5C50536F 
+ 310              	.LASF4:
+ 311 01a2 6C6F6E67 		.ascii	"long int\000"
+ 311      20696E74 
+ 311      00
+ 312              	.LASF10:
+ 313 01ab 646F7562 		.ascii	"double\000"
+ 313      6C6500
+ 314              	.LASF13:
+ 315 01b2 72656733 		.ascii	"reg32\000"
+ 315      3200
+ 316              	.LASF3:
+ 317 01b8 73686F72 		.ascii	"short unsigned int\000"
+ 317      7420756E 
+ 317      7369676E 
+ 317      65642069 
+ 317      6E7400
+ARM GAS  C:\Users\Melody\AppData\Local\Temp\cc6H4QCL.s 			page 9
 
 
- 319              	.LASF14:
- 320 01c7 6C6F6E67 		.ascii	"long double\000"
- 320      20646F75 
- 320      626C6500 
- 321              	.LASF2:
- 322 01d3 73686F72 		.ascii	"short int\000"
- 322      7420696E 
- 322      7400
- 323              	.LASF15:
- 324 01dd 73697A65 		.ascii	"sizetype\000"
- 324      74797065 
- 324      00
- 325              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 318              	.LASF0:
+ 319 01cb 7369676E 		.ascii	"signed char\000"
+ 319      65642063 
+ 319      68617200 
+ 320              	.LASF14:
+ 321 01d7 6C6F6E67 		.ascii	"long double\000"
+ 321      20646F75 
+ 321      626C6500 
+ 322              	.LASF2:
+ 323 01e3 73686F72 		.ascii	"short int\000"
+ 323      7420696E 
+ 323      7400
+ 324              	.LASF15:
+ 325 01ed 73697A65 		.ascii	"sizetype\000"
+ 325      74797065 
+ 325      00
+ 326              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

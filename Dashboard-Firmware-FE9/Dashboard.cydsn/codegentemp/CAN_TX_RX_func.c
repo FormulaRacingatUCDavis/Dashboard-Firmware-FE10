@@ -37,6 +37,7 @@ extern volatile uint16_t bms_status;
 extern volatile uint8_t shutdown_flags;
 extern volatile uint8_t CAPACITOR_VOLT;
 extern volatile uint8_t ACK_RX;
+extern volatile uint8_t mc_fault_codes;
 
 /* `#END` */
 
@@ -979,7 +980,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX9_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg9
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_TEMPERATURE_3
     ********************************************************************************
     *
     * Summary:
@@ -997,15 +998,14 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg9(void) 
+    void CAN_ReceiveMsgMC_TEMPERATURE_3(void) 
     {
-        /* `#START MESSAGE_9_RECEIVED` */
-
+        /* `#START MESSAGE_MC_TEMPERATURE_3_RECEIVED` */
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_9_CALLBACK
-            CAN_ReceiveMsg_9_Callback();
-        #endif /* CAN_RECEIVE_MSG_9_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_TEMPERATURE_3_CALLBACK
+            CAN_ReceiveMsg_MC_TEMPERATURE_3_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_TEMPERATURE_3_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(9u);
     }
@@ -1014,7 +1014,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX10_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg10
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_FAULT_CODES
     ********************************************************************************
     *
     * Summary:
@@ -1032,15 +1032,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg10(void) 
+    void CAN_ReceiveMsgMC_FAULT_CODES(void) 
     {
-        /* `#START MESSAGE_10_RECEIVED` */
+        /* `#START MESSAGE_MC_FAULT_CODES_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_10_CALLBACK
-            CAN_ReceiveMsg_10_Callback();
-        #endif /* CAN_RECEIVE_MSG_10_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_FAULT_CODES_CALLBACK
+            CAN_ReceiveMsg_MC_FAULT_CODES_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_FAULT_CODES_CALLBACK */
 
         CAN_RX_ACK_MESSAGE(10u);
     }

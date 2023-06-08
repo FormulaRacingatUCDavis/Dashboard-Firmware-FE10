@@ -42,7 +42,7 @@ void debugTemplate(){
     UG_PutString(10, 140, "GLV V:");
     UG_PutString(250, 140, "MOTOR T:");
     UG_PutString(10, 205, "SHUTDOWN:");
-    UG_PutString(250, 205, "DEBUG:");
+    UG_PutString(250, 205, "MOTOR FAULT:");
 }
 void driveTemplate(){
     UG_FillScreen(C_BLACK);
@@ -859,6 +859,36 @@ void disp_debug(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y
 
     char data_s[10];
     sprintf(data_s, "%d", data);
+    UG_FillFrame(x1, y1, x2, y2, color);
+    UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
+    UG_FontSelect(&FONT_12X16);
+}
+
+void disp_mc_fault(uint8_t data[8], uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
+    int xFont, yFont;
+    int horizFontSize = 12 + 20*size;
+    int stringSize;
+    stringSize = 10;
+    xFont = (x1 + x2)/2 - ((horizFontSize*stringSize)/2);
+    yFont = (y1 + y2)/2 - 5 - (size*17);    
+    if(size == 1){
+        UG_FontSelect(&FONT_32X53);
+    }
+    
+    // choose color
+    UG_COLOR color = C_GREEN;
+    
+    uint8_t printed_data = 0; 
+    uint8_t i = 0;
+    for (; i < 8; i++) {
+        if (data[i] > 0) {
+            printed_data = data[i];
+            break;
+        }
+    }
+
+    char data_s[10];
+    sprintf(data_s, "%d:%d", i, printed_data);
     UG_FillFrame(x1, y1, x2, y2, color);
     UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
     UG_FontSelect(&FONT_12X16);

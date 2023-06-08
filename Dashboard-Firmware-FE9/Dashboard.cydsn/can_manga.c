@@ -29,6 +29,7 @@ extern volatile uint8_t soc;
 extern volatile uint32_t voltage;
 extern volatile BMS_STATUS bms_status;
 extern volatile uint8_t shutdown_flags;
+extern volatile uint8_t mc_fault_codes[8];
 
 // info from MC and motor
 extern volatile uint16_t mc_temp;

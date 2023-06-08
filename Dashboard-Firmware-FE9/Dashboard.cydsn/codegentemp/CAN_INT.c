@@ -446,6 +446,10 @@
                             break;
                             case 8u : CAN_ReceiveMsgMC_INTERNAL_STATES();
                             break;
+                            case 9u : CAN_ReceiveMsgMC_TEMPERATURE_3();
+                            break;
+                            case 10u : CAN_ReceiveMsgMC_FAULT_CODES();
+                            break;
                             default:
                             break;
                         }

@@ -92,14 +92,14 @@ extern uint8 CAN_initVar;
 #define CAN_RX6_FUNC_ENABLE            (1u)
 #define CAN_RX7_FUNC_ENABLE            (1u)
 #define CAN_RX8_FUNC_ENABLE            (1u)
-#define CAN_RX9_FUNC_ENABLE            (0u)
-#define CAN_RX10_FUNC_ENABLE           (0u)
+#define CAN_RX9_FUNC_ENABLE            (1u)
+#define CAN_RX10_FUNC_ENABLE           (1u)
 #define CAN_RX11_FUNC_ENABLE           (0u)
 #define CAN_RX12_FUNC_ENABLE           (0u)
 #define CAN_RX13_FUNC_ENABLE           (0u)
 #define CAN_RX14_FUNC_ENABLE           (0u)
 #define CAN_RX15_FUNC_ENABLE           (0u)
-#define CAN_RX_MAILBOX_TYPE            (0x1FFu)
+#define CAN_RX_MAILBOX_TYPE            (0x7FFu)
 #define CAN_TX_MAILBOX_TYPE            (0x1u)
 
 
@@ -333,10 +333,10 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
     void CAN_ReceiveMsgMC_INTERNAL_STATES(void) ;
 #endif /* CAN_RX8_FUNC_ENABLE */
 #if (CAN_RX9_FUNC_ENABLE)
-    void CAN_ReceiveMsg9(void) ;
+    void CAN_ReceiveMsgMC_TEMPERATURE_3(void) ;
 #endif /* CAN_RX9_FUNC_ENABLE */
 #if (CAN_RX10_FUNC_ENABLE)
-    void CAN_ReceiveMsg10(void) ;
+    void CAN_ReceiveMsgMC_FAULT_CODES(void) ;
 #endif /* CAN_RX10_FUNC_ENABLE */
 #if (CAN_RX11_FUNC_ENABLE)
     void CAN_ReceiveMsg11(void) ;
@@ -430,8 +430,8 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 #define CAN_RX_MAILBOX_PEI_CURRENT_SHUTDOWN (6u)
 #define CAN_RX_MAILBOX_MC_VOLTAGE_INFO (7u)
 #define CAN_RX_MAILBOX_MC_INTERNAL_STATES (8u)
-#define CAN_RX_MAILBOX_9               (9u)
-#define CAN_RX_MAILBOX_10              (10u)
+#define CAN_RX_MAILBOX_MC_TEMPERATURE_3 (9u)
+#define CAN_RX_MAILBOX_MC_FAULT_CODES  (10u)
 #define CAN_RX_MAILBOX_11              (11u)
 #define CAN_RX_MAILBOX_12              (12u)
 #define CAN_RX_MAILBOX_13              (13u)
