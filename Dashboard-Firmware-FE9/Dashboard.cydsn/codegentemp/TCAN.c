@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: CAN_1.c
+* File Name: TCAN.c
 * Version 3.0
 *
 * Description:
@@ -17,13 +17,13 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "CAN_1.h"
+#include "TCAN.h"
 
-uint8 CAN_1_initVar = 0u;
+uint8 TCAN_initVar = 0u;
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_RxTxBuffersConfig
+* FUNCTION NAME:   TCAN_RxTxBuffersConfig
 ********************************************************************************
 *
 * Summary:
@@ -37,17 +37,17 @@ uint8 CAN_1_initVar = 0u;
 *  The indication whether the configuration has been accepted or rejected.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 * Side Effects:
 *  All the Rx and Tx Buffers control registers will be reset to their initial
 *  values.
 *
 *******************************************************************************/
-uint8 CAN_1_RxTxBuffersConfig(void) 
+uint8 TCAN_RxTxBuffersConfig(void) 
 {
     /* Initial values of CAN RX and TX registers */
-    static const CAN_1_RX_CFG CYCODE CAN_1_RXConfigStruct[] =
+    static const TCAN_RX_CFG CYCODE TCAN_RXConfigStruct[] =
     {
         { 0u, 0x0u, 0x0u, 0x0u },
         { 1u, 0x0u, 0x0u, 0x0u },
@@ -67,7 +67,7 @@ uint8 CAN_1_RxTxBuffersConfig(void)
         { 15u, 0x0u, 0x0u, 0x0u }
     };
 
-    static const CAN_1_TX_CFG CYCODE CAN_1_TXConfigStruct[] =
+    static const TCAN_TX_CFG CYCODE TCAN_TXConfigStruct[] =
     {
         { 0u, 0x880008u, 0x0u },
         { 1u, 0x880008u, 0x0u },
@@ -83,12 +83,12 @@ uint8 CAN_1_RxTxBuffersConfig(void)
     uint8 i;
 
     /* Initialize TX mailboxes */
-    for (i = 0u; i < CAN_1_NUMBER_OF_TX_MAILBOXES; i++)
+    for (i = 0u; i < TCAN_NUMBER_OF_TX_MAILBOXES; i++)
     {
-        if (CAN_1_TxBufConfig((const CAN_1_TX_CFG *)
-            (&CAN_1_TXConfigStruct[i])) != CYRET_SUCCESS)
+        if (TCAN_TxBufConfig((const TCAN_TX_CFG *)
+            (&TCAN_TXConfigStruct[i])) != CYRET_SUCCESS)
         {
-            result = CAN_1_FAIL;
+            result = TCAN_FAIL;
             break;
         }
     }
@@ -96,12 +96,12 @@ uint8 CAN_1_RxTxBuffersConfig(void)
     if (result == CYRET_SUCCESS)
     {
         /* Initialize RX mailboxes */
-        for (i = 0u; i < CAN_1_NUMBER_OF_RX_MAILBOXES; i++)
+        for (i = 0u; i < TCAN_NUMBER_OF_RX_MAILBOXES; i++)
         {
-            if (CAN_1_RxBufConfig((const CAN_1_RX_CFG *)
-                (&CAN_1_RXConfigStruct[i])) != CYRET_SUCCESS)
+            if (TCAN_RxBufConfig((const TCAN_RX_CFG *)
+                (&TCAN_RXConfigStruct[i])) != CYRET_SUCCESS)
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
                 break;
             }
         }
@@ -112,7 +112,7 @@ uint8 CAN_1_RxTxBuffersConfig(void)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_Init
+* FUNCTION NAME:   TCAN_Init
 ********************************************************************************
 *
 * Summary:
@@ -125,7 +125,7 @@ uint8 CAN_1_RxTxBuffersConfig(void)
 *  The indication whether the configuration has been accepted or rejected.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 * Side Effects:
 *  All the registers will be reset to their initial values. This will
@@ -134,39 +134,39 @@ uint8 CAN_1_RxTxBuffersConfig(void)
 *  Enable power to the CAN Core.
 *
 *******************************************************************************/
-uint8 CAN_1_Init(void) 
+uint8 TCAN_Init(void) 
 {
-    uint32 timeout = CAN_1_MODE_STATE_STOP_TIMEOUT;
-    uint8 result = CAN_1_FAIL;
-    uint8 localResult = CAN_1_FAIL;
+    uint32 timeout = TCAN_MODE_STATE_STOP_TIMEOUT;
+    uint8 result = TCAN_FAIL;
+    uint8 localResult = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
         uint8 enableInterrupts;
 
         enableInterrupts = CyEnterCriticalSection();
         /* Enable CAN block in Active mode */
-        CAN_1_PM_ACT_CFG_REG |= CAN_1_ACT_PWR_EN;
+        TCAN_PM_ACT_CFG_REG |= TCAN_ACT_PWR_EN;
         /* Enable CAN block in Alternate Active (Standby) mode */
-        CAN_1_PM_STBY_CFG_REG |= CAN_1_STBY_PWR_EN;
+        TCAN_PM_STBY_CFG_REG |= TCAN_STBY_PWR_EN;
         CyExitCriticalSection(enableInterrupts);
 
         /* Sets CAN controller to stop mode */
-        CAN_1_CMD_REG.byte[0u] &= (uint8) (~CAN_1_MODE_MASK);
+        TCAN_CMD_REG.byte[0u] &= (uint8) (~TCAN_MODE_MASK);
 
         /* Timeout for CAN state machine to switch mode to Stop */
-        while ((timeout != 0u) && ((CAN_1_CMD_REG.byte[0u] & CAN_1_MODE_MASK) != 0u))
+        while ((timeout != 0u) && ((TCAN_CMD_REG.byte[0u] & TCAN_MODE_MASK) != 0u))
         {
             timeout--;
         }
     #else  /* CY_PSOC4 */
         /* Enable CAN IP Block */
-        CAN_1_CNTL_REG = CAN_1_IP_ENABLE;
+        TCAN_CNTL_REG = TCAN_IP_ENABLE;
 
         /* Sets CAN controller to stop mode */
-        CAN_1_CMD_REG &= (uint32) (~((uint32) CAN_1_MODE_MASK));
+        TCAN_CMD_REG &= (uint32) (~((uint32) TCAN_MODE_MASK));
 
         /* Timeout for CAN state machine to switch mode to Stop */
-        while ((timeout != 0u) && ((CAN_1_CMD_REG & CAN_1_MODE_MASK) != 0u))
+        while ((timeout != 0u) && ((TCAN_CMD_REG & TCAN_MODE_MASK) != 0u))
         {
             timeout--;
         }
@@ -174,29 +174,29 @@ uint8 CAN_1_Init(void)
         if (timeout != 0u)
         {
             /* Disable Interrupt. */
-        CyIntDisable(CAN_1_ISR_NUMBER);
+        CyIntDisable(TCAN_ISR_NUMBER);
 
-        /* Set the ISR to point to the CAN_1_ISR Interrupt. */
-        (void) CyIntSetVector(CAN_1_ISR_NUMBER, & CAN_1_ISR);
+        /* Set the ISR to point to the TCAN_ISR Interrupt. */
+        (void) CyIntSetVector(TCAN_ISR_NUMBER, & TCAN_ISR);
 
         /* Set the priority. */
-        CyIntSetPriority(CAN_1_ISR_NUMBER, CAN_1_ISR_PRIORITY);
+        CyIntSetPriority(TCAN_ISR_NUMBER, TCAN_ISR_PRIORITY);
 
-            if (CAN_1_SetPreScaler(CAN_1_BITRATE) == CYRET_SUCCESS)
+            if (TCAN_SetPreScaler(TCAN_BITRATE) == CYRET_SUCCESS)
             {
-                if (CAN_1_SetArbiter(CAN_1_ARBITER) == CYRET_SUCCESS)
+                if (TCAN_SetArbiter(TCAN_ARBITER) == CYRET_SUCCESS)
                 {
                     #if (!(CY_PSOC3 || CY_PSOC5))
-                        if (CAN_1_SetSwapDataEndianness(CAN_1_SWAP_DATA_END) == CYRET_SUCCESS)
+                        if (TCAN_SetSwapDataEndianness(TCAN_SWAP_DATA_END) == CYRET_SUCCESS)
                     #endif /* (!(CY_PSOC3 || CY_PSOC5)) */
                         {
-                            if (CAN_1_SetTsegSample(CAN_1_CFG_REG_TSEG1,
-                                CAN_1_CFG_REG_TSEG2, CAN_1_CFG_REG_SJW,
-                                CAN_1_SAMPLING_MODE) == CYRET_SUCCESS)
+                            if (TCAN_SetTsegSample(TCAN_CFG_REG_TSEG1,
+                                TCAN_CFG_REG_TSEG2, TCAN_CFG_REG_SJW,
+                                TCAN_SAMPLING_MODE) == CYRET_SUCCESS)
                             {
-                                if (CAN_1_SetRestartType(CAN_1_RESET_TYPE) == CYRET_SUCCESS)
+                                if (TCAN_SetRestartType(TCAN_RESET_TYPE) == CYRET_SUCCESS)
                                 {
-                                    if (CAN_1_SetEdgeMode(CAN_1_SYNC_EDGE) == CYRET_SUCCESS)
+                                    if (TCAN_SetEdgeMode(TCAN_SYNC_EDGE) == CYRET_SUCCESS)
                                     {
                                         localResult = CYRET_SUCCESS;
                                     }
@@ -208,19 +208,19 @@ uint8 CAN_1_Init(void)
 
             if (localResult == CYRET_SUCCESS)
             {
-                if (CAN_1_RxTxBuffersConfig() == CYRET_SUCCESS)
+                if (TCAN_RxTxBuffersConfig() == CYRET_SUCCESS)
                 {
                     /* Write IRQ Mask */
-                    if (CAN_1_SetIrqMask(CAN_1_INIT_INTERRUPT_MASK) ==
+                    if (TCAN_SetIrqMask(TCAN_INIT_INTERRUPT_MASK) ==
                         CYRET_SUCCESS)
                     {
                         /* Set CAN Operation Mode to Active mode always */
                         #if (CY_PSOC3 || CY_PSOC5)
-                            CAN_1_CMD_REG.byte[0u] = CAN_1_INITIAL_MODE;
-                            if ((CAN_1_CMD_REG.byte[0u] & CAN_1_MODE_MASK) == 0u)
+                            TCAN_CMD_REG.byte[0u] = TCAN_INITIAL_MODE;
+                            if ((TCAN_CMD_REG.byte[0u] & TCAN_MODE_MASK) == 0u)
                         #else  /* CY_PSOC4 */
-                            CAN_1_CMD_REG &= (uint32) (~((uint32) CAN_1_OPMODE_FIELD_MASK));
-                            if ((CAN_1_CMD_REG & CAN_1_OPMODE_FIELD_MASK) == 0u)
+                            TCAN_CMD_REG &= (uint32) (~((uint32) TCAN_OPMODE_FIELD_MASK));
+                            if ((TCAN_CMD_REG & TCAN_OPMODE_FIELD_MASK) == 0u)
                         #endif /* CY_PSOC3 || CY_PSOC5 */
                             {
                                 result = CYRET_SUCCESS;
@@ -235,7 +235,7 @@ uint8 CAN_1_Init(void)
 
 
 /*******************************************************************************
-* Function Name: CAN_1_Enable
+* Function Name: TCAN_Enable
 ********************************************************************************
 *
 * Summary:
@@ -248,13 +248,13 @@ uint8 CAN_1_Init(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_Enable(void) 
+uint8 TCAN_Enable(void) 
 {
-    uint32 timeout = CAN_1_MODE_STATE_RUN_TIMEOUT;
-    uint8 result = CAN_1_FAIL;
+    uint32 timeout = TCAN_MODE_STATE_RUN_TIMEOUT;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
         uint8 enableInterrupts;
@@ -262,26 +262,26 @@ uint8 CAN_1_Enable(void)
         enableInterrupts = CyEnterCriticalSection();
 
         /* Enable CAN block in Active mode */
-        CAN_1_PM_ACT_CFG_REG |= CAN_1_ACT_PWR_EN;
+        TCAN_PM_ACT_CFG_REG |= TCAN_ACT_PWR_EN;
 
         /* Enable CAN block in Alternate Active (Standby) mode */
-        CAN_1_PM_STBY_CFG_REG |= CAN_1_STBY_PWR_EN;
+        TCAN_PM_STBY_CFG_REG |= TCAN_STBY_PWR_EN;
 
         CyExitCriticalSection(enableInterrupts);
     #endif /* CY_PSOC3 || CY_PSOC5 */
 
     /* Clear interrupts status */
-    CY_SET_REG32(CAN_1_INT_SR_PTR, CAN_1_INIT_INTERRUPT_MASK);
-    (void) CAN_1_GlobalIntEnable();
+    CY_SET_REG32(TCAN_INT_SR_PTR, TCAN_INIT_INTERRUPT_MASK);
+    (void) TCAN_GlobalIntEnable();
 
     /* Enable isr */
-    CyIntEnable(CAN_1_ISR_NUMBER);
+    CyIntEnable(TCAN_ISR_NUMBER);
 
     /* Sets CAN controller to run mode */
-    CY_SET_REG32(CAN_1_CMD_PTR, CY_GET_REG32(CAN_1_CMD_PTR) | CAN_1_MODE_MASK);
+    CY_SET_REG32(TCAN_CMD_PTR, CY_GET_REG32(TCAN_CMD_PTR) | TCAN_MODE_MASK);
 
     /* Timeout for CAN state machine to switch mode to Run */
-    while ((timeout != 0u) && ((CY_GET_REG32(CAN_1_CMD_PTR) & CAN_1_MODE_MASK) == 0u))
+    while ((timeout != 0u) && ((CY_GET_REG32(TCAN_CMD_PTR) & TCAN_MODE_MASK) == 0u))
     {
         timeout--;
     }
@@ -296,7 +296,7 @@ uint8 CAN_1_Enable(void)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_Start
+* FUNCTION NAME:   TCAN_Start
 ********************************************************************************
 *
 * Summary:
@@ -310,29 +310,29 @@ uint8 CAN_1_Enable(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 * Global variables:
-*  CAN_1_initVar - used to check the initial configuration, modified
+*  TCAN_initVar - used to check the initial configuration, modified
 *  on the first function call.
 *
 * Reentrant:
 *  No.
 *
 *******************************************************************************/
-uint8 CAN_1_Start(void) 
+uint8 TCAN_Start(void) 
 {
     uint8 result = CYRET_SUCCESS;
 
-    if (CAN_1_initVar == 0u)
+    if (TCAN_initVar == 0u)
     {
-        result = CAN_1_Init();
+        result = TCAN_Init();
     }
 
     if (result == CYRET_SUCCESS)
     {
-        CAN_1_initVar = 1u;
-        result = CAN_1_Enable();
+        TCAN_initVar = 1u;
+        result = TCAN_Enable();
     }
 
     return (result);
@@ -340,7 +340,7 @@ uint8 CAN_1_Start(void)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_Stop
+* FUNCTION NAME:   TCAN_Stop
 ********************************************************************************
 *
 * Summary:
@@ -353,31 +353,31 @@ uint8 CAN_1_Start(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 * Side Effects:
 *  Disable power to CAN Core in case of PSoC 3/5.
 *  Pending message in the Tx buffer of PSoC 3/5 will not be aborted on calling
-*  the CAN_1_Stop() API. User has to abort all pending messages
-*  before calling the CAN_1_Stop() function to make sure that the
+*  the TCAN_Stop() API. User has to abort all pending messages
+*  before calling the TCAN_Stop() function to make sure that the
 *  block stops all the message transmission immediately.
 *
 *******************************************************************************/
-uint8 CAN_1_Stop(void) 
+uint8 TCAN_Stop(void) 
 {
-    uint32 timeout = CAN_1_MODE_STATE_STOP_TIMEOUT;
-    uint8 result = CAN_1_FAIL;
+    uint32 timeout = TCAN_MODE_STATE_STOP_TIMEOUT;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
         uint8 enableInterrupts;
     #endif /* CY_PSOC3 || CY_PSOC5 */
 
     /* Set CAN controller to stop mode */
-    CY_SET_REG32(CAN_1_CMD_PTR, (CY_GET_REG32(CAN_1_CMD_PTR) &
-                                            ((uint32) (~((uint32)CAN_1_MODE_MASK)))));
+    CY_SET_REG32(TCAN_CMD_PTR, (CY_GET_REG32(TCAN_CMD_PTR) &
+                                            ((uint32) (~((uint32)TCAN_MODE_MASK)))));
 
     /* Timeout for CAN state machine to switch mode to Stop */
-    while ((timeout != 0u) && ((CY_GET_REG32(CAN_1_CMD_PTR) & CAN_1_MODE_MASK) != 0u))
+    while ((timeout != 0u) && ((CY_GET_REG32(TCAN_CMD_PTR) & TCAN_MODE_MASK) != 0u))
     {
         timeout--;
     }
@@ -388,16 +388,16 @@ uint8 CAN_1_Stop(void)
         result = CYRET_SUCCESS;
 
         /* Disable isr */
-    CyIntDisable(CAN_1_ISR_NUMBER);
+    CyIntDisable(TCAN_ISR_NUMBER);
 
         #if (CY_PSOC3 || CY_PSOC5)
             enableInterrupts = CyEnterCriticalSection();
 
             /* Disable CAN block in Active mode */
-            CAN_1_PM_ACT_CFG_REG &= (uint8) (~CAN_1_ACT_PWR_EN);
+            TCAN_PM_ACT_CFG_REG &= (uint8) (~TCAN_ACT_PWR_EN);
 
             /* Disable CAN block in Alternate Active (Standby) mode template */
-            CAN_1_PM_STBY_CFG_REG &= (uint8) (~CAN_1_STBY_PWR_EN);
+            TCAN_PM_STBY_CFG_REG &= (uint8) (~TCAN_STBY_PWR_EN);
 
             CyExitCriticalSection(enableInterrupts);
         #endif /* CY_PSOC3 || CY_PSOC5 */
@@ -408,7 +408,7 @@ uint8 CAN_1_Stop(void)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GlobalIntEnable
+* FUNCTION NAME:   TCAN_GlobalIntEnable
 ********************************************************************************
 *
 * Summary:
@@ -421,25 +421,25 @@ uint8 CAN_1_Stop(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_GlobalIntEnable(void) 
+uint8 TCAN_GlobalIntEnable(void) 
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        CAN_1_INT_EN_REG.byte[0u] |= CAN_1_GLOBAL_INT_MASK;
+        TCAN_INT_EN_REG.byte[0u] |= TCAN_GLOBAL_INT_MASK;
 
         /* Verify that bit is set */
-        if ((CAN_1_INT_EN_REG.byte[0u] & CAN_1_GLOBAL_INT_MASK) != 0u)
+        if ((TCAN_INT_EN_REG.byte[0u] & TCAN_GLOBAL_INT_MASK) != 0u)
         {
             result = CYRET_SUCCESS;
         }
     #else  /* CY_PSOC4 */
-        CAN_1_INT_EN_REG |= CAN_1_GLOBAL_INT_MASK;
+        TCAN_INT_EN_REG |= TCAN_GLOBAL_INT_MASK;
         /* Verify that bit is set */
-        if ((CAN_1_INT_EN_REG & CAN_1_GLOBAL_INT_MASK) != 0u)
+        if ((TCAN_INT_EN_REG & TCAN_GLOBAL_INT_MASK) != 0u)
         {
             result = CYRET_SUCCESS;
         }
@@ -450,7 +450,7 @@ uint8 CAN_1_GlobalIntEnable(void)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GlobalIntDisable
+* FUNCTION NAME:   TCAN_GlobalIntDisable
 ********************************************************************************
 *
 * Summary:
@@ -463,26 +463,26 @@ uint8 CAN_1_GlobalIntEnable(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_GlobalIntDisable(void) 
+uint8 TCAN_GlobalIntDisable(void) 
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        CAN_1_INT_EN_REG.byte[0u] &= (uint8) (~CAN_1_GLOBAL_INT_MASK);
+        TCAN_INT_EN_REG.byte[0u] &= (uint8) (~TCAN_GLOBAL_INT_MASK);
 
         /* Verify that bit is cleared */
-        if ((CAN_1_INT_EN_REG.byte[0u] & CAN_1_GLOBAL_INT_MASK) == 0u)
+        if ((TCAN_INT_EN_REG.byte[0u] & TCAN_GLOBAL_INT_MASK) == 0u)
         {
             result = CYRET_SUCCESS;
         }
     #else  /* CY_PSOC4 */
-        CAN_1_INT_EN_REG &= (uint32) (~((uint32) CAN_1_GLOBAL_INT_MASK));
+        TCAN_INT_EN_REG &= (uint32) (~((uint32) TCAN_GLOBAL_INT_MASK));
 
         /* Verify that bit is cleared */
-        if ((CAN_1_INT_EN_REG & CAN_1_GLOBAL_INT_MASK) == 0u)
+        if ((TCAN_INT_EN_REG & TCAN_GLOBAL_INT_MASK) == 0u)
         {
             result = CYRET_SUCCESS;
         }
@@ -493,7 +493,7 @@ uint8 CAN_1_GlobalIntDisable(void)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetPreScaler
+* FUNCTION NAME:   TCAN_SetPreScaler
 ********************************************************************************
 *
 * Summary:
@@ -512,35 +512,35 @@ uint8 CAN_1_GlobalIntDisable(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
-*    CAN_1_OUT_OF_RANGE      The function parameter is out of range
+*    TCAN_FAIL              The function failed
+*    TCAN_OUT_OF_RANGE      The function parameter is out of range
 *
 *******************************************************************************/
-uint8 CAN_1_SetPreScaler(uint16 bitrate) 
+uint8 TCAN_SetPreScaler(uint16 bitrate) 
 {
-    uint8 result = CAN_1_OUT_OF_RANGE;
+    uint8 result = TCAN_OUT_OF_RANGE;
 
-    if (bitrate <= CAN_1_BITRATE_MASK)
+    if (bitrate <= TCAN_BITRATE_MASK)
     {
-        result = CAN_1_FAIL;
+        result = TCAN_FAIL;
 
         #if (CY_PSOC3 || CY_PSOC5)
             /* Set prescaler */
-            CY_SET_REG16((reg16 *) (&CAN_1_CFG_REG.byte[2u]), bitrate);
+            CY_SET_REG16((reg16 *) (&TCAN_CFG_REG.byte[2u]), bitrate);
 
             /* Verify that prescaler is set */
-            if (CY_GET_REG16((reg16 *) (&CAN_1_CFG_REG.byte[2u])) == bitrate)
+            if (CY_GET_REG16((reg16 *) (&TCAN_CFG_REG.byte[2u])) == bitrate)
             {
                 result = CYRET_SUCCESS;
             }
         #else  /* CY_PSOC4 */
             /* Set prescaler */
-            CAN_1_CFG_REG = (CAN_1_CFG_REG & (uint32) (~CAN_1_BITRATE_MASK_SHIFTED)) |
-            (uint32) ((uint32) bitrate << CAN_1_BITRATE_SHIFT);
+            TCAN_CFG_REG = (TCAN_CFG_REG & (uint32) (~TCAN_BITRATE_MASK_SHIFTED)) |
+            (uint32) ((uint32) bitrate << TCAN_BITRATE_SHIFT);
 
             /* Verify that prescaler is set */
-            if ((CAN_1_CFG_REG & CAN_1_BITRATE_MASK_SHIFTED) ==
-               ((uint32) ((uint32) bitrate << CAN_1_BITRATE_SHIFT)))
+            if ((TCAN_CFG_REG & TCAN_BITRATE_MASK_SHIFTED) ==
+               ((uint32) ((uint32) bitrate << TCAN_BITRATE_SHIFT)))
             {
                 result = CYRET_SUCCESS;
             }
@@ -552,7 +552,7 @@ uint8 CAN_1_SetPreScaler(uint16 bitrate)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetArbiter
+* FUNCTION NAME:   TCAN_SetArbiter
 ********************************************************************************
 *
 * Summary:
@@ -562,58 +562,58 @@ uint8 CAN_1_SetPreScaler(uint16 bitrate)
 * Parameters:
 *  arbiter: The arbitration type for transmit mailboxes.
 *   Value                              Description
-*    CAN_1_ROUND_ROBIN       The Round Robin arbitration
-*    CAN_1_FIXED_PRIORITY    The Fixed Priority arbitration.
+*    TCAN_ROUND_ROBIN       The Round Robin arbitration
+*    TCAN_FIXED_PRIORITY    The Fixed Priority arbitration.
 *
 * Return:
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SetArbiter(uint8 arbiter) 
+uint8 TCAN_SetArbiter(uint8 arbiter) 
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        if (arbiter == CAN_1_ROUND_ROBIN)
+        if (arbiter == TCAN_ROUND_ROBIN)
         {
-            CAN_1_CFG_REG.byte[1u] &= (uint8) (~CAN_1_ARBITRATION_MASK);
+            TCAN_CFG_REG.byte[1u] &= (uint8) (~TCAN_ARBITRATION_MASK);
 
             /* Verify that bit is cleared */
-            if ((CAN_1_CFG_REG.byte[1u] & CAN_1_ARBITRATION_MASK) == 0u)
+            if ((TCAN_CFG_REG.byte[1u] & TCAN_ARBITRATION_MASK) == 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
         else    /* Fixed Priority */
         {
-            CAN_1_CFG_REG.byte[1u] |= CAN_1_ARBITRATION_MASK;
+            TCAN_CFG_REG.byte[1u] |= TCAN_ARBITRATION_MASK;
 
             /* Verify that bit is set */
-            if ((CAN_1_CFG_REG.byte[1u] & CAN_1_ARBITRATION_MASK) != 0u)
+            if ((TCAN_CFG_REG.byte[1u] & TCAN_ARBITRATION_MASK) != 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
     #else  /* CY_PSOC4 */
-        if (arbiter == CAN_1_ROUND_ROBIN)
+        if (arbiter == TCAN_ROUND_ROBIN)
         {
-            CAN_1_CFG_REG &= (uint32) (~CAN_1_ARBITRATION_MASK);
+            TCAN_CFG_REG &= (uint32) (~TCAN_ARBITRATION_MASK);
 
             /* Verify that bit is cleared */
-            if ((CAN_1_CFG_REG & CAN_1_ARBITRATION_MASK) == 0u)
+            if ((TCAN_CFG_REG & TCAN_ARBITRATION_MASK) == 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
         else    /* Fixed priority */
         {
-            CAN_1_CFG_REG |= CAN_1_ARBITRATION_MASK;
+            TCAN_CFG_REG |= TCAN_ARBITRATION_MASK;
 
             /* Verify that bit is set */
-            if ((CAN_1_CFG_REG & CAN_1_ARBITRATION_MASK) != 0u)
+            if ((TCAN_CFG_REG & TCAN_ARBITRATION_MASK) != 0u)
             {
                 result = CYRET_SUCCESS;
             }
@@ -625,7 +625,7 @@ uint8 CAN_1_SetArbiter(uint8 arbiter)
 
 
 /*******************************************************************************
-* FUNCTION NAME: CAN_1_SetTsegSample
+* FUNCTION NAME: TCAN_SetTsegSample
 ********************************************************************************
 *
 * Summary:
@@ -638,96 +638,96 @@ uint8 CAN_1_SetArbiter(uint8 arbiter)
 *  sjw: Synchronization Jump Width, value between 0x0 and 0x3 are valid;
 *  sm: Sampling Mode.
 *   Define                               Description
-*   CAN_1_ONE_SAMPLE_POINT     One sampling point is used
-*   CAN_1_THREE_SAMPLE_POINTS  Three sampling points are used
+*   TCAN_ONE_SAMPLE_POINT     One sampling point is used
+*   TCAN_THREE_SAMPLE_POINTS  Three sampling points are used
 *
 * Return:
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
-*    CAN_1_OUT_OF_RANGE      The function parameter is out of range
+*    TCAN_FAIL              The function failed
+*    TCAN_OUT_OF_RANGE      The function parameter is out of range
 *
 *******************************************************************************/
-uint8 CAN_1_SetTsegSample(uint8 cfgTseg1, uint8 cfgTseg2, uint8 sjw, uint8 sm)
+uint8 TCAN_SetTsegSample(uint8 cfgTseg1, uint8 cfgTseg2, uint8 sjw, uint8 sm)
                                      
 {
-    uint8 result = CAN_1_OUT_OF_RANGE;
+    uint8 result = TCAN_OUT_OF_RANGE;
     uint8 cfgTemp;
 
-    if ((cfgTseg1 >= CAN_1_CFG_REG_TSEG1_LOWER_LIMIT) && (cfgTseg1 <=
-         CAN_1_CFG_REG_TSEG1_UPPER_LIMIT))
+    if ((cfgTseg1 >= TCAN_CFG_REG_TSEG1_LOWER_LIMIT) && (cfgTseg1 <=
+         TCAN_CFG_REG_TSEG1_UPPER_LIMIT))
     {
-        if (((cfgTseg2 >= CAN_1_CFG_REG_TSEG2_LOWER_LIMIT) &&
-             (cfgTseg2 <= CAN_1_CFG_REG_TSEG2_UPPER_LIMIT)) || ((sm == CAN_1_ONE_SAMPLE_POINT) &&
-             (cfgTseg2 == CAN_1_CFG_REG_TSEG2_EXCEPTION)))
+        if (((cfgTseg2 >= TCAN_CFG_REG_TSEG2_LOWER_LIMIT) &&
+             (cfgTseg2 <= TCAN_CFG_REG_TSEG2_UPPER_LIMIT)) || ((sm == TCAN_ONE_SAMPLE_POINT) &&
+             (cfgTseg2 == TCAN_CFG_REG_TSEG2_EXCEPTION)))
         {
-            if ((sjw <= CAN_1_CFG_REG_SJW_LOWER_LIMIT) && (sjw <= cfgTseg1) && (sjw <= cfgTseg2))
+            if ((sjw <= TCAN_CFG_REG_SJW_LOWER_LIMIT) && (sjw <= cfgTseg1) && (sjw <= cfgTseg2))
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
 
                 #if (CY_PSOC3 || CY_PSOC5)
-                    cfgTemp = CAN_1_CFG_REG.byte[1];
-                    cfgTemp &= (uint8) (~CAN_1_CFG_REG_TSEG1_MASK);
+                    cfgTemp = TCAN_CFG_REG.byte[1];
+                    cfgTemp &= (uint8) (~TCAN_CFG_REG_TSEG1_MASK);
                     cfgTemp |= cfgTseg1;
 
                     /* Write register byte 1 */
-                    CAN_1_CFG_REG.byte[1u] = cfgTemp;
+                    TCAN_CFG_REG.byte[1u] = cfgTemp;
 
-                    /* Verify 1st byte of CAN_1_CFG_REG register */
-                    if (CAN_1_CFG_REG.byte[1u] == cfgTemp)
+                    /* Verify 1st byte of TCAN_CFG_REG register */
+                    if (TCAN_CFG_REG.byte[1u] == cfgTemp)
                     {
                         cfgTemp = 0u;
                         /* Set appropriate bits */
-                        if (sm != CAN_1_ONE_SAMPLE_POINT)
+                        if (sm != TCAN_ONE_SAMPLE_POINT)
                         {
-                            cfgTemp = CAN_1_SAMPLE_MODE_MASK;
+                            cfgTemp = TCAN_SAMPLE_MODE_MASK;
                         }
-                        cfgTemp |= ((uint8) (cfgTseg2 << CAN_1_CFG_REG_TSEG2_SHIFT)) |
-                                   ((uint8) (sjw << CAN_1_CFG_REG_SJW_SHIFT));
+                        cfgTemp |= ((uint8) (cfgTseg2 << TCAN_CFG_REG_TSEG2_SHIFT)) |
+                                   ((uint8) (sjw << TCAN_CFG_REG_SJW_SHIFT));
 
                         /* Write register byte 0 */
-                        CAN_1_CFG_REG.byte[0u] = cfgTemp;
+                        TCAN_CFG_REG.byte[0u] = cfgTemp;
 
-                        /* Verify 1st byte of CAN_1_CFG_REG register */
-                        if (CAN_1_CFG_REG.byte[0u] == cfgTemp)
+                        /* Verify 1st byte of TCAN_CFG_REG register */
+                        if (TCAN_CFG_REG.byte[0u] == cfgTemp)
                         {
                             result = CYRET_SUCCESS;
                         }
                     }
                 #else  /* CY_PSOC4 */
-                    cfgTemp = (uint8) (CAN_1_CFG_REG >> CAN_1_CFG_REG_TSEG1_SHIFT);
-                    cfgTemp &= (uint8) (~CAN_1_CFG_REG_TSEG1_MASK);
+                    cfgTemp = (uint8) (TCAN_CFG_REG >> TCAN_CFG_REG_TSEG1_SHIFT);
+                    cfgTemp &= (uint8) (~TCAN_CFG_REG_TSEG1_MASK);
                     cfgTemp |= cfgTseg1;
 
                     /* Write register byte 1 */
-                    CAN_1_CFG_REG =
-                    (CAN_1_CFG_REG & (uint32) (~((uint32) ((uint32) CAN_1_CFG_REG_TSEG1_MASK <<
-                    CAN_1_CFG_REG_TSEG1_SHIFT)))) |
-                    (uint32) ((uint32) cfgTemp << CAN_1_CFG_REG_TSEG1_SHIFT);
+                    TCAN_CFG_REG =
+                    (TCAN_CFG_REG & (uint32) (~((uint32) ((uint32) TCAN_CFG_REG_TSEG1_MASK <<
+                    TCAN_CFG_REG_TSEG1_SHIFT)))) |
+                    (uint32) ((uint32) cfgTemp << TCAN_CFG_REG_TSEG1_SHIFT);
 
-                    /* Verify 1st byte of CAN_1_CFG_REG register */
-                    if ((CAN_1_CFG_REG & (uint32) ((uint32) CAN_1_CFG_REG_TSEG1_MASK <<
-                       CAN_1_CFG_REG_TSEG1_SHIFT)) == (uint32) ((uint32) ((uint32) cfgTemp &
-                       CAN_1_CFG_REG_TSEG1_MASK) << CAN_1_CFG_REG_TSEG1_SHIFT))
+                    /* Verify 1st byte of TCAN_CFG_REG register */
+                    if ((TCAN_CFG_REG & (uint32) ((uint32) TCAN_CFG_REG_TSEG1_MASK <<
+                       TCAN_CFG_REG_TSEG1_SHIFT)) == (uint32) ((uint32) ((uint32) cfgTemp &
+                       TCAN_CFG_REG_TSEG1_MASK) << TCAN_CFG_REG_TSEG1_SHIFT))
                     {
                         cfgTemp = 0u;
                         /* Set appropriate bits */
-                        if (sm != CAN_1_ONE_SAMPLE_POINT)
+                        if (sm != TCAN_ONE_SAMPLE_POINT)
                         {
-                            cfgTemp = CAN_1_SAMPLE_MODE_MASK;
+                            cfgTemp = TCAN_SAMPLE_MODE_MASK;
                         }
-                        cfgTemp |= ((uint8) (cfgTseg2 << CAN_1_CFG_REG_TSEG2_SHIFT)) |
-                                   ((uint8) (sjw << CAN_1_CFG_REG_SJW_SHIFT));
+                        cfgTemp |= ((uint8) (cfgTseg2 << TCAN_CFG_REG_TSEG2_SHIFT)) |
+                                   ((uint8) (sjw << TCAN_CFG_REG_SJW_SHIFT));
 
                         /* Write register byte 0 */
-                        CAN_1_CFG_REG = (CAN_1_CFG_REG &
-                        (uint32) (~((uint32) (CAN_1_CFG_REG_TSEG2_MASK | CAN_1_CFG_REG_SJW_MASK |
-                        CAN_1_SAMPLE_MODE_MASK)))) | cfgTemp;
+                        TCAN_CFG_REG = (TCAN_CFG_REG &
+                        (uint32) (~((uint32) (TCAN_CFG_REG_TSEG2_MASK | TCAN_CFG_REG_SJW_MASK |
+                        TCAN_SAMPLE_MODE_MASK)))) | cfgTemp;
 
-                        /* Verify 1st byte of CAN_1_CFG_REG register */
-                        if ((CAN_1_CFG_REG & (CAN_1_CFG_REG_TSEG2_MASK |
-                           CAN_1_CFG_REG_SJW_MASK | CAN_1_SAMPLE_MODE_MASK)) == cfgTemp)
+                        /* Verify 1st byte of TCAN_CFG_REG register */
+                        if ((TCAN_CFG_REG & (TCAN_CFG_REG_TSEG2_MASK |
+                           TCAN_CFG_REG_SJW_MASK | TCAN_SAMPLE_MODE_MASK)) == cfgTemp)
                         {
                             result = CYRET_SUCCESS;
                         }
@@ -742,7 +742,7 @@ uint8 CAN_1_SetTsegSample(uint8 cfgTseg1, uint8 cfgTseg2, uint8 sjw, uint8 sm)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetRestartType
+* FUNCTION NAME:   TCAN_SetRestartType
 ********************************************************************************
 *
 * Summary:
@@ -752,10 +752,10 @@ uint8 CAN_1_SetTsegSample(uint8 cfgTseg1, uint8 cfgTseg2, uint8 sjw, uint8 sm)
 * Parameters:
 *  reset: Reset Type.
 *   Define                             Description
-*    CAN_1_MANUAL_RESTART    After Bus-Off, CAN must be restarted
+*    TCAN_MANUAL_RESTART    After Bus-Off, CAN must be restarted
 *                                       manually. This is the recommended
 *                                       setting.
-*    CAN_1_AUTO_RESTART      After Bus-Off, CAN restarts
+*    TCAN_AUTO_RESTART      After Bus-Off, CAN restarts
 *                                       automatically after 128 groups of 11
 *                                       recessive bits.
 *
@@ -763,51 +763,51 @@ uint8 CAN_1_SetTsegSample(uint8 cfgTseg1, uint8 cfgTseg2, uint8 sjw, uint8 sm)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SetRestartType(uint8 reset) 
+uint8 TCAN_SetRestartType(uint8 reset) 
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        if (reset == CAN_1_MANUAL_RESTART)
+        if (reset == TCAN_MANUAL_RESTART)
         {
-            CAN_1_CFG_REG.byte[0u] &= (uint8) (~CAN_1_RESET_MASK);
+            TCAN_CFG_REG.byte[0u] &= (uint8) (~TCAN_RESET_MASK);
 
             /* Verify that bit is cleared */
-            if ((CAN_1_CFG_REG.byte[0u] & CAN_1_RESET_MASK) == 0u)
+            if ((TCAN_CFG_REG.byte[0u] & TCAN_RESET_MASK) == 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
         else    /* Automatic restart */
         {
-            CAN_1_CFG_REG.byte[0u] |= CAN_1_RESET_MASK;
+            TCAN_CFG_REG.byte[0u] |= TCAN_RESET_MASK;
 
             /* Verify that bit is set */
-            if ((CAN_1_CFG_REG.byte[0u] & CAN_1_RESET_MASK) != 0u)
+            if ((TCAN_CFG_REG.byte[0u] & TCAN_RESET_MASK) != 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
     #else  /* CY_PSOC4 */
-        if (reset == CAN_1_MANUAL_RESTART)
+        if (reset == TCAN_MANUAL_RESTART)
         {
-            CAN_1_CFG_REG &= (uint32) (~((uint32) CAN_1_RESET_MASK));
+            TCAN_CFG_REG &= (uint32) (~((uint32) TCAN_RESET_MASK));
 
             /* Verify that bit is cleared */
-            if ((CAN_1_CFG_REG & CAN_1_RESET_MASK) == 0u)
+            if ((TCAN_CFG_REG & TCAN_RESET_MASK) == 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
         else    /* Automatic restart */
         {
-            CAN_1_CFG_REG |= CAN_1_RESET_MASK;
+            TCAN_CFG_REG |= TCAN_RESET_MASK;
 
             /* Verify that bit is set */
-            if ((CAN_1_CFG_REG & CAN_1_RESET_MASK) != 0u)
+            if ((TCAN_CFG_REG & TCAN_RESET_MASK) != 0u)
             {
                 result = CYRET_SUCCESS;
             }
@@ -819,7 +819,7 @@ uint8 CAN_1_SetRestartType(uint8 reset)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetEdgeMode
+* FUNCTION NAME:   TCAN_SetEdgeMode
 ********************************************************************************
 *
 * Summary:
@@ -829,29 +829,29 @@ uint8 CAN_1_SetRestartType(uint8 reset)
 * Parameters:
 *  edge: Edge Mode.
 *   Define                             Description
-*    CAN_1_EDGE_R_TO_D       The edge from R to D is used for
+*    TCAN_EDGE_R_TO_D       The edge from R to D is used for
 *                                       synchronization
-*    CAN_1_BOTH_EDGES        Both edges are used
+*    TCAN_BOTH_EDGES        Both edges are used
 *
 * Return:
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SetEdgeMode(uint8 edge) 
+uint8 TCAN_SetEdgeMode(uint8 edge) 
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        if (edge == CAN_1_EDGE_R_TO_D)
+        if (edge == TCAN_EDGE_R_TO_D)
         {
             /* Recessive to Dominant is used for synchronization */
-            CAN_1_CFG_REG.byte[0u] &= (uint8) (~CAN_1_EDGE_MODE_MASK);
+            TCAN_CFG_REG.byte[0u] &= (uint8) (~TCAN_EDGE_MODE_MASK);
 
             /* Verify that bit is cleared */
-            if ((CAN_1_CFG_REG.byte[0u] & CAN_1_EDGE_MODE_MASK) == 0u)
+            if ((TCAN_CFG_REG.byte[0u] & TCAN_EDGE_MODE_MASK) == 0u)
             {
                 result = CYRET_SUCCESS;
             }
@@ -859,22 +859,22 @@ uint8 CAN_1_SetEdgeMode(uint8 edge)
         else
         {
             /* Both edges to be used */
-            CAN_1_CFG_REG.byte[0u] |= CAN_1_EDGE_MODE_MASK;
+            TCAN_CFG_REG.byte[0u] |= TCAN_EDGE_MODE_MASK;
 
             /* Verify that bit is set */
-            if ((CAN_1_CFG_REG.byte[0u] & CAN_1_EDGE_MODE_MASK) != 0u)
+            if ((TCAN_CFG_REG.byte[0u] & TCAN_EDGE_MODE_MASK) != 0u)
             {
                 result = CYRET_SUCCESS;
             }
         }
     #else  /* CY_PSOC4 */
-        if (edge == CAN_1_EDGE_R_TO_D)
+        if (edge == TCAN_EDGE_R_TO_D)
         {
             /* Recessive to Dominant is used for synchronization */
-            CAN_1_CFG_REG &= (uint32) (~((uint32) CAN_1_EDGE_MODE_MASK));
+            TCAN_CFG_REG &= (uint32) (~((uint32) TCAN_EDGE_MODE_MASK));
 
             /* Verify that bit is cleared */
-            if ((CAN_1_CFG_REG & CAN_1_EDGE_MODE_MASK) == 0u)
+            if ((TCAN_CFG_REG & TCAN_EDGE_MODE_MASK) == 0u)
             {
                 result = CYRET_SUCCESS;
             }
@@ -882,10 +882,10 @@ uint8 CAN_1_SetEdgeMode(uint8 edge)
         else
         {
             /* Both edges to be used */
-            CAN_1_CFG_REG |= CAN_1_EDGE_MODE_MASK;
+            TCAN_CFG_REG |= TCAN_EDGE_MODE_MASK;
 
             /* Verify that bit is set */
-            if ((CAN_1_CFG_REG & CAN_1_EDGE_MODE_MASK) != 0u)
+            if ((TCAN_CFG_REG & TCAN_EDGE_MODE_MASK) != 0u)
             {
                 result = CYRET_SUCCESS;
             }
@@ -897,7 +897,7 @@ uint8 CAN_1_SetEdgeMode(uint8 edge)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetOpMode
+* FUNCTION NAME:   TCAN_SetOpMode
 ********************************************************************************
 *
 * Summary:
@@ -906,20 +906,20 @@ uint8 CAN_1_SetEdgeMode(uint8 edge)
 * Parameters:
 *  opMode: Operation Mode value.
 *   Define                              Description
-*    CAN_1_STOP_MODE          The CAN controller is in the Stop mode
-*    CAN_1_ACTIVE_RUN_MODE    The CAN controller is in the Active
+*    TCAN_STOP_MODE          The CAN controller is in the Stop mode
+*    TCAN_ACTIVE_RUN_MODE    The CAN controller is in the Active
 *                                        mode
-*    CAN_1_LISTEN_ONLY_MODE   The CAN controller is in the Listen
+*    TCAN_LISTEN_ONLY_MODE   The CAN controller is in the Listen
 *                                        Only mode: The output is held at the
 *                                        'R' level.
-*    CAN_1_INTERNAL_LOOP_BACK The CAN controller is in the Internal
+*    TCAN_INTERNAL_LOOP_BACK The CAN controller is in the Internal
 *                                        Loopback mode. This mode is used for
 *                                        the testing purpose and the transmitted
 *                                        transactions are internally routed
 *                                        back to the receiver logic and
 *                                        processed by the controller in this
 *                                        mode. Not available for PSoC3/5.
-*    CAN_1_EXTERNAL_LOOP_BACK This mode is used for the testing
+*    TCAN_EXTERNAL_LOOP_BACK This mode is used for the testing
 *                                        purpose by connecting Tx and Rx lines
 *                                        externally. The transmitted messages
 *                                        are received back and processed by the
@@ -929,33 +929,33 @@ uint8 CAN_1_SetEdgeMode(uint8 edge)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 * Side Effects:
 *  For PSoC 4 device family the function re-initializes the CAN registers.
 *
 *******************************************************************************/
-uint8 CAN_1_SetOpMode(uint8 opMode) 
+uint8 TCAN_SetOpMode(uint8 opMode) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
         uint32 timeout;
     #endif /* CY_PSOC3 || CY_PSOC5 */
-    uint8 result = CAN_1_FAIL;
-    uint8 runState = CAN_1_STOP_MODE;
+    uint8 result = TCAN_FAIL;
+    uint8 runState = TCAN_STOP_MODE;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        if (((CAN_1_CMD_REG.byte[0u] & CAN_1_ACTIVE_RUN_MODE) != 0u) ||
-            (opMode == CAN_1_ACTIVE_RUN_MODE))
+        if (((TCAN_CMD_REG.byte[0u] & TCAN_ACTIVE_RUN_MODE) != 0u) ||
+            (opMode == TCAN_ACTIVE_RUN_MODE))
         {
-            runState = CAN_1_ACTIVE_RUN_MODE;
+            runState = TCAN_ACTIVE_RUN_MODE;
         }
 
         /* Set CAN to the Stop Mode */
-        CAN_1_CMD_REG.byte[0u] = CAN_1_STOP_MODE;
+        TCAN_CMD_REG.byte[0u] = TCAN_STOP_MODE;
 
         /* Timeout for CAN state machine to switch mode to Stop */
-        for (timeout = CAN_1_MODE_STATE_STOP_TIMEOUT;
-            (timeout != 0u) && ((CAN_1_CMD_REG.byte[0u] & CAN_1_ACTIVE_RUN_MODE) != 0u);
+        for (timeout = TCAN_MODE_STATE_STOP_TIMEOUT;
+            (timeout != 0u) && ((TCAN_CMD_REG.byte[0u] & TCAN_ACTIVE_RUN_MODE) != 0u);
              timeout--)
         {
         }
@@ -965,60 +965,60 @@ uint8 CAN_1_SetOpMode(uint8 opMode)
             result = CYRET_SUCCESS;
         }
 
-        if ((result == CYRET_SUCCESS) && (opMode != CAN_1_STOP_MODE))
+        if ((result == CYRET_SUCCESS) && (opMode != TCAN_STOP_MODE))
         {
-            if (opMode == CAN_1_LISTEN_ONLY_MODE)
+            if (opMode == TCAN_LISTEN_ONLY_MODE)
             {
-                CAN_1_CMD_REG.byte[0u] = CAN_1_LISTEN_ONLY_MODE;
+                TCAN_CMD_REG.byte[0u] = TCAN_LISTEN_ONLY_MODE;
             }
 
-            if (runState == CAN_1_ACTIVE_RUN_MODE)
+            if (runState == TCAN_ACTIVE_RUN_MODE)
             {
-                CAN_1_CMD_REG.byte[0u] |= CAN_1_ACTIVE_RUN_MODE;
+                TCAN_CMD_REG.byte[0u] |= TCAN_ACTIVE_RUN_MODE;
 
                 /* Timeout for CAN state machine to switch mode to Run */
-                for (timeout = CAN_1_MODE_STATE_RUN_TIMEOUT;
-                    (timeout != 0u) && ((CAN_1_CMD_REG.byte[0u] & CAN_1_MODE_MASK) == 0u);
+                for (timeout = TCAN_MODE_STATE_RUN_TIMEOUT;
+                    (timeout != 0u) && ((TCAN_CMD_REG.byte[0u] & TCAN_MODE_MASK) == 0u);
                      timeout--)
                 {
                 }
 
                 if (timeout == 0u)
                 {
-                    result = CAN_1_FAIL;
+                    result = TCAN_FAIL;
                 }
             }
         }
     #else  /* CY_PSOC4 */
-        if (((CAN_1_CMD_REG & CAN_1_MODE_MASK) != 0u) ||
-            (opMode == CAN_1_ACTIVE_RUN_MODE))
+        if (((TCAN_CMD_REG & TCAN_MODE_MASK) != 0u) ||
+            (opMode == TCAN_ACTIVE_RUN_MODE))
         {
-            runState = CAN_1_ACTIVE_RUN_MODE;
+            runState = TCAN_ACTIVE_RUN_MODE;
         }
 
         /* Sets CAN Component into the Stop mode */
-        if (CAN_1_Stop() == CYRET_SUCCESS)
+        if (TCAN_Stop() == CYRET_SUCCESS)
         {
             /* Disable CAN IP Block to reset configuration before sets Operation Mode */
-            CAN_1_CNTL_REG = (uint32) (~CAN_1_IP_ENABLE);
+            TCAN_CNTL_REG = (uint32) (~TCAN_IP_ENABLE);
 
             /* Enable CAN IP Block */
-            CAN_1_CNTL_REG = CAN_1_IP_ENABLE;
+            TCAN_CNTL_REG = TCAN_IP_ENABLE;
 
-            result = CAN_1_Init();
+            result = TCAN_Init();
 
-            if ((result == CYRET_SUCCESS) && (opMode != CAN_1_STOP_MODE))
+            if ((result == CYRET_SUCCESS) && (opMode != TCAN_STOP_MODE))
             {
-                if (opMode != CAN_1_ACTIVE_RUN_MODE)
+                if (opMode != TCAN_ACTIVE_RUN_MODE)
                 {
                     /* Set CAN Operation Mode */
-                    CAN_1_CMD_REG |= opMode;
+                    TCAN_CMD_REG |= opMode;
                 }
 
-                if (runState == CAN_1_ACTIVE_RUN_MODE)
+                if (runState == TCAN_ACTIVE_RUN_MODE)
                 {
                     /* Enable component's operation */
-                    result = CAN_1_Enable();
+                    result = TCAN_Enable();
                 }
             }
         }
@@ -1029,7 +1029,7 @@ uint8 CAN_1_SetOpMode(uint8 opMode)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_RXRegisterInit
+* FUNCTION NAME:   TCAN_RXRegisterInit
 ********************************************************************************
 *
 * Summary:
@@ -1043,38 +1043,38 @@ uint8 CAN_1_SetOpMode(uint8 opMode)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
-*    CAN_1_OUT_OF_RANGE      The function parameter is out of range
+*    TCAN_FAIL              The function failed
+*    TCAN_OUT_OF_RANGE      The function parameter is out of range
 *
 *******************************************************************************/
-uint8 CAN_1_RXRegisterInit(reg32 *regAddr, uint32 config)
+uint8 TCAN_RXRegisterInit(reg32 *regAddr, uint32 config)
                                       
 {
-    uint8 result = CAN_1_OUT_OF_RANGE;
+    uint8 result = TCAN_OUT_OF_RANGE;
 
-    if ((((uint32) regAddr & CAN_1_REG_ADDR_MASK) >=
-        ((uint32) CAN_1_RX_FIRST_REGISTER_PTR & CAN_1_REG_ADDR_MASK)) &&
-        ((((uint32) regAddr & CAN_1_REG_ADDR_MASK)) <=
-        ((uint32) CAN_1_RX_LAST_REGISTER_PTR & CAN_1_REG_ADDR_MASK)))
+    if ((((uint32) regAddr & TCAN_REG_ADDR_MASK) >=
+        ((uint32) TCAN_RX_FIRST_REGISTER_PTR & TCAN_REG_ADDR_MASK)) &&
+        ((((uint32) regAddr & TCAN_REG_ADDR_MASK)) <=
+        ((uint32) TCAN_RX_LAST_REGISTER_PTR & TCAN_REG_ADDR_MASK)))
     {
-        result = CAN_1_FAIL;
+        result = TCAN_FAIL;
 
-        if ((((uint32) regAddr & CAN_1_REG_ADDR_MASK) % CAN_1_RX_CMD_REG_WIDTH) == 0u)
+        if ((((uint32) regAddr & TCAN_REG_ADDR_MASK) % TCAN_RX_CMD_REG_WIDTH) == 0u)
         {
-            config |= CAN_1_RX_WPN_SET;
+            config |= TCAN_RX_WPN_SET;
 
     /* Disable isr */
-    CyIntDisable(CAN_1_ISR_NUMBER);
+    CyIntDisable(TCAN_ISR_NUMBER);
 
             /* Write defined RX CMD registers */
             CY_SET_REG32(regAddr, config);
 
     /* Enable isr */
-    CyIntEnable(CAN_1_ISR_NUMBER);
+    CyIntEnable(TCAN_ISR_NUMBER);
 
             /* Verify register */
-            if ((CY_GET_REG32(regAddr) & CAN_1_RX_READ_BACK_MASK) ==
-                (config & CAN_1_RX_READ_BACK_MASK))
+            if ((CY_GET_REG32(regAddr) & TCAN_RX_READ_BACK_MASK) ==
+                (config & TCAN_RX_READ_BACK_MASK))
             {
                 result = CYRET_SUCCESS;
             }
@@ -1083,13 +1083,13 @@ uint8 CAN_1_RXRegisterInit(reg32 *regAddr, uint32 config)
         else
         {
     /* Disable isr */
-    CyIntDisable(CAN_1_ISR_NUMBER);
+    CyIntDisable(TCAN_ISR_NUMBER);
 
             /* Write defined CAN receive register */
             CY_SET_REG32(regAddr, config);
 
     /* Enable isr */
-    CyIntEnable(CAN_1_ISR_NUMBER);
+    CyIntEnable(TCAN_ISR_NUMBER);
 
             /* Verify register */
             if (CY_GET_REG32(regAddr) == config)
@@ -1104,7 +1104,7 @@ uint8 CAN_1_RXRegisterInit(reg32 *regAddr, uint32 config)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetIrqMask
+* FUNCTION NAME:   TCAN_SetIrqMask
 ********************************************************************************
 *
 * Summary:
@@ -1115,49 +1115,49 @@ uint8 CAN_1_RXRegisterInit(reg32 *regAddr, uint32 config)
 * Parameters:
 *  mask: Interrupt enable/disable request. 1 bit per interrupt source.
 *   Define                                    Description
-*    CAN_1_GLOBAL_INT_ENABLE        Global Interrupt Enable Flag
-*    CAN_1_ARBITRATION_LOST_ENABLE  Arbitration Loss Interrupt Enable
-*    CAN_1_OVERLOAD_ERROR_ENABLE    Overload Interrupt Enable
-*    CAN_1_BIT_ERROR_ENABLE         Bit Error Interrupt Enable
-*    CAN_1_STUFF_ERROR_ENABLE       Stuff Error Interrupt Enable
-*    CAN_1_ACK_ERROR_ENABLE         Ack Error Interrupt Enable
-*    CAN_1_FORM_ERROR_ENABLE        Form Error Interrupt Enable
-*    CAN_1_CRC_ERROR_ENABLE         CRC Error Interrupt Enable
-*    CAN_1_BUS_OFF_ENABLE           Bus-Off State Interrupt Enable
-*    CAN_1_RX_MSG_LOST_ENABLE       Rx Msg Loss Interrupt Enable
-*    CAN_1_TX_MESSAGE_ENABLE        Tx Msg Sent Interrupt Enable
-*    CAN_1_RX_MESSAGE_ENABLE        Msg Received Interrupt Enable
-*    CAN_1_RTR_MESSAGE_ENABLE       RTR Auto-reply Interrupt Enable
-*    CAN_1_STUCK_AT_ZERO_ENABLE     Stuck at dominant error Interrupt
+*    TCAN_GLOBAL_INT_ENABLE        Global Interrupt Enable Flag
+*    TCAN_ARBITRATION_LOST_ENABLE  Arbitration Loss Interrupt Enable
+*    TCAN_OVERLOAD_ERROR_ENABLE    Overload Interrupt Enable
+*    TCAN_BIT_ERROR_ENABLE         Bit Error Interrupt Enable
+*    TCAN_STUFF_ERROR_ENABLE       Stuff Error Interrupt Enable
+*    TCAN_ACK_ERROR_ENABLE         Ack Error Interrupt Enable
+*    TCAN_FORM_ERROR_ENABLE        Form Error Interrupt Enable
+*    TCAN_CRC_ERROR_ENABLE         CRC Error Interrupt Enable
+*    TCAN_BUS_OFF_ENABLE           Bus-Off State Interrupt Enable
+*    TCAN_RX_MSG_LOST_ENABLE       Rx Msg Loss Interrupt Enable
+*    TCAN_TX_MESSAGE_ENABLE        Tx Msg Sent Interrupt Enable
+*    TCAN_RX_MESSAGE_ENABLE        Msg Received Interrupt Enable
+*    TCAN_RTR_MESSAGE_ENABLE       RTR Auto-reply Interrupt Enable
+*    TCAN_STUCK_AT_ZERO_ENABLE     Stuck at dominant error Interrupt
 *                                              Enable
-*    CAN_1_SST_FAILURE_ENABLE       SST failure Interrupt Enable
+*    TCAN_SST_FAILURE_ENABLE       SST failure Interrupt Enable
 *
 * Return:
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SetIrqMask(uint16 mask) 
+uint8 TCAN_SetIrqMask(uint16 mask) 
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     #if (CY_PSOC3 || CY_PSOC5)
-        /* Write byte 0 and 1 of CAN_1_INT_EN_REG register */
-        CY_SET_REG16((reg16 *) (&CAN_1_INT_EN_REG), mask);
+        /* Write byte 0 and 1 of TCAN_INT_EN_REG register */
+        CY_SET_REG16((reg16 *) (&TCAN_INT_EN_REG), mask);
 
-        /* Verify CAN_1_INT_EN_REG register */
-        if (CY_GET_REG16((reg16 *) (&CAN_1_INT_EN_REG)) == mask)
+        /* Verify TCAN_INT_EN_REG register */
+        if (CY_GET_REG16((reg16 *) (&TCAN_INT_EN_REG)) == mask)
         {
             result = CYRET_SUCCESS;
         }
     #else  /* CY_PSOC4 */
-        /* Write byte 0 and 1 of CAN_1_INT_EN_REG register */
-        CAN_1_INT_EN_REG = mask;
+        /* Write byte 0 and 1 of TCAN_INT_EN_REG register */
+        TCAN_INT_EN_REG = mask;
 
-        /* Verify CAN_1_INT_EN_REG register */
-        if ((CAN_1_INT_EN_REG & CAN_1_REG_ADDR_MASK) == mask)
+        /* Verify TCAN_INT_EN_REG register */
+        if ((TCAN_INT_EN_REG & TCAN_REG_ADDR_MASK) == mask)
         {
             result = CYRET_SUCCESS;
         }
@@ -1168,7 +1168,7 @@ uint8 CAN_1_SetIrqMask(uint16 mask)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GetTXErrorFlag
+* FUNCTION NAME:   TCAN_GetTXErrorFlag
 ********************************************************************************
 *
 * Summary:
@@ -1182,23 +1182,23 @@ uint8 CAN_1_SetIrqMask(uint16 mask)
 *  The indication whether the number of TX errors exceeds 0x60.
 *
 *******************************************************************************/
-uint8 CAN_1_GetTXErrorFlag(void) 
+uint8 TCAN_GetTXErrorFlag(void) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
         /* Get state of transmit error flag */
-        return (((CAN_1_ERR_SR_REG.byte[2u] & CAN_1_TX_ERROR_FLAG_MASK) ==
-                  CAN_1_TX_ERROR_FLAG_MASK) ? 1u : 0u);
+        return (((TCAN_ERR_SR_REG.byte[2u] & TCAN_TX_ERROR_FLAG_MASK) ==
+                  TCAN_TX_ERROR_FLAG_MASK) ? 1u : 0u);
     #else  /* CY_PSOC4 */
         /* Get state of transmit error flag */
-        return (((CAN_1_ERR_SR_REG & CAN_1_TX_ERROR_FLAG_MASK) ==
-                  CAN_1_TX_ERROR_FLAG_MASK) ? 1u : 0u);
+        return (((TCAN_ERR_SR_REG & TCAN_TX_ERROR_FLAG_MASK) ==
+                  TCAN_TX_ERROR_FLAG_MASK) ? 1u : 0u);
     #endif /* CY_PSOC3 || CY_PSOC5 */
 
 }
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GetRXErrorFlag
+* FUNCTION NAME:   TCAN_GetRXErrorFlag
 ********************************************************************************
 *
 * Summary:
@@ -1212,23 +1212,23 @@ uint8 CAN_1_GetTXErrorFlag(void)
 *  The indication whether the number of TX errors exceeds 0x60.
 *
 *******************************************************************************/
-uint8 CAN_1_GetRXErrorFlag(void) 
+uint8 TCAN_GetRXErrorFlag(void) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
         /* Get state of receive error flag */
-        return (((CAN_1_ERR_SR_REG.byte[2u] & CAN_1_RX_ERROR_FLAG_MASK) ==
-                  CAN_1_RX_ERROR_FLAG_MASK) ? 1u : 0u);
+        return (((TCAN_ERR_SR_REG.byte[2u] & TCAN_RX_ERROR_FLAG_MASK) ==
+                  TCAN_RX_ERROR_FLAG_MASK) ? 1u : 0u);
     #else  /* CY_PSOC4 */
         /* Get state of receive error flag */
-        return (((CAN_1_ERR_SR_REG & CAN_1_RX_ERROR_FLAG_MASK) ==
-                  CAN_1_RX_ERROR_FLAG_MASK) ? 1u : 0u);
+        return (((TCAN_ERR_SR_REG & TCAN_RX_ERROR_FLAG_MASK) ==
+                  TCAN_RX_ERROR_FLAG_MASK) ? 1u : 0u);
     #endif /* CY_PSOC3 || CY_PSOC5 */
 
 }
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GetTXErrorCount
+* FUNCTION NAME:   TCAN_GetTXErrorCount
 ********************************************************************************
 *
 * Summary:
@@ -1241,20 +1241,20 @@ uint8 CAN_1_GetRXErrorFlag(void)
 *  The number of Transmit Errors.
 *
 *******************************************************************************/
-uint8 CAN_1_GetTXErrorCount(void) 
+uint8 TCAN_GetTXErrorCount(void) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
         /* Get state of transmit error count */
-        return (CAN_1_ERR_SR_REG.byte[0u]);    /* bits 7-0 */
+        return (TCAN_ERR_SR_REG.byte[0u]);    /* bits 7-0 */
     #else  /* CY_PSOC4 */
         /* Get state of transmit error count */
-        return ((uint8) CAN_1_ERR_SR_REG);    /* bits 7-0 */
+        return ((uint8) TCAN_ERR_SR_REG);    /* bits 7-0 */
     #endif /* CY_PSOC3 || CY_PSOC5 */
 }
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GetRXErrorCount
+* FUNCTION NAME:   TCAN_GetRXErrorCount
 ********************************************************************************
 *
 * Summary:
@@ -1267,21 +1267,21 @@ uint8 CAN_1_GetTXErrorCount(void)
 *  The number of Receive Errors.
 *
 *******************************************************************************/
-uint8 CAN_1_GetRXErrorCount(void) 
+uint8 TCAN_GetRXErrorCount(void) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
         /* Get state of receive error count */
-        return (CAN_1_ERR_SR_REG.byte[1u]);    /* bits 15-8 */
+        return (TCAN_ERR_SR_REG.byte[1u]);    /* bits 15-8 */
     #else  /* CY_PSOC4 */
         /* Get state of receive error count (bits 15-8) */
-        return ((uint8) (CAN_1_ERR_SR_REG >> CAN_1_ONE_BYTE_OFFSET));
+        return ((uint8) (TCAN_ERR_SR_REG >> TCAN_ONE_BYTE_OFFSET));
     #endif /* CY_PSOC3 || CY_PSOC5 */
 
 }
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_GetErrorState
+* FUNCTION NAME:   TCAN_GetErrorState
 ********************************************************************************
 *
 * Summary:
@@ -1294,21 +1294,21 @@ uint8 CAN_1_GetRXErrorCount(void)
 *  The error status.
 *
 *******************************************************************************/
-uint8 CAN_1_GetErrorState(void) 
+uint8 TCAN_GetErrorState(void) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
         /* Get error state of receiver */
-        return (CAN_1_ERR_SR_REG.byte[2u] & CAN_1_ERROR_STATE_MASK);
+        return (TCAN_ERR_SR_REG.byte[2u] & TCAN_ERROR_STATE_MASK);
     #else  /* CY_PSOC4 */
         /* Get error state of receiver */
-        return ((uint8) ((CAN_1_ERR_SR_REG >> CAN_1_TWO_BYTE_OFFSET) &
-                CAN_1_ERROR_STATE_MASK));
+        return ((uint8) ((TCAN_ERR_SR_REG >> TCAN_TWO_BYTE_OFFSET) &
+                TCAN_ERROR_STATE_MASK));
     #endif /* CY_PSOC3 || CY_PSOC5 */
 }
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_RxBufConfig
+* FUNCTION NAME:   TCAN_RxBufConfig
 ********************************************************************************
 *
 * Summary:
@@ -1322,35 +1322,35 @@ uint8 CAN_1_GetErrorState(void)
 *  The indication if particular configuration has been accepted or rejected.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_RxBufConfig(const CAN_1_RX_CFG *rxConfig)
+uint8 TCAN_RxBufConfig(const TCAN_RX_CFG *rxConfig)
                                    
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     /* Write RX CMD Register */
-    CY_SET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxcmd), (rxConfig->rxcmd |
-                 CAN_1_RX_WPN_SET));
-    if ((CY_GET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxcmd)) &
-         CAN_1_RX_READ_BACK_MASK) == (rxConfig->rxcmd & CAN_1_RX_WPN_CLEAR))
+    CY_SET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxcmd), (rxConfig->rxcmd |
+                 TCAN_RX_WPN_SET));
+    if ((CY_GET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxcmd)) &
+         TCAN_RX_READ_BACK_MASK) == (rxConfig->rxcmd & TCAN_RX_WPN_CLEAR))
     {
         /* Write RX AMR Register */
-        CY_SET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxamr), rxConfig->rxamr);
-        if (CY_GET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxamr)) == rxConfig->rxamr)
+        CY_SET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxamr), rxConfig->rxamr);
+        if (CY_GET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxamr)) == rxConfig->rxamr)
         {
             /* Write RX ACR Register */
-            CY_SET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxacr), rxConfig->rxacr);
-            if (CY_GET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxacr)) == rxConfig->rxacr)
+            CY_SET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxacr), rxConfig->rxacr);
+            if (CY_GET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxacr)) == rxConfig->rxacr)
             {
                 /* Write RX AMRD Register */
-                CY_SET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxamrd), 0xFFFFFFFFu);
-                if (CY_GET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxamrd)) == 0xFFFFFFFFu)
+                CY_SET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxamrd), 0xFFFFFFFFu);
+                if (CY_GET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxamrd)) == 0xFFFFFFFFu)
                 {
                     /* Write RX ACRD Register */
-                    CY_SET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxacrd), 0x00000000u);
-                    if (CY_GET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxacrd)) == 0x00000000u)
+                    CY_SET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxacrd), 0x00000000u);
+                    if (CY_GET_REG32((reg32 *) (&TCAN_RX[rxConfig->rxmailbox].rxacrd)) == 0x00000000u)
                     {
                         result = CYRET_SUCCESS;
                     }
@@ -1364,12 +1364,12 @@ uint8 CAN_1_RxBufConfig(const CAN_1_RX_CFG *rxConfig)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_TxBufConfig
+* FUNCTION NAME:   TCAN_TxBufConfig
 ********************************************************************************
 *
 * Summary:
 *  This function configures all transmit registers for a particular mailbox.
-*  Mailbox number contains CAN_1_TX_CFG structure.
+*  Mailbox number contains TCAN_TX_CFG structure.
 *
 * Parameters:
 *  txConfig: The pointer to structure that contain all required values to
@@ -1379,22 +1379,22 @@ uint8 CAN_1_RxBufConfig(const CAN_1_RX_CFG *rxConfig)
 *  The indication if particular configuration has been accepted or rejected.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_TxBufConfig(const CAN_1_TX_CFG *txConfig)
+uint8 TCAN_TxBufConfig(const TCAN_TX_CFG *txConfig)
                                    
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
     /* Write TX CMD Register */
-    CY_SET_REG32(CAN_1_TX_CMD_PTR(txConfig->txmailbox), (txConfig->txcmd | CAN_1_TX_WPN_SET));
-    if ((CY_GET_REG32(CAN_1_TX_CMD_PTR(txConfig->txmailbox)) &
-        CAN_1_TX_READ_BACK_MASK) == (txConfig->txcmd & CAN_1_TX_WPN_CLEAR))
+    CY_SET_REG32(TCAN_TX_CMD_PTR(txConfig->txmailbox), (txConfig->txcmd | TCAN_TX_WPN_SET));
+    if ((CY_GET_REG32(TCAN_TX_CMD_PTR(txConfig->txmailbox)) &
+        TCAN_TX_READ_BACK_MASK) == (txConfig->txcmd & TCAN_TX_WPN_CLEAR))
     {
         /* Write TX ID Register */
-        CY_SET_REG32(CAN_1_TX_ID_PTR(txConfig->txmailbox), txConfig->txid);
-        if (CY_GET_REG32(CAN_1_TX_ID_PTR(txConfig->txmailbox)) == txConfig->txid)
+        CY_SET_REG32(TCAN_TX_ID_PTR(txConfig->txmailbox), txConfig->txid);
+        if (CY_GET_REG32(TCAN_TX_ID_PTR(txConfig->txmailbox)) == txConfig->txid)
         {
             result = CYRET_SUCCESS;
         }
@@ -1407,7 +1407,7 @@ uint8 CAN_1_TxBufConfig(const CAN_1_TX_CFG *txConfig)
 #if (!(CY_PSOC3 || CY_PSOC5))
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetSwapDataEndianness
+* FUNCTION NAME:   TCAN_SetSwapDataEndianness
 ********************************************************************************
 *
 * Summary:
@@ -1419,11 +1419,11 @@ uint8 CAN_1_TxBufConfig(const CAN_1_TX_CFG *txConfig)
 * Parameters:
 *  swap: Swap Enable/Disable setting.
 *   Define                                   Description
-*   CAN_1_SWAP_ENDIANNESS_ENABLE   The endianness of transmitted/
+*   TCAN_SWAP_ENDIANNESS_ENABLE   The endianness of transmitted/
 *                                             received data byte fields (Big
 *                                             endian) is not swapped during
 *                                             multibyte data transmission.
-*   CAN_1_SWAP_ENDIANNESS_DISABLE  The endianness of transmitted/
+*   TCAN_SWAP_ENDIANNESS_DISABLE  The endianness of transmitted/
 *                                             received data byte fields is
 *                                             swapped (Little endian) during
 *                                             multi byte data transmission.
@@ -1432,29 +1432,29 @@ uint8 CAN_1_TxBufConfig(const CAN_1_TX_CFG *txConfig)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SetSwapDataEndianness(uint8 swap)
+uint8 TCAN_SetSwapDataEndianness(uint8 swap)
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
-    if (swap == CAN_1_SWAP_ENDIANNESS_DISABLE)    /* Big endian */
+    if (swap == TCAN_SWAP_ENDIANNESS_DISABLE)    /* Big endian */
     {
-        CAN_1_CFG_REG &= (uint32) (~CAN_1_ENDIANNESS_MASK);
+        TCAN_CFG_REG &= (uint32) (~TCAN_ENDIANNESS_MASK);
 
         /* Verify that bit is cleared */
-        if ((CAN_1_CFG_REG & CAN_1_ENDIANNESS_MASK) == 0u)
+        if ((TCAN_CFG_REG & TCAN_ENDIANNESS_MASK) == 0u)
         {
             result = CYRET_SUCCESS;
         }
     }
     else    /* Little endian */
     {
-        CAN_1_CFG_REG |= CAN_1_ENDIANNESS_MASK;
+        TCAN_CFG_REG |= TCAN_ENDIANNESS_MASK;
 
         /* Verify that bit is set */
-        if ((CAN_1_CFG_REG & CAN_1_ENDIANNESS_MASK) != 0u)
+        if ((TCAN_CFG_REG & TCAN_ENDIANNESS_MASK) != 0u)
         {
             result = CYRET_SUCCESS;
         }
@@ -1465,7 +1465,7 @@ uint8 CAN_1_SetSwapDataEndianness(uint8 swap)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SetErrorCaptureRegisterMode
+* FUNCTION NAME:   TCAN_SetErrorCaptureRegisterMode
 ********************************************************************************
 *
 * Summary:
@@ -1475,9 +1475,9 @@ uint8 CAN_1_SetSwapDataEndianness(uint8 swap)
 * Parameters:
 *  ecrMode: The Error Capture register mode setting.
 *   Define                               Description
-*   CAN_1_ECR_FREE_RUNNING     The ECR captures the field and bit
+*   TCAN_ECR_FREE_RUNNING     The ECR captures the field and bit
 *                                         position within the current CAN frame.
-*   CAN_1_ECR_ERROR_CAPTURE    In this mode the ECR register only
+*   TCAN_ECR_ERROR_CAPTURE    In this mode the ECR register only
 *                                         captures an error event. For
 *                                         successive error captures, the ECR
 *                                         needs to be armed again by writing
@@ -1487,29 +1487,29 @@ uint8 CAN_1_SetSwapDataEndianness(uint8 swap)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SetErrorCaptureRegisterMode(uint8 ecrMode)
+uint8 TCAN_SetErrorCaptureRegisterMode(uint8 ecrMode)
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
-    if (ecrMode == CAN_1_ECR_FREE_RUNNING)
+    if (ecrMode == TCAN_ECR_FREE_RUNNING)
     {
-        CAN_1_CFG_REG &= (uint32) (~CAN_1_ECR_MODE_MASK);
+        TCAN_CFG_REG &= (uint32) (~TCAN_ECR_MODE_MASK);
 
         /* Verify that bit is cleared */
-        if ((CAN_1_CFG_REG & CAN_1_ECR_MODE_MASK) == 0u)
+        if ((TCAN_CFG_REG & TCAN_ECR_MODE_MASK) == 0u)
         {
             result = CYRET_SUCCESS;
         }
     }
     else    /* Capture mode */
     {
-        CAN_1_CFG_REG |= CAN_1_ECR_MODE_MASK;
+        TCAN_CFG_REG |= TCAN_ECR_MODE_MASK;
 
         /* Verify that bit is set */
-        if ((CAN_1_CFG_REG & CAN_1_ECR_MODE_MASK) != 0u)
+        if ((TCAN_CFG_REG & TCAN_ECR_MODE_MASK) != 0u)
         {
             result = CYRET_SUCCESS;
         }
@@ -1520,7 +1520,7 @@ uint8 CAN_1_SetErrorCaptureRegisterMode(uint8 ecrMode)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_ReadErrorCaptureRegister
+* FUNCTION NAME:   TCAN_ReadErrorCaptureRegister
 ********************************************************************************
 *
 * Summary:
@@ -1567,14 +1567,14 @@ uint8 CAN_1_SetErrorCaptureRegisterMode(uint8 ecrMode)
 *                       Others : N/A
 *
 *******************************************************************************/
-uint32 CAN_1_ReadErrorCaptureRegister(void)
+uint32 TCAN_ReadErrorCaptureRegister(void)
 {
-    return (CAN_1_ECR_REG);
+    return (TCAN_ECR_REG);
 }
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_ArmErrorCaptureRegister
+* FUNCTION NAME:   TCAN_ArmErrorCaptureRegister
 ********************************************************************************
 *
 * Summary:
@@ -1588,17 +1588,17 @@ uint32 CAN_1_ReadErrorCaptureRegister(void)
 *  The indication whether the register is written and verified.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_ArmErrorCaptureRegister(void)
+uint8 TCAN_ArmErrorCaptureRegister(void)
 {
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
 
-    CAN_1_ECR_REG |= CAN_1_ECR_STATUS_ARM;
+    TCAN_ECR_REG |= TCAN_ECR_STATUS_ARM;
 
     /* Verify that bit is set */
-    if ((CAN_1_ECR_REG & CAN_1_ECR_STATUS_ARM) != 0u)
+    if ((TCAN_ECR_REG & TCAN_ECR_STATUS_ARM) != 0u)
     {
         result = CYRET_SUCCESS;
     }

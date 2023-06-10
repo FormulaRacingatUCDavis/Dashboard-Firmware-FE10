@@ -1,5 +1,5 @@
 # Dashboard
-# 2023-06-08 02:31:42Z
+# 2023-06-10 01:38:08Z
 
 # IO_4@[IOP=(0)][IoId=(4)] is reserved: KhzXtalEnabled
 dont_use_io iocell 0 4
@@ -42,37 +42,38 @@ set_io "Digital1(0)" iocell 3 4
 set_io "Digital2(0)" iocell 3 5
 set_io "Digital3(0)" iocell 3 6
 set_io "Digital4(0)" iocell 4 2
-set_location "\GraphicLCDIntf:full\" 1 1 0 3
-set_location "\GraphicLCDIntf:status_1\" 1 1 1 3
-set_location "\PWM_1:PWMUDB:status_2\" 0 1 0 3
-set_location "\ReadyToDrive_Timer:TimerUDB:status_tc\" 0 0 1 3
+set_location "\GraphicLCDIntf:full\" 0 0 0 3
+set_location "\GraphicLCDIntf:status_1\" 1 1 1 2
+set_location "\PWM_1:PWMUDB:status_2\" 1 0 0 2
+set_location "\ReadyToDrive_Timer:TimerUDB:status_tc\" 1 0 1 1
 set_location "\ADC_GLV_V:IRQ\" interrupt -1 -1 16
 set_location "\ADC_GLV_V:cy_psoc4_sar\" p4sarcell -1 -1 0
 set_location "\CAN:isr\" interrupt -1 -1 28
 set_location "\CAN:CanIP\" cancell -1 -1 1
-set_location "\CAN_1:isr\" interrupt -1 -1 27
-set_location "\CAN_1:CanIP\" cancell -1 -1 0
+set_location "\TCAN:isr\" interrupt -1 -1 27
+set_location "\TCAN:CanIP\" cancell -1 -1 0
 set_location "\GraphicLCDIntf:StsReg\" 0 1 3
 set_location "\GraphicLCDIntf:LsbReg\" 1 1 3
 set_location "\GraphicLCDIntf:GraphLcd8:Lsb\" 1 1 2
-set_location "\PWM_1:PWMUDB:genblk1:ctrlreg\" 1 0 6
-set_location "\PWM_1:PWMUDB:genblk8:stsreg\" 1 0 4
+set_location "\PWM_1:PWMUDB:genblk1:ctrlreg\" 0 0 6
+set_location "\PWM_1:PWMUDB:genblk8:stsreg\" 0 0 4
 set_location "\PWM_1:PWMUDB:sP8:pwmdp:u0\" 0 1 2
-set_location "\ReadyToDrive_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 0 0 6
-set_location "\ReadyToDrive_Timer:TimerUDB:rstSts:stsreg\" 0 0 4
+set_location "\ReadyToDrive_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 1 0 6
+set_location "\ReadyToDrive_Timer:TimerUDB:rstSts:stsreg\" 1 0 4
 set_location "\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u0\" 1 0 2
 set_location "\ReadyToDrive_Timer:TimerUDB:sT16:timerdp:u1\" 0 0 2
-set_location "\GraphicLCDIntf:state_3\" 1 0 1 1
+set_location "ReadyToDrive_ISR" interrupt -1 -1 0
+set_location "\GraphicLCDIntf:state_3\" 1 1 0 1
 set_location "\GraphicLCDIntf:state_2\" 1 1 1 0
-set_location "\GraphicLCDIntf:state_1\" 1 0 1 0
+set_location "\GraphicLCDIntf:state_1\" 1 1 0 0
 set_location "\GraphicLCDIntf:state_0\" 1 0 0 0
-set_location "Net_25" 1 1 1 2
-set_location "Net_26" 1 0 1 2
-set_location "Net_28" 1 1 1 1
-set_location "Net_27" 1 0 0 1
-set_location "Net_39" 1 0 1 3
-set_location "\PWM_1:PWMUDB:runmode_enable\" 0 0 0 3
-set_location "\PWM_1:PWMUDB:prevCompare1\" 0 0 1 0
-set_location "\PWM_1:PWMUDB:prevCompare2\" 0 0 0 0
-set_location "\PWM_1:PWMUDB:status_0\" 0 0 0 2
+set_location "Net_25" 1 1 1 3
+set_location "Net_26" 1 1 0 2
+set_location "Net_28" 1 0 0 1
+set_location "Net_27" 1 1 1 1
+set_location "Net_39" 1 1 0 3
+set_location "\PWM_1:PWMUDB:runmode_enable\" 1 0 1 2
+set_location "\PWM_1:PWMUDB:prevCompare1\" 0 0 0 2
+set_location "\PWM_1:PWMUDB:prevCompare2\" 0 0 1 1
+set_location "\PWM_1:PWMUDB:status_0\" 0 0 1 0
 set_location "\PWM_1:PWMUDB:status_1\" 0 0 0 1

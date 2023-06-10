@@ -2,7 +2,7 @@
 --	Conversion of Dashboard.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jun 07 19:31:39 2023
+--	Fri Jun 09 18:38:06 2023
 --
 
 USE cypress.cypress.all;
@@ -202,9 +202,9 @@ SIGNAL tmpIO_0__TX_CAN1_net_0 : bit;
 TERMINAL tmpSIOVREF__TX_CAN1_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__TX_CAN1_net_0 : bit;
 SIGNAL Net_6 : bit;
-SIGNAL \CAN_1:Net_15\ : bit;
-SIGNAL \CAN_1:Net_13\ : bit;
-SIGNAL \CAN_1:Net_14\ : bit;
+SIGNAL \TCAN:Net_15\ : bit;
+SIGNAL \TCAN:Net_13\ : bit;
+SIGNAL \TCAN:Net_14\ : bit;
 SIGNAL Net_7 : bit;
 SIGNAL tmpOE__DISP_net_0 : bit;
 SIGNAL tmpFB_0__DISP_net_0 : bit;
@@ -2132,11 +2132,11 @@ TX_CAN1:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__RGB1_1_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__TX_CAN1_net_0);
-\CAN_1:isr\:cy_isr_v1_0
+\TCAN:isr\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
 	PORT MAP(int_signal=>Net_6);
-\CAN_1:HFCLK\:cy_clock_v1_0
+\TCAN:HFCLK\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"5ed46c91-7c5b-4a5a-9846-3a328252ba87/7f2e0196-39e5-4161-97bb-5d609ca138cf",
 		source_clock_id=>"413DE2EF-D9F2-4233-A808-DFAF137FD877",
@@ -2144,9 +2144,9 @@ TX_CAN1:cy_psoc3_pins_v1_10
 		period=>"0",
 		is_direct=>'0',
 		is_digital=>'0')
-	PORT MAP(clock_out=>\CAN_1:Net_14\,
+	PORT MAP(clock_out=>\TCAN:Net_14\,
 		dig_domain_out=>open);
-\CAN_1:CanIP\:cy_m0s8_can_v1_0
+\TCAN:CanIP\:cy_m0s8_can_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(can_rx=>Net_4,
 		can_tx=>Net_5,
@@ -3323,9 +3323,9 @@ timer_clock_3:cy_clock_v1_0
 		id=>"eae209c1-0724-4de4-8d48-0c98798b0a9b",
 		source_clock_id=>"413DE2EF-D9F2-4233-A808-DFAF137FD877",
 		divisor=>0,
-		period=>"0",
-		is_direct=>'1',
-		is_digital=>'0')
+		period=>"40000000000",
+		is_direct=>'0',
+		is_digital=>'1')
 	PORT MAP(clock_out=>Net_899,
 		dig_domain_out=>open);
 \ReadyToDrive_Timer:TimerUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
@@ -3529,6 +3529,10 @@ timer_clock_3:cy_clock_v1_0
 		pi=>(zero, zero, zero, zero,
 			zero, zero, zero, zero),
 		po=>open);
+ReadyToDrive_ISR:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_1263);
 \GraphicLCDIntf:state_3\:cy_dff
 	PORT MAP(d=>\GraphicLCDIntf:state_3\\D\,
 		clk=>\GraphicLCDIntf:op_clk\,

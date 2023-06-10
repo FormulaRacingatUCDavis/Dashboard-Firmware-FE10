@@ -37,7 +37,7 @@ extern volatile uint16_t bms_status;
 extern volatile uint8_t shutdown_flags;
 extern volatile uint8_t CAPACITOR_VOLT;
 extern volatile uint8_t ACK_RX;
-extern volatile uint8_t mc_fault_codes;
+extern volatile uint8_t mc_fault_codes[8];
 
 /* `#END` */
 
@@ -1035,7 +1035,18 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_FAULT_CODES(void) 
     {
         /* `#START MESSAGE_MC_FAULT_CODES_RECEIVED` */
-
+        
+        
+        mc_fault_codes[0] = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[1] = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[2] = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[3] = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[4] = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[5] = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[6] = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        mc_fault_codes[7] = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_MC_FAULT_CODES);
+        
+        
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_FAULT_CODES_CALLBACK

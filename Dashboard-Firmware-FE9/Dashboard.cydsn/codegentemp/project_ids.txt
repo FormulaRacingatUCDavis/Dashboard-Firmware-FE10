@@ -1,7 +1,6 @@
-C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj|926e37d0-b2f4-4bbd-b578-8cd36cbad892
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0809dd9e-3ea5-4fcd-93ff-8cc188e43294
-C:\Users\Melody\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|57b96880-30db-4385-b7d1-c113d0d2ddda
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|bb13e290-9f80-4bcd-9c1b-dfead9b7ddf3
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|0a4cfb3b-2310-40c7-8bb5-ef3dd22ee87b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|42e4ada1-6fcb-48ce-83cd-72087db274c7
-C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\CAN_Full_P4_Example01.cydsn\CAN_Full_P4_Example01.cyprj|e1ed92a6-5bd6-4453-a61d-18465b89e71c
+C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cyprj|8a657e84-dfb8-45f3-9636-b3e22134377e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2e7fd62c-5f9a-46e1-a830-76f61611c682
+C:\Users\Melody\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|366948e1-8855-4bc6-b427-2f2206134e07
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6fefc99d-5199-4570-ae50-2b6ce1b2d595
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|032716e9-7005-4306-9581-9402494834f6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5958af84-1cb4-43e4-8dd5-7cef4da9d250

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: CAN_1_INT.c
+* File Name: TCAN_INT.c
 * Version 3.0
 *
 * Description:
@@ -17,16 +17,16 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "CAN_1.h"
+#include "TCAN.h"
 #include "cyapicallbacks.h"
 
 /* `#START CAN_INT_C_CODE_DEFINITION` */
 
 /* `#END` */
 
-#if (CAN_1_ARB_LOST)
+#if (TCAN_ARB_LOST)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ArbLostIsr
+    * FUNCTION NAME:   TCAN_ArbLostIsr
     ********************************************************************************
     *
     * Summary:
@@ -44,25 +44,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ArbLostIsr(void) 
+    void TCAN_ArbLostIsr(void) 
     {
         /* Clear Arbitration Lost flag */
-        CAN_1_INT_SR_REG = CAN_1_ARBITRATION_LOST_MASK;
+        TCAN_INT_SR_REG = TCAN_ARBITRATION_LOST_MASK;
 
         /* `#START ARBITRATION_LOST_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_ARB_LOST_ISR_CALLBACK
-            CAN_1_ArbLostIsr_Callback();
-        #endif /* CAN_1_ARB_LOST_ISR_CALLBACK */
+        #ifdef TCAN_ARB_LOST_ISR_CALLBACK
+            TCAN_ArbLostIsr_Callback();
+        #endif /* TCAN_ARB_LOST_ISR_CALLBACK */
     }
-#endif /* CAN_1_ARB_LOST */
+#endif /* TCAN_ARB_LOST */
 
 
-#if (CAN_1_OVERLOAD)
+#if (TCAN_OVERLOAD)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_OvrLdErrorIsr
+    * FUNCTION NAME:   TCAN_OvrLdErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -80,25 +80,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_OvrLdErrorIsr(void) 
+    void TCAN_OvrLdErrorIsr(void) 
     {
         /* Clear Overload Error flag */
-        CAN_1_INT_SR_REG = CAN_1_OVERLOAD_ERROR_MASK;
+        TCAN_INT_SR_REG = TCAN_OVERLOAD_ERROR_MASK;
 
         /* `#START OVER_LOAD_ERROR_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_OVR_LD_ERROR_ISR_CALLBACK
-            CAN_1_OvrLdErrorIsr_Callback();
-        #endif /* CAN_1_OVR_LD_ERROR_ISR_CALLBACK */
+        #ifdef TCAN_OVR_LD_ERROR_ISR_CALLBACK
+            TCAN_OvrLdErrorIsr_Callback();
+        #endif /* TCAN_OVR_LD_ERROR_ISR_CALLBACK */
     }
-#endif /* CAN_1_OVERLOAD */
+#endif /* TCAN_OVERLOAD */
 
 
-#if (CAN_1_BIT_ERR)
+#if (TCAN_BIT_ERR)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_BitErrorIsr
+    * FUNCTION NAME:   TCAN_BitErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -115,25 +115,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_BitErrorIsr(void) 
+    void TCAN_BitErrorIsr(void) 
     {
         /* Clear Bit Error flag */
-        CAN_1_INT_SR_REG = CAN_1_BIT_ERROR_MASK;
+        TCAN_INT_SR_REG = TCAN_BIT_ERROR_MASK;
 
         /* `#START BIT_ERROR_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_BIT_ERROR_ISR_CALLBACK
-            CAN_1_BitErrorIsr_Callback();
-        #endif /* CAN_1_BIT_ERROR_ISR_CALLBACK */
+        #ifdef TCAN_BIT_ERROR_ISR_CALLBACK
+            TCAN_BitErrorIsr_Callback();
+        #endif /* TCAN_BIT_ERROR_ISR_CALLBACK */
     }
-#endif /* CAN_1_BIT_ERR */
+#endif /* TCAN_BIT_ERR */
 
 
-#if (CAN_1_STUFF_ERR)
+#if (TCAN_STUFF_ERR)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_BitStuffErrorIsr
+    * FUNCTION NAME:   TCAN_BitStuffErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -151,25 +151,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_BitStuffErrorIsr(void) 
+    void TCAN_BitStuffErrorIsr(void) 
     {
         /* Clear Stuff Error flag */
-        CAN_1_INT_SR_REG = CAN_1_STUFF_ERROR_MASK;
+        TCAN_INT_SR_REG = TCAN_STUFF_ERROR_MASK;
 
         /* `#START BIT_STUFF_ERROR_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_BIT_STUFF_ERROR_ISR_CALLBACK
-            CAN_1_BitStuffErrorIsr_Callback();
-        #endif /* CAN_1_BIT_STUFF_ERROR_ISR_CALLBACK */
+        #ifdef TCAN_BIT_STUFF_ERROR_ISR_CALLBACK
+            TCAN_BitStuffErrorIsr_Callback();
+        #endif /* TCAN_BIT_STUFF_ERROR_ISR_CALLBACK */
     }
-#endif /* CAN_1_STUFF_ERR */
+#endif /* TCAN_STUFF_ERR */
 
 
-#if (CAN_1_ACK_ERR)
+#if (TCAN_ACK_ERR)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_AckErrorIsr
+    * FUNCTION NAME:   TCAN_AckErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -187,25 +187,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_AckErrorIsr(void) 
+    void TCAN_AckErrorIsr(void) 
     {
         /* Clear Acknoledge Error flag */
-        CAN_1_INT_SR_REG = CAN_1_ACK_ERROR_MASK;
+        TCAN_INT_SR_REG = TCAN_ACK_ERROR_MASK;
 
         /* `#START ACKNOWLEDGE_ERROR_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_ACK_ERROR_ISR_CALLBACK
-            CAN_1_AckErrorIsr_Callback();
-        #endif /* CAN_1_ACK_ERROR_ISR_CALLBACK */
+        #ifdef TCAN_ACK_ERROR_ISR_CALLBACK
+            TCAN_AckErrorIsr_Callback();
+        #endif /* TCAN_ACK_ERROR_ISR_CALLBACK */
     }
-#endif /* CAN_1_ACK_ERR */
+#endif /* TCAN_ACK_ERR */
 
 
-#if (CAN_1_FORM_ERR)
+#if (TCAN_FORM_ERR)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_MsgErrorIsr
+    * FUNCTION NAME:   TCAN_MsgErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -222,25 +222,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_MsgErrorIsr(void) 
+    void TCAN_MsgErrorIsr(void) 
     {
         /* Clear Form Error flag */
-        CAN_1_INT_SR_REG = CAN_1_FORM_ERROR_MASK;
+        TCAN_INT_SR_REG = TCAN_FORM_ERROR_MASK;
 
         /* `#START MESSAGE_ERROR_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_MSG_ERROR_ISR_CALLBACK
-            CAN_1_MsgErrorIsr_Callback();
-        #endif /* CAN_1_MSG_ERROR_ISR_CALLBACK */
+        #ifdef TCAN_MSG_ERROR_ISR_CALLBACK
+            TCAN_MsgErrorIsr_Callback();
+        #endif /* TCAN_MSG_ERROR_ISR_CALLBACK */
     }
-#endif /* CAN_1_FORM_ERR */
+#endif /* TCAN_FORM_ERR */
 
 
-#if (CAN_1_CRC_ERR)
+#if (TCAN_CRC_ERR)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_CrcErrorIsr
+    * FUNCTION NAME:   TCAN_CrcErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -257,25 +257,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_CrcErrorIsr(void) 
+    void TCAN_CrcErrorIsr(void) 
     {
         /* Clear CRC Error flag */
-        CAN_1_INT_SR_REG = CAN_1_CRC_ERROR_MASK;
+        TCAN_INT_SR_REG = TCAN_CRC_ERROR_MASK;
 
         /* `#START CRC_ERROR_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_CRC_ERROR_ISR_CALLBACK
-            CAN_1_CrcErrorIsr_Callback();
-        #endif /* CAN_1_CRC_ERROR_ISR_CALLBACK */
+        #ifdef TCAN_CRC_ERROR_ISR_CALLBACK
+            TCAN_CrcErrorIsr_Callback();
+        #endif /* TCAN_CRC_ERROR_ISR_CALLBACK */
     }
-#endif /* CAN_1_CRC_ERR */
+#endif /* TCAN_CRC_ERR */
 
 
-#if (CAN_1_BUS_OFF)
+#if (TCAN_BUS_OFF)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_BusOffIsr
+    * FUNCTION NAME:   TCAN_BusOffIsr
     ********************************************************************************
     *
     * Summary:
@@ -293,27 +293,27 @@
     *  Stops CAN component operation.
     *
     *******************************************************************************/
-    void CAN_1_BusOffIsr(void) 
+    void TCAN_BusOffIsr(void) 
     {
         /* Clear Bus Off flag */
-        CAN_1_INT_SR_REG = CAN_1_BUS_OFF_MASK;
+        TCAN_INT_SR_REG = TCAN_BUS_OFF_MASK;
 
         /* `#START BUS_OFF_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_BUS_OFF_ISR_CALLBACK
-            CAN_1_BusOffIsr_Callback();
-        #endif /* CAN_1_BUS_OFF_ISR_CALLBACK */
+        #ifdef TCAN_BUS_OFF_ISR_CALLBACK
+            TCAN_BusOffIsr_Callback();
+        #endif /* TCAN_BUS_OFF_ISR_CALLBACK */
 
-        (void) CAN_1_Stop();
+        (void) TCAN_Stop();
     }
-#endif /* CAN_1_BUS_OFF */
+#endif /* TCAN_BUS_OFF */
 
 
-#if (CAN_1_RX_MSG_LOST)
+#if (TCAN_RX_MSG_LOST)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_MsgLostIsr
+    * FUNCTION NAME:   TCAN_MsgLostIsr
     ********************************************************************************
     *
     * Summary:
@@ -330,25 +330,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_MsgLostIsr(void) 
+    void TCAN_MsgLostIsr(void) 
     {
         /* Clear Receive Message Lost flag */
-        CAN_1_INT_SR_REG = CAN_1_RX_MSG_LOST_MASK;
+        TCAN_INT_SR_REG = TCAN_RX_MSG_LOST_MASK;
 
         /* `#START MESSAGE_LOST_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_MSG_LOST_ISR_CALLBACK
-            CAN_1_MsgLostIsr_Callback();
-        #endif /* CAN_1_MSG_LOST_ISR_CALLBACK */
+        #ifdef TCAN_MSG_LOST_ISR_CALLBACK
+            TCAN_MsgLostIsr_Callback();
+        #endif /* TCAN_MSG_LOST_ISR_CALLBACK */
     }
-#endif /* CAN_1_RX_MSG_LOST */
+#endif /* TCAN_RX_MSG_LOST */
 
 
-#if (CAN_1_TX_MESSAGE)
+#if (TCAN_TX_MESSAGE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_MsgTXIsr
+    * FUNCTION NAME:   TCAN_MsgTXIsr
     ********************************************************************************
     *
     * Summary:
@@ -366,25 +366,25 @@
     *  Depends on Customer code.
     *
     *******************************************************************************/
-    void CAN_1_MsgTXIsr(void) 
+    void TCAN_MsgTXIsr(void) 
     {
         /* Clear Transmit Message flag */
-        CAN_1_INT_SR_REG = CAN_1_TX_MESSAGE_MASK;
+        TCAN_INT_SR_REG = TCAN_TX_MESSAGE_MASK;
 
         /* `#START MESSAGE_TRANSMITTED_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_MSG_TX_ISR_CALLBACK
-            CAN_1_MsgTXIsr_Callback();
-        #endif /* CAN_1_MSG_TX_ISR_CALLBACK */
+        #ifdef TCAN_MSG_TX_ISR_CALLBACK
+            TCAN_MsgTXIsr_Callback();
+        #endif /* TCAN_MSG_TX_ISR_CALLBACK */
     }
-#endif /* CAN_1_TX_MESSAGE */
+#endif /* TCAN_TX_MESSAGE */
 
 
-#if (CAN_1_RX_MESSAGE)
+#if (TCAN_RX_MESSAGE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_MsgRXIsr
+    * FUNCTION NAME:   TCAN_MsgRXIsr
     ********************************************************************************
     *
     * Summary:
@@ -400,49 +400,49 @@
     *  None.
     *
     *******************************************************************************/
-    void CAN_1_MsgRXIsr(void) 
+    void TCAN_MsgRXIsr(void) 
     {
         uint8 mailboxNumber;
         uint16 shift = 0x01u;
 
         /* Clear Receive Message flag */
-        CAN_1_INT_SR_REG = CAN_1_RX_MESSAGE_MASK;
+        TCAN_INT_SR_REG = TCAN_RX_MESSAGE_MASK;
 
         /* `#START MESSAGE_RECEIVE_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_MSG_RX_ISR_CALLBACK
-            CAN_1_MsgRXIsr_Callback();
-        #endif /* CAN_1_MSG_RX_ISR_CALLBACK */
+        #ifdef TCAN_MSG_RX_ISR_CALLBACK
+            TCAN_MsgRXIsr_Callback();
+        #endif /* TCAN_MSG_RX_ISR_CALLBACK */
 
-        for (mailboxNumber = 0u; mailboxNumber < CAN_1_NUMBER_OF_RX_MAILBOXES; mailboxNumber++)
+        for (mailboxNumber = 0u; mailboxNumber < TCAN_NUMBER_OF_RX_MAILBOXES; mailboxNumber++)
         {
 
-            if ((CAN_1_BUF_SR_REG & shift) != 0u)
+            if ((TCAN_BUF_SR_REG & shift) != 0u)
             {
-                if ((CAN_1_RX_CMD_REG(mailboxNumber) & CAN_1_RX_INT_ENABLE_MASK) != 0u)
+                if ((TCAN_RX_CMD_REG(mailboxNumber) & TCAN_RX_INT_ENABLE_MASK) != 0u)
                 {
-                    if ((CAN_1_RX_MAILBOX_TYPE & shift) != 0u)
+                    if ((TCAN_RX_MAILBOX_TYPE & shift) != 0u)
                     {
                         /* RX Full mailboxes handler */
                     }
                     else
                     {
                         /* RX Basic mailbox handler */
-                        CAN_1_ReceiveMsg(mailboxNumber);
+                        TCAN_ReceiveMsg(mailboxNumber);
                     }
                 }
             }
             shift <<= 1u;
         }
     }
-#endif /* CAN_1_RX_MESSAGE */
+#endif /* TCAN_RX_MESSAGE */
 
 
-#if (CAN_1_RTR_AUTO_MSG_SENT)
+#if (TCAN_RTR_AUTO_MSG_SENT)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_RtrAutoMsgSentIsr
+    * FUNCTION NAME:   TCAN_RtrAutoMsgSentIsr
     ********************************************************************************
     *
     * Summary:
@@ -456,25 +456,25 @@
     *  None.
     *
     *******************************************************************************/
-    void CAN_1_RtrAutoMsgSentIsr(void)
+    void TCAN_RtrAutoMsgSentIsr(void)
     {
         /* Clear RTR auto-reply message sent flag */
-        CAN_1_INT_SR_REG = CAN_1_RTR_MSG_MASK;
+        TCAN_INT_SR_REG = TCAN_RTR_MSG_MASK;
 
         /* `#START RTR_AUTO_MSG_SENT_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RTR_AUTO_MSG_SENT_ISR_CALLBACK
-            CAN_1_RtrAutoMsgSentIsr_Callback();
-        #endif /* CAN_1_RTR_AUTO_MSG_SENT_ISR_CALLBACK */
+        #ifdef TCAN_RTR_AUTO_MSG_SENT_ISR_CALLBACK
+            TCAN_RtrAutoMsgSentIsr_Callback();
+        #endif /* TCAN_RTR_AUTO_MSG_SENT_ISR_CALLBACK */
     }
-#endif /* CAN_1_RTR_AUTO_MSG_SENT */
+#endif /* TCAN_RTR_AUTO_MSG_SENT */
 
 
-#if (CAN_1_STUCK_AT_ZERO)
+#if (TCAN_STUCK_AT_ZERO)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_StuckAtZeroIsr
+    * FUNCTION NAME:   TCAN_StuckAtZeroIsr
     ********************************************************************************
     *
     * Summary:
@@ -492,27 +492,27 @@
     *  Stops CAN component operation.
     *
     *******************************************************************************/
-    void CAN_1_StuckAtZeroIsr(void)
+    void TCAN_StuckAtZeroIsr(void)
     {
         /* Clear Stuck at dominant error flag */
-        CAN_1_INT_SR_REG = CAN_1_STUCK_AT_ZERO_MASK;
+        TCAN_INT_SR_REG = TCAN_STUCK_AT_ZERO_MASK;
 
         /* `#START STUCK_AT_ZERO_ISR` */
 
         /* `#END` */
 
-        #ifdef CAN_1_STUCK_AT_ZERO_ISR_CALLBACK
-            CAN_1_StuckAtZeroIsr_Callback();
-        #endif /* CAN_1_STUCK_AT_ZERO_ISR_CALLBACK */
+        #ifdef TCAN_STUCK_AT_ZERO_ISR_CALLBACK
+            TCAN_StuckAtZeroIsr_Callback();
+        #endif /* TCAN_STUCK_AT_ZERO_ISR_CALLBACK */
 
-        (void) CAN_1_Stop();
+        (void) TCAN_Stop();
     }
-#endif /* CAN_1_STUCK_AT_ZERO */
+#endif /* TCAN_STUCK_AT_ZERO */
 
 
-#if (CAN_1_SST_FAILURE)
+#if (TCAN_SST_FAILURE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SSTErrorIsr
+    * FUNCTION NAME:   TCAN_SSTErrorIsr
     ********************************************************************************
     *
     * Summary:
@@ -532,28 +532,28 @@
     *  Removes message that failed SST transmission from the Tx mailbox.
     *
     *******************************************************************************/
-    void CAN_1_SSTErrorIsr(void)
+    void TCAN_SSTErrorIsr(void)
     {
         uint8 i;
 
         /* Clear Single shot transmission failure flag */
-        CAN_1_INT_SR_REG = CAN_1_SST_FAILURE_MASK;
+        TCAN_INT_SR_REG = TCAN_SST_FAILURE_MASK;
 
         /* `#START SST_FAILURE_ISR_PRE` */
 
         /* `#END` */
 
-        #ifdef CAN_1_SST_ERROR_ISR_PRE_CALLBACK
-            CAN_1_SSTErrorIsr_Pre_Callback();
-        #endif /* CAN_1_SST_ERROR_ISR_PRE_CALLBACK */
+        #ifdef TCAN_SST_ERROR_ISR_PRE_CALLBACK
+            TCAN_SSTErrorIsr_Pre_Callback();
+        #endif /* TCAN_SST_ERROR_ISR_PRE_CALLBACK */
 
         /* Removes message that failed SST transmission from the Tx mailbox */
-        for (i = 0u; i < CAN_1_NUMBER_OF_TX_MAILBOXES; i++)
+        for (i = 0u; i < TCAN_NUMBER_OF_TX_MAILBOXES; i++)
         {
-            if ((CAN_1_TX_CMD_REG(i) & CAN_1_TX_ABORT_MASK) != 0u)
+            if ((TCAN_TX_CMD_REG(i) & TCAN_TX_ABORT_MASK) != 0u)
             {
-                CAN_1_TX_CMD_REG(i) = (CAN_1_TX_CMD_REG(i) & (uint32) (~(uint32) CAN_1_TX_TRANSMIT_REQUEST)) |
-                                    CAN_1_TX_ABORT_MASK;
+                TCAN_TX_CMD_REG(i) = (TCAN_TX_CMD_REG(i) & (uint32) (~(uint32) TCAN_TX_TRANSMIT_REQUEST)) |
+                                    TCAN_TX_ABORT_MASK;
             }
         }
 
@@ -561,15 +561,15 @@
 
         /* `#END` */
 
-        #ifdef CAN_1_SST_ERROR_ISR_POST_CALLBACK
-            CAN_1_SSTErrorIsr_Post_Callback();
-        #endif /* CAN_1_SST_ERROR_ISR_POST_CALLBACK */
+        #ifdef TCAN_SST_ERROR_ISR_POST_CALLBACK
+            TCAN_SSTErrorIsr_Post_Callback();
+        #endif /* TCAN_SST_ERROR_ISR_POST_CALLBACK */
     }
-#endif /* CAN_1_SST_FAILURE */
+#endif /* TCAN_SST_FAILURE */
 
 
 /*******************************************************************************
-* Function Name: CAN_1_ISR
+* Function Name: TCAN_ISR
 ********************************************************************************
 *
 * Summary:
@@ -585,11 +585,11 @@
 *  None.
 *
 *******************************************************************************/
-CY_ISR(CAN_1_ISR)
+CY_ISR(TCAN_ISR)
 {
-    #ifdef CAN_1_ISR_INTERRUPT_CALLBACK
-        CAN_1_ISR_InterruptCallback();
-    #endif /* CAN_1_ISR_INTERRUPT_CALLBACK */
+    #ifdef TCAN_ISR_INTERRUPT_CALLBACK
+        TCAN_ISR_InterruptCallback();
+    #endif /* TCAN_ISR_INTERRUPT_CALLBACK */
     
     /* Place your Interrupt code here. */
     /* `#START CAN_ISR` */
@@ -597,130 +597,130 @@ CY_ISR(CAN_1_ISR)
     /* `#END` */
     
     /* Arbitration */
-    #if (CAN_1_ARB_LOST && (CAN_1_ARB_LOST_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_ARBITRATION_LOST_MASK) != 0u)
+    #if (TCAN_ARB_LOST && (TCAN_ARB_LOST_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_ARBITRATION_LOST_MASK) != 0u)
         {
-            CAN_1_ArbLostIsr();
+            TCAN_ArbLostIsr();
         }
-    #endif /* CAN_1_ARB_LOST && CAN_1_ARB_LOST_USE_HELPER */
+    #endif /* TCAN_ARB_LOST && TCAN_ARB_LOST_USE_HELPER */
 
     /* Overload Error */
-    #if (CAN_1_OVERLOAD && (CAN_1_OVERLOAD_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_OVERLOAD_ERROR_MASK) != 0u)
+    #if (TCAN_OVERLOAD && (TCAN_OVERLOAD_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_OVERLOAD_ERROR_MASK) != 0u)
         {
-            CAN_1_OvrLdErrorIsr();
+            TCAN_OvrLdErrorIsr();
         }
-    #endif /* CAN_1_OVERLOAD && CAN_1_OVERLOAD_USE_HELPER */
+    #endif /* TCAN_OVERLOAD && TCAN_OVERLOAD_USE_HELPER */
 
     /* Bit Error */
-    #if (CAN_1_BIT_ERR && (CAN_1_BIT_ERR_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_BIT_ERROR_MASK) != 0u)
+    #if (TCAN_BIT_ERR && (TCAN_BIT_ERR_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_BIT_ERROR_MASK) != 0u)
         {
-            CAN_1_BitErrorIsr();
+            TCAN_BitErrorIsr();
         }
-    #endif /* CAN_1_BIT_ERR && CAN_1_BIT_ERR_USE_HELPER */
+    #endif /* TCAN_BIT_ERR && TCAN_BIT_ERR_USE_HELPER */
 
     /* Bit Staff Error */
-    #if (CAN_1_STUFF_ERR && (CAN_1_STUFF_ERR_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_STUFF_ERROR_MASK) != 0u)
+    #if (TCAN_STUFF_ERR && (TCAN_STUFF_ERR_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_STUFF_ERROR_MASK) != 0u)
         {
-            CAN_1_BitStuffErrorIsr();
+            TCAN_BitStuffErrorIsr();
         }
-    #endif /* CAN_1_STUFF_ERR && CAN_1_STUFF_ERR_USE_HELPER */
+    #endif /* TCAN_STUFF_ERR && TCAN_STUFF_ERR_USE_HELPER */
 
     /* ACK Error */
-    #if (CAN_1_ACK_ERR && (CAN_1_ACK_ERR_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_ACK_ERROR_MASK) != 0u)
+    #if (TCAN_ACK_ERR && (TCAN_ACK_ERR_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_ACK_ERROR_MASK) != 0u)
         {
-            CAN_1_AckErrorIsr();
+            TCAN_AckErrorIsr();
         }
-    #endif /* CAN_1_ACK_ERR && CAN_1_ACK_ERR_USE_HELPER */
+    #endif /* TCAN_ACK_ERR && TCAN_ACK_ERR_USE_HELPER */
 
     /* Form(msg) Error */
-    #if (CAN_1_FORM_ERR && (CAN_1_FORM_ERR_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_FORM_ERROR_MASK) != 0u)
+    #if (TCAN_FORM_ERR && (TCAN_FORM_ERR_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_FORM_ERROR_MASK) != 0u)
         {
-            CAN_1_MsgErrorIsr();
+            TCAN_MsgErrorIsr();
         }
-    #endif /* CAN_1_FORM_ERR && CAN_1_FORM_ERR_USE_HELPER */
+    #endif /* TCAN_FORM_ERR && TCAN_FORM_ERR_USE_HELPER */
 
     /* CRC Error */
-    #if (CAN_1_CRC_ERR && (CAN_1_CRC_ERR_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_CRC_ERROR_MASK) != 0u)
+    #if (TCAN_CRC_ERR && (TCAN_CRC_ERR_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_CRC_ERROR_MASK) != 0u)
         {
-            CAN_1_CrcErrorIsr();
+            TCAN_CrcErrorIsr();
         }
-    #endif /* CAN_1_CRC_ERR && CAN_1_CRC_ERR_USE_HELPER */
+    #endif /* TCAN_CRC_ERR && TCAN_CRC_ERR_USE_HELPER */
 
     /* Bus Off state */
-    #if (CAN_1_BUS_OFF && (CAN_1_BUS_OFF_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_BUS_OFF_MASK) != 0u)
+    #if (TCAN_BUS_OFF && (TCAN_BUS_OFF_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_BUS_OFF_MASK) != 0u)
         {
-            CAN_1_BusOffIsr();
+            TCAN_BusOffIsr();
         }
-    #endif /* CAN_1_BUS_OFF && CAN_1_BUS_OFF_USE_HELPER */
+    #endif /* TCAN_BUS_OFF && TCAN_BUS_OFF_USE_HELPER */
 
     /* Message Lost */
-    #if (CAN_1_RX_MSG_LOST && (CAN_1_RX_MSG_LOST_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_RX_MSG_LOST_MASK) != 0u)
+    #if (TCAN_RX_MSG_LOST && (TCAN_RX_MSG_LOST_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_RX_MSG_LOST_MASK) != 0u)
         {
-            CAN_1_MsgLostIsr();
+            TCAN_MsgLostIsr();
         }
-    #endif /* CAN_1_RX_MSG_LOST && CAN_1_RX_MSG_LOST_USE_HELPER */
+    #endif /* TCAN_RX_MSG_LOST && TCAN_RX_MSG_LOST_USE_HELPER */
 
     /* TX Message Send */
-    #if (CAN_1_TX_MESSAGE && (CAN_1_TX_MESSAGE_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_TX_MESSAGE_MASK) != 0u)
+    #if (TCAN_TX_MESSAGE && (TCAN_TX_MESSAGE_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_TX_MESSAGE_MASK) != 0u)
         {
-            CAN_1_MsgTXIsr();
+            TCAN_MsgTXIsr();
         }
-    #endif /* CAN_1_TX_MESSAGE && CAN_1_TX_MESSAGE_USE_HELPER */
+    #endif /* TCAN_TX_MESSAGE && TCAN_TX_MESSAGE_USE_HELPER */
 
     /* RX Message Available */
-    #if (CAN_1_RX_MESSAGE && (CAN_1_RX_MESSAGE_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_RX_MESSAGE_MASK) != 0u)
+    #if (TCAN_RX_MESSAGE && (TCAN_RX_MESSAGE_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_RX_MESSAGE_MASK) != 0u)
         {
-            CAN_1_MsgRXIsr();
+            TCAN_MsgRXIsr();
         }
-    #endif /* CAN_1_RX_MESSAGE && CAN_1_RX_MESSAGE_USE_HELPER */
+    #endif /* TCAN_RX_MESSAGE && TCAN_RX_MESSAGE_USE_HELPER */
 
     /* RTR Auto-reply Message Sent */
-    #if (CAN_1_RTR_AUTO_MSG_SENT && (CAN_1_RTR_MESSAGE_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_RTR_MSG_MASK) != 0u)
+    #if (TCAN_RTR_AUTO_MSG_SENT && (TCAN_RTR_MESSAGE_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_RTR_MSG_MASK) != 0u)
         {
-            CAN_1_RtrAutoMsgSentIsr();
+            TCAN_RtrAutoMsgSentIsr();
         }
-    #endif /* CAN_1_RTR_AUTO_MSG_SENT && CAN_1_RTR_MESSAGE_USE_HELPER */
+    #endif /* TCAN_RTR_AUTO_MSG_SENT && TCAN_RTR_MESSAGE_USE_HELPER */
 
     /* Stuck at dominant error */
-    #if (CAN_1_STUCK_AT_ZERO && (CAN_1_STUCK_AT_ZERO_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_STUCK_AT_ZERO_MASK) != 0u)
+    #if (TCAN_STUCK_AT_ZERO && (TCAN_STUCK_AT_ZERO_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_STUCK_AT_ZERO_MASK) != 0u)
         {
-            CAN_1_StuckAtZeroIsr();
+            TCAN_StuckAtZeroIsr();
         }
-    #endif /* CAN_1_STUCK_AT_ZERO && CAN_1_STUCK_AT_ZERO_USE_HELPER */
+    #endif /* TCAN_STUCK_AT_ZERO && TCAN_STUCK_AT_ZERO_USE_HELPER */
 
     /* Single shot transmission failure */
-    #if (CAN_1_SST_FAILURE && (CAN_1_SST_FAILURE_USE_HELPER || \
-        (!CAN_1_ADVANCED_INTERRUPT_CFG)))
-        if ((CAN_1_INT_SR_REG & CAN_1_SST_FAILURE_MASK) != 0u)
+    #if (TCAN_SST_FAILURE && (TCAN_SST_FAILURE_USE_HELPER || \
+        (!TCAN_ADVANCED_INTERRUPT_CFG)))
+        if ((TCAN_INT_SR_REG & TCAN_SST_FAILURE_MASK) != 0u)
         {
-            CAN_1_SSTErrorIsr();
+            TCAN_SSTErrorIsr();
         }
-    #endif /* CAN_1_SST_FAILURE && CAN_1_SST_FAILURE_USE_HELPER */
+    #endif /* TCAN_SST_FAILURE && TCAN_SST_FAILURE_USE_HELPER */
 }
 
 

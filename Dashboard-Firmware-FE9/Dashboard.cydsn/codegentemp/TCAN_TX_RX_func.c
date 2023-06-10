@@ -1,15 +1,15 @@
 /*******************************************************************************
-* File Name: CAN_1_TX_RX_func.c
+* File Name: TCAN_TX_RX_func.c
 * Version 3.0
 *
 * Description:
 *  There are functions process "Full" Receive and Transmit mailboxes:
-*     - CAN_1_SendMsg0-7();
-*     - CAN_1_ReceiveMsg0-15();
+*     - TCAN_SendMsg0-7();
+*     - TCAN_ReceiveMsg0-15();
 *  Transmission of message, and receive routine for "Basic" mailboxes:
-*     - CAN_1_SendMsg();
-*     - CAN_1_TxCancel();
-*     - CAN_1_ReceiveMsg();
+*     - TCAN_SendMsg();
+*     - TCAN_TxCancel();
+*     - TCAN_ReceiveMsg();
 *
 *  Note:
 *   None
@@ -21,7 +21,7 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "CAN_1.h"
+#include "TCAN.h"
 #include "cyapicallbacks.h"
 
 /* `#START TX_RX_FUNCTION` */
@@ -30,7 +30,7 @@
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_SendMsg
+* FUNCTION NAME:   TCAN_SendMsg
 ********************************************************************************
 *
 * Summary:
@@ -46,96 +46,96 @@
 *  Indication if message has been sent.
 *   Define                             Description
 *    CYRET_SUCCESS                      The function passed successfully
-*    CAN_1_FAIL              The function failed
+*    TCAN_FAIL              The function failed
 *
 *******************************************************************************/
-uint8 CAN_1_SendMsg(const CAN_1_TX_MSG *message) 
+uint8 TCAN_SendMsg(const TCAN_TX_MSG *message) 
 {
     uint8 i, j, shift;
     uint8 retry = 0u;
-    uint8 result = CAN_1_FAIL;
+    uint8 result = TCAN_FAIL;
     uint32 regTemp;
 
-    while (retry < CAN_1_RETRY_NUMBER)
+    while (retry < TCAN_RETRY_NUMBER)
     {
         shift = 1u;    /* Start from first mailbox */
-        for (i = 0u; i < CAN_1_NUMBER_OF_TX_MAILBOXES; i++)
+        for (i = 0u; i < TCAN_NUMBER_OF_TX_MAILBOXES; i++)
         {
             /* Find Basic TX mailboxes */
-            if ((CAN_1_TX_MAILBOX_TYPE & shift) == 0u)
+            if ((TCAN_TX_MAILBOX_TYPE & shift) == 0u)
             {
                 /* Find free mailbox */
                 #if (CY_PSOC3 || CY_PSOC5)
-                    if ((CAN_1_BUF_SR_REG.byte[2] & shift) == 0u)
+                    if ((TCAN_BUF_SR_REG.byte[2] & shift) == 0u)
                 #else  /* CY_PSOC4 */
-                    if ((CAN_1_BUF_SR_REG &
-                        (uint32) ((uint32) shift << CAN_1_TWO_BYTE_OFFSET)) == 0u)
+                    if ((TCAN_BUF_SR_REG &
+                        (uint32) ((uint32) shift << TCAN_TWO_BYTE_OFFSET)) == 0u)
                 #endif /* CY_PSOC3 || CY_PSOC5 */
                     {
                         regTemp = 0u;
 
                         /* Set message parameters */
-                        if (message->rtr != CAN_1_STANDARD_MESSAGE)
+                        if (message->rtr != TCAN_STANDARD_MESSAGE)
                         {
-                            regTemp = CAN_1_TX_RTR_MASK;    /* RTR message Enable */
+                            regTemp = TCAN_TX_RTR_MASK;    /* RTR message Enable */
                         }
 
-                        if (message->ide == CAN_1_STANDARD_MESSAGE)
+                        if (message->ide == TCAN_STANDARD_MESSAGE)
                         {
-                            CAN_1_SET_TX_ID_STANDARD_MSG(i, message->id);
+                            TCAN_SET_TX_ID_STANDARD_MSG(i, message->id);
                         }
                         else
                         {
-                            regTemp |= CAN_1_TX_IDE_MASK;
-                            CAN_1_SET_TX_ID_EXTENDED_MSG(i, message->id);
+                            regTemp |= TCAN_TX_IDE_MASK;
+                            TCAN_SET_TX_ID_EXTENDED_MSG(i, message->id);
                         }
 
-                        if (message->dlc < CAN_1_TX_DLC_MAX_VALUE)
+                        if (message->dlc < TCAN_TX_DLC_MAX_VALUE)
                         {
-                            regTemp |= ((uint32) message->dlc) << CAN_1_TWO_BYTE_OFFSET;
+                            regTemp |= ((uint32) message->dlc) << TCAN_TWO_BYTE_OFFSET;
                         }
                         else
                         {
-                            regTemp |= CAN_1_TX_DLC_UPPER_VALUE;
+                            regTemp |= TCAN_TX_DLC_UPPER_VALUE;
                         }
 
-                        if (message->irq != CAN_1_TRANSMIT_INT_DISABLE)
+                        if (message->irq != TCAN_TRANSMIT_INT_DISABLE)
                         {
-                            regTemp |= CAN_1_TX_INT_ENABLE_MASK;    /* Transmit Interrupt Enable */
+                            regTemp |= TCAN_TX_INT_ENABLE_MASK;    /* Transmit Interrupt Enable */
                         }
 
-                        for (j = 0u; (j < message->dlc) && (j < CAN_1_TX_DLC_MAX_VALUE); j++)
+                        for (j = 0u; (j < message->dlc) && (j < TCAN_TX_DLC_MAX_VALUE); j++)
                         {
                             #if (CY_PSOC3 || CY_PSOC5)
-                                CAN_1_TX_DATA_BYTE(i, j) = message->msg->byte[j];
+                                TCAN_TX_DATA_BYTE(i, j) = message->msg->byte[j];
                             #else /* CY_PSOC4 */
-                                CAN_1_TX_DATA_BYTE(i, j, message->msg->byte[j]);
+                                TCAN_TX_DATA_BYTE(i, j, message->msg->byte[j]);
                             #endif /* CY_PSOC3 || CY_PSOC5 */
                         }
 
                         /* Disable isr */
-    CyIntDisable(CAN_1_ISR_NUMBER);
+    CyIntDisable(TCAN_ISR_NUMBER);
 
                         /* WPN[23] and WPN[3] set to 1 for write to CAN Control reg */
-                        CY_SET_REG32(CAN_1_TX_CMD_PTR(i), (regTemp | CAN_1_TX_WPN_SET));
+                        CY_SET_REG32(TCAN_TX_CMD_PTR(i), (regTemp | TCAN_TX_WPN_SET));
 
                         #if (CY_PSOC3 || CY_PSOC5)
-                            CY_SET_REG32(CAN_1_TX_CMD_PTR(i), CAN_1_SEND_MESSAGE);
+                            CY_SET_REG32(TCAN_TX_CMD_PTR(i), TCAN_SEND_MESSAGE);
                         #else /* CY_PSOC4 */
-                            if (message->sst != CAN_1_STANDARD_MESSAGE)
+                            if (message->sst != TCAN_STANDARD_MESSAGE)
                             {
                                 /* Single Shot Transmission */
-                                CAN_1_TX_CMD_REG(i) |= CAN_1_SEND_MESSAGE |
-                                CAN_1_TX_ABORT_MASK;
+                                TCAN_TX_CMD_REG(i) |= TCAN_SEND_MESSAGE |
+                                TCAN_TX_ABORT_MASK;
                             }
                             else
                             {
-                                CAN_1_TX_CMD_REG(i) |= CAN_1_SEND_MESSAGE;
+                                TCAN_TX_CMD_REG(i) |= TCAN_SEND_MESSAGE;
                             }
                         #endif /* CY_PSOC3 || CY_PSOC5 */
 
                         /* Enable isr */
-    CyIntEnable(CAN_1_ISR_NUMBER);
+    CyIntEnable(TCAN_ISR_NUMBER);
 
                         result = CYRET_SUCCESS;
                     }
@@ -161,7 +161,7 @@ uint8 CAN_1_SendMsg(const CAN_1_TX_MSG *message)
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_TxCancel
+* FUNCTION NAME:   TCAN_TxCancel
 ********************************************************************************
 *
 * Summary:
@@ -175,18 +175,18 @@ uint8 CAN_1_SendMsg(const CAN_1_TX_MSG *message)
 *  None.
 *
 *******************************************************************************/
-void CAN_1_TxCancel(uint8 bufferId) 
+void TCAN_TxCancel(uint8 bufferId) 
 {
-    if (bufferId < CAN_1_NUMBER_OF_TX_MAILBOXES)
+    if (bufferId < TCAN_NUMBER_OF_TX_MAILBOXES)
     {
-        CAN_1_TX_ABORT_MESSAGE(bufferId);
+        TCAN_TX_ABORT_MESSAGE(bufferId);
     }
 }
 
 
-#if (CAN_1_TX0_FUNC_ENABLE)
+#if (TCAN_TX0_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg0
+    * FUNCTION NAME:   TCAN_SendMsg0
     ********************************************************************************
     *
     * Summary:
@@ -202,20 +202,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg0(void) 
+    uint8 TCAN_SendMsg0(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[0u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[0u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(0u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(0u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -223,22 +223,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_0_CALLBACK
-                    CAN_1_SendMsg_0_Callback();
-                #endif /* CAN_1_SEND_MSG_0_CALLBACK */
+                #ifdef TCAN_SEND_MSG_0_CALLBACK
+                    TCAN_SendMsg_0_Callback();
+                #endif /* TCAN_SEND_MSG_0_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(0u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(0u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(0u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(0u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX0_FUNC_ENABLE */
+#endif /* TCAN_TX0_FUNC_ENABLE */
 
 
-#if (CAN_1_TX1_FUNC_ENABLE)
+#if (TCAN_TX1_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg1
+    * FUNCTION NAME:   TCAN_SendMsg1
     ********************************************************************************
     *
     * Summary:
@@ -254,20 +254,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg1(void) 
+    uint8 TCAN_SendMsg1(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[1u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[1u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(1u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(1u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -275,22 +275,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_1_CALLBACK
-                    CAN_1_SendMsg_1_Callback();
-                #endif /* CAN_1_SEND_MSG_1_CALLBACK */
+                #ifdef TCAN_SEND_MSG_1_CALLBACK
+                    TCAN_SendMsg_1_Callback();
+                #endif /* TCAN_SEND_MSG_1_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(1u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(1u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(1u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(1u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX1_FUNC_ENABLE */
+#endif /* TCAN_TX1_FUNC_ENABLE */
 
 
-#if (CAN_1_TX2_FUNC_ENABLE)
+#if (TCAN_TX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg2
+    * FUNCTION NAME:   TCAN_SendMsg2
     ********************************************************************************
     *
     * Summary:
@@ -306,20 +306,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg2(void) 
+    uint8 TCAN_SendMsg2(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[2u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[2u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(2u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(2u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -327,22 +327,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_2_CALLBACK
-                    CAN_1_SendMsg_2_Callback();
-                #endif /* CAN_1_SEND_MSG_2_CALLBACK */
+                #ifdef TCAN_SEND_MSG_2_CALLBACK
+                    TCAN_SendMsg_2_Callback();
+                #endif /* TCAN_SEND_MSG_2_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(2u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(2u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(2u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(2u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX2_FUNC_ENABLE */
+#endif /* TCAN_TX2_FUNC_ENABLE */
 
 
-#if (CAN_1_TX3_FUNC_ENABLE)
+#if (TCAN_TX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg3
+    * FUNCTION NAME:   TCAN_SendMsg3
     ********************************************************************************
     *
     * Summary:
@@ -358,20 +358,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg3(void) 
+    uint8 TCAN_SendMsg3(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[3u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[3u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(3u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(3u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -379,22 +379,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_3_CALLBACK
-                    CAN_1_SendMsg_3_Callback();
-                #endif /* CAN_1_SEND_MSG_3_CALLBACK */
+                #ifdef TCAN_SEND_MSG_3_CALLBACK
+                    TCAN_SendMsg_3_Callback();
+                #endif /* TCAN_SEND_MSG_3_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(3u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(3u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(3u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(3u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX3_FUNC_ENABLE */
+#endif /* TCAN_TX3_FUNC_ENABLE */
 
 
-#if (CAN_1_TX4_FUNC_ENABLE)
+#if (TCAN_TX4_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg4
+    * FUNCTION NAME:   TCAN_SendMsg4
     ********************************************************************************
     *
     * Summary:
@@ -410,20 +410,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg4(void) 
+    uint8 TCAN_SendMsg4(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[4u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[4u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(4u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(4u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -431,22 +431,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_4_CALLBACK
-                    CAN_1_SendMsg_4_Callback();
-                #endif /* CAN_1_SEND_MSG_4_CALLBACK */
+                #ifdef TCAN_SEND_MSG_4_CALLBACK
+                    TCAN_SendMsg_4_Callback();
+                #endif /* TCAN_SEND_MSG_4_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(4u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(4u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(4u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(4u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX4_FUNC_ENABLE */
+#endif /* TCAN_TX4_FUNC_ENABLE */
 
 
-#if (CAN_1_TX5_FUNC_ENABLE)
+#if (TCAN_TX5_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg5
+    * FUNCTION NAME:   TCAN_SendMsg5
     ********************************************************************************
     *
     * Summary:
@@ -462,20 +462,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg5(void) 
+    uint8 TCAN_SendMsg5(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[5u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[5u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(5u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(5u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -483,22 +483,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_5_CALLBACK
-                    CAN_1_SendMsg_5_Callback();
-                #endif /* CAN_1_SEND_MSG_5_CALLBACK */
+                #ifdef TCAN_SEND_MSG_5_CALLBACK
+                    TCAN_SendMsg_5_Callback();
+                #endif /* TCAN_SEND_MSG_5_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(5u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(5u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(5u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(5u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX5_FUNC_ENABLE */
+#endif /* TCAN_TX5_FUNC_ENABLE */
 
 
-#if (CAN_1_TX6_FUNC_ENABLE)
+#if (TCAN_TX6_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg6
+    * FUNCTION NAME:   TCAN_SendMsg6
     ********************************************************************************
     *
     * Summary:
@@ -514,20 +514,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg6(void) 
+    uint8 TCAN_SendMsg6(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[6u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[6u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(6u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(6u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -535,22 +535,22 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_6_CALLBACK
-                    CAN_1_SendMsg_6_Callback();
-                #endif /* CAN_1_SEND_MSG_6_CALLBACK */
+                #ifdef TCAN_SEND_MSG_6_CALLBACK
+                    TCAN_SendMsg_6_Callback();
+                #endif /* TCAN_SEND_MSG_6_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(6u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(6u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(6u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(6u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX6_FUNC_ENABLE */
+#endif /* TCAN_TX6_FUNC_ENABLE */
 
 
-#if (CAN_1_TX7_FUNC_ENABLE)
+#if (TCAN_TX7_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_SendMsg7)
+    * FUNCTION NAME:   TCAN_SendMsg7)
     ********************************************************************************
     *
     * Summary:
@@ -566,20 +566,20 @@ void CAN_1_TxCancel(uint8 bufferId)
     *  Indication if Message has been sent.
     *   Define                             Description
     *    CYRET_SUCCESS                      The function passed successfully
-    *    CAN_1_FAIL              The function failed
+    *    TCAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_1_SendMsg7(void) 
+    uint8 TCAN_SendMsg7(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
         #if (CY_PSOC3 || CY_PSOC5)
-            if ((CAN_1_TX[7u].txcmd.byte[0u] & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX[7u].txcmd.byte[0u] & TCAN_TX_REQUEST_PENDING) != 0u)
         #else  /* CY_PSOC4 */
-            if ((CAN_1_TX_CMD_REG(7u) & CAN_1_TX_REQUEST_PENDING) != 0u)
+            if ((TCAN_TX_CMD_REG(7u) & TCAN_TX_REQUEST_PENDING) != 0u)
         #endif /* CY_PSOC3 || CY_PSOC5 */
             {
-                result = CAN_1_FAIL;
+                result = TCAN_FAIL;
             }
             else
             {
@@ -587,21 +587,21 @@ void CAN_1_TxCancel(uint8 bufferId)
 
                 /* `#END` */
 
-                #ifdef CAN_1_SEND_MSG_7_CALLBACK
-                    CAN_1_SendMsg_7_Callback();
-                #endif /* CAN_1_SEND_MSG_7_CALLBACK */
+                #ifdef TCAN_SEND_MSG_7_CALLBACK
+                    TCAN_SendMsg_7_Callback();
+                #endif /* TCAN_SEND_MSG_7_CALLBACK */
 
-                CY_SET_REG32(CAN_1_TX_CMD_PTR(7u),
-                CY_GET_REG32(CAN_1_TX_CMD_PTR(7u)) | CAN_1_SEND_MESSAGE);
+                CY_SET_REG32(TCAN_TX_CMD_PTR(7u),
+                CY_GET_REG32(TCAN_TX_CMD_PTR(7u)) | TCAN_SEND_MESSAGE);
             }
 
         return (result);
     }
-#endif /* CAN_1_TX7_FUNC_ENABLE */
+#endif /* TCAN_TX7_FUNC_ENABLE */
 
 
 /*******************************************************************************
-* FUNCTION NAME:   CAN_1_ReceiveMsg
+* FUNCTION NAME:   TCAN_ReceiveMsg
 ********************************************************************************
 *
 * Summary:
@@ -619,34 +619,34 @@ void CAN_1_TxCancel(uint8 bufferId)
 *  Depends on the Customer code.
 *
 *******************************************************************************/
-void CAN_1_ReceiveMsg(uint8 rxMailbox) 
+void TCAN_ReceiveMsg(uint8 rxMailbox) 
 {
     #if (CY_PSOC3 || CY_PSOC5)
-        if ((CAN_1_RX[rxMailbox].rxcmd.byte[0u] & CAN_1_RX_ACK_MSG) != 0u)
+        if ((TCAN_RX[rxMailbox].rxcmd.byte[0u] & TCAN_RX_ACK_MSG) != 0u)
     #else  /* CY_PSOC4 */
-        if ((CAN_1_RX_CMD_REG(rxMailbox) & CAN_1_RX_ACK_MSG) != 0u)
+        if ((TCAN_RX_CMD_REG(rxMailbox) & TCAN_RX_ACK_MSG) != 0u)
     #endif /* CY_PSOC3 || CY_PSOC5 */
         {
             /* `#START MESSAGE_BASIC_RECEIVED` */
 
             /* `#END` */
 
-            #ifdef CAN_1_RECEIVE_MSG_CALLBACK
-                CAN_1_ReceiveMsg_Callback();
-            #endif /* CAN_1_RECEIVE_MSG_CALLBACK */
+            #ifdef TCAN_RECEIVE_MSG_CALLBACK
+                TCAN_ReceiveMsg_Callback();
+            #endif /* TCAN_RECEIVE_MSG_CALLBACK */
 
             #if (CY_PSOC3 || CY_PSOC5)
-                CAN_1_RX[rxMailbox].rxcmd.byte[0u] |= CAN_1_RX_ACK_MSG;
+                TCAN_RX[rxMailbox].rxcmd.byte[0u] |= TCAN_RX_ACK_MSG;
             #else  /* CY_PSOC4 */
-                CAN_1_RX_CMD_REG(rxMailbox) |= CAN_1_RX_ACK_MSG;
+                TCAN_RX_CMD_REG(rxMailbox) |= TCAN_RX_ACK_MSG;
             #endif /* CY_PSOC3 || CY_PSOC5 */
         }
 }
 
 
-#if (CAN_1_RX0_FUNC_ENABLE)
+#if (TCAN_RX0_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg0
+    * FUNCTION NAME:   TCAN_ReceiveMsg0
     ********************************************************************************
     *
     * Summary:
@@ -664,24 +664,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg0(void) 
+    void TCAN_ReceiveMsg0(void) 
     {
         /* `#START MESSAGE_0_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_0_CALLBACK
-            CAN_1_ReceiveMsg_0_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_0_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_0_CALLBACK
+            TCAN_ReceiveMsg_0_Callback();
+        #endif /* TCAN_RECEIVE_MSG_0_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(0u);
+        TCAN_RX_ACK_MESSAGE(0u);
     }
-#endif /* CAN_1_RX0_FUNC_ENABLE */
+#endif /* TCAN_RX0_FUNC_ENABLE */
 
 
-#if (CAN_1_RX1_FUNC_ENABLE)
+#if (TCAN_RX1_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:    CAN_1_ReceiveMsg1
+    * FUNCTION NAME:    TCAN_ReceiveMsg1
     ********************************************************************************
     *
     * Summary:
@@ -699,24 +699,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg1(void) 
+    void TCAN_ReceiveMsg1(void) 
     {
         /* `#START MESSAGE_1_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_1_CALLBACK
-            CAN_1_ReceiveMsg_1_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_1_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_1_CALLBACK
+            TCAN_ReceiveMsg_1_Callback();
+        #endif /* TCAN_RECEIVE_MSG_1_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(1u);
+        TCAN_RX_ACK_MESSAGE(1u);
     }
-#endif /* CAN_1_RX1_FUNC_ENABLE */
+#endif /* TCAN_RX1_FUNC_ENABLE */
 
 
-#if (CAN_1_RX2_FUNC_ENABLE)
+#if (TCAN_RX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg2
+    * FUNCTION NAME:   TCAN_ReceiveMsg2
     ********************************************************************************
     *
     * Summary:
@@ -734,24 +734,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg2(void) 
+    void TCAN_ReceiveMsg2(void) 
     {
         /* `#START MESSAGE_2_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_2_CALLBACK
-            CAN_1_ReceiveMsg_2_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_2_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_2_CALLBACK
+            TCAN_ReceiveMsg_2_Callback();
+        #endif /* TCAN_RECEIVE_MSG_2_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(2u);
+        TCAN_RX_ACK_MESSAGE(2u);
     }
-#endif /* CAN_1_RX2_FUNC_ENABLE */
+#endif /* TCAN_RX2_FUNC_ENABLE */
 
 
-#if (CAN_1_RX3_FUNC_ENABLE)
+#if (TCAN_RX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg3
+    * FUNCTION NAME:   TCAN_ReceiveMsg3
     ********************************************************************************
     *
     * Summary:
@@ -769,24 +769,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg3(void) 
+    void TCAN_ReceiveMsg3(void) 
     {
         /* `#START MESSAGE_3_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_3_CALLBACK
-            CAN_1_ReceiveMsg_3_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_3_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_3_CALLBACK
+            TCAN_ReceiveMsg_3_Callback();
+        #endif /* TCAN_RECEIVE_MSG_3_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(3u);
+        TCAN_RX_ACK_MESSAGE(3u);
     }
-#endif /* CAN_1_RX3_FUNC_ENABLE */
+#endif /* TCAN_RX3_FUNC_ENABLE */
 
 
-#if (CAN_1_RX4_FUNC_ENABLE)
+#if (TCAN_RX4_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg4
+    * FUNCTION NAME:   TCAN_ReceiveMsg4
     ********************************************************************************
     *
     * Summary:
@@ -804,24 +804,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg4(void) 
+    void TCAN_ReceiveMsg4(void) 
     {
         /* `#START MESSAGE_4_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_4_CALLBACK
-            CAN_1_ReceiveMsg_4_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_4_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_4_CALLBACK
+            TCAN_ReceiveMsg_4_Callback();
+        #endif /* TCAN_RECEIVE_MSG_4_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(4u);
+        TCAN_RX_ACK_MESSAGE(4u);
     }
-#endif /* CAN_1_RX4_FUNC_ENABLE */
+#endif /* TCAN_RX4_FUNC_ENABLE */
 
 
-#if (CAN_1_RX5_FUNC_ENABLE)
+#if (TCAN_RX5_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg5
+    * FUNCTION NAME:   TCAN_ReceiveMsg5
     ********************************************************************************
     *
     * Summary:
@@ -839,24 +839,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg5(void) 
+    void TCAN_ReceiveMsg5(void) 
     {
         /* `#START MESSAGE_5_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_5_CALLBACK
-            CAN_1_ReceiveMsg_5_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_5_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_5_CALLBACK
+            TCAN_ReceiveMsg_5_Callback();
+        #endif /* TCAN_RECEIVE_MSG_5_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(5u);
+        TCAN_RX_ACK_MESSAGE(5u);
     }
-#endif /* CAN_1_RX5_FUNC_ENABLE */
+#endif /* TCAN_RX5_FUNC_ENABLE */
 
 
-#if (CAN_1_RX6_FUNC_ENABLE)
+#if (TCAN_RX6_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg6
+    * FUNCTION NAME:   TCAN_ReceiveMsg6
     ********************************************************************************
     *
     * Summary:
@@ -874,24 +874,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg6(void) 
+    void TCAN_ReceiveMsg6(void) 
     {
         /* `#START MESSAGE_6_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_6_CALLBACK
-            CAN_1_ReceiveMsg_6_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_6_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_6_CALLBACK
+            TCAN_ReceiveMsg_6_Callback();
+        #endif /* TCAN_RECEIVE_MSG_6_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(6u);
+        TCAN_RX_ACK_MESSAGE(6u);
     }
-#endif /* CAN_1_RX6_FUNC_ENABLE */
+#endif /* TCAN_RX6_FUNC_ENABLE */
 
 
-#if (CAN_1_RX7_FUNC_ENABLE)
+#if (TCAN_RX7_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg7
+    * FUNCTION NAME:   TCAN_ReceiveMsg7
     ********************************************************************************
     *
     * Summary:
@@ -909,24 +909,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg7(void) 
+    void TCAN_ReceiveMsg7(void) 
     {
         /* `#START MESSAGE_7_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_7_CALLBACK
-            CAN_1_ReceiveMsg_7_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_7_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_7_CALLBACK
+            TCAN_ReceiveMsg_7_Callback();
+        #endif /* TCAN_RECEIVE_MSG_7_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(7u);
+        TCAN_RX_ACK_MESSAGE(7u);
     }
-#endif /* CAN_1_RX7_FUNC_ENABLE */
+#endif /* TCAN_RX7_FUNC_ENABLE */
 
 
-#if (CAN_1_RX8_FUNC_ENABLE)
+#if (TCAN_RX8_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg8
+    * FUNCTION NAME:   TCAN_ReceiveMsg8
     ********************************************************************************
     *
     * Summary:
@@ -944,24 +944,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg8(void) 
+    void TCAN_ReceiveMsg8(void) 
     {
         /* `#START MESSAGE_8_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_8_CALLBACK
-            CAN_1_ReceiveMsg_8_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_8_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_8_CALLBACK
+            TCAN_ReceiveMsg_8_Callback();
+        #endif /* TCAN_RECEIVE_MSG_8_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(8u);
+        TCAN_RX_ACK_MESSAGE(8u);
     }
-#endif /* CAN_1_RX8_FUNC_ENABLE */
+#endif /* TCAN_RX8_FUNC_ENABLE */
 
 
-#if (CAN_1_RX9_FUNC_ENABLE)
+#if (TCAN_RX9_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg9
+    * FUNCTION NAME:   TCAN_ReceiveMsg9
     ********************************************************************************
     *
     * Summary:
@@ -979,24 +979,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg9(void) 
+    void TCAN_ReceiveMsg9(void) 
     {
         /* `#START MESSAGE_9_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_9_CALLBACK
-            CAN_1_ReceiveMsg_9_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_9_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_9_CALLBACK
+            TCAN_ReceiveMsg_9_Callback();
+        #endif /* TCAN_RECEIVE_MSG_9_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(9u);
+        TCAN_RX_ACK_MESSAGE(9u);
     }
-#endif /* CAN_1_RX9_FUNC_ENABLE */
+#endif /* TCAN_RX9_FUNC_ENABLE */
 
 
-#if (CAN_1_RX10_FUNC_ENABLE)
+#if (TCAN_RX10_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg10
+    * FUNCTION NAME:   TCAN_ReceiveMsg10
     ********************************************************************************
     *
     * Summary:
@@ -1014,24 +1014,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg10(void) 
+    void TCAN_ReceiveMsg10(void) 
     {
         /* `#START MESSAGE_10_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_10_CALLBACK
-            CAN_1_ReceiveMsg_10_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_10_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_10_CALLBACK
+            TCAN_ReceiveMsg_10_Callback();
+        #endif /* TCAN_RECEIVE_MSG_10_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(10u);
+        TCAN_RX_ACK_MESSAGE(10u);
     }
-#endif /* CAN_1_RX10_FUNC_ENABLE */
+#endif /* TCAN_RX10_FUNC_ENABLE */
 
 
-#if (CAN_1_RX11_FUNC_ENABLE)
+#if (TCAN_RX11_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg11
+    * FUNCTION NAME:   TCAN_ReceiveMsg11
     ********************************************************************************
     *
     * Summary:
@@ -1049,24 +1049,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg11(void) 
+    void TCAN_ReceiveMsg11(void) 
     {
         /* `#START MESSAGE_11_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_11_CALLBACK
-            CAN_1_ReceiveMsg_11_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_11_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_11_CALLBACK
+            TCAN_ReceiveMsg_11_Callback();
+        #endif /* TCAN_RECEIVE_MSG_11_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(11u);
+        TCAN_RX_ACK_MESSAGE(11u);
     }
-#endif /* CAN_1_RX11_FUNC_ENABLE */
+#endif /* TCAN_RX11_FUNC_ENABLE */
 
 
-#if (CAN_1_RX12_FUNC_ENABLE)
+#if (TCAN_RX12_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg12
+    * FUNCTION NAME:   TCAN_ReceiveMsg12
     ********************************************************************************
     *
     * Summary:
@@ -1084,24 +1084,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg12(void) 
+    void TCAN_ReceiveMsg12(void) 
     {
         /* `#START MESSAGE_12_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_12_CALLBACK
-            CAN_1_ReceiveMsg_12_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_12_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_12_CALLBACK
+            TCAN_ReceiveMsg_12_Callback();
+        #endif /* TCAN_RECEIVE_MSG_12_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(12u);
+        TCAN_RX_ACK_MESSAGE(12u);
     }
-#endif /* CAN_1_RX12_FUNC_ENABLE */
+#endif /* TCAN_RX12_FUNC_ENABLE */
 
 
-#if (CAN_1_RX13_FUNC_ENABLE)
+#if (TCAN_RX13_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg13
+    * FUNCTION NAME:   TCAN_ReceiveMsg13
     ********************************************************************************
     *
     * Summary:
@@ -1119,24 +1119,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg13(void) 
+    void TCAN_ReceiveMsg13(void) 
     {
         /* `#START MESSAGE_13_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_13_CALLBACK
-            CAN_1_ReceiveMsg_13_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_13_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_13_CALLBACK
+            TCAN_ReceiveMsg_13_Callback();
+        #endif /* TCAN_RECEIVE_MSG_13_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(13u);
+        TCAN_RX_ACK_MESSAGE(13u);
     }
-#endif /* CAN_1_RX13_FUNC_ENABLE */
+#endif /* TCAN_RX13_FUNC_ENABLE */
 
 
-#if (CAN_1_RX14_FUNC_ENABLE)
+#if (TCAN_RX14_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg14
+    * FUNCTION NAME:   TCAN_ReceiveMsg14
     ********************************************************************************
     *
     * Summary:
@@ -1154,24 +1154,24 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg14(void) 
+    void TCAN_ReceiveMsg14(void) 
     {
         /* `#START MESSAGE_14_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_14_CALLBACK
-            CAN_1_ReceiveMsg_14_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_14_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_14_CALLBACK
+            TCAN_ReceiveMsg_14_Callback();
+        #endif /* TCAN_RECEIVE_MSG_14_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(14u);
+        TCAN_RX_ACK_MESSAGE(14u);
     }
-#endif /* CAN_1_RX14_FUNC_ENABLE */
+#endif /* TCAN_RX14_FUNC_ENABLE */
 
 
-#if (CAN_1_RX15_FUNC_ENABLE)
+#if (TCAN_RX15_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_1_ReceiveMsg15
+    * FUNCTION NAME:   TCAN_ReceiveMsg15
     ********************************************************************************
     *
     * Summary:
@@ -1189,19 +1189,19 @@ void CAN_1_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_1_ReceiveMsg15(void) 
+    void TCAN_ReceiveMsg15(void) 
     {
         /* `#START MESSAGE_15_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_1_RECEIVE_MSG_15_CALLBACK
-            CAN_1_ReceiveMsg_15_Callback();
-        #endif /* CAN_1_RECEIVE_MSG_15_CALLBACK */
+        #ifdef TCAN_RECEIVE_MSG_15_CALLBACK
+            TCAN_ReceiveMsg_15_Callback();
+        #endif /* TCAN_RECEIVE_MSG_15_CALLBACK */
 
-        CAN_1_RX_ACK_MESSAGE(15u);
+        TCAN_RX_ACK_MESSAGE(15u);
     }
-#endif /* CAN_1_RX15_FUNC_ENABLE */
+#endif /* TCAN_RX15_FUNC_ENABLE */
 
 
 /* [] END OF FILE */

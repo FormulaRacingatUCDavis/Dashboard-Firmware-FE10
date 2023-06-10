@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: CAN_1_HFCLK.c
+* File Name: timer_clock_3.c
 * Version 2.20
 *
 *  Description:
@@ -17,12 +17,12 @@
 *******************************************************************************/
 
 #include <cydevice_trm.h>
-#include "CAN_1_HFCLK.h"
+#include "timer_clock_3.h"
 
 #if defined CYREG_PERI_DIV_CMD
 
 /*******************************************************************************
-* Function Name: CAN_1_HFCLK_StartEx
+* Function Name: timer_clock_3_StartEx
 ********************************************************************************
 *
 * Summary:
@@ -36,24 +36,24 @@
 *  None
 *
 *******************************************************************************/
-void CAN_1_HFCLK_StartEx(uint32 alignClkDiv)
+void timer_clock_3_StartEx(uint32 alignClkDiv)
 {
     /* Make sure any previous start command has finished. */
-    while((CAN_1_HFCLK_CMD_REG & CAN_1_HFCLK_CMD_ENABLE_MASK) != 0u)
+    while((timer_clock_3_CMD_REG & timer_clock_3_CMD_ENABLE_MASK) != 0u)
     {
     }
     
     /* Specify the target divider and it's alignment divider, and enable. */
-    CAN_1_HFCLK_CMD_REG =
-        ((uint32)CAN_1_HFCLK__DIV_ID << CAN_1_HFCLK_CMD_DIV_SHIFT)|
-        (alignClkDiv << CAN_1_HFCLK_CMD_PA_DIV_SHIFT) |
-        (uint32)CAN_1_HFCLK_CMD_ENABLE_MASK;
+    timer_clock_3_CMD_REG =
+        ((uint32)timer_clock_3__DIV_ID << timer_clock_3_CMD_DIV_SHIFT)|
+        (alignClkDiv << timer_clock_3_CMD_PA_DIV_SHIFT) |
+        (uint32)timer_clock_3_CMD_ENABLE_MASK;
 }
 
 #else
 
 /*******************************************************************************
-* Function Name: CAN_1_HFCLK_Start
+* Function Name: timer_clock_3_Start
 ********************************************************************************
 *
 * Summary:
@@ -67,17 +67,17 @@ void CAN_1_HFCLK_StartEx(uint32 alignClkDiv)
 *
 *******************************************************************************/
 
-void CAN_1_HFCLK_Start(void)
+void timer_clock_3_Start(void)
 {
     /* Set the bit to enable the clock. */
-    CAN_1_HFCLK_ENABLE_REG |= CAN_1_HFCLK__ENABLE_MASK;
+    timer_clock_3_ENABLE_REG |= timer_clock_3__ENABLE_MASK;
 }
 
 #endif /* CYREG_PERI_DIV_CMD */
 
 
 /*******************************************************************************
-* Function Name: CAN_1_HFCLK_Stop
+* Function Name: timer_clock_3_Stop
 ********************************************************************************
 *
 * Summary:
@@ -92,31 +92,31 @@ void CAN_1_HFCLK_Start(void)
 *  None
 *
 *******************************************************************************/
-void CAN_1_HFCLK_Stop(void)
+void timer_clock_3_Stop(void)
 {
 #if defined CYREG_PERI_DIV_CMD
 
     /* Make sure any previous start command has finished. */
-    while((CAN_1_HFCLK_CMD_REG & CAN_1_HFCLK_CMD_ENABLE_MASK) != 0u)
+    while((timer_clock_3_CMD_REG & timer_clock_3_CMD_ENABLE_MASK) != 0u)
     {
     }
     
     /* Specify the target divider and it's alignment divider, and disable. */
-    CAN_1_HFCLK_CMD_REG =
-        ((uint32)CAN_1_HFCLK__DIV_ID << CAN_1_HFCLK_CMD_DIV_SHIFT)|
-        ((uint32)CAN_1_HFCLK_CMD_DISABLE_MASK);
+    timer_clock_3_CMD_REG =
+        ((uint32)timer_clock_3__DIV_ID << timer_clock_3_CMD_DIV_SHIFT)|
+        ((uint32)timer_clock_3_CMD_DISABLE_MASK);
 
 #else
 
     /* Clear the bit to disable the clock. */
-    CAN_1_HFCLK_ENABLE_REG &= (uint32)(~CAN_1_HFCLK__ENABLE_MASK);
+    timer_clock_3_ENABLE_REG &= (uint32)(~timer_clock_3__ENABLE_MASK);
     
 #endif /* CYREG_PERI_DIV_CMD */
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_HFCLK_SetFractionalDividerRegister
+* Function Name: timer_clock_3_SetFractionalDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -131,35 +131,35 @@ void CAN_1_HFCLK_Stop(void)
 *  None
 *
 *******************************************************************************/
-void CAN_1_HFCLK_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
+void timer_clock_3_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
 {
     uint32 maskVal;
     uint32 regVal;
     
-#if defined (CAN_1_HFCLK__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
+#if defined (timer_clock_3__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
     
 	/* get all but divider bits */
-    maskVal = CAN_1_HFCLK_DIV_REG & 
-                    (uint32)(~(uint32)(CAN_1_HFCLK_DIV_INT_MASK | CAN_1_HFCLK_DIV_FRAC_MASK)); 
+    maskVal = timer_clock_3_DIV_REG & 
+                    (uint32)(~(uint32)(timer_clock_3_DIV_INT_MASK | timer_clock_3_DIV_FRAC_MASK)); 
 	/* combine mask and new divider vals into 32-bit value */
     regVal = maskVal |
-        ((uint32)((uint32)clkDivider <<  CAN_1_HFCLK_DIV_INT_SHIFT) & CAN_1_HFCLK_DIV_INT_MASK) |
-        ((uint32)((uint32)clkFractional << CAN_1_HFCLK_DIV_FRAC_SHIFT) & CAN_1_HFCLK_DIV_FRAC_MASK);
+        ((uint32)((uint32)clkDivider <<  timer_clock_3_DIV_INT_SHIFT) & timer_clock_3_DIV_INT_MASK) |
+        ((uint32)((uint32)clkFractional << timer_clock_3_DIV_FRAC_SHIFT) & timer_clock_3_DIV_FRAC_MASK);
     
 #else
     /* get all but integer divider bits */
-    maskVal = CAN_1_HFCLK_DIV_REG & (uint32)(~(uint32)CAN_1_HFCLK__DIVIDER_MASK);
+    maskVal = timer_clock_3_DIV_REG & (uint32)(~(uint32)timer_clock_3__DIVIDER_MASK);
     /* combine mask and new divider val into 32-bit value */
     regVal = clkDivider | maskVal;
     
-#endif /* CAN_1_HFCLK__FRAC_MASK || CYREG_PERI_DIV_CMD */
+#endif /* timer_clock_3__FRAC_MASK || CYREG_PERI_DIV_CMD */
 
-    CAN_1_HFCLK_DIV_REG = regVal;
+    timer_clock_3_DIV_REG = regVal;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_HFCLK_GetDividerRegister
+* Function Name: timer_clock_3_GetDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -173,15 +173,15 @@ void CAN_1_HFCLK_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFracti
 *  divide by 2, the return value will be 1.
 *
 *******************************************************************************/
-uint16 CAN_1_HFCLK_GetDividerRegister(void)
+uint16 timer_clock_3_GetDividerRegister(void)
 {
-    return (uint16)((CAN_1_HFCLK_DIV_REG & CAN_1_HFCLK_DIV_INT_MASK)
-        >> CAN_1_HFCLK_DIV_INT_SHIFT);
+    return (uint16)((timer_clock_3_DIV_REG & timer_clock_3_DIV_INT_MASK)
+        >> timer_clock_3_DIV_INT_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_HFCLK_GetFractionalDividerRegister
+* Function Name: timer_clock_3_GetFractionalDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -195,15 +195,15 @@ uint16 CAN_1_HFCLK_GetDividerRegister(void)
 *  0 if the fractional divider is not in use.
 *
 *******************************************************************************/
-uint8 CAN_1_HFCLK_GetFractionalDividerRegister(void)
+uint8 timer_clock_3_GetFractionalDividerRegister(void)
 {
-#if defined (CAN_1_HFCLK__FRAC_MASK)
+#if defined (timer_clock_3__FRAC_MASK)
     /* return fractional divider bits */
-    return (uint8)((CAN_1_HFCLK_DIV_REG & CAN_1_HFCLK_DIV_FRAC_MASK)
-        >> CAN_1_HFCLK_DIV_FRAC_SHIFT);
+    return (uint8)((timer_clock_3_DIV_REG & timer_clock_3_DIV_FRAC_MASK)
+        >> timer_clock_3_DIV_FRAC_SHIFT);
 #else
     return 0u;
-#endif /* CAN_1_HFCLK__FRAC_MASK */
+#endif /* timer_clock_3__FRAC_MASK */
 }
 
 

@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Jun 7 2023 19:31:41
+#File Generated:     Jun 9 2023 18:38:07
 
 #Purpose:            
 
@@ -76,17 +76,18 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 10
+Number of clocks: 11
 Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   4.8 MHz
 Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   4.8 MHz
 Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
-Clock: CyHFClk              | Frequency:  41.7 MHz | Target:  24.0 MHz
+Clock: CyHFClk              | Frequency:  58.1 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: timer_clock_3        | Frequency:  41.7 MHz | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -98,17 +99,18 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 10
+Number of clocks: 11
 Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   4.8 MHz
 Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   4.8 MHz
 Clock: Clock_2              | Frequency:  53.4 MHz | Target:  12.0 MHz
-Clock: CyHFClk              | Frequency:  41.7 MHz | Target:  24.0 MHz
+Clock: CyHFClk              | Frequency:  54.4 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: timer_clock_3        | Frequency:  41.7 MHz | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -143,17 +145,18 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 10
+Number of clocks: 11
 Clock: ADC_GLV_V_intClock   | Frequency: N/A       | Target:   4.8 MHz
 Clock: ADC_GLV_V_intClock(FFB) | Frequency: N/A       | Target:   4.8 MHz
 Clock: Clock_2              | Frequency:  53.4 MHz | Target:  13.2 MHz
-Clock: CyHFClk              | Frequency:  41.7 MHz | Target:  26.3 MHz
+Clock: CyHFClk              | Frequency:  54.4 MHz | Target:  26.3 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: timer_clock_3        | Frequency:  41.7 MHz | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -164,5 +167,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.9 sec.
 

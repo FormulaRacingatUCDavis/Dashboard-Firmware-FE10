@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: CAN_1_isr.c  
+* File Name: TCAN_isr.c  
 * Version 1.70
 *
 *  Description:
@@ -18,15 +18,15 @@
 
 #include <cydevice_trm.h>
 #include <CyLib.h>
-#include <CAN_1_isr.h>
+#include <TCAN_isr.h>
 #include "cyapicallbacks.h"
 
-#if !defined(CAN_1_isr__REMOVED) /* Check for removal by optimization */
+#if !defined(TCAN_isr__REMOVED) /* Check for removal by optimization */
 
 /*******************************************************************************
 *  Place your includes, defines and code here 
 ********************************************************************************/
-/* `#START CAN_1_isr_intc` */
+/* `#START TCAN_isr_intc` */
 
 /* `#END` */
 
@@ -37,7 +37,7 @@ CY_ISR_PROTO(IntDefaultHandler);
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_Start
+* Function Name: TCAN_isr_Start
 ********************************************************************************
 *
 * Summary:
@@ -53,24 +53,24 @@ CY_ISR_PROTO(IntDefaultHandler);
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_Start(void)
+void TCAN_isr_Start(void)
 {
     /* For all we know the interrupt is active. */
-    CAN_1_isr_Disable();
+    TCAN_isr_Disable();
 
-    /* Set the ISR to point to the CAN_1_isr Interrupt. */
-    CAN_1_isr_SetVector(&CAN_1_isr_Interrupt);
+    /* Set the ISR to point to the TCAN_isr Interrupt. */
+    TCAN_isr_SetVector(&TCAN_isr_Interrupt);
 
     /* Set the priority. */
-    CAN_1_isr_SetPriority((uint8)CAN_1_isr_INTC_PRIOR_NUMBER);
+    TCAN_isr_SetPriority((uint8)TCAN_isr_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    CAN_1_isr_Enable();
+    TCAN_isr_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_StartEx
+* Function Name: TCAN_isr_StartEx
 ********************************************************************************
 *
 * Summary:
@@ -96,24 +96,24 @@ void CAN_1_isr_Start(void)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_StartEx(cyisraddress address)
+void TCAN_isr_StartEx(cyisraddress address)
 {
     /* For all we know the interrupt is active. */
-    CAN_1_isr_Disable();
+    TCAN_isr_Disable();
 
-    /* Set the ISR to point to the CAN_1_isr Interrupt. */
-    CAN_1_isr_SetVector(address);
+    /* Set the ISR to point to the TCAN_isr Interrupt. */
+    TCAN_isr_SetVector(address);
 
     /* Set the priority. */
-    CAN_1_isr_SetPriority((uint8)CAN_1_isr_INTC_PRIOR_NUMBER);
+    TCAN_isr_SetPriority((uint8)TCAN_isr_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    CAN_1_isr_Enable();
+    TCAN_isr_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_Stop
+* Function Name: TCAN_isr_Stop
 ********************************************************************************
 *
 * Summary:
@@ -126,22 +126,22 @@ void CAN_1_isr_StartEx(cyisraddress address)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_Stop(void)
+void TCAN_isr_Stop(void)
 {
     /* Disable this interrupt. */
-    CAN_1_isr_Disable();
+    TCAN_isr_Disable();
 
     /* Set the ISR to point to the passive one. */
-    CAN_1_isr_SetVector(&IntDefaultHandler);
+    TCAN_isr_SetVector(&IntDefaultHandler);
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_Interrupt
+* Function Name: TCAN_isr_Interrupt
 ********************************************************************************
 *
 * Summary:
-*   The default Interrupt Service Routine for CAN_1_isr.
+*   The default Interrupt Service Routine for TCAN_isr.
 *
 *   Add custom code between the START and END comments to keep the next version
 *   of this file from over-writing your code.
@@ -156,27 +156,27 @@ void CAN_1_isr_Stop(void)
 *   None
 *
 *******************************************************************************/
-CY_ISR(CAN_1_isr_Interrupt)
+CY_ISR(TCAN_isr_Interrupt)
 {
-    #ifdef CAN_1_isr_INTERRUPT_INTERRUPT_CALLBACK
-        CAN_1_isr_Interrupt_InterruptCallback();
-    #endif /* CAN_1_isr_INTERRUPT_INTERRUPT_CALLBACK */ 
+    #ifdef TCAN_isr_INTERRUPT_INTERRUPT_CALLBACK
+        TCAN_isr_Interrupt_InterruptCallback();
+    #endif /* TCAN_isr_INTERRUPT_INTERRUPT_CALLBACK */ 
 
     /*  Place your Interrupt code here. */
-    /* `#START CAN_1_isr_Interrupt` */
+    /* `#START TCAN_isr_Interrupt` */
 
     /* `#END` */
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_SetVector
+* Function Name: TCAN_isr_SetVector
 ********************************************************************************
 *
 * Summary:
-*   Change the ISR vector for the Interrupt. Note calling CAN_1_isr_Start
+*   Change the ISR vector for the Interrupt. Note calling TCAN_isr_Start
 *   will override any effect this method would have had. To set the vector 
-*   before the component has been started use CAN_1_isr_StartEx instead.
+*   before the component has been started use TCAN_isr_StartEx instead.
 * 
 *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
 *   used to provide consistent definition across compilers:
@@ -196,14 +196,14 @@ CY_ISR(CAN_1_isr_Interrupt)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_SetVector(cyisraddress address)
+void TCAN_isr_SetVector(cyisraddress address)
 {
-    CyRamVectors[CYINT_IRQ_BASE + CAN_1_isr__INTC_NUMBER] = address;
+    CyRamVectors[CYINT_IRQ_BASE + TCAN_isr__INTC_NUMBER] = address;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_GetVector
+* Function Name: TCAN_isr_GetVector
 ********************************************************************************
 *
 * Summary:
@@ -216,22 +216,22 @@ void CAN_1_isr_SetVector(cyisraddress address)
 *   Address of the ISR in the interrupt vector table.
 *
 *******************************************************************************/
-cyisraddress CAN_1_isr_GetVector(void)
+cyisraddress TCAN_isr_GetVector(void)
 {
-    return CyRamVectors[CYINT_IRQ_BASE + CAN_1_isr__INTC_NUMBER];
+    return CyRamVectors[CYINT_IRQ_BASE + TCAN_isr__INTC_NUMBER];
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_SetPriority
+* Function Name: TCAN_isr_SetPriority
 ********************************************************************************
 *
 * Summary:
 *   Sets the Priority of the Interrupt. 
 *
-*   Note calling CAN_1_isr_Start or CAN_1_isr_StartEx will 
+*   Note calling TCAN_isr_Start or TCAN_isr_StartEx will 
 *   override any effect this API would have had. This API should only be called
-*   after CAN_1_isr_Start or CAN_1_isr_StartEx has been called. 
+*   after TCAN_isr_Start or TCAN_isr_StartEx has been called. 
 *   To set the initial priority for the component, use the Design-Wide Resources
 *   Interrupt Editor.
 *
@@ -246,20 +246,20 @@ cyisraddress CAN_1_isr_GetVector(void)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_SetPriority(uint8 priority)
+void TCAN_isr_SetPriority(uint8 priority)
 {
 	uint8 interruptState;
-    uint32 priorityOffset = ((CAN_1_isr__INTC_NUMBER % 4u) * 8u) + 6u;
+    uint32 priorityOffset = ((TCAN_isr__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *CAN_1_isr_INTC_PRIOR = (*CAN_1_isr_INTC_PRIOR & (uint32)(~CAN_1_isr__INTC_PRIOR_MASK)) |
+    *TCAN_isr_INTC_PRIOR = (*TCAN_isr_INTC_PRIOR & (uint32)(~TCAN_isr__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_GetPriority
+* Function Name: TCAN_isr_GetPriority
 ********************************************************************************
 *
 * Summary:
@@ -274,19 +274,19 @@ void CAN_1_isr_SetPriority(uint8 priority)
 *    PSoC 4: Priority is from 0 to 3.
 *
 *******************************************************************************/
-uint8 CAN_1_isr_GetPriority(void)
+uint8 TCAN_isr_GetPriority(void)
 {
     uint32 priority;
-	uint32 priorityOffset = ((CAN_1_isr__INTC_NUMBER % 4u) * 8u) + 6u;
+	uint32 priorityOffset = ((TCAN_isr__INTC_NUMBER % 4u) * 8u) + 6u;
 
-    priority = (*CAN_1_isr_INTC_PRIOR & CAN_1_isr__INTC_PRIOR_MASK) >> priorityOffset;
+    priority = (*TCAN_isr_INTC_PRIOR & TCAN_isr__INTC_PRIOR_MASK) >> priorityOffset;
 
     return (uint8)priority;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_Enable
+* Function Name: TCAN_isr_Enable
 ********************************************************************************
 *
 * Summary:
@@ -301,15 +301,15 @@ uint8 CAN_1_isr_GetPriority(void)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_Enable(void)
+void TCAN_isr_Enable(void)
 {
     /* Enable the general interrupt. */
-    *CAN_1_isr_INTC_SET_EN = CAN_1_isr__INTC_MASK;
+    *TCAN_isr_INTC_SET_EN = TCAN_isr__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_GetState
+* Function Name: TCAN_isr_GetState
 ********************************************************************************
 *
 * Summary:
@@ -322,15 +322,15 @@ void CAN_1_isr_Enable(void)
 *   1 if enabled, 0 if disabled.
 *
 *******************************************************************************/
-uint8 CAN_1_isr_GetState(void)
+uint8 TCAN_isr_GetState(void)
 {
     /* Get the state of the general interrupt. */
-    return ((*CAN_1_isr_INTC_SET_EN & (uint32)CAN_1_isr__INTC_MASK) != 0u) ? 1u:0u;
+    return ((*TCAN_isr_INTC_SET_EN & (uint32)TCAN_isr__INTC_MASK) != 0u) ? 1u:0u;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_Disable
+* Function Name: TCAN_isr_Disable
 ********************************************************************************
 *
 * Summary:
@@ -343,15 +343,15 @@ uint8 CAN_1_isr_GetState(void)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_Disable(void)
+void TCAN_isr_Disable(void)
 {
     /* Disable the general interrupt. */
-    *CAN_1_isr_INTC_CLR_EN = CAN_1_isr__INTC_MASK;
+    *TCAN_isr_INTC_CLR_EN = TCAN_isr__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_SetPending
+* Function Name: TCAN_isr_SetPending
 ********************************************************************************
 *
 * Summary:
@@ -370,14 +370,14 @@ void CAN_1_isr_Disable(void)
 *   interrupts).
 *
 *******************************************************************************/
-void CAN_1_isr_SetPending(void)
+void TCAN_isr_SetPending(void)
 {
-    *CAN_1_isr_INTC_SET_PD = CAN_1_isr__INTC_MASK;
+    *TCAN_isr_INTC_SET_PD = TCAN_isr__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: CAN_1_isr_ClearPending
+* Function Name: TCAN_isr_ClearPending
 ********************************************************************************
 *
 * Summary:
@@ -395,9 +395,9 @@ void CAN_1_isr_SetPending(void)
 *   None
 *
 *******************************************************************************/
-void CAN_1_isr_ClearPending(void)
+void TCAN_isr_ClearPending(void)
 {
-    *CAN_1_isr_INTC_CLR_PD = CAN_1_isr__INTC_MASK;
+    *TCAN_isr_INTC_CLR_PD = TCAN_isr__INTC_MASK;
 }
 
 #endif /* End check for removal by optimization */

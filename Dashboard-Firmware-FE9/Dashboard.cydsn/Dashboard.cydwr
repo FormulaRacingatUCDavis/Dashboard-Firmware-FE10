@@ -19,6 +19,12 @@
       <Data key="abefc0d0-3e9b-4751-a875-86d46e73b8e8/5c71752a-e182-47ca-942c-9cb20adbdf2f" value="ADC_GLV_V_intClock" />
       <Data key="eae209c1-0724-4de4-8d48-0c98798b0a9b" value="timer_clock_3" />
     </Group>
+    <Group key="Interrupt">
+      <Data key="2c366327-8ea9-4813-ab0d-a7ce473af76e/3a6c5259-9a34-42b7-9aeb-218a7f619daa" value="CAN_isr" />
+      <Data key="4b2f9f47-152d-4efc-95c4-348fced45751" value="ReadyToDrive_ISR" />
+      <Data key="5ed46c91-7c5b-4a5a-9846-3a328252ba87/3a6c5259-9a34-42b7-9aeb-218a7f619daa" value="TCAN_isr" />
+      <Data key="abefc0d0-3e9b-4751-a875-86d46e73b8e8/a1033dc5-f595-4313-8eee-ea9108ee36fd" value="ADC_GLV_V_IRQ" />
+    </Group>
     <Group key="Pin">
       <Data key="0cd87e70-5cf6-4661-b6ab-7b94d970ae45" value="CS" />
       <Data key="0f65f06f-aa4a-4beb-99fe-24c261cf01c1" value="BUZZER" />
@@ -3128,6 +3134,15 @@
       </Group>
       <Group key="1024">
         <Data key="LevelKey" value="0" />
+      </Group>
+    </Group>
+  </Group>
+  <Group key="Interrupt">
+    <Group key="4b2f9f47-152d-4efc-95c4-348fced45751">
+      <Group key="CortexM0">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="2" />
+        <Data key="Vector" value="-1" />
       </Group>
     </Group>
   </Group>

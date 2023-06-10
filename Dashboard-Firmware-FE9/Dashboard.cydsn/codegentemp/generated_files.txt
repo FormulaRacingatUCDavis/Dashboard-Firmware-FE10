@@ -66,11 +66,11 @@
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TX_CAN1.h" value="HEADER;;;;;TX_CAN1" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TX_CAN1_aliases.h" value="HEADER;;;;;TX_CAN1" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TX_CAN1_PM.c" value="SOURCE_C;CortexM0;;;;TX_CAN1" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1.c" value="SOURCE_C;CortexM0;;;;CAN_1" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1.h" value="HEADER;;;;;CAN_1" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_INT.c" value="SOURCE_C;CortexM0;;;;CAN_1" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_PM.c" value="SOURCE_C;CortexM0;;;;CAN_1" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_TX_RX_func.c" value="SOURCE_C;CortexM0;;;;CAN_1" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN.c" value="SOURCE_C;CortexM0;;;;TCAN" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN.h" value="HEADER;;;;;TCAN" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_INT.c" value="SOURCE_C;CortexM0;;;;TCAN" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_PM.c" value="SOURCE_C;CortexM0;;;;TCAN" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_TX_RX_func.c" value="SOURCE_C;CortexM0;;;;TCAN" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\DISP.c" value="SOURCE_C;CortexM0;;;;DISP" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\DISP.h" value="HEADER;;;;;DISP" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\DISP_aliases.h" value="HEADER;;;;;DISP" />
@@ -111,9 +111,13 @@
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Digital4.h" value="HEADER;;;;;Digital4" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Digital4_aliases.h" value="HEADER;;;;;Digital4" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Digital4_PM.c" value="SOURCE_C;CortexM0;;;;Digital4" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\timer_clock_3.c" value="SOURCE_C;CortexM0;;;;timer_clock_3" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\timer_clock_3.h" value="HEADER;;;;;timer_clock_3" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ReadyToDrive_Timer.c" value="SOURCE_C;CortexM0;;;;ReadyToDrive_Timer" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ReadyToDrive_Timer.h" value="HEADER;;;;;ReadyToDrive_Timer" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ReadyToDrive_Timer_PM.c" value="SOURCE_C;CortexM0;;;;ReadyToDrive_Timer" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ReadyToDrive_ISR.c" value="SOURCE_C;CortexM0;;;;ReadyToDrive_ISR" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ReadyToDrive_ISR.h" value="HEADER;;;;;ReadyToDrive_ISR" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ADC_GLV_V_IRQ.c" value="SOURCE_C;CortexM0;;;;ADC_GLV_V_IRQ" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ADC_GLV_V_IRQ.h" value="HEADER;;;;;ADC_GLV_V_IRQ" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\ADC_GLV_V_intClock.c" value="SOURCE_C;CortexM0;;;;ADC_GLV_V_intClock" />
@@ -122,10 +126,10 @@
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_isr.h" value="HEADER;;;;;CAN_isr" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_HFCLK.c" value="SOURCE_C;CortexM0;;;;CAN_HFCLK" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_HFCLK.h" value="HEADER;;;;;CAN_HFCLK" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_isr.c" value="SOURCE_C;CortexM0;;;;CAN_1_isr" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_isr.h" value="HEADER;;;;;CAN_1_isr" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_HFCLK.c" value="SOURCE_C;CortexM0;;;;CAN_1_HFCLK" />
-  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\CAN_1_HFCLK.h" value="HEADER;;;;;CAN_1_HFCLK" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_isr.c" value="SOURCE_C;CortexM0;;;;TCAN_isr" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_isr.h" value="HEADER;;;;;TCAN_isr" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_HFCLK.c" value="SOURCE_C;CortexM0;;;;TCAN_HFCLK" />
+  <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\TCAN_HFCLK.h" value="HEADER;;;;;TCAN_HFCLK" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Cm0RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\codegentemp\Cm0Start.c" value="SOURCE_C;CortexM0;;;;cy_boot" />

@@ -133,6 +133,7 @@ int main()
     CyGlobalIntEnable;
     
     uint8_t debugMode = 1;
+    uint8_t prev_debugMode = 0;
     
     //Initialize CAN
     CAN_GlobalIntEnable();
@@ -154,10 +155,10 @@ int main()
        driveTemplate();
     }
     
+    ReadyToDrive_ISR_Start();
     
     for(;;)
     {
-        
         // check driver switches
         if (!HV_Read()) {
             switches |= 0b10;
@@ -170,28 +171,14 @@ int main()
             switches &= 0b11111110;
         }
         
-        /*if(!Digital1_Read() || !Digital2_Read() || !Digital3_Read() || !Digital4_Read()){
-            Buzzer_Write(1);
-        } else {
-            Buzzer_Write(0);
-        }*/
-        
         if (!Digital2_Read()) {
-            if (debug_data) { // switch to drive mode
-                debug_data = 0;
-            }
-            else {
-                debug_data = 1;
-            }
-            
-            /*if (debugMode) { // switch to drive mode
-                driveTemplate();
+            if (debugMode) { // switch to drive mode
                 debugMode = 0;
             }
-            else {
-                debugTemplate();
+            else { // switch to debug mode
                 debugMode = 1;
-            }*/
+            }
+            
         } 
         
         
@@ -201,13 +188,20 @@ int main()
         // this is where we actually display
         uint32_t glv_v = (int32_t)ADC_GLV_V_CountsTo_mVolts(0, ADC_GLV_V_GetResult16(0));
         
+        if (debugMode && prev_debugMode == 0){
+            debugTemplate();
+            prev_debugMode = 1;
+        }
+        if (!debugMode && prev_debugMode == 1) {
+            driveTemplate();
+            prev_debugMode = 0;
+        }
         
         // big displays are usually 180 by 135
         // small displays are usually (60-90) by 30
         // need to adjust size of squares for changing fontSize
         
         if(debugMode){
-            
             disp_SOC(soc, 10, 35, 240, 65, SMALL_FONT);
             disp_max_pack_temp(PACK_TEMP, 250, 35, 470, 65, SMALL_FONT);
             disp_state(state, 10, 100, 240, 130, SMALL_FONT);
@@ -228,15 +222,15 @@ int main()
         
         /*      END display latest data         */
         
-        // if (state == DRIVE && previous_state == HV_ENABLED) {
-        if (state == FAULT) {
+        if (state == DRIVE && previous_state == HV_ENABLED) {
             // entered drive; sound ready to drive buzzer
+           
             Buzzer_Write(1);
             // EV.10.5.2: Sounded continuously for minimum 1 second
             // and a maximum of 3 seconds [we use 2 seconds]
-            //ReadyToDrive_Int_Start();
-            //ReadyToDrive_Timer_Init();
-            //ReadyToDrive_Timer_Enable();
+            ReadyToDrive_Timer_Start();
+            
+            
         }
         
         previous_state = state;

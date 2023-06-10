@@ -13,24 +13,9 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\frucd_display.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Dashboard-Firmware-FE10\Dashboard\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\Pins</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\Analog</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\DMA</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\Clocks</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\Interrupts</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\System</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\Directives</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.cydwr\Flash Security</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\Header Files</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\Header Files\cyapicallbacks.h</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\Source Files</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\Source Files\main.c</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example.pdf</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
 <v>Dashboard-Firmware-FE10\Dashboard\TopDesign</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr</v>
@@ -62,78 +47,24 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Source Files\main.c</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Generated_Source</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\BUZZER</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\CAN_isr</v>
+<v>Dashboard-Firmware-FE10\Dashboard\Generated_Source\PSoC4\ReadyToDrive_ISR</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Analog</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\DMA</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Clocks</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Interrupts</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\System</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Directives</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Dashboard.cydwr\Flash Security</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Header Files</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Header Files\cyapicallbacks.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\frucd_display.c</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\frucd_display.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui.c</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_config.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.c</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\Display_Drivers\ugui_SSD1963.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\can_manga.c</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\can_manga.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\data.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\device.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\fonts.h</v>
-<v>Dashboard-Firmware-FE10\Dashboard\Source Files\LED.h</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200L</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200L\TopDesign.ctl</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200M</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200M\TopDesign.ctl</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\TopDesign.cysch</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
 <v>Dashboard-Firmware-FE10\Dashboard\TopDesign</v>
 <v>Dashboard-Firmware-FE10\Dashboard\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200L</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200L\TopDesign.ctl</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200M</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\PSoC4\PSoC 4200M\TopDesign.ctl</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\TopDesign\TopDesign.cysch</v>
-<v>Dashboard-Firmware-FE10\Dashboard</v>
-<v>Dashboard-Firmware-FE10\Dashboard\TopDesign</v>
-<v>Dashboard-Firmware-FE10\Dashboard\TopDesign\TopDesign.cysch</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.elf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.hex</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.map</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.gpdsc</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.rpt</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01_timing.html</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541</v>
@@ -149,12 +80,6 @@
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2_PM.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_HFCLK.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_INT.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_isr.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_1_TX_RX_func.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_HFCLK.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_isr.lst</v>
@@ -197,6 +122,7 @@
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1_PM.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ReadyToDrive_ISR.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ReadyToDrive_Timer.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ReadyToDrive_Timer_PM.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RGB1_1.lst</v>
@@ -209,6 +135,13 @@
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_CAN1.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_CAN1_PM.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_PM.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TCAN.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TCAN_HFCLK.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TCAN_INT.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TCAN_isr.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TCAN_PM.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TCAN_TX_RX_func.lst</v>
+<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\timer_clock_3.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_CAN1.lst</v>
 <v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_CAN1_PM.lst</v>
@@ -222,32 +155,7 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Dashboard.rpt</v>
 <v>Dashboard-Firmware-FE10\Dashboard\Dashboard_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.elf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.hex</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CortexM0\ARM_GCC_541\Debug\CAN_Full_P4_Example01.map</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.gpdsc</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01.rpt</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_Full_P4_Example01_timing.html</v>
-<v>Dashboard-Firmware-FE10\Dashboard</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_INT.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_intClock.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_IRQ.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_GLV_V_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_1_PM.lst</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CortexM0\ARM_GCC_541\Debug\Listing Files\Analog_2.lst</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -257,17 +165,6 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\PSoC 4 Architecture TRM</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\PSoC 4200M Family Datasheet</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides\cy_boot_v5_60</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides\cy_dmac_v1_10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides\cy_lfclk_v1_20</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_v3_0.pdf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\cy_pins_v2_20</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\SCB_P4_v3_20.pdf</v>
 <v>Dashboard-Firmware-FE10\Dashboard</v>
 <v>Dashboard-Firmware-FE10\Dashboard\PSoC 4 Architecture TRM</v>
 <v>Dashboard-Firmware-FE10\Dashboard\PSoC 4200M Family Datasheet</v>
@@ -280,6 +177,7 @@
 <v>Dashboard-Firmware-FE10\Dashboard\CAN_v3_0\CAN_v3_0.pdf</v>
 <v>Dashboard-Firmware-FE10\Dashboard\cy_clock_v2_20</v>
 <v>Dashboard-Firmware-FE10\Dashboard\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Dashboard-Firmware-FE10\Dashboard\cy_isr_v1_71.pdf</v>
 <v>Dashboard-Firmware-FE10\Dashboard\cy_pins_v2_20</v>
 <v>Dashboard-Firmware-FE10\Dashboard\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>Dashboard-Firmware-FE10\Dashboard\GraphicLCDIntf_v1_80.pdf</v>
@@ -287,32 +185,7 @@
 <v>Dashboard-Firmware-FE10\Dashboard\Timer_v2_80.pdf</v>
 <v>Dashboard-Firmware-FE10\Dashboard\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Dashboard-Firmware-FE10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\PSoC 4 Architecture TRM</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\PSoC 4200M Family Datasheet</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides\cy_boot_v5_60</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides\cy_dmac_v1_10</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\System Reference Guides\cy_lfclk_v1_20</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\CAN_v3_0.pdf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\cy_pins_v2_20</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Dashboard-Firmware-FE10\CAN_Full_P4_Example01\SCB_P4_v3_20.pdf</v>
-<v>Dashboard-Firmware-FE10\Dashboard</v>
-<v>Dashboard-Firmware-FE10\Dashboard\PSoC 4 Architecture TRM</v>
-<v>Dashboard-Firmware-FE10\Dashboard\PSoC 4200M Family Datasheet</v>
-<v>Dashboard-Firmware-FE10\Dashboard\System Reference Guides</v>
-<v>Dashboard-Firmware-FE10\Dashboard\System Reference Guides\cy_boot_v6_10</v>
-<v>Dashboard-Firmware-FE10\Dashboard\System Reference Guides\cy_dmac_v1_10</v>
-<v>Dashboard-Firmware-FE10\Dashboard\System Reference Guides\cy_lfclk_v1_20</v>
-<v>Dashboard-Firmware-FE10\Dashboard\ADC_SAR_SEQ_P4_v2_60.pdf</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CAN_v3_0</v>
-<v>Dashboard-Firmware-FE10\Dashboard\CAN_v3_0\CAN_v3_0.pdf</v>
-<v>Dashboard-Firmware-FE10\Dashboard\cy_clock_v2_20</v>
-<v>Dashboard-Firmware-FE10\Dashboard\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -329,11 +202,22 @@
 <name v=".\Dashboard.cydsn\ugui.h" />
 <name v=".\Dashboard.cydsn\can_manga.h" />
 <name v=".\Dashboard.cydsn\can_manga.c" />
-<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\CAN_TX_RX_func.c" />
 <name v=".\Dashboard.cydsn\data.h" />
 <name v=".\Dashboard.cydsn\device.h" />
 <name v=".\Dashboard.cydsn\ugui_SSD1963.h" />
-<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\CAN.h" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\CAN_TX_RX_func.c" />
+<name v=".\Dashboard.cydsn\ugui_config.h" />
+<name v=".\Dashboard.cydsn\fonts.h" />
+<name v=".\CAN_Full_P4_Example01.cydsn\CAN_Full_P4_Example01.cydwr" />
+<name v=".\CAN_Full_P4_Example01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_Timer.c" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\Buzzer.c" />
+<name v=".\Dashboard.cydsn\LED.h" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_Timer.h" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_ISR.c" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\CAN_isr.c" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_ISR.h" />
+<name v=".\Dashboard.cydsn\Generated_Source\PSoC4\Buzzer.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -341,7 +225,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 495" SelectedTabbedMdiWindow="fbcf6507-0586-4ec8-8e53-d5c447392c2a"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="35d14f8d-dc9b-4a2d-ab17-bb00b6b379ac" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="fbcf6507-0586-4ec8-8e53-d5c447392c2a" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.c" Guid="493d7c57-8be3-4d8a-920d-d40238c6cdda" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\main.c" Guid="64f679c2-0685-4eba-b3e0-32f012fcbb9a" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cydwr" Guid="fc15fa10-9089-49bf-a161-c8082e3cfa5b" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.h" Guid="b8a5b8a1-b204-4531-b49a-d2154faeeaed" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui.h" Guid="7b17f6da-d954-4480-b5a5-19e1ae3c7f08" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.h" Guid="b5fe9a17-fcf0-4397-a075-62821666eb4e" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.c" Guid="31d2ee5a-da7e-4bc7-874f-1b0bc15cbfac" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\CAN_TX_RX_func.c" Guid="5afb4d8e-3307-4f47-a24e-3d9fe25074ef" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\data.h" Guid="bd0757a6-ca31-4862-96f7-016c2ac97c08" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\device.h" Guid="e36325bc-8d75-4362-850a-514f9a03cd6d" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui_SSD1963.h" Guid="5d2fab66-55b1-4261-8cd9-d5107b32d515" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\CAN.h" Guid="45a777f0-1515-4efe-a32d-740afbb624f5" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="994, 495" SelectedTabbedMdiWindow="fbcf6507-0586-4ec8-8e53-d5c447392c2a"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="35d14f8d-dc9b-4a2d-ab17-bb00b6b379ac" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\TopDesign\TopDesign.cysch" Guid="fbcf6507-0586-4ec8-8e53-d5c447392c2a" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.c" Guid="493d7c57-8be3-4d8a-920d-d40238c6cdda" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\main.c" Guid="64f679c2-0685-4eba-b3e0-32f012fcbb9a" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Dashboard.cydwr" Guid="fc15fa10-9089-49bf-a161-c8082e3cfa5b" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\frucd_display.h" Guid="b8a5b8a1-b204-4531-b49a-d2154faeeaed" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui.h" Guid="7b17f6da-d954-4480-b5a5-19e1ae3c7f08" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.h" Guid="b5fe9a17-fcf0-4397-a075-62821666eb4e" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\can_manga.c" Guid="31d2ee5a-da7e-4bc7-874f-1b0bc15cbfac" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\data.h" Guid="bd0757a6-ca31-4862-96f7-016c2ac97c08" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\device.h" Guid="e36325bc-8d75-4362-850a-514f9a03cd6d" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui_SSD1963.h" Guid="5d2fab66-55b1-4261-8cd9-d5107b32d515" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\CAN_TX_RX_func.c" Guid="1998a754-4988-4db3-ad62-cc3c290ad788" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\ugui_config.h" Guid="77df4d12-bca2-4c2a-90f3-0cde79ee4862" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\fonts.h" Guid="d7c331a1-e9c1-4fad-af84-5071c372ca4a" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\CAN_Full_P4_Example01.cydsn\CAN_Full_P4_Example01.cydwr" Guid="326486a5-c996-4118-b027-34d262dfcee2" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\CAN_Full_P4_Example01.cydsn\TopDesign\TopDesign.cysch" Guid="eaa72bad-31e0-40a3-a229-ac6441ed11e1" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_Timer.c" Guid="3663246b-562e-492d-be03-913aa94dfa9c" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\Buzzer.c" Guid="2a6586ed-1244-4b6d-b5cc-97246b7abc35" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\LED.h" Guid="63fe61c4-e936-4439-b45a-8fc3c6987a77" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_Timer.h" Guid="63d74fef-9c4b-4910-996d-badfee5c224a" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_ISR.c" Guid="a9791fa3-d913-409e-82d9-6a00afb858f2" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\CAN_isr.c" Guid="c82c8e98-2d8f-4ff8-9bfd-37a63a974ab1" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\ReadyToDrive_ISR.h" Guid="8ec3c704-b95f-4d62-848d-bade59e5b456" /><DocumentWindow Key="C:\Users\Melody\Desktop\Programming_Stuff\FRUCD\Dashboard-Firmware-FE10\Dashboard-Firmware-FE9\Dashboard.cydsn\Generated_Source\PSoC4\Buzzer.h" Guid="0a20bf79-a471-4a49-81e5-df32a2be92bc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

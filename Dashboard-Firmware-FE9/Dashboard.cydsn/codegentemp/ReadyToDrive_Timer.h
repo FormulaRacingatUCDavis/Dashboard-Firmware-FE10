@@ -168,7 +168,7 @@ void ReadyToDrive_Timer_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define ReadyToDrive_Timer_INIT_PERIOD             65535u
+#define ReadyToDrive_Timer_INIT_PERIOD             49999u
 #define ReadyToDrive_Timer_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << ReadyToDrive_Timer_CTRL_CAP_MODE_SHIFT))
 #define ReadyToDrive_Timer_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << ReadyToDrive_Timer_CTRL_TRIG_MODE_SHIFT))
 #if (ReadyToDrive_Timer_UsingFixedFunction)
