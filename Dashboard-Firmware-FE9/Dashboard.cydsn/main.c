@@ -18,6 +18,7 @@ volatile uint32_t voltage = 0;
 uint8_t charge = 0;
 uint16_t curr_voltage = 0;
 uint8_t mc_fault_codes[8];
+volatile uint16_t torque_limit = 0;
 
 uint8_t SMALL_FONT = 0;
 uint8_t BIG_FONT = 1;
@@ -186,13 +187,19 @@ int main()
         can_send_switches(switches);
         
         // this is where we actually display
-        uint32_t glv_v = (int32_t)ADC_GLV_V_CountsTo_mVolts(0, ADC_GLV_V_GetResult16(0));
+        ADC_GLV_V_StartConvert();
+        uint32_t analog_1 = (int32_t)ADC_GLV_V_CountsTo_mVolts(0, ADC_GLV_V_GetResult16(0));
+        torque_limit = analog_1 * 255/3300; // scale to 8 bit
+        
+        //uint32_t glv_v = (int32_t)ADC_GLV_V_CountsTo_mVolts(0, ADC_GLV_V_GetResult16(1));
         
         if (debugMode && prev_debugMode == 0){
             debugTemplate();
+            clear_colors();
             prev_debugMode = 1;
         }
         if (!debugMode && prev_debugMode == 1) {
+            clear_colors();
             driveTemplate();
             prev_debugMode = 0;
         }
@@ -202,20 +209,20 @@ int main()
         // need to adjust size of squares for changing fontSize
         
         if(debugMode){
-            disp_SOC(soc, 10, 35, 240, 65, SMALL_FONT);
+            disp_SOC(curr_voltage/100, 10, 35, 240, 65, SMALL_FONT);
             disp_max_pack_temp(PACK_TEMP, 250, 35, 470, 65, SMALL_FONT);
             disp_state(state, 10, 100, 240, 130, SMALL_FONT);
             disp_mc_temp(mc_temp, 250, 100, 470, 130, SMALL_FONT);
-            disp_glv_v(glv_v, 10, 165, 240, 195, SMALL_FONT);
-            disp_motor_temp(motor_temp, 250, 165, 470, 195, SMALL_FONT);
+            disp_glv_v(0, 10, 165, 240, 195, SMALL_FONT);
+            disp_motor_temp(torque_limit, 250, 165, 470, 195, SMALL_FONT);
             disp_shutdown_circuit(shutdown_flags, 10, 230, 240, 260, SMALL_FONT);
             //disp_debug(debug_data, 250, 230, 470, 260, SMALL_FONT);
             disp_mc_fault(mc_fault_codes, 250, 230, 470, 260, SMALL_FONT);
         }else{
-            disp_SOC(soc, 30, 35, 210, 170, BIG_FONT);
+            disp_SOC(curr_voltage/100, 30, 35, 210, 170, BIG_FONT);
             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);
             disp_state(state, 20, 200, 200, 230, SMALL_FONT);
-            disp_glv_v(glv_v, 290, 200, 470, 230, SMALL_FONT);
+            disp_glv_v(0, 290, 200, 470, 230, SMALL_FONT);
         
         }
         

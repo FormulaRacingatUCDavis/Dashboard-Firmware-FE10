@@ -29,8 +29,6 @@
 /* `#START ReadyToDrive_ISR_intc` */
 #include <Buzzer.h>
 #include <ReadyToDrive_Timer.h>
-    
-extern volatile uint16 debug_data;
 /* `#END` */
 
 extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
@@ -167,7 +165,7 @@ CY_ISR(ReadyToDrive_ISR_Interrupt)
 
     /*  Place your Interrupt code here. */
     /* `#START ReadyToDrive_ISR_Interrupt` */
-    debug_data = 3;
+    Buzzer_Write(0);
     ReadyToDrive_Timer_Stop();
     /* `#END` */
 }

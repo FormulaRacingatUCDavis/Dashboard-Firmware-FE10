@@ -38,6 +38,7 @@ extern volatile uint8_t shutdown_flags;
 extern volatile uint8_t CAPACITOR_VOLT;
 extern volatile uint8_t ACK_RX;
 extern volatile uint8_t mc_fault_codes[8];
+extern uint16_t curr_voltage;
 
 /* `#END` */
 
@@ -754,6 +755,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         soc = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BMS_STATUS_MSG);
         bms_status = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BMS_STATUS_MSG) << 8;    // bms error flags
         bms_status |= CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_BMS_STATUS_MSG);        // bms error flags
+        curr_voltage = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_BMS_STATUS_MSG) << 8;    // bms error flags
+        curr_voltage |= CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_BMS_STATUS_MSG);  
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_BMS_STATUS_MSG_CALLBACK

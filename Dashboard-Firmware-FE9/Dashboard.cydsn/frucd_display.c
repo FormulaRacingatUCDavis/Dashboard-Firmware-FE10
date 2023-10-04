@@ -35,7 +35,7 @@ void initDashTemplate() {
 
 void debugTemplate(){
     UG_FillScreen(C_BLACK);
-    UG_PutString(10, 10, "PACK SOC:");
+    UG_PutString(10, 10, "PACK V:");
     UG_PutString(250, 10, "MAX PACK T:");
     UG_PutString(10, 75, "STATE:");
     UG_PutString(250, 75, "MC T:");
@@ -130,7 +130,7 @@ void disp_SOC(uint8_t data) {
 
 
 // size is big if 1, small if not
-void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
+void disp_SOC(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size) {
     int stringSize;
     int xFont, yFont;
     int horizFontSize = 12 + 20*size;
@@ -150,20 +150,14 @@ void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, 
     }
         
     UG_COLOR color;
-    if (data == 100) {
+    
+    char data_s[5];
+    sprintf(data_s, "%dV", data);
+    
+    if (data >= 100) {
         // handle 100% case
         color = C_GREEN;
-        if (color != last_SOC_color) {
-            // only draw rectangle if color changed
-            UG_FillFrame(x1, y1, x2, y2, color);
-            last_SOC_color = color;
-        }
-        
-        UG_PutColorString(xFont, yFont, "100%", C_BLACK, C_GREEN);
     } else {
-        // handle other cases
-        char data_s[4];
-        sprintf(data_s, "%d", data);
         if (data >= 10) {
             // handle 2 digit cases
             // choose color
@@ -176,28 +170,18 @@ void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, 
             } else {
                 color = C_RED;
             }
-            data_s[2] = '%';
-            data_s[3] = '\0';
-            if (color != last_SOC_color) {
-                // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_SOC_color = color;
-            }
-            UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
         } else {
-            // handle 1 digit cases
-            data_s[1] = '%';
-            data_s[2] = '\0';
             color = C_RED;
-            if (color != last_SOC_color) {
-            // only draw rectangle if color changed
-                UG_FillFrame(x1, y1, x2, y2, color);
-                last_SOC_color = color;
-            }
-           
-            UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
+            
         }   
     }
+    if (color != last_SOC_color) {
+    // only draw rectangle if color changed
+        UG_FillFrame(x1, y1, x2, y2, color);
+        last_SOC_color = color;
+    }
+    UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
+    
     UG_FontSelect(&FONT_12X16);
 }
 
@@ -901,6 +885,17 @@ void disp_mc_fault(uint8_t data[8], uint16_t x1, uint16_t y1, uint16_t x2, uint1
     UG_FillFrame(x1, y1, x2, y2, color);
     UG_PutColorString(xFont, yFont, data_s, C_BLACK, color);
     UG_FontSelect(&FONT_12X16);
+}
+
+void clear_colors(void)
+{
+    last_SOC_color = C_BLACK;
+    last_max_pack_temp_color = C_BLACK;
+    last_state_color = C_BLACK;
+    last_glv_v_color = C_BLACK;
+    last_mc_temp_color = C_BLACK;
+    last_motor_temp_color = C_BLACK;
+    last_shutdown_color = C_BLACK;
 }
     
 /* [] END OF FILE */

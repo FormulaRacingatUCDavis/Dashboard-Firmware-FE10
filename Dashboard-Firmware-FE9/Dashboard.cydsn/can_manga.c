@@ -30,6 +30,7 @@ extern volatile uint32_t voltage;
 extern volatile BMS_STATUS bms_status;
 extern volatile uint8_t shutdown_flags;
 extern volatile uint8_t mc_fault_codes[8];
+extern volatile uint16_t torque_limit; 
 
 // info from MC and motor
 extern volatile uint16_t mc_temp;
@@ -149,7 +150,7 @@ void can_send_switches(uint8_t sw_status){
         CAN_TX_MSG message_switches;
     
         /* BASIC CAN mailbox configuration */
-        message_switches.dlc = 1;
+        message_switches.dlc = 2;
         message_switches.id  = DRIVER_SWITCHES;
         message_switches.ide = 0;
         message_switches.irq = 0;
@@ -157,6 +158,7 @@ void can_send_switches(uint8_t sw_status){
         message_switches.rtr = 0;
     
         data_switches.byte[0u] = sw_status;
+        data_switches.byte[1u] = torque_limit & 0xFF; 
         CAN_SendMsg(&message_switches);
     
         /*

@@ -29,13 +29,14 @@ void calibrateScreen();
 // Initialize debug mode or drive mode
 void debugTemplate();
 void driveTemplate();
+void clear_colors(void);
 
 
 /*
  * BEGIN: functions to show data on dash
  * - color decision logic is in here
  */
-void disp_SOC(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
+void disp_SOC(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
 void disp_max_pack_temp(uint8_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
 void disp_state(uint8_t state, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);
 void disp_glv_v(uint32_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t size);

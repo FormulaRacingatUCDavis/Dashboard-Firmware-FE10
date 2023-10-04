@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
   28:Generated_Source\PSoC4/PWM_1.c ****     #error PWM_v3_30 detected with a constant 0 for the enable or \
   29:Generated_Source\PSoC4/PWM_1.c ****          constant 1 for reset. This will prevent the component from operating.
   30:Generated_Source\PSoC4/PWM_1.c **** #endif /* PWM_1_PWMUDB_genblk1_ctrlreg__REMOVED */
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 2
 
 
   31:Generated_Source\PSoC4/PWM_1.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
   85:Generated_Source\PSoC4/PWM_1.c **** {
   86:Generated_Source\PSoC4/PWM_1.c ****     #if (PWM_1_UsingFixedFunction || PWM_1_UseControl)
   87:Generated_Source\PSoC4/PWM_1.c ****         uint8 ctrl;
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 3
 
 
   88:Generated_Source\PSoC4/PWM_1.c ****     #endif /* (PWM_1_UsingFixedFunction || PWM_1_UseControl) */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  142:Generated_Source\PSoC4/PWM_1.c ****             PWM_1_WriteCompare2(PWM_1_INIT_COMPARE_VALUE2);
  143:Generated_Source\PSoC4/PWM_1.c ****         #endif /* (PWM_1_UseOneCompareMode) */
  144:Generated_Source\PSoC4/PWM_1.c **** 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 4
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 4
 
 
  145:Generated_Source\PSoC4/PWM_1.c ****         #if (PWM_1_KillModeMinTime)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  199:Generated_Source\PSoC4/PWM_1.c **** void PWM_1_Enable(void) 
  200:Generated_Source\PSoC4/PWM_1.c **** {
   28              		.loc 1 200 0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 5
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 5
 
 
   29              		.cfi_startproc
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  224:Generated_Source\PSoC4/PWM_1.c **** *
  225:Generated_Source\PSoC4/PWM_1.c **** * Return:
  226:Generated_Source\PSoC4/PWM_1.c **** *  None
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 6
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 6
 
 
  227:Generated_Source\PSoC4/PWM_1.c **** *
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  249:Generated_Source\PSoC4/PWM_1.c **** 
  250:Generated_Source\PSoC4/PWM_1.c ****         /*******************************************************************************
  251:Generated_Source\PSoC4/PWM_1.c ****         * Function Name: PWM_1_SetCompareMode
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 7
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 7
 
 
  252:Generated_Source\PSoC4/PWM_1.c ****         ********************************************************************************
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  306:Generated_Source\PSoC4/PWM_1.c **** #else /* UseOneCompareMode */
  307:Generated_Source\PSoC4/PWM_1.c **** 
  308:Generated_Source\PSoC4/PWM_1.c ****     #if (PWM_1_CompareMode1SW)
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 8
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 8
 
 
  309:Generated_Source\PSoC4/PWM_1.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  363:Generated_Source\PSoC4/PWM_1.c ****         #if(0 != PWM_1_CTRL_CMPMODE2_SHIFT)
  364:Generated_Source\PSoC4/PWM_1.c ****             uint8 comparemodemasked = ((uint8)((uint8)comparemode << PWM_1_CTRL_CMPMODE2_SHIFT)) &
  365:Generated_Source\PSoC4/PWM_1.c ****                                                  PWM_1_CTRL_CMPMODE2_MASK;
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 9
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 9
 
 
  366:Generated_Source\PSoC4/PWM_1.c ****         #else
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  101 0002 1870     		strb	r0, [r3]
  102              		.loc 1 407 0
  103 0004 7047     		bx	lr
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 10
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 10
 
 
  104              	.L9:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  433:Generated_Source\PSoC4/PWM_1.c ****     }
  130              		.loc 1 433 0
  131 0004 024B     		ldr	r3, .L11+4
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 11
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 11
 
 
  132 0006 1878     		ldrb	r0, [r3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  460:Generated_Source\PSoC4/PWM_1.c **** 
  461:Generated_Source\PSoC4/PWM_1.c ****     #endif /* PWM_1_UseStatus */
  462:Generated_Source\PSoC4/PWM_1.c **** 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 12
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 12
 
 
  463:Generated_Source\PSoC4/PWM_1.c **** #endif /* !PWM_1_UsingFixedFunction */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  517:Generated_Source\PSoC4/PWM_1.c ****                                        
  518:Generated_Source\PSoC4/PWM_1.c ****     {
  519:Generated_Source\PSoC4/PWM_1.c ****         #if(PWM_1_UsingFixedFunction)
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 13
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 13
 
 
  520:Generated_Source\PSoC4/PWM_1.c ****             CY_SET_REG16(PWM_1_COMPARE1_LSB_PTR, (uint16)compare);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  574:Generated_Source\PSoC4/PWM_1.c ****     *  less than or less than or equal to the compare register, depending on the
  575:Generated_Source\PSoC4/PWM_1.c ****     *  mode.
  576:Generated_Source\PSoC4/PWM_1.c ****     *
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 14
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 14
 
 
  577:Generated_Source\PSoC4/PWM_1.c ****     * Parameters:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  631:Generated_Source\PSoC4/PWM_1.c ****     }
  632:Generated_Source\PSoC4/PWM_1.c **** 
  633:Generated_Source\PSoC4/PWM_1.c **** 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 15
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 15
 
 
  634:Generated_Source\PSoC4/PWM_1.c ****     /*******************************************************************************
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  688:Generated_Source\PSoC4/PWM_1.c **** 
  689:Generated_Source\PSoC4/PWM_1.c **** 
  690:Generated_Source\PSoC4/PWM_1.c ****     /*******************************************************************************
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 16
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 16
 
 
  691:Generated_Source\PSoC4/PWM_1.c ****     * Function Name: PWM_1_ReadStatusRegister
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  739:Generated_Source\PSoC4/PWM_1.c ****         uint8 result;
  740:Generated_Source\PSoC4/PWM_1.c **** 
  741:Generated_Source\PSoC4/PWM_1.c ****         result = CY_GET_REG8(PWM_1_CONTROL_PTR);
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 17
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 17
 
 
  742:Generated_Source\PSoC4/PWM_1.c ****         return (result);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  170              	.LBE20:
  171              	.LBE19:
  172              	.LBB22:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 18
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 18
 
 
  173              	.LBB18:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  220              		.loc 1 117 0
  221 0006 1149     		ldr	r1, .L21
  179:Generated_Source\PSoC4/PWM_1.c **** 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 19
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 19
 
 
  222              		.loc 1 179 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  269 002c 1A70     		strb	r2, [r3]
  270              	.LVL7:
  271              	.LBE31:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 20
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 20
 
 
  272              	.LBE30:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  320              	.LFB1:
   56:Generated_Source\PSoC4/PWM_1.c ****     /* If not Initialized then initialize all required hardware and software */
  321              		.loc 1 56 0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 21
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 21
 
 
  322              		.cfi_startproc
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  369 0000 014B     		ldr	r3, .L28
  489:Generated_Source\PSoC4/PWM_1.c **** 
  370              		.loc 1 489 0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 22
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 22
 
 
  371              		@ sp needed
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  418              	PWM_1_WriteCompare2:
  419              	.LFB10:
  586:Generated_Source\PSoC4/PWM_1.c ****         #if(PWM_1_UsingFixedFunction)
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 23
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 23
 
 
  420              		.loc 1 586 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  465              	.L37:
  466 0008 83000F40 		.word	1074724995
  467              		.cfi_endproc
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 24
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 24
 
 
  468              	.LFE11:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  514              		.loc 1 743 0
  515              		@ sp needed
  741:Generated_Source\PSoC4/PWM_1.c ****         return (result);
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 25
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 25
 
 
  516              		.loc 1 741 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  564              	PWM_1_ReadCapture:
  565              	.LFB15:
  791:Generated_Source\PSoC4/PWM_1.c ****         return (CY_GET_REG8(PWM_1_CAPTURE_LSB_PTR));
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 26
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 26
 
 
  566              		.loc 1 791 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  817:Generated_Source\PSoC4/PWM_1.c ****     {
  818:Generated_Source\PSoC4/PWM_1.c ****         #if(PWM_1_UsingFixedFunction)
  819:Generated_Source\PSoC4/PWM_1.c ****             return ((uint8)CY_GET_REG16(PWM_1_COMPARE1_LSB_PTR));
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 27
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 27
 
 
  820:Generated_Source\PSoC4/PWM_1.c ****         #else
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  622              	PWM_1_ReadCompare2:
  623              	.LFB17:
  846:Generated_Source\PSoC4/PWM_1.c **** 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 28
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 28
 
 
  847:Generated_Source\PSoC4/PWM_1.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  871:Generated_Source\PSoC4/PWM_1.c **** * Function Name: PWM_1_ReadPeriod
  872:Generated_Source\PSoC4/PWM_1.c **** ********************************************************************************
  873:Generated_Source\PSoC4/PWM_1.c **** *
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 29
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 29
 
 
  874:Generated_Source\PSoC4/PWM_1.c **** * Summary:
@@ -1738,49 +1738,49 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  688 0004 0400     		.2byte	0x4
  689 0006 00000000 		.4byte	.Ldebug_abbrev0
  690 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 30
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 30
 
 
  691 000b 01       		.uleb128 0x1
- 692 000c 0D030000 		.4byte	.LASF42
+ 692 000c FD020000 		.4byte	.LASF42
  693 0010 0C       		.byte	0xc
- 694 0011 07010000 		.4byte	.LASF43
- 695 0015 0D000000 		.4byte	.LASF44
+ 694 0011 98000000 		.4byte	.LASF43
+ 695 0015 D3010000 		.4byte	.LASF44
  696 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
  697 001d 00000000 		.4byte	0
  698 0021 00000000 		.4byte	.Ldebug_line0
  699 0025 02       		.uleb128 0x2
  700 0026 01       		.byte	0x1
  701 0027 06       		.byte	0x6
- 702 0028 F9020000 		.4byte	.LASF0
+ 702 0028 E9020000 		.4byte	.LASF0
  703 002c 02       		.uleb128 0x2
  704 002d 01       		.byte	0x1
  705 002e 08       		.byte	0x8
- 706 002f 4B010000 		.4byte	.LASF1
+ 706 002f DC000000 		.4byte	.LASF1
  707 0033 02       		.uleb128 0x2
  708 0034 02       		.byte	0x2
  709 0035 05       		.byte	0x5
- 710 0036 E9010000 		.4byte	.LASF2
+ 710 0036 7A010000 		.4byte	.LASF2
  711 003a 02       		.uleb128 0x2
  712 003b 02       		.byte	0x2
  713 003c 07       		.byte	0x7
- 714 003d CC000000 		.4byte	.LASF3
+ 714 003d 5D000000 		.4byte	.LASF3
  715 0041 02       		.uleb128 0x2
  716 0042 04       		.byte	0x4
  717 0043 05       		.byte	0x5
- 718 0044 DF020000 		.4byte	.LASF4
+ 718 0044 CF020000 		.4byte	.LASF4
  719 0048 02       		.uleb128 0x2
  720 0049 04       		.byte	0x4
  721 004a 07       		.byte	0x7
- 722 004b 6F010000 		.4byte	.LASF5
+ 722 004b 00010000 		.4byte	.LASF5
  723 004f 02       		.uleb128 0x2
  724 0050 08       		.byte	0x8
  725 0051 05       		.byte	0x5
- 726 0052 7A020000 		.4byte	.LASF6
+ 726 0052 6A020000 		.4byte	.LASF6
  727 0056 02       		.uleb128 0x2
  728 0057 08       		.byte	0x8
  729 0058 07       		.byte	0x7
- 730 0059 34010000 		.4byte	.LASF7
+ 730 0059 C5000000 		.4byte	.LASF7
  731 005d 03       		.uleb128 0x3
  732 005e 04       		.byte	0x4
  733 005f 05       		.byte	0x5
@@ -1788,29 +1788,29 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  735 0064 02       		.uleb128 0x2
  736 0065 04       		.byte	0x4
  737 0066 07       		.byte	0x7
- 738 0067 42020000 		.4byte	.LASF8
+ 738 0067 32020000 		.4byte	.LASF8
  739 006b 04       		.uleb128 0x4
- 740 006c 81010000 		.4byte	.LASF12
+ 740 006c 12010000 		.4byte	.LASF12
  741 0070 02       		.byte	0x2
  742 0071 FC01     		.2byte	0x1fc
  743 0073 2C000000 		.4byte	0x2c
  744 0077 02       		.uleb128 0x2
  745 0078 04       		.byte	0x4
  746 0079 04       		.byte	0x4
- 747 007a 26010000 		.4byte	.LASF9
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 31
+ 747 007a B7000000 		.4byte	.LASF9
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 31
 
 
  748 007e 02       		.uleb128 0x2
  749 007f 08       		.byte	0x8
  750 0080 04       		.byte	0x4
- 751 0081 BF010000 		.4byte	.LASF10
+ 751 0081 50010000 		.4byte	.LASF10
  752 0085 02       		.uleb128 0x2
  753 0086 01       		.byte	0x1
  754 0087 08       		.byte	0x8
- 755 0088 E8020000 		.4byte	.LASF11
+ 755 0088 D8020000 		.4byte	.LASF11
  756 008c 04       		.uleb128 0x4
- 757 008d 59010000 		.4byte	.LASF13
+ 757 008d EA000000 		.4byte	.LASF13
  758 0091 02       		.byte	0x2
  759 0092 A602     		.2byte	0x2a6
  760 0094 98000000 		.4byte	0x98
@@ -1819,82 +1819,82 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  763 009d 02       		.uleb128 0x2
  764 009e 08       		.byte	0x8
  765 009f 04       		.byte	0x4
- 766 00a0 ED020000 		.4byte	.LASF14
+ 766 00a0 DD020000 		.4byte	.LASF14
  767 00a4 02       		.uleb128 0x2
  768 00a5 04       		.byte	0x4
  769 00a6 07       		.byte	0x7
- 770 00a7 71020000 		.4byte	.LASF15
+ 770 00a7 61020000 		.4byte	.LASF15
  771 00ab 06       		.uleb128 0x6
- 772 00ac F3010000 		.4byte	.LASF16
+ 772 00ac 84010000 		.4byte	.LASF16
  773 00b0 01       		.byte	0x1
  774 00b1 1603     		.2byte	0x316
  775 00b3 6B000000 		.4byte	0x6b
  776 00b7 01       		.byte	0x1
  777 00b8 06       		.uleb128 0x6
- 778 00b9 A6010000 		.4byte	.LASF17
+ 778 00b9 37010000 		.4byte	.LASF17
  779 00bd 01       		.byte	0x1
  780 00be C702     		.2byte	0x2c7
  781 00c0 6B000000 		.4byte	0x6b
  782 00c4 01       		.byte	0x1
  783 00c5 07       		.uleb128 0x7
- 784 00c6 8F010000 		.4byte	.LASF18
+ 784 00c6 20010000 		.4byte	.LASF18
  785 00ca 01       		.byte	0x1
  786 00cb AC02     		.2byte	0x2ac
  787 00cd 01       		.byte	0x1
  788 00ce DF000000 		.4byte	0xdf
  789 00d2 08       		.uleb128 0x8
- 790 00d3 A2020000 		.4byte	.LASF20
+ 790 00d3 92020000 		.4byte	.LASF20
  791 00d7 01       		.byte	0x1
  792 00d8 AC02     		.2byte	0x2ac
  793 00da 6B000000 		.4byte	0x6b
  794 00de 00       		.byte	0
  795 00df 07       		.uleb128 0x7
- 796 00e0 F3000000 		.4byte	.LASF19
+ 796 00e0 84000000 		.4byte	.LASF19
  797 00e4 01       		.byte	0x1
  798 00e5 4802     		.2byte	0x248
  799 00e7 01       		.byte	0x1
  800 00e8 F9000000 		.4byte	0xf9
  801 00ec 08       		.uleb128 0x8
- 802 00ed 05030000 		.4byte	.LASF21
+ 802 00ed F5020000 		.4byte	.LASF21
  803 00f1 01       		.byte	0x1
  804 00f2 4802     		.2byte	0x248
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 32
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 32
 
 
  805 00f4 6B000000 		.4byte	0x6b
  806 00f8 00       		.byte	0
  807 00f9 07       		.uleb128 0x7
- 808 00fa DF000000 		.4byte	.LASF22
+ 808 00fa 70000000 		.4byte	.LASF22
  809 00fe 01       		.byte	0x1
  810 00ff 2B02     		.2byte	0x22b
  811 0101 01       		.byte	0x1
  812 0102 13010000 		.4byte	0x113
  813 0106 08       		.uleb128 0x8
- 814 0107 05030000 		.4byte	.LASF21
+ 814 0107 F5020000 		.4byte	.LASF21
  815 010b 01       		.byte	0x1
  816 010c 2B02     		.2byte	0x22b
  817 010e 6B000000 		.4byte	0x6b
  818 0112 00       		.byte	0
  819 0113 07       		.uleb128 0x7
- 820 0114 B0020000 		.4byte	.LASF23
+ 820 0114 A0020000 		.4byte	.LASF23
  821 0118 01       		.byte	0x1
  822 0119 E201     		.2byte	0x1e2
  823 011b 01       		.byte	0x1
  824 011c 2D010000 		.4byte	0x12d
  825 0120 08       		.uleb128 0x8
- 826 0121 9F000000 		.4byte	.LASF24
+ 826 0121 30000000 		.4byte	.LASF24
  827 0125 01       		.byte	0x1
  828 0126 E201     		.2byte	0x1e2
  829 0128 6B000000 		.4byte	0x6b
  830 012c 00       		.byte	0
  831 012d 07       		.uleb128 0x7
- 832 012e 7C000000 		.4byte	.LASF25
+ 832 012e 0D000000 		.4byte	.LASF25
  833 0132 01       		.byte	0x1
  834 0133 9301     		.2byte	0x193
  835 0135 01       		.byte	0x1
  836 0136 47010000 		.4byte	0x147
  837 013a 08       		.uleb128 0x8
- 838 013b 2C010000 		.4byte	.LASF26
+ 838 013b BD000000 		.4byte	.LASF26
  839 013f 01       		.byte	0x1
  840 0140 9301     		.2byte	0x193
  841 0142 6B000000 		.4byte	0x6b
@@ -1908,7 +1908,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  849 0156 01       		.uleb128 0x1
  850 0157 9C       		.byte	0x9c
  851 0158 09       		.uleb128 0x9
- 852 0159 D4020000 		.4byte	.LASF28
+ 852 0159 C4020000 		.4byte	.LASF28
  853 015d 01       		.byte	0x1
  854 015e E9       		.byte	0xe9
  855 015f 00000000 		.4byte	.LFB4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  859 0169 0A       		.uleb128 0xa
  860 016a 2D010000 		.4byte	0x12d
  861 016e 00000000 		.4byte	.LFB5
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 33
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 33
 
 
  862 0172 0C000000 		.4byte	.LFE5-.LFB5
@@ -1931,7 +1931,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  869 0182 50       		.byte	0x50
  870 0183 00       		.byte	0
  871 0184 0C       		.uleb128 0xc
- 872 0185 C2020000 		.4byte	.LASF36
+ 872 0185 B2020000 		.4byte	.LASF36
  873 0189 01       		.byte	0x1
  874 018a A901     		.2byte	0x1a9
  875 018c 6B000000 		.4byte	0x6b
@@ -1940,7 +1940,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  878 0198 01       		.uleb128 0x1
  879 0199 9C       		.byte	0x9c
  880 019a 0D       		.uleb128 0xd
- 881 019b 8F000000 		.4byte	.LASF29
+ 881 019b 20000000 		.4byte	.LASF29
  882 019f 01       		.byte	0x1
  883 01a0 C501     		.2byte	0x1c5
  884 01a2 00000000 		.4byte	.LFB7
@@ -1962,7 +1962,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  900 01ce C901     		.2byte	0x1c9
  901 01d0 00       		.byte	0
  902 01d1 0F       		.uleb128 0xf
- 903 01d2 20020000 		.4byte	.LASF30
+ 903 01d2 B1010000 		.4byte	.LASF30
  904 01d6 01       		.byte	0x1
  905 01d7 54       		.byte	0x54
  906 01d8 00000000 		.4byte	.LFB2
@@ -1971,14 +1971,14 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  909 01e1 9C       		.byte	0x9c
  910 01e2 B1020000 		.4byte	0x2b1
  911 01e6 10       		.uleb128 0x10
- 912 01e7 6C020000 		.4byte	.LASF31
+ 912 01e7 5C020000 		.4byte	.LASF31
  913 01eb 01       		.byte	0x1
  914 01ec 57       		.byte	0x57
  915 01ed 6B000000 		.4byte	0x6b
  916 01f1 00000000 		.4byte	.LLST0
  917 01f5 10       		.uleb128 0x10
- 918 01f6 C6010000 		.4byte	.LASF32
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 34
+ 918 01f6 57010000 		.4byte	.LASF32
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 34
 
 
  919 01fa 01       		.byte	0x1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  973 0287 95020000 		.4byte	0x295
  974 028b 12       		.uleb128 0x12
  975 028c D2000000 		.4byte	0xd2
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 35
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 35
 
 
  976 0290 7F000000 		.4byte	.LLST6
@@ -2054,7 +2054,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  986 02ac 9A010000 		.4byte	0x19a
  987 02b0 00       		.byte	0
  988 02b1 0F       		.uleb128 0xf
- 989 02b2 9B030000 		.4byte	.LASF33
+ 989 02b2 8B030000 		.4byte	.LASF33
  990 02b6 01       		.byte	0x1
  991 02b7 37       		.byte	0x37
  992 02b8 00000000 		.4byte	.LFB1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1030 0314 00000000 		.4byte	.LFB10
  1031 0318 0C000000 		.4byte	.LFE10-.LFB10
  1032 031c 01       		.uleb128 0x1
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 36
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 36
 
 
  1033 031d 9C       		.byte	0x9c
@@ -2127,7 +2127,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1056 0352 01       		.uleb128 0x1
  1057 0353 9C       		.byte	0x9c
  1058 0354 15       		.uleb128 0x15
- 1059 0355 88020000 		.4byte	.LASF45
+ 1059 0355 78020000 		.4byte	.LASF45
  1060 0359 01       		.byte	0x1
  1061 035a E102     		.2byte	0x2e1
  1062 035c 6B000000 		.4byte	0x6b
@@ -2137,7 +2137,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1066 0369 9C       		.byte	0x9c
  1067 036a 7D030000 		.4byte	0x37d
  1068 036e 16       		.uleb128 0x16
- 1069 036f 65020000 		.4byte	.LASF34
+ 1069 036f 55020000 		.4byte	.LASF34
  1070 0373 01       		.byte	0x1
  1071 0374 E302     		.2byte	0x2e3
  1072 0376 6B000000 		.4byte	0x6b
@@ -2145,7 +2145,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1074 037b 50       		.byte	0x50
  1075 037c 00       		.byte	0
  1076 037d 0D       		.uleb128 0xd
- 1077 037e 05020000 		.4byte	.LASF35
+ 1077 037e 96010000 		.4byte	.LASF35
  1078 0382 01       		.byte	0x1
  1079 0383 FD02     		.2byte	0x2fd
  1080 0385 00000000 		.4byte	.LFB14
@@ -2154,11 +2154,11 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1083 038e 9C       		.byte	0x9c
  1084 038f A2030000 		.4byte	0x3a2
  1085 0393 17       		.uleb128 0x17
- 1086 0394 87010000 		.4byte	.LASF46
+ 1086 0394 18010000 		.4byte	.LASF46
  1087 0398 01       		.byte	0x1
  1088 0399 FD02     		.2byte	0x2fd
  1089 039b 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 37
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 37
 
 
  1090 039f 01       		.uleb128 0x1
@@ -2171,7 +2171,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1097 03af 01       		.uleb128 0x1
  1098 03b0 9C       		.byte	0x9c
  1099 03b1 0C       		.uleb128 0xc
- 1100 03b2 A6000000 		.4byte	.LASF37
+ 1100 03b2 37000000 		.4byte	.LASF37
  1101 03b6 01       		.byte	0x1
  1102 03b7 4A03     		.2byte	0x34a
  1103 03b9 6B000000 		.4byte	0x6b
@@ -2180,7 +2180,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1106 03c5 01       		.uleb128 0x1
  1107 03c6 9C       		.byte	0x9c
  1108 03c7 0C       		.uleb128 0xc
- 1109 03c8 B9000000 		.4byte	.LASF38
+ 1109 03c8 4A000000 		.4byte	.LASF38
  1110 03cc 01       		.byte	0x1
  1111 03cd 5E03     		.2byte	0x35e
  1112 03cf 6B000000 		.4byte	0x6b
@@ -2189,7 +2189,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1115 03db 01       		.uleb128 0x1
  1116 03dc 9C       		.byte	0x9c
  1117 03dd 0C       		.uleb128 0xc
- 1118 03de 5E010000 		.4byte	.LASF39
+ 1118 03de EF000000 		.4byte	.LASF39
  1119 03e2 01       		.byte	0x1
  1120 03e3 7403     		.2byte	0x374
  1121 03e5 6B000000 		.4byte	0x6b
@@ -2198,7 +2198,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1124 03f1 01       		.uleb128 0x1
  1125 03f2 9C       		.byte	0x9c
  1126 03f3 18       		.uleb128 0x18
- 1127 03f4 DB010000 		.4byte	.LASF47
+ 1127 03f4 6C010000 		.4byte	.LASF47
  1128 03f8 01       		.byte	0x1
  1129 03f9 20       		.byte	0x20
  1130 03fa 6B000000 		.4byte	0x6b
@@ -2206,19 +2206,19 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1132 03ff 03       		.byte	0x3
  1133 0400 00000000 		.4byte	PWM_1_initVar
  1134 0404 19       		.uleb128 0x19
- 1135 0405 2B020000 		.4byte	.LASF40
- 1136 0409 2B020000 		.4byte	.LASF40
+ 1135 0405 BC010000 		.4byte	.LASF40
+ 1136 0409 BC010000 		.4byte	.LASF40
  1137 040d 03       		.byte	0x3
  1138 040e F8       		.byte	0xf8
  1139 040f 19       		.uleb128 0x19
- 1140 0410 4F020000 		.4byte	.LASF41
- 1141 0414 4F020000 		.4byte	.LASF41
+ 1140 0410 3F020000 		.4byte	.LASF41
+ 1141 0414 3F020000 		.4byte	.LASF41
  1142 0418 03       		.byte	0x3
  1143 0419 F9       		.byte	0xf9
  1144 041a 00       		.byte	0
  1145              		.section	.debug_abbrev,"",%progbits
  1146              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 38
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 38
 
 
  1147 0000 01       		.uleb128 0x1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1201 0036 05       		.uleb128 0x5
  1202 0037 35       		.uleb128 0x35
  1203 0038 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 39
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 39
 
 
  1204 0039 49       		.uleb128 0x49
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1258 006f 00       		.byte	0
  1259 0070 09       		.uleb128 0x9
  1260 0071 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 40
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 40
 
 
  1261 0072 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1315 00aa 3A       		.uleb128 0x3a
  1316 00ab 0B       		.uleb128 0xb
  1317 00ac 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 41
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 41
 
 
  1318 00ad 05       		.uleb128 0x5
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1372 00e5 00       		.byte	0
  1373 00e6 0F       		.uleb128 0xf
  1374 00e7 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 42
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 42
 
 
  1375 00e8 01       		.byte	0x1
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1429 011f 00       		.byte	0
  1430 0120 12       		.uleb128 0x12
  1431 0121 05       		.uleb128 0x5
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 43
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 43
 
 
  1432 0122 00       		.byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1486 015c 01       		.uleb128 0x1
  1487 015d 13       		.uleb128 0x13
  1488 015e 00       		.byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 44
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 44
 
 
  1489 015f 00       		.byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1543 0195 19       		.uleb128 0x19
  1544 0196 6E       		.uleb128 0x6e
  1545 0197 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 45
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 45
 
 
  1546 0198 03       		.uleb128 0x3
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1600 0061 9F       		.byte	0x9f
  1601 0062 00000000 		.4byte	0
  1602 0066 00000000 		.4byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 46
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 46
 
 
  1603              	.LLST5:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1657 0084 0C000000 		.4byte	.LFE15-.LFB15
  1658 0088 00000000 		.4byte	.LFB16
  1659 008c 0C000000 		.4byte	.LFE16-.LFB16
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 47
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 47
 
 
  1660 0090 00000000 		.4byte	.LFB17
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1714 00b8 00000000 		.4byte	.LFB18
  1715 00bc 0C000000 		.4byte	.LFE18
  1716 00c0 00000000 		.4byte	0
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 48
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 48
 
 
  1717 00c4 00000000 		.4byte	0
@@ -2834,262 +2834,258 @@ ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 1
  1722      315F456E 
  1722      61626C65 
  1722      00
- 1723              	.LASF44:
- 1724 000d 433A5C55 		.ascii	"C:\\Users\\Melody\\Desktop\\Programming_Stuff\\FRUC"
- 1724      73657273 
- 1724      5C4D656C 
- 1724      6F64795C 
- 1724      4465736B 
- 1725 003b 445C4461 		.ascii	"D\\Dashboard-Firmware-FE10\\Dashboard-Firmware-FE9\\"
- 1725      7368626F 
- 1725      6172642D 
- 1725      4669726D 
- 1725      77617265 
- 1726 006c 44617368 		.ascii	"Dashboard.cydsn\000"
- 1726      626F6172 
- 1726      642E6379 
- 1726      64736E00 
- 1727              	.LASF25:
- 1728 007c 50574D5F 		.ascii	"PWM_1_WriteCounter\000"
- 1728      315F5772 
- 1728      69746543 
- 1728      6F756E74 
- 1728      657200
- 1729              	.LASF29:
- 1730 008f 50574D5F 		.ascii	"PWM_1_ClearFIFO\000"
- 1730      315F436C 
- 1730      65617246 
- 1730      49464F00 
- 1731              	.LASF24:
- 1732 009f 70657269 		.ascii	"period\000"
- 1732      6F6400
- 1733              	.LASF37:
- 1734 00a6 50574D5F 		.ascii	"PWM_1_ReadCompare1\000"
- 1734      315F5265 
- 1734      6164436F 
- 1734      6D706172 
- 1734      653100
- 1735              	.LASF38:
- 1736 00b9 50574D5F 		.ascii	"PWM_1_ReadCompare2\000"
- 1736      315F5265 
- 1736      6164436F 
- 1736      6D706172 
- 1736      653200
- 1737              	.LASF3:
- 1738 00cc 73686F72 		.ascii	"short unsigned int\000"
- 1738      7420756E 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 49
+ 1723              	.LASF25:
+ 1724 000d 50574D5F 		.ascii	"PWM_1_WriteCounter\000"
+ 1724      315F5772 
+ 1724      69746543 
+ 1724      6F756E74 
+ 1724      657200
+ 1725              	.LASF29:
+ 1726 0020 50574D5F 		.ascii	"PWM_1_ClearFIFO\000"
+ 1726      315F436C 
+ 1726      65617246 
+ 1726      49464F00 
+ 1727              	.LASF24:
+ 1728 0030 70657269 		.ascii	"period\000"
+ 1728      6F6400
+ 1729              	.LASF37:
+ 1730 0037 50574D5F 		.ascii	"PWM_1_ReadCompare1\000"
+ 1730      315F5265 
+ 1730      6164436F 
+ 1730      6D706172 
+ 1730      653100
+ 1731              	.LASF38:
+ 1732 004a 50574D5F 		.ascii	"PWM_1_ReadCompare2\000"
+ 1732      315F5265 
+ 1732      6164436F 
+ 1732      6D706172 
+ 1732      653200
+ 1733              	.LASF3:
+ 1734 005d 73686F72 		.ascii	"short unsigned int\000"
+ 1734      7420756E 
+ 1734      7369676E 
+ 1734      65642069 
+ 1734      6E7400
+ 1735              	.LASF22:
+ 1736 0070 50574D5F 		.ascii	"PWM_1_WriteCompare1\000"
+ 1736      315F5772 
+ 1736      69746543 
+ 1736      6F6D7061 
+ 1736      72653100 
+ 1737              	.LASF19:
+ 1738 0084 50574D5F 		.ascii	"PWM_1_WriteCompare2\000"
+ 1738      315F5772 
+ 1738      69746543 
+ 1738      6F6D7061 
+ 1738      72653200 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 49
 
 
- 1738      7369676E 
- 1738      65642069 
- 1738      6E7400
- 1739              	.LASF22:
- 1740 00df 50574D5F 		.ascii	"PWM_1_WriteCompare1\000"
- 1740      315F5772 
- 1740      69746543 
- 1740      6F6D7061 
- 1740      72653100 
- 1741              	.LASF19:
- 1742 00f3 50574D5F 		.ascii	"PWM_1_WriteCompare2\000"
- 1742      315F5772 
- 1742      69746543 
- 1742      6F6D7061 
- 1742      72653200 
- 1743              	.LASF43:
- 1744 0107 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM_1.c\000"
- 1744      72617465 
- 1744      645F536F 
- 1744      75726365 
- 1744      5C50536F 
- 1745              	.LASF9:
- 1746 0126 666C6F61 		.ascii	"float\000"
- 1746      7400
- 1747              	.LASF26:
- 1748 012c 636F756E 		.ascii	"counter\000"
- 1748      74657200 
- 1749              	.LASF7:
- 1750 0134 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1750      206C6F6E 
- 1750      6720756E 
- 1750      7369676E 
- 1750      65642069 
- 1751              	.LASF1:
- 1752 014b 756E7369 		.ascii	"unsigned char\000"
- 1752      676E6564 
- 1752      20636861 
- 1752      7200
- 1753              	.LASF13:
- 1754 0159 72656738 		.ascii	"reg8\000"
- 1754      00
- 1755              	.LASF39:
- 1756 015e 50574D5F 		.ascii	"PWM_1_ReadPeriod\000"
- 1756      315F5265 
- 1756      61645065 
- 1756      72696F64 
- 1756      00
- 1757              	.LASF5:
- 1758 016f 6C6F6E67 		.ascii	"long unsigned int\000"
- 1758      20756E73 
- 1758      69676E65 
- 1758      6420696E 
- 1758      7400
- 1759              	.LASF12:
- 1760 0181 75696E74 		.ascii	"uint8\000"
- 1760      3800
- 1761              	.LASF46:
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 50
+ 1739              	.LASF43:
+ 1740 0098 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM_1.c\000"
+ 1740      72617465 
+ 1740      645F536F 
+ 1740      75726365 
+ 1740      5C50536F 
+ 1741              	.LASF9:
+ 1742 00b7 666C6F61 		.ascii	"float\000"
+ 1742      7400
+ 1743              	.LASF26:
+ 1744 00bd 636F756E 		.ascii	"counter\000"
+ 1744      74657200 
+ 1745              	.LASF7:
+ 1746 00c5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1746      206C6F6E 
+ 1746      6720756E 
+ 1746      7369676E 
+ 1746      65642069 
+ 1747              	.LASF1:
+ 1748 00dc 756E7369 		.ascii	"unsigned char\000"
+ 1748      676E6564 
+ 1748      20636861 
+ 1748      7200
+ 1749              	.LASF13:
+ 1750 00ea 72656738 		.ascii	"reg8\000"
+ 1750      00
+ 1751              	.LASF39:
+ 1752 00ef 50574D5F 		.ascii	"PWM_1_ReadPeriod\000"
+ 1752      315F5265 
+ 1752      61645065 
+ 1752      72696F64 
+ 1752      00
+ 1753              	.LASF5:
+ 1754 0100 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1754      20756E73 
+ 1754      69676E65 
+ 1754      6420696E 
+ 1754      7400
+ 1755              	.LASF12:
+ 1756 0112 75696E74 		.ascii	"uint8\000"
+ 1756      3800
+ 1757              	.LASF46:
+ 1758 0118 636F6E74 		.ascii	"control\000"
+ 1758      726F6C00 
+ 1759              	.LASF18:
+ 1760 0120 50574D5F 		.ascii	"PWM_1_SetInterruptMode\000"
+ 1760      315F5365 
+ 1760      74496E74 
+ 1760      65727275 
+ 1760      70744D6F 
+ 1761              	.LASF17:
+ 1762 0137 50574D5F 		.ascii	"PWM_1_ReadStatusRegister\000"
+ 1762      315F5265 
+ 1762      61645374 
+ 1762      61747573 
+ 1762      52656769 
+ 1763              	.LASF10:
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 50
 
 
- 1762 0187 636F6E74 		.ascii	"control\000"
- 1762      726F6C00 
- 1763              	.LASF18:
- 1764 018f 50574D5F 		.ascii	"PWM_1_SetInterruptMode\000"
- 1764      315F5365 
- 1764      74496E74 
- 1764      65727275 
- 1764      70744D6F 
- 1765              	.LASF17:
- 1766 01a6 50574D5F 		.ascii	"PWM_1_ReadStatusRegister\000"
- 1766      315F5265 
- 1766      61645374 
- 1766      61747573 
- 1766      52656769 
- 1767              	.LASF10:
- 1768 01bf 646F7562 		.ascii	"double\000"
- 1768      6C6500
- 1769              	.LASF32:
- 1770 01c6 50574D5F 		.ascii	"PWM_1_interruptState\000"
- 1770      315F696E 
- 1770      74657272 
- 1770      75707453 
- 1770      74617465 
- 1771              	.LASF47:
- 1772 01db 50574D5F 		.ascii	"PWM_1_initVar\000"
- 1772      315F696E 
- 1772      69745661 
- 1772      7200
- 1773              	.LASF2:
- 1774 01e9 73686F72 		.ascii	"short int\000"
- 1774      7420696E 
- 1774      7400
- 1775              	.LASF16:
- 1776 01f3 50574D5F 		.ascii	"PWM_1_ReadCapture\000"
- 1776      315F5265 
- 1776      61644361 
- 1776      70747572 
- 1776      6500
- 1777              	.LASF35:
- 1778 0205 50574D5F 		.ascii	"PWM_1_WriteControlRegister\000"
- 1778      315F5772 
- 1778      69746543 
- 1778      6F6E7472 
- 1778      6F6C5265 
- 1779              	.LASF30:
- 1780 0220 50574D5F 		.ascii	"PWM_1_Init\000"
- 1780      315F496E 
- 1780      697400
- 1781              	.LASF40:
- 1782 022b 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 1782      74657243 
- 1782      72697469 
- 1782      63616C53 
- 1782      65637469 
- 1783              	.LASF8:
- 1784 0242 756E7369 		.ascii	"unsigned int\000"
- 1784      676E6564 
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 51
+ 1764 0150 646F7562 		.ascii	"double\000"
+ 1764      6C6500
+ 1765              	.LASF32:
+ 1766 0157 50574D5F 		.ascii	"PWM_1_interruptState\000"
+ 1766      315F696E 
+ 1766      74657272 
+ 1766      75707453 
+ 1766      74617465 
+ 1767              	.LASF47:
+ 1768 016c 50574D5F 		.ascii	"PWM_1_initVar\000"
+ 1768      315F696E 
+ 1768      69745661 
+ 1768      7200
+ 1769              	.LASF2:
+ 1770 017a 73686F72 		.ascii	"short int\000"
+ 1770      7420696E 
+ 1770      7400
+ 1771              	.LASF16:
+ 1772 0184 50574D5F 		.ascii	"PWM_1_ReadCapture\000"
+ 1772      315F5265 
+ 1772      61644361 
+ 1772      70747572 
+ 1772      6500
+ 1773              	.LASF35:
+ 1774 0196 50574D5F 		.ascii	"PWM_1_WriteControlRegister\000"
+ 1774      315F5772 
+ 1774      69746543 
+ 1774      6F6E7472 
+ 1774      6F6C5265 
+ 1775              	.LASF30:
+ 1776 01b1 50574D5F 		.ascii	"PWM_1_Init\000"
+ 1776      315F496E 
+ 1776      697400
+ 1777              	.LASF40:
+ 1778 01bc 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1778      74657243 
+ 1778      72697469 
+ 1778      63616C53 
+ 1778      65637469 
+ 1779              	.LASF44:
+ 1780 01d3 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\Dashboard-Firm"
+ 1780      73657273 
+ 1780      5C6C656F 
+ 1780      6A615C44 
+ 1780      6F63756D 
+ 1781 0201 77617265 		.ascii	"ware-FE10\\Dashboard-Firmware-FE9\\Dashboard.cydsn\000"
+ 1781      2D464531 
+ 1781      305C4461 
+ 1781      7368626F 
+ 1781      6172642D 
+ 1782              	.LASF8:
+ 1783 0232 756E7369 		.ascii	"unsigned int\000"
+ 1783      676E6564 
+ 1783      20696E74 
+ 1783      00
+ 1784              	.LASF41:
+ 1785 023f 43794578 		.ascii	"CyExitCriticalSection\000"
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 51
 
 
- 1784      20696E74 
- 1784      00
- 1785              	.LASF41:
- 1786 024f 43794578 		.ascii	"CyExitCriticalSection\000"
- 1786      69744372 
- 1786      69746963 
- 1786      616C5365 
- 1786      6374696F 
- 1787              	.LASF34:
- 1788 0265 72657375 		.ascii	"result\000"
- 1788      6C7400
- 1789              	.LASF31:
- 1790 026c 6374726C 		.ascii	"ctrl\000"
- 1790      00
- 1791              	.LASF15:
- 1792 0271 73697A65 		.ascii	"sizetype\000"
- 1792      74797065 
- 1792      00
- 1793              	.LASF6:
- 1794 027a 6C6F6E67 		.ascii	"long long int\000"
- 1794      206C6F6E 
- 1794      6720696E 
- 1794      7400
- 1795              	.LASF45:
- 1796 0288 50574D5F 		.ascii	"PWM_1_ReadControlRegister\000"
- 1796      315F5265 
- 1796      6164436F 
- 1796      6E74726F 
- 1796      6C526567 
- 1797              	.LASF20:
- 1798 02a2 696E7465 		.ascii	"interruptMode\000"
- 1798      72727570 
- 1798      744D6F64 
- 1798      6500
- 1799              	.LASF23:
- 1800 02b0 50574D5F 		.ascii	"PWM_1_WritePeriod\000"
- 1800      315F5772 
- 1800      69746550 
- 1800      6572696F 
- 1800      6400
- 1801              	.LASF36:
- 1802 02c2 50574D5F 		.ascii	"PWM_1_ReadCounter\000"
- 1802      315F5265 
- 1802      6164436F 
- 1802      756E7465 
- 1802      7200
- 1803              	.LASF28:
- 1804 02d4 50574D5F 		.ascii	"PWM_1_Stop\000"
- 1804      315F5374 
- 1804      6F7000
- 1805              	.LASF4:
- 1806 02df 6C6F6E67 		.ascii	"long int\000"
- 1806      20696E74 
- 1806      00
- 1807              	.LASF11:
- 1808 02e8 63686172 		.ascii	"char\000"
- 1808      00
-ARM GAS  C:\Users\Melody\AppData\Local\Temp\ccl959bY.s 			page 52
+ 1785      69744372 
+ 1785      69746963 
+ 1785      616C5365 
+ 1785      6374696F 
+ 1786              	.LASF34:
+ 1787 0255 72657375 		.ascii	"result\000"
+ 1787      6C7400
+ 1788              	.LASF31:
+ 1789 025c 6374726C 		.ascii	"ctrl\000"
+ 1789      00
+ 1790              	.LASF15:
+ 1791 0261 73697A65 		.ascii	"sizetype\000"
+ 1791      74797065 
+ 1791      00
+ 1792              	.LASF6:
+ 1793 026a 6C6F6E67 		.ascii	"long long int\000"
+ 1793      206C6F6E 
+ 1793      6720696E 
+ 1793      7400
+ 1794              	.LASF45:
+ 1795 0278 50574D5F 		.ascii	"PWM_1_ReadControlRegister\000"
+ 1795      315F5265 
+ 1795      6164436F 
+ 1795      6E74726F 
+ 1795      6C526567 
+ 1796              	.LASF20:
+ 1797 0292 696E7465 		.ascii	"interruptMode\000"
+ 1797      72727570 
+ 1797      744D6F64 
+ 1797      6500
+ 1798              	.LASF23:
+ 1799 02a0 50574D5F 		.ascii	"PWM_1_WritePeriod\000"
+ 1799      315F5772 
+ 1799      69746550 
+ 1799      6572696F 
+ 1799      6400
+ 1800              	.LASF36:
+ 1801 02b2 50574D5F 		.ascii	"PWM_1_ReadCounter\000"
+ 1801      315F5265 
+ 1801      6164436F 
+ 1801      756E7465 
+ 1801      7200
+ 1802              	.LASF28:
+ 1803 02c4 50574D5F 		.ascii	"PWM_1_Stop\000"
+ 1803      315F5374 
+ 1803      6F7000
+ 1804              	.LASF4:
+ 1805 02cf 6C6F6E67 		.ascii	"long int\000"
+ 1805      20696E74 
+ 1805      00
+ 1806              	.LASF11:
+ 1807 02d8 63686172 		.ascii	"char\000"
+ 1807      00
+ 1808              	.LASF14:
+ 1809 02dd 6C6F6E67 		.ascii	"long double\000"
+ 1809      20646F75 
+ 1809      626C6500 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccGV2D2R.s 			page 52
 
 
- 1809              	.LASF14:
- 1810 02ed 6C6F6E67 		.ascii	"long double\000"
- 1810      20646F75 
- 1810      626C6500 
- 1811              	.LASF0:
- 1812 02f9 7369676E 		.ascii	"signed char\000"
- 1812      65642063 
- 1812      68617200 
- 1813              	.LASF21:
- 1814 0305 636F6D70 		.ascii	"compare\000"
- 1814      61726500 
- 1815              	.LASF42:
- 1816 030d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1816      43313120 
- 1816      352E342E 
- 1816      31203230 
- 1816      31363036 
- 1817 0340 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 1817      20726576 
- 1817      6973696F 
- 1817      6E203233 
- 1817      37373135 
- 1818 0373 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
- 1818      66756E63 
- 1818      74696F6E 
- 1818      2D736563 
- 1818      74696F6E 
- 1819              	.LASF33:
- 1820 039b 50574D5F 		.ascii	"PWM_1_Start\000"
- 1820      315F5374 
- 1820      61727400 
- 1821              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1810              	.LASF0:
+ 1811 02e9 7369676E 		.ascii	"signed char\000"
+ 1811      65642063 
+ 1811      68617200 
+ 1812              	.LASF21:
+ 1813 02f5 636F6D70 		.ascii	"compare\000"
+ 1813      61726500 
+ 1814              	.LASF42:
+ 1815 02fd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1815      43313120 
+ 1815      352E342E 
+ 1815      31203230 
+ 1815      31363036 
+ 1816 0330 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1816      20726576 
+ 1816      6973696F 
+ 1816      6E203233 
+ 1816      37373135 
+ 1817 0363 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 1817      66756E63 
+ 1817      74696F6E 
+ 1817      2D736563 
+ 1817      74696F6E 
+ 1818              	.LASF33:
+ 1819 038b 50574D5F 		.ascii	"PWM_1_Start\000"
+ 1819      315F5374 
+ 1819      61727400 
+ 1820              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
