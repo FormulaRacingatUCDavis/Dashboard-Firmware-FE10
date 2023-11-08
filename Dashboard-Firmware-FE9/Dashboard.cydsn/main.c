@@ -178,8 +178,16 @@ int main()
             }
             else { // switch to debug mode
                 debugMode = 1;
+            }  
+        } 
+        
+        if (!Digital3_Read() || !Digital4_Read()) {
+            if (switches & 0b100) { // switch to drive mode
+               switches &= 0b11111011;
             }
-            
+            else { // switch to debug mode
+                switches |= 0b100;
+            }  
         } 
         
         
@@ -209,7 +217,7 @@ int main()
         // need to adjust size of squares for changing fontSize
         
         if(debugMode){
-            disp_SOC(curr_voltage/100, 10, 35, 240, 65, SMALL_FONT);
+            disp_SOC(soc, 10, 35, 240, 65, SMALL_FONT);
             disp_max_pack_temp(PACK_TEMP, 250, 35, 470, 65, SMALL_FONT);
             disp_state(state, 10, 100, 240, 130, SMALL_FONT);
             disp_mc_temp(mc_temp, 250, 100, 470, 130, SMALL_FONT);
@@ -219,7 +227,7 @@ int main()
             //disp_debug(debug_data, 250, 230, 470, 260, SMALL_FONT);
             disp_mc_fault(mc_fault_codes, 250, 230, 470, 260, SMALL_FONT);
         }else{
-            disp_SOC(curr_voltage/100, 30, 35, 210, 170, BIG_FONT);
+            disp_SOC(soc, 30, 35, 210, 170, BIG_FONT);
             disp_max_pack_temp(PACK_TEMP, 270, 35, 450, 170, BIG_FONT);
             disp_state(state, 20, 200, 200, 230, SMALL_FONT);
             disp_glv_v(0, 290, 200, 470, 230, SMALL_FONT);

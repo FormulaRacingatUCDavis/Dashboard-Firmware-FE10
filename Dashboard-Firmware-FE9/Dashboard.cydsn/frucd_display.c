@@ -35,7 +35,7 @@ void initDashTemplate() {
 
 void debugTemplate(){
     UG_FillScreen(C_BLACK);
-    UG_PutString(10, 10, "PACK V:");
+    UG_PutString(10, 10, "PACK SOC:");
     UG_PutString(250, 10, "MAX PACK T:");
     UG_PutString(10, 75, "STATE:");
     UG_PutString(250, 75, "MC T:");
@@ -47,7 +47,7 @@ void debugTemplate(){
 void driveTemplate(){
     UG_FillScreen(C_BLACK);
     UG_PutString(68, 10, "PACK SOC");
-    UG_PutString(297, 10, "MAX PACK T");
+    UG_PutString(297, 10, "MAX PACK T"); 
     UG_PutString(5, 180, "STATE:");
     UG_PutString(275, 180, "GLV V:");
     
@@ -152,7 +152,7 @@ void disp_SOC(uint16_t data, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
     UG_COLOR color;
     
     char data_s[5];
-    sprintf(data_s, "%dV", data);
+    sprintf(data_s, "%d%%", data);
     
     if (data >= 100) {
         // handle 100% case
